@@ -110,7 +110,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>⚽ Soccer Quiz</h1>
+        <h1>⚽ Ball Knowledge</h1>
         <p className="tagline">Name the players</p>
       </header>
 
