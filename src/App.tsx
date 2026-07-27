@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { Question, Format, Category } from './game/types';
+import type { Question, Format, Category, Difficulty } from './game/types';
 import { loadQuestions } from './game/loadQuestions';
 import { QuestionRouter } from './components/QuestionRouter';
+import { DailyView } from './components/DailyView';
 
 type FormatFilter = 'ALL' | Format;
 type CategoryFilter = 'ALL' | Category;
@@ -16,6 +17,11 @@ const FORMAT_LABELS: Record<FormatFilter, string> = {
   ALL: 'All',
   LIST: 'Top-N lists',
   CAREER_PATH: 'Career paths',
+};
+
+const DIFFICULTY_LABELS: Record<Difficulty, string> = {
+  STANDARD: 'Standard',
+  HARD: 'Hard',
 };
 
 // Deterministic shuffle seeded by an integer (avoids Math.random for stable dev).
@@ -33,11 +39,15 @@ function shuffle<T>(arr: T[], seed: number): T[] {
   return a;
 }
 
+type Mode = 'DAILY' | 'PRACTICE';
+
 export default function App() {
   const [all, setAll] = useState<Question[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [mode, setMode] = useState<Mode>('DAILY');
   const [formatFilter, setFormatFilter] = useState<FormatFilter>('ALL');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('ALL');
+  const [difficulty, setDifficulty] = useState<Difficulty>('STANDARD');
   // Seed the shuffle randomly per session so every visit gets a different order
   // (bumped on filter change / deck wrap to reshuffle). Lazy init → evaluated once.
   const [order, setOrder] = useState(() => Math.floor(Math.random() * 1_000_000));
@@ -62,10 +72,12 @@ export default function App() {
     const filtered = all.filter(
       (q) =>
         (formatFilter === 'ALL' || q.format === formatFilter) &&
-        (categoryFilter === 'ALL' || q.category === categoryFilter),
+        (categoryFilter === 'ALL' || q.category === categoryFilter) &&
+        // Difficulty applies to career-path questions only; lists always pass.
+        (q.format !== 'CAREER_PATH' || q.difficulty === difficulty),
     );
     return shuffle(filtered, order + 1);
-  }, [all, formatFilter, categoryFilter, order]);
+  }, [all, formatFilter, categoryFilter, difficulty, order]);
 
   const current = deck[pos];
 
@@ -77,6 +89,12 @@ export default function App() {
 
   const chooseCategory = (c: CategoryFilter) => {
     setCategoryFilter(c);
+    setPos(0);
+    setOrder((o) => o + 1);
+  };
+
+  const chooseDifficulty = (d: Difficulty) => {
+    setDifficulty(d);
     setPos(0);
     setOrder((o) => o + 1);
   };
@@ -96,39 +114,74 @@ export default function App() {
         <p className="tagline">Name the players</p>
       </header>
 
-      {categories.length > 1 && (
-        <nav className="filters">
-          {(['ALL', ...categories] as CategoryFilter[]).map((c) => (
-            <button
-              key={c}
-              className={categoryFilter === c ? 'chip active' : 'chip'}
-              onClick={() => chooseCategory(c)}
-            >
-              {c === 'ALL' ? 'All competitions' : CATEGORY_LABELS[c]}
-            </button>
-          ))}
-        </nav>
-      )}
-
-      <nav className="filters">
-        {(['ALL', 'LIST', 'CAREER_PATH'] as FormatFilter[]).map((f) => (
+      {/* Mode switch: Daily (shared challenge) vs Practice (free-play deck). */}
+      <nav className="filters modes">
+        {(['DAILY', 'PRACTICE'] as Mode[]).map((m) => (
           <button
-            key={f}
-            className={formatFilter === f ? 'chip active' : 'chip'}
-            onClick={() => chooseFormat(f)}
+            key={m}
+            className={mode === m ? 'chip active' : 'chip'}
+            onClick={() => setMode(m)}
           >
-            {FORMAT_LABELS[f]}
+            {m === 'DAILY' ? 'Daily' : 'Practice'}
           </button>
         ))}
-        <span className="deck-count">
-          {deck.length ? `${pos + 1} / ${deck.length}` : '0'}
-        </span>
       </nav>
 
-      {current ? (
-        <QuestionRouter question={current} onNext={next} />
+      {mode === 'DAILY' ? (
+        <DailyView all={all} />
       ) : (
-        <p>No questions for this filter.</p>
+        <>
+          {categories.length > 1 && (
+            <nav className="filters">
+              {(['ALL', ...categories] as CategoryFilter[]).map((c) => (
+                <button
+                  key={c}
+                  className={categoryFilter === c ? 'chip active' : 'chip'}
+                  onClick={() => chooseCategory(c)}
+                >
+                  {c === 'ALL' ? 'All competitions' : CATEGORY_LABELS[c]}
+                </button>
+              ))}
+            </nav>
+          )}
+
+          <nav className="filters">
+            {(['ALL', 'LIST', 'CAREER_PATH'] as FormatFilter[]).map((f) => (
+              <button
+                key={f}
+                className={formatFilter === f ? 'chip active' : 'chip'}
+                onClick={() => chooseFormat(f)}
+              >
+                {FORMAT_LABELS[f]}
+              </button>
+            ))}
+            <span className="deck-count">
+              {deck.length ? `${pos + 1} / ${deck.length}` : '0'}
+            </span>
+          </nav>
+
+          {/* Difficulty applies to career-path questions; show it only when those are in view. */}
+          {formatFilter !== 'LIST' && (
+            <nav className="filters">
+              <span className="filter-label">Career difficulty:</span>
+              {(['STANDARD', 'HARD'] as Difficulty[]).map((d) => (
+                <button
+                  key={d}
+                  className={difficulty === d ? 'chip active' : 'chip'}
+                  onClick={() => chooseDifficulty(d)}
+                >
+                  {DIFFICULTY_LABELS[d]}
+                </button>
+              ))}
+            </nav>
+          )}
+
+          {current ? (
+            <QuestionRouter question={current} onNext={next} />
+          ) : (
+            <p>No questions for this filter.</p>
+          )}
+        </>
       )}
 
       <footer>

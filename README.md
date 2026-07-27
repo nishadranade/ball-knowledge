@@ -12,8 +12,19 @@ question formats and forgiving answer matching.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
 
-Filter by **competition** (Premier League / Champions League) and by **format** (lists / career
-paths).
+## Modes
+
+- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 2 questions (one list +
+  one career path) each day, picked deterministically from the UTC date (no backend). Play once per
+  day, then **share a spoiler-free result** (emoji grid + "Footy Quiz #N") via the Web Share
+  API / clipboard. Progress and a streak are kept in `localStorage`.
+- **Practice** — free-play endless deck with all the filters below.
+
+## Filters (Practice)
+
+Filter by **competition** (Premier League / Champions League), **format** (lists / career paths),
+and **career difficulty** — **Standard** (famous players) vs **Hard** (rarer players, ranked
+201–500 across all metrics). Difficulty applies to career-path questions only.
 
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
 (`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). Career-path answers also
@@ -89,9 +100,14 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~707
-questions (368 list, 339 career) across two competitions — **Premier League** (535) and **Champions
-League** (172) — covering 48 nationalities and all PL clubs with enough qualifying players.
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~1,274
+questions (368 list, 906 career) across two competitions — **Premier League** and **Champions
+League** — covering 48 nationalities and all PL clubs with enough qualifying players. Career
+questions are split **Standard** (~586) / **Hard** (~320) by player rank.
+
+> The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
+> (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more
+> — coverage grows monotonically across runs.
 
 **List sizing & quality floors.** A player only counts as a valid answer if they clear a per-metric
 floor (goals ≥10, assists ≥5, appearances ≥50, clean sheets ≥10), so lists never pad with players

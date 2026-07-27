@@ -47,6 +47,7 @@ header h1 { margin: 0; font-size: 1.8rem; }
 }
 .chip.active { background: var(--accent); color: #06202a; font-weight: 600; }
 .deck-count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+.filter-label { color: var(--muted); font-size: 0.85rem; align-self: center; }
 
 .card {
   background: var(--card);
@@ -139,3 +140,23 @@ button:hover { filter: brightness(1.08); }
 .source a { color: var(--accent); }
 
 footer { color: var(--muted); font-size: 0.8rem; margin-top: 1.5rem; }
+
+/* Mode switch (Daily / Practice) sits above the filters. */
+.filters.modes { margin-bottom: 1rem; }
+
+/* Daily view */
+.daily-progress { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.5rem; }
+.daily-result h2 { margin: 0 0 0.75rem; }
+.share-grid {
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  margin: 0 0 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.streak { color: var(--warn); font-weight: 600; margin: 0 0 1rem; }
+.daily-note { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }

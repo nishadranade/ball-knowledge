@@ -1,17 +1,38 @@
+import { useEffect, useRef } from 'react';
 import type { ListQuestion as ListQ } from '../game/types';
 import { useGame } from '../game/useGame';
+import type { RoundResult } from '../game/daily';
 import { GuessInput } from './GuessInput';
 import { Lives } from './Lives';
 
 interface Props {
   question: ListQ;
-  onNext: () => void;
+  onNext?: () => void;
+  nextLabel?: string;
+  /** Fired once when the round ends (won or lost). */
+  onComplete?: (result: RoundResult) => void;
 }
 
-export function ListQuestion({ question, onNext }: Props) {
+export function ListQuestion({ question, onNext, nextLabel = 'Next question →', onComplete }: Props) {
   const { state, guess, giveUp, livesLeft } = useGame(question);
   const foundByIndex = new Map(state.found.map((f) => [f.index, f.player]));
   const over = state.status !== 'in-progress';
+
+  // Report the outcome exactly once when the round ends.
+  const reported = useRef(false);
+  useEffect(() => {
+    if (over && !reported.current) {
+      reported.current = true;
+      onComplete?.({
+        format: 'LIST',
+        found: state.found.length,
+        total: question.answers.length,
+        wrong: state.wrong,
+        maxWrong: question.maxWrong,
+        won: state.status === 'won',
+      });
+    }
+  }, [over, onComplete, state, question]);
 
   return (
     <div className="question card">
@@ -56,7 +77,7 @@ export function ListQuestion({ question, onNext }: Props) {
               ? `Solved with ${livesLeft} guess${livesLeft === 1 ? '' : 'es'} to spare!`
               : `Round over — you found ${state.found.length} of ${question.answers.length}.`}
           </p>
-          <button onClick={onNext}>Next question →</button>
+          {onNext && <button onClick={onNext}>{nextLabel}</button>}
         </div>
       )}
 

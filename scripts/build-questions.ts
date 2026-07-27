@@ -15,7 +15,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { fetchWikitext, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
+import { fetchWikitext, hasCached, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
 import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
 import {
@@ -40,11 +40,12 @@ import type {
 const OUT_DIR = 'public/data';
 const NOW = new Date().toISOString();
 const PL_SOURCE_URL = 'https://www.premierleague.com/stats';
-/** How many top players per metric go into the career-path pool. Higher = more
- *  career-path questions, but each new player needs a (rate-limited) Wikipedia
- *  fetch. Deduped across metrics AND competitions. */
-const CAREER_TOP_K = 100;
-/** How deep (×100 players) to pull each overall leaderboard. */
+/** Career-path difficulty bands, by a player's BEST rank across all metrics and
+ *  competitions. STANDARD = famous (best rank ≤ this); HARD = rarer (best rank in
+ *  (STANDARD_MAX, HARD_MAX]). Players past HARD_MAX are excluded (too obscure). */
+const STANDARD_MAX_RANK = 200;
+const HARD_MAX_RANK = 500;
+/** How deep (×100 players) to pull each overall leaderboard. Must cover HARD_MAX_RANK. */
 const OVERALL_DEPTH_PAGES = 5;
 
 // ---------------------------------------------------------------------------
@@ -212,33 +213,62 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
 interface CareerCandidate {
   player: PlayerRow;
   category: Competition; // competition this player is drawn from (first bank that had them)
+  bestRank: number; // best (lowest) rank across all metrics & competitions
+  difficulty: 'STANDARD' | 'HARD';
 }
 
-/** Career pool = the top-K players by each metric across ALL competitions'
- *  banks (spans strikers, playmakers, appearance-makers and goalkeepers),
- *  deduped by name. A player is tagged with the first competition they appear
- *  in (banks are processed PL-first, so PL takes precedence). */
+/** Career pool, difficulty-banded. A player's rarity = their BEST rank across
+ *  all metrics and competitions (elite in any one dimension = famous). Players
+ *  with best rank ≤ STANDARD_MAX_RANK are STANDARD; (STANDARD_MAX, HARD_MAX] are
+ *  HARD; beyond HARD_MAX are dropped. `category` is the first competition the
+ *  player appears in (banks are PL-first). Only rows carrying an overall rank
+ *  count (club-only rows have rank=null and can't be placed on the fame scale). */
 function careerPool(banks: AnswerBank[]): CareerCandidate[] {
-  const seen = new Map<string, CareerCandidate>();
+  const best = new Map<string, { player: PlayerRow; category: Competition; rank: number }>();
   for (const bank of banks) {
     for (const rows of bank.byMetric.values()) {
-      const topK = [...rows].sort((a, b) => b.value - a.value).slice(0, CAREER_TOP_K);
-      for (const r of topK) {
-        if (!seen.has(r.fullName)) {
-          seen.set(r.fullName, { player: r, category: bank.cfg.competition });
+      for (const r of rows) {
+        if (r.rank == null) continue;
+        const cur = best.get(r.fullName);
+        if (!cur || r.rank < cur.rank) {
+          best.set(r.fullName, {
+            player: r,
+            category: cur?.category ?? bank.cfg.competition,
+            rank: r.rank,
+          });
         }
       }
     }
   }
-  return [...seen.values()];
+  const out: CareerCandidate[] = [];
+  for (const { player, category, rank } of best.values()) {
+    if (rank > HARD_MAX_RANK) continue;
+    out.push({
+      player,
+      category,
+      bestRank: rank,
+      difficulty: rank <= STANDARD_MAX_RANK ? 'STANDARD' : 'HARD',
+    });
+  }
+  return out;
 }
 
 async function buildCareerQuestions(banks: AnswerBank[]): Promise<CareerPathQuestion[]> {
+  // CACHE_ONLY=1 → use only players whose Wikipedia page is already cached (no
+  // live fetches). Lets us ship immediately from a partial crawl; a later full
+  // run fills in the rest.
+  const cacheOnly = process.env.CACHE_ONLY === '1';
   const pool = careerPool(banks);
-  console.log(`  CAREER pool = ${pool.length} unique players`);
+  const std = pool.filter((c) => c.difficulty === 'STANDARD').length;
+  console.log(
+    `  CAREER pool = ${pool.length} players (${std} standard, ${pool.length - std} hard)${
+      cacheOnly ? ' [CACHE_ONLY]' : ''
+    }`,
+  );
   const out: CareerPathQuestion[] = [];
-  for (const { player: p, category } of pool) {
+  for (const { player: p, category, difficulty } of pool) {
     const pageTitle = p.fullName.replace(/ /g, '_');
+    if (cacheOnly && !(await hasCached(pageTitle))) continue; // skip uncached without fetching
     let career: CareerStint[];
     try {
       const wt = await fetchWikitext(pageTitle);
@@ -258,6 +288,7 @@ async function buildCareerQuestions(banks: AnswerBank[]): Promise<CareerPathQues
       format: 'CAREER_PATH',
       prompt: 'Which player had this career?',
       maxWrong: 2,
+      difficulty,
       source: {
         name: 'Wikipedia',
         url: `https://en.wikipedia.org/wiki/${pageTitle}`,
@@ -295,6 +326,9 @@ function validate(questions: Question[]): string[] {
       if (q.maxWrong !== 2) errors.push(`${q.id}: CAREER maxWrong should be 2`);
       if (!q.answer.lastName) errors.push(`${q.id}: missing answer lastName`);
       if (q.career.length < 2) errors.push(`${q.id}: career too short`);
+      if (q.difficulty !== 'STANDARD' && q.difficulty !== 'HARD') {
+        errors.push(`${q.id}: invalid difficulty ${q.difficulty}`);
+      }
     }
   }
   return errors;
@@ -328,6 +362,10 @@ async function main() {
   // Per-category counts for the manifest.
   const byCategory: Record<string, number> = {};
   for (const q of questions) byCategory[q.category] = (byCategory[q.category] ?? 0) + 1;
+  const byDifficulty = {
+    STANDARD: careerQs.filter((q) => q.difficulty === 'STANDARD').length,
+    HARD: careerQs.filter((q) => q.difficulty === 'HARD').length,
+  };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
   await fs.writeFile(
@@ -344,6 +382,7 @@ async function main() {
           list: listQs.length,
           career: careerQs.length,
           byCategory,
+          careerByDifficulty: byDifficulty,
         },
         attribution:
           'LIST stats from the Premier League (premierleague.com), covering the Premier League and Champions League. Career paths from Wikipedia (CC BY-SA 4.0).',

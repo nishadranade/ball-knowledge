@@ -1,16 +1,41 @@
+import { useEffect, useRef } from 'react';
 import type { CareerPathQuestion as CareerQ } from '../game/types';
 import { useGame } from '../game/useGame';
+import type { RoundResult } from '../game/daily';
 import { GuessInput } from './GuessInput';
 import { Lives } from './Lives';
 
 interface Props {
   question: CareerQ;
-  onNext: () => void;
+  onNext?: () => void;
+  nextLabel?: string;
+  /** Fired once when the round ends (won or lost). */
+  onComplete?: (result: RoundResult) => void;
 }
 
-export function CareerPathQuestion({ question, onNext }: Props) {
+export function CareerPathQuestion({
+  question,
+  onNext,
+  nextLabel = 'Next question →',
+  onComplete,
+}: Props) {
   const { state, guess, giveUp, livesLeft } = useGame(question);
   const over = state.status !== 'in-progress';
+
+  const reported = useRef(false);
+  useEffect(() => {
+    if (over && !reported.current) {
+      reported.current = true;
+      onComplete?.({
+        format: 'CAREER_PATH',
+        found: state.status === 'won' ? 1 : 0,
+        total: 1,
+        wrong: state.wrong,
+        maxWrong: question.maxWrong,
+        won: state.status === 'won',
+      });
+    }
+  }, [over, onComplete, state, question]);
 
   return (
     <div className="question card">
@@ -63,7 +88,7 @@ export function CareerPathQuestion({ question, onNext }: Props) {
             {state.status === 'won' ? 'Correct — ' : 'The answer was '}
             <strong>{question.answer.fullName}</strong>
           </p>
-          <button onClick={onNext}>Next question →</button>
+          {onNext && <button onClick={onNext}>{nextLabel}</button>}
         </div>
       )}
 

@@ -25,6 +25,16 @@ async function cachePath(page: string): Promise<string> {
   return path.join(CACHE_DIR, `${safe}.wikitext`);
 }
 
+/** True if this page's wikitext is already on disk (no network needed). */
+export async function hasCached(page: string): Promise<boolean> {
+  try {
+    await fs.access(await cachePath(page));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** Serialize + throttle live requests to respect Wikipedia's rate limits. */

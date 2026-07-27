@@ -70,4 +70,21 @@ describe('generated questions.json', () => {
     const cl = bundle.questions.filter((q) => q.category === 'CHAMPIONS_LEAGUE');
     expect(cl.length).toBeGreaterThan(0);
   });
+
+  const careers = bundle.questions.filter((q) => q.format === 'CAREER_PATH');
+
+  it('every career question has a valid difficulty', () => {
+    for (const q of careers) {
+      expect(q.format === 'CAREER_PATH' && (q.difficulty === 'STANDARD' || q.difficulty === 'HARD')).toBe(
+        true,
+      );
+    }
+  });
+
+  it('has both Standard and Hard career questions', () => {
+    const std = careers.filter((q) => q.format === 'CAREER_PATH' && q.difficulty === 'STANDARD');
+    const hard = careers.filter((q) => q.format === 'CAREER_PATH' && q.difficulty === 'HARD');
+    expect(std.length).toBeGreaterThan(0);
+    expect(hard.length).toBeGreaterThan(0);
+  });
 });

@@ -5,6 +5,8 @@
 
 export type Category = 'PREMIER_LEAGUE' | 'CHAMPIONS_LEAGUE' | 'WORLD_CUP';
 export type Format = 'LIST' | 'CAREER_PATH';
+/** Career-path difficulty: STANDARD = famous players, HARD = rarer ones. */
+export type Difficulty = 'STANDARD' | 'HARD';
 
 export interface Player {
   /** Full display name, e.g. "Alan Shearer". */
@@ -56,6 +58,8 @@ export interface CareerPathQuestion extends BaseQuestion {
   /** Senior-career club stints shown to the player (name hidden). */
   career: CareerStint[];
   answer: Player;
+  /** Rarity band (STANDARD = famous, HARD = rarer). Career-path only. */
+  difficulty: Difficulty;
 }
 
 export type Question = ListQuestion | CareerPathQuestion;
