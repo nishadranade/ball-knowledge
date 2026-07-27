@@ -46,7 +46,7 @@ npm run build:data   # OPTIONAL: refresh public/data/questions.json from Wikiped
 ## Verifying the install worked
 
 - `npm test` → `Tests 17 passed (17)`.
-- `npm run dev` → page titled "⚽ Soccer Quiz" with filter chips (All / Top-N lists / Career paths)
+- `npm run dev` → page titled "⚽ Ball Knowledge" with filter chips (All / Top-N lists / Career paths)
   and a question card. Try guessing a surname (e.g. on a "top goalscorers" question, type `Shearer`).
 
 ## Version note (not a problem on Mac)

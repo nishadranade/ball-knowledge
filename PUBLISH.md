@@ -65,8 +65,8 @@ This creates the repo, adds it as `origin`, and pushes `main` in one step.
 
 ## Verification
 
-- Open https://nishadranade.github.io/ball-knowledge/ — it should load the quiz (title "⚽ Soccer
-  Quiz"), show competition + format filter chips, and a question card.
+- Open https://nishadranade.github.io/ball-knowledge/ — it should load the quiz (title
+  "⚽ Ball Knowledge"), show competition + format filter chips, and a question card.
 - Reload a couple of times: the first question should differ (order is randomized per session).
 - Click **Champions League** → the deck count should shrink (CL-only questions).
 

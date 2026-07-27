@@ -1,4 +1,4 @@
-# ⚽ Soccer Quiz
+# ⚽ Ball Knowledge
 
 A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with two
 question formats and forgiving answer matching.
