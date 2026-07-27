@@ -35,13 +35,21 @@ const pool: Question[] = [
   ...Array.from({ length: 10 }, (_, i) => career(`c${i}`)),
 ];
 
-describe('dateKey / dayNumber', () => {
-  it('formats a UTC date key', () => {
+describe('dateKey / dayNumber (US Pacific)', () => {
+  it('formats a Pacific date key', () => {
+    // Noon UTC on Mar 5 is still Mar 5 in Pacific (04:00 PST).
     expect(dateKey(new Date('2026-03-05T12:00:00Z'))).toBe('2026-03-05');
   });
-  it('day number is 1 on the epoch and increments daily', () => {
-    expect(dayNumber(new Date('2026-01-01T00:00:00Z'))).toBe(1);
-    expect(dayNumber(new Date('2026-01-11T23:59:00Z'))).toBe(11);
+  it('rolls over at Pacific midnight, not UTC', () => {
+    // 05:00Z on Mar 5 = 21:00 PST on Mar 4 → still the 4th in Pacific.
+    expect(dateKey(new Date('2026-03-05T05:00:00Z'))).toBe('2026-03-04');
+    // 09:00Z on Mar 5 = 01:00 PST on Mar 5 → now the 5th.
+    expect(dateKey(new Date('2026-03-05T09:00:00Z'))).toBe('2026-03-05');
+  });
+  it('day number increments by Pacific day', () => {
+    // Local noon in Pacific on the epoch date → day 1.
+    expect(dayNumber(new Date('2026-01-01T20:00:00Z'))).toBe(1); // 12:00 PST Jan 1
+    expect(dayNumber(new Date('2026-01-11T20:00:00Z'))).toBe(11);
   });
 });
 

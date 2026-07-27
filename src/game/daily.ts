@@ -1,28 +1,43 @@
 /**
  * Daily challenge logic (Wordle-style): pick the same questions for everyone on
- * a given day, seeded only by the UTC date — no backend. Also builds the
+ * a given day, seeded only by the calendar date — no backend. Also builds the
  * spoiler-free share text.
  *
  * The daily is 2 questions: one LIST + one CAREER_PATH. Selection is fixed by
  * the date (ignores the user's practice-mode filters), so every visitor gets
- * an identical daily.
+ * an identical daily. The "day" is **US Pacific** (America/Los_Angeles), so the
+ * puzzle rolls over at Pacific midnight regardless of the visitor's own
+ * timezone (DST handled automatically by Intl).
  */
 
 import type { Question, ListQuestion, CareerPathQuestion } from './types';
 
-/** Launch epoch (UTC midnight) — day 1 of "Footy Quiz #N". */
-const EPOCH_UTC = Date.UTC(2026, 0, 1); // 2026-01-01
+const TIME_ZONE = 'America/Los_Angeles';
+/** Launch epoch (Pacific) — the date that is day 1 of "Footy Quiz #N". */
+const EPOCH_KEY = '2026-01-01';
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
-/** UTC date key "YYYY-MM-DD" for a given Date (defaults to now). */
+/** Calendar date key "YYYY-MM-DD" in US Pacific time for a given instant. */
 export function dateKey(now: Date = new Date()): string {
-  return now.toISOString().slice(0, 10);
+  // en-CA formats as YYYY-MM-DD; timeZone shifts the instant to Pacific first.
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+}
+
+/** Whole days between two "YYYY-MM-DD" keys (b - a), timezone-agnostic. */
+function daysBetween(aKey: string, bKey: string): number {
+  const a = Date.UTC(+aKey.slice(0, 4), +aKey.slice(5, 7) - 1, +aKey.slice(8, 10));
+  const b = Date.UTC(+bKey.slice(0, 4), +bKey.slice(5, 7) - 1, +bKey.slice(8, 10));
+  return Math.round((b - a) / MS_PER_DAY);
 }
 
 /** Day number since launch epoch (1-based) → the "#N" in the share header. */
 export function dayNumber(now: Date = new Date()): number {
-  const todayUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-  return Math.floor((todayUtc - EPOCH_UTC) / MS_PER_DAY) + 1;
+  return daysBetween(EPOCH_KEY, dateKey(now)) + 1;
 }
 
 /** Deterministic 32-bit hash of a string (FNV-1a). Stable across sessions/browsers. */

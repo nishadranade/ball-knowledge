@@ -15,9 +15,11 @@ question formats and forgiving answer matching.
 ## Modes
 
 - **Daily** — a shared Wordle-style challenge: everyone gets the **same** 2 questions (one list +
-  one career path) each day, picked deterministically from the UTC date (no backend). Play once per
-  day, then **share a spoiler-free result** (emoji grid + "Footy Quiz #N") via the Web Share
-  API / clipboard. Progress and a streak are kept in `localStorage`.
+  one career path) each day, picked deterministically from the calendar date (no backend). The day
+  rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
+  same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
+  result** (emoji grid + "Footy Quiz #N") via the Web Share API / clipboard. Progress and a streak
+  are kept in `localStorage`.
 - **Practice** — free-play endless deck with all the filters below.
 
 ## Filters (Practice)
