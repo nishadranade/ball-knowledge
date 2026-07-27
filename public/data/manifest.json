@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-27T15:49:16.005Z",
+  "generatedAt": "2026-07-27T16:45:43.672Z",
   "counts": {
-    "total": 707,
+    "total": 741,
     "list": 368,
-    "career": 339,
+    "career": 373,
     "byCategory": {
       "PREMIER_LEAGUE": 535,
-      "CHAMPIONS_LEAGUE": 172
+      "CHAMPIONS_LEAGUE": 206
     }
   },
   "attribution": "LIST stats from the Premier League (premierleague.com), covering the Premier League and Champions League. Career paths from Wikipedia (CC BY-SA 4.0).",

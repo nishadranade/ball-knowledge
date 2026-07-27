@@ -20,6 +20,7 @@ import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
 import {
   COUNTRIES,
+  MAJOR_COUNTRIES,
   expandListTemplates,
   renderListPrompt,
   SUPPORTED_METRICS,
@@ -173,9 +174,14 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
   for (const t of expandListTemplates(bank.clubs, bank.cfg.competition)) {
     attempted++;
     const ranked = qualifiersForTemplate(t, bank);
-    // Tiered sizing: use the largest size (10→5→3) that the qualifier pool
-    // supports; drop the scope if fewer than the smallest tier qualify.
-    const topN = TIER_SIZES.find((n) => ranked.length >= n);
+    // Cap "obscure" countries at top 5: their rank 6–10 tail is too hard/unfun
+    // (e.g. top-10 Cameroonian appearance makers). Major footballing nations,
+    // overall, and per-club scopes keep the full 10→5→3 tiering.
+    const maxSize =
+      t.scopeType === 'country' && !MAJOR_COUNTRIES.has(t.scopeValue) ? 5 : Infinity;
+    // Tiered sizing: use the largest allowed size the qualifier pool supports;
+    // drop the scope if fewer than the smallest tier qualify.
+    const topN = TIER_SIZES.find((n) => n <= maxSize && ranked.length >= n);
     if (!topN) continue;
 
     const answers = sliceAnswers(ranked, topN);

@@ -100,6 +100,11 @@ who barely recorded the stat. Each scope then asks for the largest tier that fit
 clear the floor) instead of a top-10 padded with 3-assist players. Clean-sheet lists are restricted
 to goalkeepers.
 
+**Country tiers.** Countries are curated into major footballing nations vs the rest (`major` flag in
+`scripts/question-templates.ts`). Obscure countries cap at **top 5** (5 → 3) because their rank 6–10
+tail is too hard/unfun (e.g. no "top 10 Cameroonian appearance makers"); major nations, overall, and
+per-club scopes keep the full 10 → 5 → 3.
+
 ## Known limitations & roadmap
 
 - **Premier League & Champions League only.** La Liga and World Cup categories (the data model

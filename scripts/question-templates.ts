@@ -74,25 +74,28 @@ export interface CountryScope {
   name: string; // display name used in prompts, e.g. "Ivory Coast"
   demonym: string; // adjective used in prompts, e.g. "German"
   apiName?: string; // PL API nationality string, if different from `name`
+  /** Well-known footballing nations may go up to top 10; others (default) cap
+   *  at top 5, since their rank 6–10 tail is obscure. Curated — edit freely. */
+  major?: boolean;
 }
 
 export const COUNTRIES: CountryScope[] = [
   // Europe
-  { name: 'England', demonym: 'English' },
-  { name: 'France', demonym: 'French' },
-  { name: 'Germany', demonym: 'German' },
-  { name: 'Spain', demonym: 'Spanish' },
-  { name: 'Italy', demonym: 'Italian' },
-  { name: 'Netherlands', demonym: 'Dutch' },
-  { name: 'Portugal', demonym: 'Portuguese' },
-  { name: 'Belgium', demonym: 'Belgian' },
-  { name: 'Republic of Ireland', demonym: 'Irish', apiName: 'Ireland' },
+  { name: 'England', demonym: 'English', major: true },
+  { name: 'France', demonym: 'French', major: true },
+  { name: 'Germany', demonym: 'German', major: true },
+  { name: 'Spain', demonym: 'Spanish', major: true },
+  { name: 'Italy', demonym: 'Italian', major: true },
+  { name: 'Netherlands', demonym: 'Dutch', major: true },
+  { name: 'Portugal', demonym: 'Portuguese', major: true },
+  { name: 'Belgium', demonym: 'Belgian', major: true },
+  { name: 'Republic of Ireland', demonym: 'Irish', apiName: 'Ireland', major: true },
   { name: 'Northern Ireland', demonym: 'Northern Irish' },
-  { name: 'Scotland', demonym: 'Scottish' },
-  { name: 'Wales', demonym: 'Welsh' },
+  { name: 'Scotland', demonym: 'Scottish', major: true },
+  { name: 'Wales', demonym: 'Welsh', major: true },
   { name: 'Norway', demonym: 'Norwegian' },
-  { name: 'Denmark', demonym: 'Danish' },
-  { name: 'Sweden', demonym: 'Swedish' },
+  { name: 'Denmark', demonym: 'Danish', major: true },
+  { name: 'Sweden', demonym: 'Swedish', major: true },
   { name: 'Croatia', demonym: 'Croatian' },
   { name: 'Serbia', demonym: 'Serbian' },
   { name: 'Czech Republic', demonym: 'Czech' },
@@ -103,8 +106,8 @@ export const COUNTRIES: CountryScope[] = [
   { name: 'Finland', demonym: 'Finnish' },
   { name: 'Turkiye', demonym: 'Turkish' },
   // South America
-  { name: 'Brazil', demonym: 'Brazilian' },
-  { name: 'Argentina', demonym: 'Argentine' },
+  { name: 'Brazil', demonym: 'Brazilian', major: true },
+  { name: 'Argentina', demonym: 'Argentine', major: true },
   { name: 'Uruguay', demonym: 'Uruguayan' },
   { name: 'Colombia', demonym: 'Colombian' },
   { name: 'Chile', demonym: 'Chilean' },
@@ -132,6 +135,9 @@ export const COUNTRIES: CountryScope[] = [
   { name: 'South Korea', demonym: 'South Korean' },
   { name: 'Japan', demonym: 'Japanese' },
 ];
+
+/** Set of major-country display names, for quick lookup by the generator. */
+export const MAJOR_COUNTRIES = new Set(COUNTRIES.filter((c) => c.major).map((c) => c.name));
 
 /** Premier League clubs used as club-scope values (canonical + display name).
  *  Start with the ever-present / historically significant clubs; the pipeline
