@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-27T18:06:24.245Z",
+  "generatedAt": "2026-07-27T18:19:21.882Z",
   "counts": {
-    "total": 1274,
+    "total": 1708,
     "list": 368,
-    "career": 906,
+    "career": 1340,
     "byCategory": {
-      "PREMIER_LEAGUE": 979,
-      "CHAMPIONS_LEAGUE": 295
+      "PREMIER_LEAGUE": 1080,
+      "CHAMPIONS_LEAGUE": 628
     },
     "careerByDifficulty": {
-      "STANDARD": 586,
-      "HARD": 320
+      "STANDARD": 694,
+      "HARD": 646
     }
   },
   "attribution": "LIST stats from the Premier League (premierleague.com), covering the Premier League and Champions League. Career paths from Wikipedia (CC BY-SA 4.0).",

@@ -102,10 +102,10 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~1,274
-questions (368 list, 906 career) across two competitions — **Premier League** and **Champions
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~1,708
+questions (368 list, 1,340 career) across two competitions — **Premier League** and **Champions
 League** — covering 48 nationalities and all PL clubs with enough qualifying players. Career
-questions are split **Standard** (~586) / **Hard** (~320) by player rank.
+questions are split **Standard** (~694) / **Hard** (~646) by player rank.
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more
