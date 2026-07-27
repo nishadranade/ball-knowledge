@@ -1,0 +1,358 @@
+/**
+ * Answer-bank build pipeline.
+ *
+ *   fetch (Premier League API)  ->  aggregate to PlayerRow[]  ->  ranked bank
+ *   ->  expand LIST templates & KEEP only feasible ones
+ *   ->  build CAREER pool (notable players) & attach Wikipedia infobox careers
+ *   ->  validate  ->  write public/data/questions.json + manifest.json
+ *
+ * LIST data comes from the PL official API (all-time, all players, correct
+ * per-club/per-country totals). CAREER progression still comes from Wikipedia
+ * infoboxes (the PL API has no career-history-outside-the-PL data).
+ *
+ * Run: npm run build:data
+ */
+
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { fetchWikitext, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
+import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
+import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
+import {
+  COUNTRIES,
+  expandListTemplates,
+  renderListPrompt,
+  SUPPORTED_METRICS,
+  METRIC_FLOOR,
+  TIER_SIZES,
+  type ListQuestionTemplate,
+  type Metric,
+  type Competition,
+} from './question-templates.js';
+import type {
+  Question,
+  ListQuestion,
+  CareerPathQuestion,
+  ListAnswer,
+} from '../src/game/types.js';
+
+const OUT_DIR = 'public/data';
+const NOW = new Date().toISOString();
+const PL_SOURCE_URL = 'https://www.premierleague.com/stats';
+/** How many top players per metric go into the career-path pool. Higher = more
+ *  career-path questions, but each new player needs a (rate-limited) Wikipedia
+ *  fetch. Deduped across metrics AND competitions. */
+const CAREER_TOP_K = 100;
+/** How deep (×100 players) to pull each overall leaderboard. */
+const OVERALL_DEPTH_PAGES = 5;
+
+// ---------------------------------------------------------------------------
+// Competitions to generate. Both use the pulselive API; CL has no usable
+// per-club data (team ids are English-only), so it is overall + country only.
+// ---------------------------------------------------------------------------
+interface CompetitionConfig {
+  competition: Competition; // structurally identical to the Category union in types.ts
+  compsId: CompsId;
+  hasClubs: boolean;
+  sourceName: string;
+  sourceUrl: string;
+}
+
+const COMPETITIONS: CompetitionConfig[] = [
+  {
+    competition: 'PREMIER_LEAGUE',
+    compsId: COMPS.PREMIER_LEAGUE,
+    hasClubs: true,
+    sourceName: 'Premier League',
+    sourceUrl: PL_SOURCE_URL,
+  },
+  {
+    competition: 'CHAMPIONS_LEAGUE',
+    compsId: COMPS.CHAMPIONS_LEAGUE,
+    hasClubs: false,
+    sourceName: 'Premier League',
+    sourceUrl: PL_SOURCE_URL,
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Nationality: map the PL API's country string (e.g. "Ireland", "Cote D’Ivoire")
+// to our canonical display name (e.g. "Republic of Ireland", "Ivory Coast"),
+// which is what a template's country scopeValue uses. Countries whose API string
+// matches their display name need no override; others carry `apiName`.
+// ---------------------------------------------------------------------------
+const API_NAME_TO_DISPLAY = new Map<string, string>(
+  COUNTRIES.map((c) => [c.apiName ?? c.name, c.name] as const),
+);
+
+function canonicalCountry(nat: string | null): string | null {
+  if (!nat) return null;
+  return API_NAME_TO_DISPLAY.get(nat) ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// Answer bank: metric -> PlayerRow[] from the Premier League API
+// ---------------------------------------------------------------------------
+interface AnswerBank {
+  cfg: CompetitionConfig;
+  byMetric: Map<Metric, PlayerRow[]>;
+  clubs: string[]; // club names for per-club questions (empty for CL)
+}
+
+async function buildAnswerBank(cfg: CompetitionConfig): Promise<AnswerBank> {
+  // Clubs only apply to competitions with usable per-club data (PL).
+  const teams = cfg.hasClubs ? await fetchTeams() : [];
+  if (cfg.hasClubs) console.log(`  ${teams.length} clubs`);
+  const byMetric = new Map<Metric, PlayerRow[]>();
+  for (const metric of SUPPORTED_METRICS) {
+    const agg = await aggregateMetric(metric, teams, OVERALL_DEPTH_PAGES, cfg.compsId);
+    byMetric.set(metric, agg.rows);
+    console.log(`  bank[${cfg.competition}/${metric}] = ${agg.rows.length} players`);
+  }
+  return { cfg, byMetric, clubs: teams.map((t) => t.name) };
+}
+
+// ---------------------------------------------------------------------------
+// LIST question generation
+// ---------------------------------------------------------------------------
+
+function toAnswer(row: PlayerRow, value: number, rank: number): ListAnswer {
+  return { fullName: row.fullName, lastName: row.lastName, value, rank };
+}
+
+/** All players who qualify for a template (clear the metric floor), sorted by
+ *  value descending. The pipeline then slices this to a tiered size. */
+function qualifiersForTemplate(
+  t: ListQuestionTemplate,
+  bank: AnswerBank,
+): { row: PlayerRow; value: number }[] {
+  let rows = bank.byMetric.get(t.metric);
+  if (!rows) return [];
+
+  // Clean sheets are a goalkeeping stat: the PL API credits a clean sheet to
+  // every player on the pitch, so restrict this metric to goalkeepers.
+  if (t.metric === 'cleanSheets') {
+    rows = rows.filter((r) => r.position === 'G');
+  }
+
+  let ranked: { row: PlayerRow; value: number }[];
+  if (t.scopeType === 'overall') {
+    ranked = rows.map((r) => ({ row: r, value: r.value }));
+  } else if (t.scopeType === 'country') {
+    ranked = rows
+      .filter((r) => canonicalCountry(r.nationality) === t.scopeValue)
+      .map((r) => ({ row: r, value: r.value }));
+  } else {
+    // club scope: value is the player's count AT that club (from the per-club split)
+    ranked = [];
+    for (const r of rows) {
+      const split = r.clubs.find((c) => c.club === t.scopeValue);
+      if (split) ranked.push({ row: r, value: split.count });
+    }
+  }
+
+  // Apply the per-metric floor: a player only counts if their value meets the
+  // minimum (e.g. ≥10 goals, ≥5 assists). This drops weak tail answers.
+  const floor = METRIC_FLOOR[t.metric];
+  ranked = ranked.filter((x) => x.value >= floor);
+  ranked.sort((a, b) => b.value - a.value);
+  return ranked;
+}
+
+/** Build the answer slice for a chosen size, expanding to include ties at the
+ *  boundary (everyone whose value ≥ the Nth value). */
+function sliceAnswers(ranked: { row: PlayerRow; value: number }[], topN: number): ListAnswer[] {
+  const cutoff = ranked[topN - 1].value;
+  const kept = ranked.filter((x) => x.value >= cutoff);
+  return kept.map((x, i) => toAnswer(x.row, x.value, i + 1));
+}
+
+function buildListQuestions(bank: AnswerBank): ListQuestion[] {
+  const out: ListQuestion[] = [];
+  let attempted = 0;
+  for (const t of expandListTemplates(bank.clubs, bank.cfg.competition)) {
+    attempted++;
+    const ranked = qualifiersForTemplate(t, bank);
+    // Tiered sizing: use the largest size (10→5→3) that the qualifier pool
+    // supports; drop the scope if fewer than the smallest tier qualify.
+    const topN = TIER_SIZES.find((n) => ranked.length >= n);
+    if (!topN) continue;
+
+    const answers = sliceAnswers(ranked, topN);
+    // id namespaced by competition so PL and CL questions never collide.
+    const id = `list_${t.competition}_${t.metric}_${t.scopeType}_${t.scopeValue || 'all'}_${topN}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '_');
+    out.push({
+      id,
+      category: bank.cfg.competition,
+      format: 'LIST',
+      prompt: renderListPrompt(t, topN),
+      maxWrong: 3,
+      source: { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW },
+      answers,
+    });
+  }
+  console.log(`  LIST[${bank.cfg.competition}]: kept ${out.length} / attempted ${attempted}`);
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// CAREER-PATH question generation
+// Pool = top-K players per metric (deduped). Look up each player's Wikipedia
+// page (by full name) and parse the infobox career.
+// ---------------------------------------------------------------------------
+
+interface CareerCandidate {
+  player: PlayerRow;
+  category: Competition; // competition this player is drawn from (first bank that had them)
+}
+
+/** Career pool = the top-K players by each metric across ALL competitions'
+ *  banks (spans strikers, playmakers, appearance-makers and goalkeepers),
+ *  deduped by name. A player is tagged with the first competition they appear
+ *  in (banks are processed PL-first, so PL takes precedence). */
+function careerPool(banks: AnswerBank[]): CareerCandidate[] {
+  const seen = new Map<string, CareerCandidate>();
+  for (const bank of banks) {
+    for (const rows of bank.byMetric.values()) {
+      const topK = [...rows].sort((a, b) => b.value - a.value).slice(0, CAREER_TOP_K);
+      for (const r of topK) {
+        if (!seen.has(r.fullName)) {
+          seen.set(r.fullName, { player: r, category: bank.cfg.competition });
+        }
+      }
+    }
+  }
+  return [...seen.values()];
+}
+
+async function buildCareerQuestions(banks: AnswerBank[]): Promise<CareerPathQuestion[]> {
+  const pool = careerPool(banks);
+  console.log(`  CAREER pool = ${pool.length} unique players`);
+  const out: CareerPathQuestion[] = [];
+  for (const { player: p, category } of pool) {
+    const pageTitle = p.fullName.replace(/ /g, '_');
+    let career: CareerStint[];
+    try {
+      const wt = await fetchWikitext(pageTitle);
+      career = parseCareerInfobox(wt);
+    } catch (e) {
+      console.warn(`    ! skip ${p.fullName}: ${(e as Error).message}`);
+      continue;
+    }
+    // Need at least 2 clubs to make a meaningful career-path puzzle.
+    if (career.length < 2) {
+      console.warn(`    ! skip ${p.fullName}: only ${career.length} career stint(s)`);
+      continue;
+    }
+    out.push({
+      id: `career_${pageTitle.toLowerCase().replace(/[^a-z0-9]+/g, '_')}`,
+      category,
+      format: 'CAREER_PATH',
+      prompt: 'Which player had this career?',
+      maxWrong: 2,
+      source: {
+        name: 'Wikipedia',
+        url: `https://en.wikipedia.org/wiki/${pageTitle}`,
+        retrievedAt: NOW,
+      },
+      career,
+      // Career answers are generous: accept any significant name token, since
+      // many players (esp. Brazilian/mononym) are commonly known by their first
+      // name (e.g. "Alisson", "Ederson") rather than the derived surname.
+      answer: {
+        fullName: p.fullName,
+        lastName: p.lastName,
+        aliases: p.fullName.split(/\s+/).filter((t) => t.length >= 3),
+      },
+    });
+  }
+  console.log(`  CAREER: built ${out.length} questions`);
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// Validation
+// ---------------------------------------------------------------------------
+function validate(questions: Question[]): string[] {
+  const errors: string[] = [];
+  const ids = new Set<string>();
+  for (const q of questions) {
+    if (ids.has(q.id)) errors.push(`duplicate id ${q.id}`);
+    ids.add(q.id);
+    if (q.format === 'LIST') {
+      if (q.maxWrong !== 3) errors.push(`${q.id}: LIST maxWrong should be 3`);
+      if (!q.answers.length) errors.push(`${q.id}: no answers`);
+      for (const a of q.answers) if (!a.lastName) errors.push(`${q.id}: answer missing lastName`);
+    } else {
+      if (q.maxWrong !== 2) errors.push(`${q.id}: CAREER maxWrong should be 2`);
+      if (!q.answer.lastName) errors.push(`${q.id}: missing answer lastName`);
+      if (q.career.length < 2) errors.push(`${q.id}: career too short`);
+    }
+  }
+  return errors;
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+async function main() {
+  // Build one answer bank per competition, then LIST questions from each.
+  const banks: AnswerBank[] = [];
+  const listQs: ListQuestion[] = [];
+  for (const cfg of COMPETITIONS) {
+    console.log(`Building answer bank: ${cfg.competition}...`);
+    const bank = await buildAnswerBank(cfg);
+    banks.push(bank);
+    listQs.push(...buildListQuestions(bank));
+  }
+
+  // Career questions draw from ALL competitions' pools (deduped by name).
+  console.log('Generating career-path questions...');
+  const careerQs = await buildCareerQuestions(banks);
+  const questions: Question[] = [...listQs, ...careerQs];
+
+  const errors = validate(questions);
+  if (errors.length) {
+    console.error('VALIDATION ERRORS:\n' + errors.map((e) => '  - ' + e).join('\n'));
+    process.exit(1);
+  }
+
+  // Per-category counts for the manifest.
+  const byCategory: Record<string, number> = {};
+  for (const q of questions) byCategory[q.category] = (byCategory[q.category] ?? 0) + 1;
+
+  await fs.mkdir(OUT_DIR, { recursive: true });
+  await fs.writeFile(
+    path.join(OUT_DIR, 'questions.json'),
+    JSON.stringify({ generatedAt: NOW, questions }, null, 2),
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'manifest.json'),
+    JSON.stringify(
+      {
+        generatedAt: NOW,
+        counts: {
+          total: questions.length,
+          list: listQs.length,
+          career: careerQs.length,
+          byCategory,
+        },
+        attribution:
+          'LIST stats from the Premier League (premierleague.com), covering the Premier League and Champions League. Career paths from Wikipedia (CC BY-SA 4.0).',
+        sources: [PL_SOURCE_URL, 'https://en.wikipedia.org'],
+      },
+      null,
+      2,
+    ),
+  );
+  console.log(
+    `\nWrote ${questions.length} questions (${listQs.length} list, ${careerQs.length} career) to ${OUT_DIR}/questions.json`,
+  );
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

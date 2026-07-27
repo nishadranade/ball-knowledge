@@ -1,0 +1,10 @@
+node_modules/
+dist/
+scripts/.cache/
+.playwright-mcp/
+playwright-responses/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+.DS_Store

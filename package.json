@@ -1,0 +1,29 @@
+{
+  "name": "footy-quiz",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:data && npm run build:app",
+    "build:app": "tsc -b && vite build",
+    "build:data": "tsx scripts/build-questions.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "fastest-levenshtein": "^1.0.16",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^4.5.5",
+    "vitest": "^0.34.6"
+  }
+}
