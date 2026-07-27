@@ -13,7 +13,7 @@
 import type { Question, ListQuestion, CareerPathQuestion } from './types';
 
 const TIME_ZONE = 'America/Los_Angeles';
-/** Launch epoch (Pacific) — the date that is day 1 of "Footy Quiz #N". */
+/** Launch epoch (Pacific) — the date that is day 1 of "Ball Knowledge #N". */
 const EPOCH_KEY = '2026-01-01';
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -87,8 +87,8 @@ export interface DailyResult {
 }
 
 /** Build the spoiler-free share text (no player names). */
-export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/footy-quiz'): string {
-  const lines = [`⚽ Footy Quiz #${result.day}`];
+export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
+  const lines = [`⚽ Ball Knowledge #${result.day}`];
   for (const r of result.results) {
     if (r.format === 'LIST') {
       // One square per answer slot: 🟩 found, 🟥 missed.

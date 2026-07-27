@@ -21,8 +21,8 @@ interface StoredDaily {
   completed: boolean;
 }
 
-const STORAGE_KEY = 'footy-quiz-daily';
-const STREAK_KEY = 'footy-quiz-streak';
+const STORAGE_KEY = 'ball-knowledge-daily';
+const STREAK_KEY = 'ball-knowledge-streak';
 
 function loadStored(date: string): StoredDaily | null {
   try {
@@ -119,7 +119,7 @@ export function DailyView({ all }: Props) {
   if (done) {
     return (
       <div className="question card daily-result">
-        <h2>Footy Quiz #{day}</h2>
+        <h2>Ball Knowledge #{day}</h2>
         <pre className="share-grid">{buildShareText(dailyResult)}</pre>
         {streak != null && streak > 1 && <p className="streak">🔥 {streak}-day streak</p>}
         <button onClick={share}>{copied ? 'Copied!' : 'Share result'}</button>

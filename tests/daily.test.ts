@@ -94,11 +94,12 @@ describe('buildShareText', () => {
       ],
     };
     const text = buildShareText(result);
-    expect(text).toContain('Footy Quiz #42');
+    expect(text).toContain('Ball Knowledge #42');
     expect(text).toContain('🟩🟩🟩🟥'); // 4 found, 1 missed
     expect(text).toContain('4/5');
     expect(text).toContain('(1 guess)');
-    // no player names leaked
-    expect(text).not.toContain('B');
+    // no player names leaked (share text is only emojis, stats, and the title)
+    expect(text).not.toContain('Shearer');
+    expect(text).not.toContain('Beckham');
   });
 });

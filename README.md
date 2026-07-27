@@ -3,7 +3,7 @@
 A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with two
 question formats and forgiving answer matching.
 
-**▶ Play it live: https://nishadranade.github.io/footy-quiz/**
+**▶ Play it live: https://nishadranade.github.io/ball-knowledge/**
 
 ## Question formats
 
@@ -18,7 +18,7 @@ question formats and forgiving answer matching.
   one career path) each day, picked deterministically from the calendar date (no backend). The day
   rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
   same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
-  result** (emoji grid + "Footy Quiz #N") via the Web Share API / clipboard. Progress and a streak
+  result** (emoji grid + "Ball Knowledge #N") via the Web Share API / clipboard. Progress and a streak
   are kept in `localStorage`.
 - **Practice** — free-play endless deck with all the filters below.
 
@@ -85,9 +85,9 @@ npm run preview      # serve the production build
 ## Deployment
 
 Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy.yml`
-(→ https://nishadranade.github.io/footy-quiz/). CI runs `build:app` only — it ships the
+(→ https://nishadranade.github.io/ball-knowledge/). CI runs `build:app` only — it ships the
 **committed** `public/data/questions.json` and never calls the live data pipeline. Vite's `base` is
-`/footy-quiz/` (override with the `BASE_PATH` env var for other hosts, e.g. `BASE_PATH=/`).
+`/ball-knowledge/` (override with the `BASE_PATH` env var for other hosts, e.g. `BASE_PATH=/`).
 
 **To refresh the data:** run `npm run build:data` locally, commit the updated
 `public/data/questions.json`, and push — the next deploy ships it.

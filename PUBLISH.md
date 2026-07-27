@@ -1,12 +1,12 @@
-# Publishing footy-quiz to GitHub + GitHub Pages
+# Publishing ball-knowledge to GitHub + GitHub Pages
 
 Handoff instructions for setting up the public repo and live site. Written for an agent (or
 developer) working on the local machine where the GitHub account is authenticated.
 
 **Target:**
 - GitHub owner/user: `nishadranade`
-- Repo name: `footy-quiz` (Public)
-- Live URL after setup: **https://nishadranade.github.io/footy-quiz/**
+- Repo name: `ball-knowledge` (Public)
+- Live URL after setup: **https://nishadranade.github.io/ball-knowledge/**
 
 ## Current state (already done in this workspace)
 
@@ -17,7 +17,7 @@ The project is fully prepared and committed locally — do **not** redo these:
 - `LICENSE` (MIT), `README.md`, `.gitignore` present. No secrets/`.env` in the tree.
 - `.github/workflows/deploy.yml` — GitHub Actions workflow that builds and deploys to Pages on
   every push to `main`.
-- `vite.config.ts` has `base: '/footy-quiz/'` so assets resolve under the Pages project path.
+- `vite.config.ts` has `base: '/ball-knowledge/'` so assets resolve under the Pages project path.
 - CI ships the committed `public/data/questions.json` (it runs `build:app`, NOT the live data
   pipeline).
 
@@ -33,20 +33,20 @@ There is **no git remote** configured yet. That's the main thing to add.
 
 **Option A — using the GitHub CLI (`gh`), if installed and authenticated:**
 ```bash
-gh repo create nishadranade/footy-quiz --public --source=. --remote=origin --push
+gh repo create nishadranade/ball-knowledge --public --source=. --remote=origin --push
 ```
 This creates the repo, adds it as `origin`, and pushes `main` in one step.
 
 **Option B — manual (no `gh`):**
 1. Create an empty repo at https://github.com/new
-   - Owner: `nishadranade`, Name: `footy-quiz`, Visibility: **Public**
+   - Owner: `nishadranade`, Name: `ball-knowledge`, Visibility: **Public**
    - Do NOT initialize with a README, .gitignore, or license (they already exist here).
 2. Add the remote and push:
    ```bash
-   git remote add origin https://github.com/nishadranade/footy-quiz.git
+   git remote add origin https://github.com/nishadranade/ball-knowledge.git
    git push -u origin main
    ```
-   (For SSH instead: `git remote add origin git@github.com:nishadranade/footy-quiz.git`)
+   (For SSH instead: `git remote add origin git@github.com:nishadranade/ball-knowledge.git`)
 
 ## Step 2 — Enable GitHub Pages (via Actions)
 
@@ -61,11 +61,11 @@ This creates the repo, adds it as `origin`, and pushes `main` in one step.
   both go green.
 - If it didn't run (e.g. Pages source was set after the push): Actions tab → "Deploy to GitHub
   Pages" → **Run workflow** on `main`.
-- When `deploy` finishes, the site is live at **https://nishadranade.github.io/footy-quiz/**.
+- When `deploy` finishes, the site is live at **https://nishadranade.github.io/ball-knowledge/**.
 
 ## Verification
 
-- Open https://nishadranade.github.io/footy-quiz/ — it should load the quiz (title "⚽ Soccer
+- Open https://nishadranade.github.io/ball-knowledge/ — it should load the quiz (title "⚽ Soccer
   Quiz"), show competition + format filter chips, and a question card.
 - Reload a couple of times: the first question should differ (order is randomized per session).
 - Click **Champions League** → the deck count should shrink (CL-only questions).
@@ -75,7 +75,7 @@ This creates the repo, adds it as `origin`, and pushes `main` in one step.
 - **404 at the site URL:** confirm Pages Source = "GitHub Actions" (Step 2) and the `deploy` job
   succeeded. First deploy can take a couple of minutes to propagate.
 - **Blank page / assets 404 in console:** the repo name must match the Vite `base`. This is set to
-  `/footy-quiz/` in `vite.config.ts`. If the repo is named something else, update `base` to
+  `/ball-knowledge/` in `vite.config.ts`. If the repo is named something else, update `base` to
   `'/<repo-name>/'`, commit, and push.
 - **Workflow fails on `npm ci`:** ensure `package-lock.json` is committed (it is) and the runner
   uses Node 20 (the workflow pins this).
