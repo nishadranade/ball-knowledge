@@ -45,6 +45,12 @@ export interface BaseQuestion {
   /** Allowed wrong guesses before the round ends. 3 for LIST, 2 for CAREER_PATH. */
   maxWrong: number;
   source: SourceRef;
+  /**
+   * Rarity band. STANDARD = approachable (famous players; major clubs/countries
+   * at full top-10). HARD = tougher (rare players; lesser clubs/countries, capped
+   * smaller). Applies to BOTH formats; Standard mode + the daily use STANDARD only.
+   */
+  difficulty: Difficulty;
 }
 
 export interface ListQuestion extends BaseQuestion {
@@ -58,8 +64,6 @@ export interface CareerPathQuestion extends BaseQuestion {
   /** Senior-career club stints shown to the player (name hidden). */
   career: CareerStint[];
   answer: Player;
-  /** Rarity band (STANDARD = famous, HARD = rarer). Career-path only. */
-  difficulty: Difficulty;
 }
 
 export type Question = ListQuestion | CareerPathQuestion;

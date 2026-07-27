@@ -25,8 +25,10 @@ question formats and forgiving answer matching.
 ## Filters (Practice)
 
 Filter by **competition** (Premier League / Champions League), **format** (lists / career paths),
-and **career difficulty** — **Standard** (famous players) vs **Hard** (rarer players, ranked
-201–500 across all metrics). Difficulty applies to career-path questions only.
+and **difficulty**. **Difficulty applies to both formats:** **Standard** is approachable — famous
+career players (best rank ≤200) and lists for major clubs/nations + overall (full top 10). **Hard**
+adds rarer career players (rank 201–500) and lists for lesser clubs/countries (capped at top 5, so
+their obscure rank 6–10 tail never shows in Standard). The daily challenge is always Standard-only.
 
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
 (`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). Career-path answers also
@@ -104,8 +106,8 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
 
 Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~1,811
 questions (368 list, 1,443 career) across two competitions — **Premier League** and **Champions
-League** — covering 48 nationalities and all PL clubs with enough qualifying players. Career
-questions are split **Standard** / **Hard** by player rank.
+League** — covering 48 nationalities and all PL clubs with enough qualifying players. Questions are
+split **Standard** (~885) / **Hard** (~926) across both formats (see difficulty tiers below).
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more
@@ -118,10 +120,12 @@ who barely recorded the stat. Each scope then asks for the largest tier that fit
 clear the floor) instead of a top-10 padded with 3-assist players. Clean-sheet lists are restricted
 to goalkeepers.
 
-**Country tiers.** Countries are curated into major footballing nations vs the rest (`major` flag in
-`scripts/question-templates.ts`). Obscure countries cap at **top 5** (5 → 3) because their rank 6–10
-tail is too hard/unfun (e.g. no "top 10 Cameroonian appearance makers"); major nations, overall, and
-per-club scopes keep the full 10 → 5 → 3.
+**Difficulty tiers (clubs & countries).** Countries and clubs are curated into "major" vs the rest
+(`MAJOR_COUNTRIES` / `MAJOR_CLUBS` in `scripts/question-templates.ts`). Major nations/clubs + overall
+scopes are **Standard**, full 10 → 5 → 3. Lesser nations/clubs are **Hard-only** and capped at
+**top 5** (5 → 3), because their rank 6–10 tail is too hard/unfun (e.g. no "top 10 Cameroonian
+appearance makers" or "top 10 Charlton assisters" in Standard). ~16 clubs are major (the big six +
+Everton, Villa, West Ham, Newcastle, Leeds, Leicester, Southampton, Forest, Wolves, Crystal Palace).
 
 ## Known limitations & roadmap
 

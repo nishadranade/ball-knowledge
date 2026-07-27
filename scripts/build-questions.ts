@@ -21,6 +21,7 @@ import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
 import {
   COUNTRIES,
   MAJOR_COUNTRIES,
+  MAJOR_CLUBS,
   expandListTemplates,
   renderListPrompt,
   SUPPORTED_METRICS,
@@ -30,6 +31,7 @@ import {
   type Metric,
   type Competition,
 } from './question-templates.js';
+import type { Difficulty } from '../src/game/types.js';
 import type {
   Question,
   ListQuestion,
@@ -169,17 +171,29 @@ function sliceAnswers(ranked: { row: PlayerRow; value: number }[], topN: number)
   return kept.map((x, i) => toAnswer(x.row, x.value, i + 1));
 }
 
+/** Difficulty + max list size for a LIST scope.
+ *  - overall: STANDARD, full 10→5→3.
+ *  - country/club: STANDARD + full tiering if it's a MAJOR nation/club; otherwise
+ *    HARD-only and capped at top 5 (so its obscure rank 6–10 tail never shows in
+ *    Standard mode, and it asks a shorter list). */
+function listTier(t: ListQuestionTemplate): { difficulty: Difficulty; maxSize: number } {
+  if (t.scopeType === 'overall') return { difficulty: 'STANDARD', maxSize: Infinity };
+  const isMajor =
+    t.scopeType === 'country'
+      ? MAJOR_COUNTRIES.has(t.scopeValue)
+      : MAJOR_CLUBS.has(t.scopeValue);
+  return isMajor
+    ? { difficulty: 'STANDARD', maxSize: Infinity }
+    : { difficulty: 'HARD', maxSize: 5 };
+}
+
 function buildListQuestions(bank: AnswerBank): ListQuestion[] {
   const out: ListQuestion[] = [];
   let attempted = 0;
   for (const t of expandListTemplates(bank.clubs, bank.cfg.competition)) {
     attempted++;
     const ranked = qualifiersForTemplate(t, bank);
-    // Cap "obscure" countries at top 5: their rank 6–10 tail is too hard/unfun
-    // (e.g. top-10 Cameroonian appearance makers). Major footballing nations,
-    // overall, and per-club scopes keep the full 10→5→3 tiering.
-    const maxSize =
-      t.scopeType === 'country' && !MAJOR_COUNTRIES.has(t.scopeValue) ? 5 : Infinity;
+    const { difficulty, maxSize } = listTier(t);
     // Tiered sizing: use the largest allowed size the qualifier pool supports;
     // drop the scope if fewer than the smallest tier qualify.
     const topN = TIER_SIZES.find((n) => n <= maxSize && ranked.length >= n);
@@ -196,11 +210,15 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
       format: 'LIST',
       prompt: renderListPrompt(t, topN),
       maxWrong: 3,
+      difficulty,
       source: { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW },
       answers,
     });
   }
-  console.log(`  LIST[${bank.cfg.competition}]: kept ${out.length} / attempted ${attempted}`);
+  const hard = out.filter((q) => q.difficulty === 'HARD').length;
+  console.log(
+    `  LIST[${bank.cfg.competition}]: kept ${out.length} / attempted ${attempted} (${out.length - hard} standard, ${hard} hard)`,
+  );
   return out;
 }
 
@@ -318,6 +336,10 @@ function validate(questions: Question[]): string[] {
   for (const q of questions) {
     if (ids.has(q.id)) errors.push(`duplicate id ${q.id}`);
     ids.add(q.id);
+    // Every question (both formats) must carry a valid difficulty.
+    if (q.difficulty !== 'STANDARD' && q.difficulty !== 'HARD') {
+      errors.push(`${q.id}: invalid difficulty ${q.difficulty}`);
+    }
     if (q.format === 'LIST') {
       if (q.maxWrong !== 3) errors.push(`${q.id}: LIST maxWrong should be 3`);
       if (!q.answers.length) errors.push(`${q.id}: no answers`);
@@ -326,9 +348,6 @@ function validate(questions: Question[]): string[] {
       if (q.maxWrong !== 2) errors.push(`${q.id}: CAREER maxWrong should be 2`);
       if (!q.answer.lastName) errors.push(`${q.id}: missing answer lastName`);
       if (q.career.length < 2) errors.push(`${q.id}: career too short`);
-      if (q.difficulty !== 'STANDARD' && q.difficulty !== 'HARD') {
-        errors.push(`${q.id}: invalid difficulty ${q.difficulty}`);
-      }
     }
   }
   return errors;
@@ -362,9 +381,10 @@ async function main() {
   // Per-category counts for the manifest.
   const byCategory: Record<string, number> = {};
   for (const q of questions) byCategory[q.category] = (byCategory[q.category] ?? 0) + 1;
+  // Difficulty now spans both formats.
   const byDifficulty = {
-    STANDARD: careerQs.filter((q) => q.difficulty === 'STANDARD').length,
-    HARD: careerQs.filter((q) => q.difficulty === 'HARD').length,
+    STANDARD: questions.filter((q) => q.difficulty === 'STANDARD').length,
+    HARD: questions.filter((q) => q.difficulty === 'HARD').length,
   };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
@@ -382,7 +402,7 @@ async function main() {
           list: listQs.length,
           career: careerQs.length,
           byCategory,
-          careerByDifficulty: byDifficulty,
+          byDifficulty,
         },
         attribution:
           'LIST stats from the Premier League (premierleague.com), covering the Premier League and Champions League. Career paths from Wikipedia (CC BY-SA 4.0).',

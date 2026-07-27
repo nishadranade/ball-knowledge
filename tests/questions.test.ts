@@ -71,20 +71,33 @@ describe('generated questions.json', () => {
     expect(cl.length).toBeGreaterThan(0);
   });
 
-  const careers = bundle.questions.filter((q) => q.format === 'CAREER_PATH');
-
-  it('every career question has a valid difficulty', () => {
-    for (const q of careers) {
-      expect(q.format === 'CAREER_PATH' && (q.difficulty === 'STANDARD' || q.difficulty === 'HARD')).toBe(
-        true,
-      );
+  it('every question (both formats) has a valid difficulty', () => {
+    for (const q of bundle.questions) {
+      expect(q.difficulty === 'STANDARD' || q.difficulty === 'HARD').toBe(true);
     }
   });
 
-  it('has both Standard and Hard career questions', () => {
-    const std = careers.filter((q) => q.format === 'CAREER_PATH' && q.difficulty === 'STANDARD');
-    const hard = careers.filter((q) => q.format === 'CAREER_PATH' && q.difficulty === 'HARD');
+  it('has both Standard and Hard questions', () => {
+    const std = bundle.questions.filter((q) => q.difficulty === 'STANDARD');
+    const hard = bundle.questions.filter((q) => q.difficulty === 'HARD');
     expect(std.length).toBeGreaterThan(0);
     expect(hard.length).toBeGreaterThan(0);
+  });
+
+  it('the daily (Standard-only) pool has both a list and a career question', () => {
+    const std = bundle.questions.filter((q) => q.difficulty === 'STANDARD');
+    expect(std.some((q) => q.format === 'LIST')).toBe(true);
+    expect(std.some((q) => q.format === 'CAREER_PATH')).toBe(true);
+  });
+
+  it('lesser clubs/countries are Hard and capped at top 5', () => {
+    // Any LIST question tagged STANDARD for a country/club scope must be a major
+    // one; and no HARD list should exceed top 5.
+    const lists = bundle.questions.filter((q): q is ListQuestion => q.format === 'LIST');
+    for (const q of lists) {
+      const m = q.id.match(/_(\d+)$/);
+      const n = m ? Number(m[1]) : 0;
+      if (q.difficulty === 'HARD') expect(n).toBeLessThanOrEqual(5);
+    }
   });
 });

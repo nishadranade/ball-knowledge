@@ -73,8 +73,8 @@ export default function App() {
       (q) =>
         (formatFilter === 'ALL' || q.format === formatFilter) &&
         (categoryFilter === 'ALL' || q.category === categoryFilter) &&
-        // Difficulty applies to career-path questions only; lists always pass.
-        (q.format !== 'CAREER_PATH' || q.difficulty === difficulty),
+        // Difficulty applies to BOTH formats now (lists too).
+        q.difficulty === difficulty,
     );
     return shuffle(filtered, order + 1);
   }, [all, formatFilter, categoryFilter, difficulty, order]);
@@ -160,21 +160,20 @@ export default function App() {
             </span>
           </nav>
 
-          {/* Difficulty applies to career-path questions; show it only when those are in view. */}
-          {formatFilter !== 'LIST' && (
-            <nav className="filters">
-              <span className="filter-label">Career difficulty:</span>
-              {(['STANDARD', 'HARD'] as Difficulty[]).map((d) => (
-                <button
-                  key={d}
-                  className={difficulty === d ? 'chip active' : 'chip'}
-                  onClick={() => chooseDifficulty(d)}
-                >
-                  {DIFFICULTY_LABELS[d]}
-                </button>
-              ))}
-            </nav>
-          )}
+          {/* Difficulty applies to both formats: Hard adds lesser clubs/countries
+              and rarer players. */}
+          <nav className="filters">
+            <span className="filter-label">Difficulty:</span>
+            {(['STANDARD', 'HARD'] as Difficulty[]).map((d) => (
+              <button
+                key={d}
+                className={difficulty === d ? 'chip active' : 'chip'}
+                onClick={() => chooseDifficulty(d)}
+              >
+                {DIFFICULTY_LABELS[d]}
+              </button>
+            ))}
+          </nav>
 
           {current ? (
             <QuestionRouter question={current} onNext={next} />

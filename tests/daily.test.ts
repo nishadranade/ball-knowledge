@@ -9,22 +9,23 @@ import {
 } from '../src/game/daily';
 import type { Question } from '../src/game/types';
 
-const list = (id: string): Question => ({
+const list = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
   id,
   category: 'PREMIER_LEAGUE',
   format: 'LIST',
   prompt: 'p',
   maxWrong: 3,
+  difficulty,
   source: { name: 'x', url: 'x', retrievedAt: 'x' },
   answers: [{ fullName: 'A B', lastName: 'B' }],
 });
-const career = (id: string): Question => ({
+const career = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
   id,
   category: 'PREMIER_LEAGUE',
   format: 'CAREER_PATH',
   prompt: 'p',
   maxWrong: 2,
-  difficulty: 'STANDARD',
+  difficulty,
   source: { name: 'x', url: 'x', retrievedAt: 'x' },
   career: [{ years: 'y', club: 'c' }, { years: 'y', club: 'd' }],
   answer: { fullName: 'A B', lastName: 'B' },
@@ -76,6 +77,20 @@ describe('selectDaily', () => {
     const keys = ['2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08'];
     const ids = new Set(keys.map((k) => selectDaily(pool, k).list?.id));
     expect(ids.size).toBeGreaterThan(1);
+  });
+  it('only picks STANDARD questions', () => {
+    // A pool where the hash-preferred entries would be HARD if not filtered.
+    const mixed: Question[] = [
+      list('l-hard', 'HARD'),
+      list('l-std', 'STANDARD'),
+      career('c-hard', 'HARD'),
+      career('c-std', 'STANDARD'),
+    ];
+    for (const key of ['2026-03-05', '2026-06-10', '2026-09-22', '2027-01-01']) {
+      const d = selectDaily(mixed, key);
+      expect(d.list?.id).toBe('l-std');
+      expect(d.career?.id).toBe('c-std');
+    }
   });
   it('handles empty pools gracefully', () => {
     const d = selectDaily([], '2026-03-05');

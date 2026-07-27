@@ -61,8 +61,11 @@ export interface DailySelection {
  * null for a slot if the pool has none of that format.
  */
 export function selectDaily(all: Question[], key: string = dateKey()): DailySelection {
-  const lists = all.filter((q): q is ListQuestion => q.format === 'LIST');
-  const careers = all.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
+  // The daily is Standard-only so everyone's shared challenge stays approachable
+  // (famous clubs/countries/players — no obscure Hard slices).
+  const standard = all.filter((q) => q.difficulty === 'STANDARD');
+  const lists = standard.filter((q): q is ListQuestion => q.format === 'LIST');
+  const careers = standard.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
   const pick = <T>(pool: T[], salt: string): T | null =>
     pool.length ? pool[hashString(key + salt) % pool.length] : null;
   return {

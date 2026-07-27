@@ -139,9 +139,9 @@ export const COUNTRIES: CountryScope[] = [
 /** Set of major-country display names, for quick lookup by the generator. */
 export const MAJOR_COUNTRIES = new Set(COUNTRIES.filter((c) => c.major).map((c) => c.name));
 
-/** Premier League clubs used as club-scope values (canonical + display name).
- *  Start with the ever-present / historically significant clubs; the pipeline
- *  can widen this to every club that has appeared in the PL. */
+/** Premier League clubs used as the fallback club-scope list when the pipeline
+ *  isn't given the live club set. The pipeline normally scopes by every club the
+ *  API returns (all ~46). */
 export const PL_CLUBS: { name: string; short: string }[] = [
   { name: 'Arsenal F.C.', short: 'Arsenal' },
   { name: 'Aston Villa F.C.', short: 'Aston Villa' },
@@ -154,6 +154,28 @@ export const PL_CLUBS: { name: string; short: string }[] = [
   { name: 'Tottenham Hotspur F.C.', short: 'Tottenham Hotspur' },
   { name: 'West Ham United F.C.', short: 'West Ham United' },
 ];
+
+/** "Major" clubs: their per-club lists stay STANDARD and can go to top 10.
+ *  Every other PL club is HARD-only and capped at top 5. Names must match the
+ *  pulselive API's club names exactly (that's what the generator scopes by). */
+export const MAJOR_CLUBS = new Set<string>([
+  'Arsenal',
+  'Aston Villa',
+  'Chelsea',
+  'Everton',
+  'Liverpool',
+  'Manchester City',
+  'Manchester United',
+  'Newcastle United',
+  'Tottenham Hotspur',
+  'West Ham United',
+  'Leeds United',
+  'Leicester City',
+  'Southampton',
+  'Nottingham Forest',
+  'Wolverhampton Wanderers',
+  'Crystal Palace',
+]);
 
 // ---------------------------------------------------------------------------
 // LIST question template
