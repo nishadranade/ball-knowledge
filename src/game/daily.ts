@@ -14,7 +14,7 @@ import type { Question, ListQuestion, CareerPathQuestion } from './types';
 
 const TIME_ZONE = 'America/Los_Angeles';
 /** Launch epoch (Pacific) — the date that is day 1 of "Ball Knowledge #N". */
-const EPOCH_KEY = '2026-01-01';
+const EPOCH_KEY = '2026-07-28';
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 /** Calendar date key "YYYY-MM-DD" in US Pacific time for a given instant. */

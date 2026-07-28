@@ -48,10 +48,10 @@ describe('dateKey / dayNumber (US Pacific)', () => {
     // 09:00Z on Mar 5 = 01:00 PST on Mar 5 → now the 5th.
     expect(dateKey(new Date('2026-03-05T09:00:00Z'))).toBe('2026-03-05');
   });
-  it('day number increments by Pacific day', () => {
+  it('day number increments by Pacific day (epoch 2026-07-28 = #1)', () => {
     // Local noon in Pacific on the epoch date → day 1.
-    expect(dayNumber(new Date('2026-01-01T20:00:00Z'))).toBe(1); // 12:00 PST Jan 1
-    expect(dayNumber(new Date('2026-01-11T20:00:00Z'))).toBe(11);
+    expect(dayNumber(new Date('2026-07-28T19:00:00Z'))).toBe(1); // 12:00 PDT Jul 28
+    expect(dayNumber(new Date('2026-08-07T19:00:00Z'))).toBe(11);
   });
 });
 
