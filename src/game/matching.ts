@@ -14,9 +14,26 @@
 import { distance } from 'fastest-levenshtein';
 import type { Player } from './types';
 
-/** Lowercase, strip diacritics, drop punctuation, collapse whitespace. */
+/** Special Latin letters that NFD does NOT decompose to ASCII + combining marks,
+ *  so we transliterate them explicitly (e.g. German ß → ss: "Groß" ↔ "Gross"). */
+const SPECIAL_LETTERS: Array<[RegExp, string]> = [
+  [/ß/g, 'ss'],
+  [/æ/gi, 'ae'],
+  [/œ/gi, 'oe'],
+  [/ø/gi, 'o'],
+  [/ł/gi, 'l'],
+  [/đ/gi, 'd'],
+  [/ð/gi, 'd'],
+  [/þ/gi, 'th'],
+  [/ı/g, 'i'], // dotless i (Turkish)
+];
+
+/** Lowercase, transliterate special letters, strip diacritics, drop punctuation,
+ *  collapse whitespace. */
 export function normalize(input: string): string {
-  return input
+  let s = input;
+  for (const [re, rep] of SPECIAL_LETTERS) s = s.replace(re, rep);
+  return s
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '') // combining marks (accents)
     .replace(/[.'`’\-]/g, ' ') // punctuation → space (O'Neil, Xhaka-style)

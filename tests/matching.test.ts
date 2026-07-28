@@ -14,6 +14,12 @@ describe('normalize', () => {
     expect(normalize('Rösler')).toBe('rosler');
     expect(normalize('Čech')).toBe('cech');
   });
+  it('transliterates special Latin letters NFD misses', () => {
+    expect(normalize('Groß')).toBe('gross'); // German eszett
+    expect(normalize('Håland')).toBe('haland');
+    expect(normalize('Kjær')).toBe('kjaer');
+    expect(normalize('Błaszczykowski')).toBe('blaszczykowski');
+  });
   it('lowercases and trims', () => {
     expect(normalize('  Shearer  ')).toBe('shearer');
   });
@@ -53,6 +59,12 @@ describe('matchAnswer — typo tolerance', () => {
   it('forgives missing diacritic', () => {
     expect(isMatch('Ozil', p('Mesut Özil', 'Özil'))).toBe(true);
     expect(isMatch('Rosler', p('Uwe Rösler', 'Rösler'))).toBe(true);
+  });
+  it('accepts the anglicized spelling of ß (Groß → Gross / Gros)', () => {
+    const gross = p('Pascal Groß', 'Groß');
+    expect(isMatch('Gross', gross)).toBe(true); // exact after transliteration
+    expect(isMatch('Gros', gross)).toBe(true); // 1-edit typo tolerance
+    expect(isMatch('Groß', gross)).toBe(true); // original spelling still works
   });
   it('forgives a transposition in a longer name', () => {
     expect(isMatch('Aubemayang', p('Pierre-Emerick Aubameyang', 'Aubameyang'))).toBe(true);
