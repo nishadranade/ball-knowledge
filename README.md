@@ -97,6 +97,14 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
 > Note: pinned to Vite 4 / Vitest 0.34 because the build host runs glibc 2.26, which Vite 5's
 > native Rollup binary does not support.
 
+## Analytics
+
+Page views are tracked with **[GoatCounter](https://www.goatcounter.com/)** — a cookieless,
+privacy-friendly analytics service (no consent banner needed). It's a single `<script>` tag in
+`index.html` pointing at the dashboard `https://ballknowledge.goatcounter.com`. Numbers are a close
+estimate (visitors with JS disabled or a tracker-blocker on `gc.zgo.at` aren't counted). If a real
+visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
+
 ## Data source & attribution
 
 - **LIST stats:** the Premier League's official stats API (premierleague.com). All-time, complete
