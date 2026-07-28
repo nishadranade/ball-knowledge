@@ -60,6 +60,22 @@ export interface DailySelection {
  * different salts for the two slots so they don't move in lockstep. Returns
  * null for a slot if the pool has none of that format.
  */
+/** Max answers a daily LIST question shows — keeps the daily snappy. A top-10
+ *  question is cut down to its top 5 (ties at the 5th value are kept, matching
+ *  the generator's tie behavior), and its prompt's number is rewritten to match. */
+const DAILY_LIST_SIZE = 5;
+
+export function truncateDailyList(q: ListQuestion): ListQuestion {
+  if (q.answers.length <= DAILY_LIST_SIZE) return q;
+  const cutoff = q.answers[DAILY_LIST_SIZE - 1].value ?? 0;
+  const answers = q.answers.filter((a, i) => i < DAILY_LIST_SIZE || (a.value ?? 0) >= cutoff);
+  return {
+    ...q,
+    answers,
+    prompt: q.prompt.replace(/\btop \d+\b/i, `top ${DAILY_LIST_SIZE}`),
+  };
+}
+
 export function selectDaily(all: Question[], key: string = dateKey()): DailySelection {
   // The daily is Standard-only so everyone's shared challenge stays approachable
   // (famous clubs/countries/players — no obscure Hard slices).
@@ -68,8 +84,9 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
   const careers = standard.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
   const pick = <T>(pool: T[], salt: string): T | null =>
     pool.length ? pool[hashString(key + salt) % pool.length] : null;
+  const list = pick(lists, ':list');
   return {
-    list: pick(lists, ':list'),
+    list: list ? truncateDailyList(list) : null,
     career: pick(careers, ':career'),
   };
 }
@@ -89,20 +106,19 @@ export interface DailyResult {
   results: RoundResult[];
 }
 
-/** Build the spoiler-free share text (no player names). */
+/** Build the spoiler-free share text (no player names). Formatted to read well
+ *  in any app (no monospace alignment): header, blank line, one line per
+ *  question, blank line, URL. */
 export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
-  const lines = [`⚽ Ball Knowledge #${result.day}`];
-  for (const r of result.results) {
+  const rows = result.results.map((r) => {
     if (r.format === 'LIST') {
       // One square per answer slot: 🟩 found, 🟥 missed.
       const grid = '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
-      lines.push(`List:   ${grid} ${r.found}/${r.total}`);
-    } else {
-      const mark = r.won ? '🟩' : '🟥';
-      const guesses = r.won ? `${r.wrong + 1} guess${r.wrong === 0 ? '' : 'es'}` : 'missed';
-      lines.push(`Career: ${mark} (${guesses})`);
+      return `📋 List: ${grid} (${r.found}/${r.total})`;
     }
-  }
-  lines.push(url);
-  return lines.join('\n');
+    const mark = r.won ? '🟩' : '🟥';
+    const guesses = r.won ? `${r.wrong + 1} guess${r.wrong === 0 ? '' : 'es'}` : 'missed';
+    return `👤 Career: ${mark} (${guesses})`;
+  });
+  return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }

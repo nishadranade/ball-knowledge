@@ -4,10 +4,11 @@ import {
   dayNumber,
   hashString,
   selectDaily,
+  truncateDailyList,
   buildShareText,
   type DailyResult,
 } from '../src/game/daily';
-import type { Question } from '../src/game/types';
+import type { Question, ListQuestion } from '../src/game/types';
 
 const list = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
   id,
@@ -116,5 +117,49 @@ describe('buildShareText', () => {
     // no player names leaked (share text is only emojis, stats, and the title)
     expect(text).not.toContain('Shearer');
     expect(text).not.toContain('Beckham');
+  });
+
+  it('has blank lines separating header, rows, and url', () => {
+    const result: DailyResult = {
+      day: 7,
+      results: [
+        { format: 'LIST', found: 5, total: 5, wrong: 0, maxWrong: 3, won: true },
+        { format: 'CAREER_PATH', found: 0, total: 1, wrong: 2, maxWrong: 2, won: false },
+      ],
+    };
+    const lines = buildShareText(result).split('\n');
+    expect(lines[0]).toContain('Ball Knowledge #7'); // header
+    expect(lines[1]).toBe(''); // blank after header
+    expect(lines[lines.length - 2]).toBe(''); // blank before url
+    expect(lines[lines.length - 1]).toContain('ball-knowledge'); // url last
+  });
+});
+
+describe('truncateDailyList', () => {
+  const bigList: ListQuestion = {
+    id: 'x',
+    category: 'PREMIER_LEAGUE',
+    format: 'LIST',
+    prompt: 'Name the top 10 goalscorers in Premier League history.',
+    maxWrong: 3,
+    difficulty: 'STANDARD',
+    source: { name: 'x', url: 'x', retrievedAt: 'x' },
+    answers: Array.from({ length: 10 }, (_, i) => ({
+      fullName: `P${i}`,
+      lastName: `P${i}`,
+      value: 100 - i,
+    })),
+  };
+
+  it('cuts a top-10 down to top 5 and rewrites the prompt', () => {
+    const t = truncateDailyList(bigList);
+    expect(t.answers.length).toBe(5);
+    expect(t.prompt).toContain('top 5');
+    expect(t.prompt).not.toContain('top 10');
+  });
+
+  it('leaves a top-5 (or smaller) list untouched', () => {
+    const small: ListQuestion = { ...bigList, answers: bigList.answers.slice(0, 5) };
+    expect(truncateDailyList(small)).toBe(small);
   });
 });
