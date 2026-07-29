@@ -64,6 +64,10 @@ interface CompetitionConfig {
   /** Use Wikipedia's all-time CL top-scorers list for the `goals` metric instead
    *  of pulselive (which only covers 2004/05+, undercounting older players). */
   wikipediaGoals?: boolean;
+  /** Coverage disclosure for pulselive-sourced metrics whose data is limited to
+   *  a window (e.g. "since 2004/05" for CL). Appended to the prompt. Metrics
+   *  sourced all-time (e.g. Wikipedia goals) skip this. */
+  pulseliveEraNote?: string;
 }
 
 const WIKI_CL_SCORERS_URL = 'https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers';
@@ -83,6 +87,7 @@ const COMPETITIONS: CompetitionConfig[] = [
     sourceName: 'Premier League',
     sourceUrl: PL_SOURCE_URL,
     wikipediaGoals: true,
+    pulseliveEraNote: 'since 2004/05',
   },
 ];
 
@@ -219,16 +224,18 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
     const id = `list_${t.competition}_${t.metric}_${t.scopeType}_${t.scopeValue || 'all'}_${topN}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '_');
-    // CL goals are sourced from Wikipedia — attribute correctly.
+    // CL goals are sourced all-time from Wikipedia; other CL metrics come from
+    // pulselive (2004/05+) and get a coverage disclosure in the prompt.
     const usesWiki = t.metric === 'goals' && bank.cfg.wikipediaGoals;
     const source = usesWiki
       ? { name: 'Wikipedia', url: WIKI_CL_SCORERS_URL, retrievedAt: NOW }
       : { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW };
+    const eraNote = usesWiki ? undefined : bank.cfg.pulseliveEraNote;
     out.push({
       id,
       category: bank.cfg.competition,
       format: 'LIST',
-      prompt: renderListPrompt(t, topN),
+      prompt: renderListPrompt(t, topN, eraNote),
       maxWrong: 3,
       difficulty,
       source,

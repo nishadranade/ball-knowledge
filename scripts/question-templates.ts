@@ -193,19 +193,31 @@ export interface ListQuestionTemplate {
 /** Render the human-facing prompt for a LIST template at a chosen size.
  *  e.g. "Name the top 5 goalscorers in Premier League history."
  *       "Name the top 5 English goalscorers in Premier League history."
- *       "Name the top 10 appearance makers for Arsenal in the Premier League." */
-export function renderListPrompt(t: ListQuestionTemplate, topN: number): string {
+ *       "Name the top 10 appearance makers for Arsenal in the Premier League."
+ *
+ *  `eraNote` overrides the default "history"/"the" phrasing to disclose a
+ *  limited coverage window, e.g. "since 2004/05" for CL metrics whose data only
+ *  goes back that far. Goals (all-time) pass no eraNote. */
+export function renderListPrompt(t: ListQuestionTemplate, topN: number, eraNote?: string): string {
   const comp = COMPETITION_LABELS[t.competition];
   const noun = METRIC_LABELS[t.metric].noun;
+  // Tail phrase: default is "…in {comp} history" (overall/country) or "for X in
+  // the {comp}" (club). With an eraNote it becomes "…in the {comp} {eraNote}".
   if (t.scopeType === 'overall') {
-    return `Name the top ${topN} ${noun} in ${comp} history.`;
+    return eraNote
+      ? `Name the top ${topN} ${noun} in the ${comp} ${eraNote}.`
+      : `Name the top ${topN} ${noun} in ${comp} history.`;
   }
   if (t.scopeType === 'country') {
     const c = COUNTRIES.find((x) => x.name === t.scopeValue);
     const demonym = c ? c.demonym : t.scopeValue;
-    return `Name the top ${topN} ${demonym} ${noun} in ${comp} history.`;
+    return eraNote
+      ? `Name the top ${topN} ${demonym} ${noun} in the ${comp} ${eraNote}.`
+      : `Name the top ${topN} ${demonym} ${noun} in ${comp} history.`;
   }
-  return `Name the top ${topN} ${noun} for ${t.scopeValue} in the ${comp}.`;
+  return eraNote
+    ? `Name the top ${topN} ${noun} for ${t.scopeValue} in the ${comp} ${eraNote}.`
+    : `Name the top ${topN} ${noun} for ${t.scopeValue} in the ${comp}.`;
 }
 
 // ---------------------------------------------------------------------------
