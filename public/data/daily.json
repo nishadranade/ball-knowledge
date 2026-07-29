@@ -1,0 +1,223 @@
+{
+  "2026-07-28": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_tottenham_hotspur_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Tottenham Hotspur in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-29T16:32:14.024Z"
+      },
+      "answers": [
+        {
+          "fullName": "Hugo Lloris",
+          "lastName": "Lloris",
+          "value": 127,
+          "rank": 1
+        },
+        {
+          "fullName": "Ian Walker",
+          "lastName": "Walker",
+          "value": 62,
+          "rank": 2
+        },
+        {
+          "fullName": "Paul Robinson",
+          "lastName": "Robinson",
+          "value": 36,
+          "rank": 3
+        },
+        {
+          "fullName": "Heurelho Gomes",
+          "lastName": "Gomes",
+          "value": 31,
+          "rank": 4
+        },
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "value": 18,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_gareth_barry",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 2,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gareth_Barry",
+        "retrievedAt": "2026-07-29T16:32:14.024Z"
+      },
+      "career": [
+        {
+          "years": "1998–2009",
+          "club": "Aston Villa",
+          "appearances": 365,
+          "goals": 41
+        },
+        {
+          "years": "2009–2014",
+          "club": "Manchester City",
+          "appearances": 132,
+          "goals": 6
+        },
+        {
+          "years": "2013–2014",
+          "club": "Everton",
+          "appearances": 32,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2014–2017",
+          "club": "Everton",
+          "appearances": 99,
+          "goals": 2
+        },
+        {
+          "years": "2017–2020",
+          "club": "West Bromwich Albion",
+          "appearances": 52,
+          "goals": 2
+        },
+        {
+          "years": "2024–2025",
+          "club": "Hurstpierpoint",
+          "appearances": 2,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Gareth Barry",
+        "lastName": "Barry",
+        "aliases": [
+          "Gareth",
+          "Barry"
+        ]
+      }
+    }
+  },
+  "2026-07-29": {
+    "list": {
+      "id": "list_premier_league_assists_club_wolverhampton_wanderers_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Wolverhampton Wanderers in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-29T16:32:14.024Z"
+      },
+      "answers": [
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Neto",
+          "value": 19,
+          "rank": 1
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "value": 18,
+          "rank": 2
+        },
+        {
+          "fullName": "João Moutinho",
+          "lastName": "Moutinho",
+          "value": 18,
+          "rank": 3
+        },
+        {
+          "fullName": "Adama Traoré",
+          "lastName": "Traoré",
+          "value": 13,
+          "rank": 4
+        },
+        {
+          "fullName": "Matthew Jarvis",
+          "lastName": "Jarvis",
+          "value": 13,
+          "rank": 5
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Cunha",
+          "value": 13,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_wesley_sneijder",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 100,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wesley_Sneijder",
+        "retrievedAt": "2026-07-29T16:32:14.024Z"
+      },
+      "career": [
+        {
+          "years": "2002–2007",
+          "club": "Ajax",
+          "appearances": 126,
+          "goals": 43
+        },
+        {
+          "years": "2007–2009",
+          "club": "Real Madrid",
+          "appearances": 52,
+          "goals": 11
+        },
+        {
+          "years": "2009–2013",
+          "club": "Inter Milan",
+          "appearances": 76,
+          "goals": 13
+        },
+        {
+          "years": "2013–2017",
+          "club": "Galatasaray",
+          "appearances": 124,
+          "goals": 35
+        },
+        {
+          "years": "2017–2018",
+          "club": "Nice",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2018–2019",
+          "club": "Al-Gharafa",
+          "appearances": 22,
+          "goals": 15
+        }
+      ],
+      "answer": {
+        "fullName": "Wesley Sneijder",
+        "lastName": "Sneijder",
+        "aliases": [
+          "Wesley",
+          "Sneijder"
+        ]
+      }
+    }
+  }
+}

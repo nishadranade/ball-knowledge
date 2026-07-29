@@ -122,6 +122,31 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
   };
 }
 
+/**
+ * A frozen daily schedule: date → the exact questions for that day, stored as
+ * FULL question objects so a day, once frozen, is immune to any later change in
+ * questions.json. Written at build time (past + today), committed, and served as
+ * public/data/daily.json. See scripts/build-daily.ts.
+ */
+export interface DailySchedule {
+  [dateKey: string]: { list: ListQuestion | null; career: CareerPathQuestion | null };
+}
+
+/**
+ * Resolve the day's questions: use the frozen schedule entry if present (so
+ * data updates can never change a past/frozen daily), otherwise fall back to
+ * hashing the live pool (dev, or a day not yet frozen into the schedule).
+ */
+export function resolveDaily(
+  all: Question[],
+  schedule: DailySchedule | null,
+  key: string = dateKey(),
+): DailySelection {
+  const frozen = schedule?.[key];
+  if (frozen) return { list: frozen.list, career: frozen.career };
+  return selectDaily(all, key);
+}
+
 /** Per-question outcome captured when a round ends. */
 export interface RoundResult {
   format: 'LIST' | 'CAREER_PATH';

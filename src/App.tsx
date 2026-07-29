@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Question, Format, Category, Difficulty } from './game/types';
-import { loadQuestions } from './game/loadQuestions';
+import type { DailySchedule } from './game/daily';
+import { loadQuestions, loadDailySchedule } from './game/loadQuestions';
 import { QuestionRouter } from './components/QuestionRouter';
 import { DailyView } from './components/DailyView';
 
@@ -43,6 +44,7 @@ type Mode = 'DAILY' | 'PRACTICE';
 
 export default function App() {
   const [all, setAll] = useState<Question[] | null>(null);
+  const [schedule, setSchedule] = useState<DailySchedule | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<Mode>('DAILY');
   const [formatFilter, setFormatFilter] = useState<FormatFilter>('ALL');
@@ -57,6 +59,8 @@ export default function App() {
     loadQuestions()
       .then((b) => setAll(b.questions))
       .catch((e) => setError(String(e)));
+    // Best-effort: the frozen daily schedule (null if absent → live fallback).
+    loadDailySchedule().then(setSchedule).catch(() => setSchedule(null));
   }, []);
 
   // Which categories actually exist in the loaded data (drives the chip row).
@@ -128,7 +132,7 @@ export default function App() {
       </nav>
 
       {mode === 'DAILY' ? (
-        <DailyView all={all} />
+        <DailyView all={all} schedule={schedule} />
       ) : (
         <>
           {categories.length > 1 && (

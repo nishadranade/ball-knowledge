@@ -1,18 +1,20 @@
 import { useMemo, useState, useCallback } from 'react';
 import type { Question } from '../game/types';
 import {
-  selectDaily,
+  resolveDaily,
   dateKey,
   dayNumber,
   buildShareText,
   type RoundResult,
   type DailyResult,
+  type DailySchedule,
 } from '../game/daily';
 import { ListQuestion } from './ListQuestion';
 import { CareerPathQuestion } from './CareerPathQuestion';
 
 interface Props {
   all: Question[];
+  schedule: DailySchedule | null;
 }
 
 interface StoredDaily {
@@ -60,10 +62,10 @@ function bumpStreak(day: number): number {
   }
 }
 
-export function DailyView({ all }: Props) {
+export function DailyView({ all, schedule }: Props) {
   const date = dateKey();
   const day = dayNumber();
-  const daily = useMemo(() => selectDaily(all, date), [all, date]);
+  const daily = useMemo(() => resolveDaily(all, schedule, date), [all, schedule, date]);
 
   // Ordered daily questions (list first, then career).
   const questions = useMemo(

@@ -4,9 +4,11 @@ import {
   dayNumber,
   hashString,
   selectDaily,
+  resolveDaily,
   truncateDailyList,
   buildShareText,
   type DailyResult,
+  type DailySchedule,
 } from '../src/game/daily';
 import type { Question, ListQuestion } from '../src/game/types';
 
@@ -97,6 +99,30 @@ describe('selectDaily', () => {
     const d = selectDaily([], '2026-03-05');
     expect(d.list).toBeNull();
     expect(d.career).toBeNull();
+  });
+});
+
+describe('resolveDaily (frozen schedule)', () => {
+  it('returns the frozen entry when present, ignoring the live pool', () => {
+    const frozenList = list('frozen-list') as ListQuestion;
+    const schedule: DailySchedule = {
+      '2026-03-05': { list: frozenList, career: null },
+    };
+    // Pass a totally different pool; the frozen entry must win.
+    const d = resolveDaily(pool, schedule, '2026-03-05');
+    expect(d.list?.id).toBe('frozen-list');
+    expect(d.career).toBeNull();
+  });
+
+  it('falls back to live selection when the date is not frozen', () => {
+    const schedule: DailySchedule = { '2026-03-05': { list: null, career: null } };
+    const d = resolveDaily(pool, schedule, '2026-03-06'); // different date
+    expect(d.list?.id).toBe(selectDaily(pool, '2026-03-06').list?.id);
+  });
+
+  it('falls back to live selection when there is no schedule', () => {
+    const d = resolveDaily(pool, null, '2026-03-06');
+    expect(d.list?.id).toBe(selectDaily(pool, '2026-03-06').list?.id);
   });
 });
 
