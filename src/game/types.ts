@@ -64,6 +64,9 @@ export interface CareerPathQuestion extends BaseQuestion {
   /** Senior-career club stints shown to the player (name hidden). */
   career: CareerStint[];
   answer: Player;
+  /** Player's best (lowest) rank across all metrics/competitions — a fame proxy.
+   *  Lower = more famous. Used to keep the daily's career pick well-known. */
+  bestRank?: number;
 }
 
 export type Question = ListQuestion | CareerPathQuestion;

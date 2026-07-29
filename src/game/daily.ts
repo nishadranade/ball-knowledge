@@ -76,12 +76,43 @@ export function truncateDailyList(q: ListQuestion): ListQuestion {
   };
 }
 
+/** Daily career picks should be broadly recognizable. Accept a player if they're
+ *  either VERY famous (best rank ≤ this) OR played recently (see YEAR floor) —
+ *  so all-time legends (Henry, Gerrard) AND modern names both qualify, while
+ *  older mid-tier players are trimmed. */
+const DAILY_CAREER_FAME_RANK = 100;
+const DAILY_CAREER_RECENT_YEAR = 2015;
+
+/** Latest year a player was active, parsed from their career stints. An open
+ *  range like "2023–" (still active) returns a large year so it always passes. */
+export function latestCareerYear(q: CareerPathQuestion): number {
+  let latest = 0;
+  for (const stint of q.career) {
+    const years = stint.years ?? '';
+    if (/[–-]\s*$/.test(years.trim())) return 9999; // open-ended = currently active
+    const nums = years.match(/\d{4}/g);
+    if (nums) for (const n of nums) latest = Math.max(latest, Number(n));
+  }
+  return latest;
+}
+
+/** Whether a career question is "daily-appropriate": famous OR recent. */
+export function isDailyCareer(q: CareerPathQuestion): boolean {
+  const famous = q.bestRank != null && q.bestRank <= DAILY_CAREER_FAME_RANK;
+  const recent = latestCareerYear(q) >= DAILY_CAREER_RECENT_YEAR;
+  return famous || recent;
+}
+
 export function selectDaily(all: Question[], key: string = dateKey()): DailySelection {
   // The daily is Standard-only so everyone's shared challenge stays approachable
   // (famous clubs/countries/players — no obscure Hard slices).
   const standard = all.filter((q) => q.difficulty === 'STANDARD');
   const lists = standard.filter((q): q is ListQuestion => q.format === 'LIST');
-  const careers = standard.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
+  let careers = standard.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
+  // Prefer daily-appropriate (famous OR recent) career players; fall back to the
+  // full Standard set only if the filter somehow leaves nothing (safety net).
+  const dailyCareers = careers.filter(isDailyCareer);
+  if (dailyCareers.length) careers = dailyCareers;
   const pick = <T>(pool: T[], salt: string): T | null =>
     pool.length ? pool[hashString(key + salt) % pool.length] : null;
   const list = pick(lists, ':list');

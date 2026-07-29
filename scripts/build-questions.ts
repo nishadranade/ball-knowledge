@@ -18,6 +18,7 @@ import path from 'node:path';
 import { fetchWikitext, hasCached, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
 import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
+import { fetchChampionsLeagueScorers } from './fetch/clScorers.js';
 import {
   COUNTRIES,
   MAJOR_COUNTRIES,
@@ -60,7 +61,12 @@ interface CompetitionConfig {
   hasClubs: boolean;
   sourceName: string;
   sourceUrl: string;
+  /** Use Wikipedia's all-time CL top-scorers list for the `goals` metric instead
+   *  of pulselive (which only covers 2004/05+, undercounting older players). */
+  wikipediaGoals?: boolean;
 }
+
+const WIKI_CL_SCORERS_URL = 'https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers';
 
 const COMPETITIONS: CompetitionConfig[] = [
   {
@@ -76,6 +82,7 @@ const COMPETITIONS: CompetitionConfig[] = [
     hasClubs: false,
     sourceName: 'Premier League',
     sourceUrl: PL_SOURCE_URL,
+    wikipediaGoals: true,
   },
 ];
 
@@ -109,6 +116,14 @@ async function buildAnswerBank(cfg: CompetitionConfig): Promise<AnswerBank> {
   if (cfg.hasClubs) console.log(`  ${teams.length} clubs`);
   const byMetric = new Map<Metric, PlayerRow[]>();
   for (const metric of SUPPORTED_METRICS) {
+    // CL goals come from Wikipedia's all-time list (pulselive only has 2004/05+,
+    // which undercounts older players like Crespo). Other metrics stay pulselive.
+    if (metric === 'goals' && cfg.wikipediaGoals) {
+      const rows = await fetchChampionsLeagueScorers();
+      byMetric.set(metric, rows);
+      console.log(`  bank[${cfg.competition}/${metric}] = ${rows.length} players (Wikipedia)`);
+      continue;
+    }
     const agg = await aggregateMetric(metric, teams, OVERALL_DEPTH_PAGES, cfg.compsId);
     byMetric.set(metric, agg.rows);
     console.log(`  bank[${cfg.competition}/${metric}] = ${agg.rows.length} players`);
@@ -204,6 +219,11 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
     const id = `list_${t.competition}_${t.metric}_${t.scopeType}_${t.scopeValue || 'all'}_${topN}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '_');
+    // CL goals are sourced from Wikipedia — attribute correctly.
+    const usesWiki = t.metric === 'goals' && bank.cfg.wikipediaGoals;
+    const source = usesWiki
+      ? { name: 'Wikipedia', url: WIKI_CL_SCORERS_URL, retrievedAt: NOW }
+      : { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW };
     out.push({
       id,
       category: bank.cfg.competition,
@@ -211,7 +231,7 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
       prompt: renderListPrompt(t, topN),
       maxWrong: 3,
       difficulty,
-      source: { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW },
+      source,
       answers,
     });
   }
@@ -284,7 +304,7 @@ async function buildCareerQuestions(banks: AnswerBank[]): Promise<CareerPathQues
     }`,
   );
   const out: CareerPathQuestion[] = [];
-  for (const { player: p, category, difficulty } of pool) {
+  for (const { player: p, category, difficulty, bestRank } of pool) {
     const pageTitle = p.fullName.replace(/ /g, '_');
     if (cacheOnly && !(await hasCached(pageTitle))) continue; // skip uncached without fetching
     let career: CareerStint[];
@@ -307,6 +327,7 @@ async function buildCareerQuestions(banks: AnswerBank[]): Promise<CareerPathQues
       prompt: 'Which player had this career?',
       maxWrong: 2,
       difficulty,
+      bestRank,
       source: {
         name: 'Wikipedia',
         url: `https://en.wikipedia.org/wiki/${pageTitle}`,
