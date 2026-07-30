@@ -22,6 +22,8 @@ export function CareerPathQuestion({
   const { state, guess, giveUp, livesLeft } = useGame(question);
   const over = state.status !== 'in-progress';
 
+  // Wall-clock start for this question (reset on remount via `key`).
+  const startedAt = useRef(Date.now());
   const reported = useRef(false);
   useEffect(() => {
     if (over && !reported.current) {
@@ -33,6 +35,7 @@ export function CareerPathQuestion({
         wrong: state.wrong,
         maxWrong: question.maxWrong,
         won: state.status === 'won',
+        elapsedMs: Date.now() - startedAt.current,
       });
     }
   }, [over, onComplete, state, question]);

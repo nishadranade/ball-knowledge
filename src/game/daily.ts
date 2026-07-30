@@ -157,6 +157,17 @@ export interface RoundResult {
   won: boolean;
   /** LIST only: per-slot found/missed in answer (rank) order — true = found. */
   slots?: boolean[];
+  /** Wall-clock time on this question, ms (mount → round end). Optional so old
+   *  stored results / tests without timing still work. */
+  elapsedMs?: number;
+}
+
+/** Format a duration as compact m:ss (e.g. 67000 → "1:07"). */
+export function formatDuration(ms: number): string {
+  const total = Math.max(0, Math.round(ms / 1000));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
 }
 
 export interface DailyResult {
@@ -167,21 +178,26 @@ export interface DailyResult {
 /** Build the spoiler-free share text (no player names). Formatted to read well
  *  in any app (no monospace alignment): header, blank line, one line per
  *  question, blank line, URL. */
+/** One spoiler-free result line for a single round (shared by daily + practice).
+ *  e.g. "📋 List: 🟩🟥🟩🟥🟩 (3/5 · 1:07)" or "👤 Career: 🟥🟩 (2 guesses · 0:24)". */
+export function formatRoundRow(r: RoundResult): string {
+  const time = r.elapsedMs != null ? ` · ${formatDuration(r.elapsedMs)}` : '';
+  if (r.format === 'LIST') {
+    // One square per answer slot IN RANK ORDER: 🟩 found, 🟥 missed. Fall back
+    // to count-based (all found first) if slot order wasn't captured.
+    const grid = r.slots
+      ? r.slots.map((f) => (f ? '🟩' : '🟥')).join('')
+      : '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
+    return `📋 List: ${grid} (${r.found}/${r.total}${time})`;
+  }
+  // Career: one 🟥 per wrong guess, then 🟩 if solved — the guess sequence.
+  // e.g. first try → 🟩; second try → 🟥🟩; missed → 🟥🟥.
+  const grid = '🟥'.repeat(r.wrong) + (r.won ? '🟩' : '');
+  const guesses = r.won ? `${r.wrong + 1} guess${r.wrong === 0 ? '' : 'es'}` : 'missed';
+  return `👤 Career: ${grid} (${guesses}${time})`;
+}
+
 export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
-  const rows = result.results.map((r) => {
-    if (r.format === 'LIST') {
-      // One square per answer slot IN RANK ORDER: 🟩 found, 🟥 missed. Fall back
-      // to count-based (all found first) if slot order wasn't captured.
-      const grid = r.slots
-        ? r.slots.map((f) => (f ? '🟩' : '🟥')).join('')
-        : '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
-      return `📋 List: ${grid} (${r.found}/${r.total})`;
-    }
-    // Career: one 🟥 per wrong guess, then 🟩 if solved — the guess sequence.
-    // e.g. first try → 🟩; second try → 🟥🟩; missed → 🟥🟥.
-    const grid = '🟥'.repeat(r.wrong) + (r.won ? '🟩' : '');
-    const guesses = r.won ? `${r.wrong + 1} guess${r.wrong === 0 ? '' : 'es'}` : 'missed';
-    return `👤 Career: ${grid} (${guesses})`;
-  });
+  const rows = result.results.map(formatRoundRow);
   return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }

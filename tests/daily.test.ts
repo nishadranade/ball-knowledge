@@ -7,6 +7,7 @@ import {
   resolveDaily,
   truncateDailyList,
   buildShareText,
+  formatDuration,
   type DailyResult,
   type DailySchedule,
 } from '../src/game/daily';
@@ -54,6 +55,20 @@ describe('dateKey / dayNumber (US Pacific)', () => {
     // Local noon in Pacific on the epoch date → day 1.
     expect(dayNumber(new Date('2026-07-28T19:00:00Z'))).toBe(1); // 12:00 PDT Jul 28
     expect(dayNumber(new Date('2026-08-07T19:00:00Z'))).toBe(11);
+  });
+});
+
+describe('formatDuration', () => {
+  it('formats ms as m:ss', () => {
+    expect(formatDuration(0)).toBe('0:00');
+    expect(formatDuration(9_000)).toBe('0:09');
+    expect(formatDuration(67_000)).toBe('1:07');
+    expect(formatDuration(600_000)).toBe('10:00');
+  });
+  it('rounds to the nearest second and clamps negatives', () => {
+    expect(formatDuration(1_400)).toBe('0:01');
+    expect(formatDuration(1_600)).toBe('0:02');
+    expect(formatDuration(-50)).toBe('0:00');
   });
 });
 
@@ -171,6 +186,19 @@ describe('buildShareText', () => {
     expect(buildShareText(mk(0, true))).toContain('👤 Career: 🟩 (1 guess)'); // first try
     expect(buildShareText(mk(1, true))).toContain('👤 Career: 🟥🟩 (2 guesses)'); // second try
     expect(buildShareText(mk(2, false))).toContain('👤 Career: 🟥🟥 (missed)'); // both wrong
+  });
+
+  it('includes per-question time when elapsedMs is present', () => {
+    const result: DailyResult = {
+      day: 5,
+      results: [
+        { format: 'LIST', found: 5, total: 5, wrong: 0, maxWrong: 3, won: true, elapsedMs: 67_000 },
+        { format: 'CAREER_PATH', found: 1, total: 1, wrong: 1, maxWrong: 2, won: true, elapsedMs: 24_000 },
+      ],
+    };
+    const text = buildShareText(result);
+    expect(text).toContain('(5/5 · 1:07)');
+    expect(text).toContain('(2 guesses · 0:24)');
   });
 
   it('has blank lines separating header, rows, and url', () => {

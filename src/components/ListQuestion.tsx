@@ -18,6 +18,9 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
   const foundByIndex = new Map(state.found.map((f) => [f.index, f.player]));
   const over = state.status !== 'in-progress';
 
+  // Wall-clock start for this question (set once when the component mounts;
+  // a new question remounts via `key`, resetting the timer).
+  const startedAt = useRef(Date.now());
   // Report the outcome exactly once when the round ends.
   const reported = useRef(false);
   useEffect(() => {
@@ -34,6 +37,7 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
         maxWrong: question.maxWrong,
         won: state.status === 'won',
         slots,
+        elapsedMs: Date.now() - startedAt.current,
       });
     }
   }, [over, onComplete, state, question]);
