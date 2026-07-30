@@ -7,9 +7,12 @@ import {
   resolveDaily,
   truncateDailyList,
   buildShareText,
+  buildPracticeShareText,
+  buildQuestionLink,
   formatDuration,
   type DailyResult,
   type DailySchedule,
+  type RoundResult,
 } from '../src/game/daily';
 import type { Question, ListQuestion } from '../src/game/types';
 
@@ -243,5 +246,40 @@ describe('truncateDailyList', () => {
   it('leaves a top-5 (or smaller) list untouched', () => {
     const small: ListQuestion = { ...bigList, answers: bigList.answers.slice(0, 5) };
     expect(truncateDailyList(small)).toBe(small);
+  });
+});
+
+describe('buildQuestionLink', () => {
+  it('builds an absolute ?q= deep link from origin + base', () => {
+    expect(buildQuestionLink('list_pl_goals_overall_all_10', 'https://x.github.io', '/ball-knowledge/')).toBe(
+      'https://x.github.io/ball-knowledge/?q=list_pl_goals_overall_all_10',
+    );
+  });
+  it('url-encodes the id', () => {
+    expect(buildQuestionLink('a b&c', 'https://x', '/')).toBe('https://x/?q=a%20b%26c');
+  });
+});
+
+describe('buildPracticeShareText', () => {
+  const result: RoundResult = {
+    format: 'LIST',
+    found: 3,
+    total: 5,
+    wrong: 3,
+    maxWrong: 3,
+    won: false,
+    slots: [true, false, true, false, true],
+    elapsedMs: 45_000,
+  };
+  const link = 'https://x.github.io/ball-knowledge/?q=abc';
+  const prompt = 'Name the top 5 German goalscorers in Premier League history.';
+
+  it('includes the prompt, result row (with time) and the deep link — no player names', () => {
+    const text = buildPracticeShareText(result, prompt, link);
+    expect(text).toContain('Ball Knowledge');
+    expect(text).toContain(prompt); // prompt names the challenge, not answers
+    expect(text).toContain('🟩🟥🟩🟥🟩 (3/5 · 0:45)');
+    expect(text).toContain(link);
+    expect(text).not.toContain('Gündogan'); // no answers leaked
   });
 });

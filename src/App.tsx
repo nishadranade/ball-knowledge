@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Question, Format, Category, Difficulty } from './game/types';
-import type { DailySchedule } from './game/daily';
+import {
+  buildPracticeShareText,
+  buildQuestionLink,
+  type DailySchedule,
+  type RoundResult,
+} from './game/daily';
 import { loadQuestions, loadDailySchedule } from './game/loadQuestions';
 import { QuestionRouter } from './components/QuestionRouter';
 import { DailyView } from './components/DailyView';
@@ -54,14 +59,31 @@ export default function App() {
   // (bumped on filter change / deck wrap to reshuffle). Lazy init → evaluated once.
   const [order, setOrder] = useState(() => Math.floor(Math.random() * 1_000_000));
   const [pos, setPos] = useState(0);
+  // Deep link (?q=<id>): id requested in the URL, and whether it resolved.
+  const [linkedId] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null;
+    return new URLSearchParams(window.location.search).get('q');
+  });
+  const [linkMissing, setLinkMissing] = useState(false);
+  // Result of the just-finished practice question (drives the share affordance).
+  const [practiceResult, setPracticeResult] = useState<RoundResult | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     loadQuestions()
-      .then((b) => setAll(b.questions))
+      .then((b) => {
+        setAll(b.questions);
+        // Any deep link (?q=) opens Practice; if the id no longer exists we
+        // still switch to Practice and show a "not available" note + the deck.
+        if (linkedId) {
+          setMode('PRACTICE');
+          if (!b.questions.some((q) => q.id === linkedId)) setLinkMissing(true);
+        }
+      })
       .catch((e) => setError(String(e)));
     // Best-effort: the frozen daily schedule (null if absent → live fallback).
     loadDailySchedule().then(setSchedule).catch(() => setSchedule(null));
-  }, []);
+  }, [linkedId]);
 
   // Which categories actually exist in the loaded data (drives the chip row).
   const categories = useMemo<Category[]>(() => {
@@ -71,8 +93,16 @@ export default function App() {
     return order.filter((c) => present.has(c));
   }, [all]);
 
+  // A resolved deep link pins the deck to that single question (played fresh);
+  // otherwise the deck is the filtered + shuffled set.
+  const linkedQuestion = useMemo(
+    () => (linkedId && all ? all.find((q) => q.id === linkedId) ?? null : null),
+    [linkedId, all],
+  );
+
   const deck = useMemo(() => {
     if (!all) return [];
+    if (linkedQuestion) return [linkedQuestion];
     const filtered = all.filter(
       (q) =>
         (formatFilter === 'ALL' || q.format === formatFilter) &&
@@ -81,31 +111,51 @@ export default function App() {
         q.difficulty === difficulty,
     );
     return shuffle(filtered, order + 1);
-  }, [all, formatFilter, categoryFilter, difficulty, order]);
+  }, [all, linkedQuestion, formatFilter, categoryFilter, difficulty, order]);
 
   const current = deck[pos];
 
+  // Moving to a different question clears the finished-question result/share.
   const chooseFormat = (f: FormatFilter) => {
     setFormatFilter(f);
     setPos(0);
     setOrder((o) => o + 1);
+    setPracticeResult(null);
   };
 
   const chooseCategory = (c: CategoryFilter) => {
     setCategoryFilter(c);
     setPos(0);
     setOrder((o) => o + 1);
+    setPracticeResult(null);
   };
 
   const chooseDifficulty = (d: Difficulty) => {
     setDifficulty(d);
     setPos(0);
     setOrder((o) => o + 1);
+    setPracticeResult(null);
   };
 
   const next = () => {
     setPos((p) => (p + 1 < deck.length ? p + 1 : 0));
     if (pos + 1 >= deck.length) setOrder((o) => o + 1); // reshuffle on wrap
+    setPracticeResult(null);
+  };
+
+  const sharePractice = async () => {
+    if (!current || !practiceResult) return;
+    const text = buildPracticeShareText(practiceResult, current.prompt, buildQuestionLink(current.id));
+    try {
+      if (navigator.share) await navigator.share({ text });
+      else {
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
+    } catch {
+      /* user cancelled / clipboard blocked */
+    }
   };
 
   if (error) return <div className="app"><p className="result lose">Error: {error}</p></div>;
@@ -133,8 +183,25 @@ export default function App() {
 
       {mode === 'DAILY' ? (
         <DailyView all={all} schedule={schedule} />
+      ) : linkedQuestion ? (
+        // Deep-linked single question: play it fresh, no filters/deck.
+        <>
+          <p className="daily-progress">A friend shared this question</p>
+          <QuestionRouter question={linkedQuestion} onComplete={setPracticeResult} />
+          {practiceResult && (
+            <div className="practice-share">
+              <button onClick={sharePractice}>{copied ? 'Copied!' : 'Share result'}</button>
+              <a className="link-btn" href={import.meta.env.BASE_URL}>
+                Play more →
+              </a>
+            </div>
+          )}
+        </>
       ) : (
         <>
+          {linkMissing && (
+            <p className="link-missing">That shared question isn’t available anymore — here’s the practice deck instead.</p>
+          )}
           {categories.length > 1 && (
             <nav className="filters">
               {(['ALL', ...categories] as CategoryFilter[]).map((c) => (
@@ -180,7 +247,14 @@ export default function App() {
           </nav>
 
           {current ? (
-            <QuestionRouter question={current} onNext={next} />
+            <>
+              <QuestionRouter question={current} onNext={next} onComplete={setPracticeResult} />
+              {practiceResult && (
+                <div className="practice-share">
+                  <button onClick={sharePractice}>{copied ? 'Copied!' : 'Share result'}</button>
+                </div>
+              )}
+            </>
           ) : (
             <p>No questions for this filter.</p>
           )}

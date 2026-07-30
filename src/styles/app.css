@@ -160,3 +160,7 @@ footer { color: var(--muted); font-size: 0.8rem; margin-top: 1.5rem; }
 }
 .streak { color: var(--warn); font-weight: 600; margin: 0 0 1rem; }
 .daily-note { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
+
+/* Practice share affordance under a finished question */
+.practice-share { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; }
+.link-missing { color: var(--warn); font-size: 0.9rem; margin: 0 0 1rem; }

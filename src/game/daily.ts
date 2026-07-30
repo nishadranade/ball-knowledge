@@ -201,3 +201,20 @@ export function buildShareText(result: DailyResult, url = 'nishadranade.github.i
   const rows = result.results.map(formatRoundRow);
   return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }
+
+/** Absolute deep link to a specific question, e.g.
+ *  "https://nishadranade.github.io/ball-knowledge/?q=<id>". Uses the current
+ *  origin + Vite BASE_URL so it works on any host / base path. A query param
+ *  (not a path) is required — GitHub Pages has no SPA path routing. */
+export function buildQuestionLink(id: string, origin?: string, base?: string): string {
+  const o = origin ?? (typeof location !== 'undefined' ? location.origin : '');
+  const b = base ?? (typeof import.meta !== 'undefined' ? import.meta.env.BASE_URL : '/');
+  return `${o}${b}?q=${encodeURIComponent(id)}`;
+}
+
+/** Spoiler-free share text for a single Practice question: the prompt (which
+ *  names the challenge but never the answers), the result row, and a deep link
+ *  the recipient can open to play that exact question fresh. */
+export function buildPracticeShareText(result: RoundResult, prompt: string, link: string): string {
+  return [`⚽ Ball Knowledge`, prompt, formatRoundRow(result), '', link].join('\n');
+}
