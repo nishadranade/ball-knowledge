@@ -202,14 +202,33 @@ export function buildShareText(result: DailyResult, url = 'nishadranade.github.i
   return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }
 
+/** The `?q=` token for a question. LIST ids just restate the (visible) prompt,
+ *  so they stay readable. CAREER ids are derived from the player's name, which
+ *  would spell the answer — so career links use an OPAQUE hash token instead. */
+export function questionParam(q: Question): string {
+  return q.format === 'CAREER_PATH' ? `c${hashString(q.id).toString(36)}` : q.id;
+}
+
+/** Resolve a `?q=` param back to a question. List ids match directly; career
+ *  tokens match by hashing each career question's id. Returns null if unknown
+ *  (stale link) → caller falls back to the practice deck. */
+export function resolveQuestionParam(param: string, questions: Question[]): Question | null {
+  // Direct id match (list links, and a safety net for any literal id).
+  const byId = questions.find((q) => q.id === param);
+  if (byId) return byId;
+  // Career hash token, e.g. "c1a2b3".
+  return questions.find((q) => q.format === 'CAREER_PATH' && questionParam(q) === param) ?? null;
+}
+
 /** Absolute deep link to a specific question, e.g.
- *  "https://nishadranade.github.io/ball-knowledge/?q=<id>". Uses the current
+ *  "https://nishadranade.github.io/ball-knowledge/?q=<token>". Uses the current
  *  origin + Vite BASE_URL so it works on any host / base path. A query param
- *  (not a path) is required — GitHub Pages has no SPA path routing. */
-export function buildQuestionLink(id: string, origin?: string, base?: string): string {
+ *  (not a path) is required — GitHub Pages has no SPA path routing. Career links
+ *  are opaque (see `questionParam`) so they don't reveal the answer. */
+export function buildQuestionLink(q: Question, origin?: string, base?: string): string {
   const o = origin ?? (typeof location !== 'undefined' ? location.origin : '');
   const b = base ?? (typeof import.meta !== 'undefined' ? import.meta.env.BASE_URL : '/');
-  return `${o}${b}?q=${encodeURIComponent(id)}`;
+  return `${o}${b}?q=${encodeURIComponent(questionParam(q))}`;
 }
 
 /** Spoiler-free share text for a single Practice question: the prompt (which

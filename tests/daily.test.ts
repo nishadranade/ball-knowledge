@@ -9,6 +9,8 @@ import {
   buildShareText,
   buildPracticeShareText,
   buildQuestionLink,
+  questionParam,
+  resolveQuestionParam,
   formatDuration,
   type DailyResult,
   type DailySchedule,
@@ -249,14 +251,43 @@ describe('truncateDailyList', () => {
   });
 });
 
-describe('buildQuestionLink', () => {
-  it('builds an absolute ?q= deep link from origin + base', () => {
-    expect(buildQuestionLink('list_pl_goals_overall_all_10', 'https://x.github.io', '/ball-knowledge/')).toBe(
+describe('buildQuestionLink / questionParam', () => {
+  it('LIST links keep the readable id (the id only restates the prompt)', () => {
+    const q = list('list_pl_goals_overall_all_10');
+    expect(buildQuestionLink(q, 'https://x.github.io', '/ball-knowledge/')).toBe(
       'https://x.github.io/ball-knowledge/?q=list_pl_goals_overall_all_10',
     );
   });
-  it('url-encodes the id', () => {
-    expect(buildQuestionLink('a b&c', 'https://x', '/')).toBe('https://x/?q=a%20b%26c');
+  it('CAREER links are opaque — no player name / id in the URL', () => {
+    const q = career('career_dominic_solanke');
+    const link = buildQuestionLink(q, 'https://x', '/');
+    expect(link).not.toContain('solanke');
+    expect(link).not.toContain('career_');
+    expect(link).toMatch(/\?q=c[0-9a-z]+$/); // opaque token like ?q=c1a2b3
+  });
+  it('career token is stable for the same id', () => {
+    expect(questionParam(career('career_x'))).toBe(questionParam(career('career_x')));
+  });
+});
+
+describe('resolveQuestionParam', () => {
+  const pool: Question[] = [
+    list('list_pl_goals_overall_all_10'),
+    career('career_dominic_solanke'),
+    career('career_alan_shearer'),
+  ];
+  it('resolves a list id directly', () => {
+    expect(resolveQuestionParam('list_pl_goals_overall_all_10', pool)?.id).toBe(
+      'list_pl_goals_overall_all_10',
+    );
+  });
+  it('resolves a career hash token back to the right question', () => {
+    const token = questionParam(career('career_dominic_solanke'));
+    expect(resolveQuestionParam(token, pool)?.id).toBe('career_dominic_solanke');
+  });
+  it('returns null for an unknown / stale param', () => {
+    expect(resolveQuestionParam('nope', pool)).toBeNull();
+    expect(resolveQuestionParam('career_dominic_solanke', pool)?.id).toBe('career_dominic_solanke'); // literal id still works as a safety net
   });
 });
 

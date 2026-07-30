@@ -3,6 +3,7 @@ import type { Question, Format, Category, Difficulty } from './game/types';
 import {
   buildPracticeShareText,
   buildQuestionLink,
+  resolveQuestionParam,
   type DailySchedule,
   type RoundResult,
 } from './game/daily';
@@ -73,11 +74,11 @@ export default function App() {
     loadQuestions()
       .then((b) => {
         setAll(b.questions);
-        // Any deep link (?q=) opens Practice; if the id no longer exists we
-        // still switch to Practice and show a "not available" note + the deck.
+        // Any deep link (?q=) opens Practice; if it doesn't resolve we still
+        // switch to Practice and show a "not available" note + the deck.
         if (linkedId) {
           setMode('PRACTICE');
-          if (!b.questions.some((q) => q.id === linkedId)) setLinkMissing(true);
+          if (!resolveQuestionParam(linkedId, b.questions)) setLinkMissing(true);
         }
       })
       .catch((e) => setError(String(e)));
@@ -96,7 +97,7 @@ export default function App() {
   // A resolved deep link pins the deck to that single question (played fresh);
   // otherwise the deck is the filtered + shuffled set.
   const linkedQuestion = useMemo(
-    () => (linkedId && all ? all.find((q) => q.id === linkedId) ?? null : null),
+    () => (linkedId && all ? resolveQuestionParam(linkedId, all) : null),
     [linkedId, all],
   );
 
@@ -145,7 +146,7 @@ export default function App() {
 
   const sharePractice = async () => {
     if (!current || !practiceResult) return;
-    const text = buildPracticeShareText(practiceResult, current.prompt, buildQuestionLink(current.id));
+    const text = buildPracticeShareText(practiceResult, current.prompt, buildQuestionLink(current));
     try {
       if (navigator.share) await navigator.share({ text });
       else {
