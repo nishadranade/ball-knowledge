@@ -18,7 +18,7 @@ import path from 'node:path';
 import { fetchWikitext, hasCached, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
 import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
-import { fetchChampionsLeagueScorers } from './fetch/clScorers.js';
+import { fetchChampionsLeagueScorers, fetchChampionsLeagueAppearances } from './fetch/clScorers.js';
 import {
   COUNTRIES,
   MAJOR_COUNTRIES,
@@ -55,22 +55,30 @@ const OVERALL_DEPTH_PAGES = 5;
 // Competitions to generate. Both use the pulselive API; CL has no usable
 // per-club data (team ids are English-only), so it is overall + country only.
 // ---------------------------------------------------------------------------
+/** A Wikipedia-sourced metric override: an all-time fetcher + its source URL.
+ *  Metrics with an override use Wikipedia (all-time, with names); metrics without
+ *  fall back to the pulselive API (which for CL is limited to 2004/05+). */
+interface WikiMetricSource {
+  fetch: () => Promise<PlayerRow[]>;
+  url: string;
+}
+
 interface CompetitionConfig {
   competition: Competition; // structurally identical to the Category union in types.ts
   compsId: CompsId;
   hasClubs: boolean;
   sourceName: string;
   sourceUrl: string;
-  /** Use Wikipedia's all-time CL top-scorers list for the `goals` metric instead
-   *  of pulselive (which only covers 2004/05+, undercounting older players). */
-  wikipediaGoals?: boolean;
-  /** Coverage disclosure for pulselive-sourced metrics whose data is limited to
-   *  a window (e.g. "since 2004/05" for CL). Appended to the prompt. Metrics
-   *  sourced all-time (e.g. Wikipedia goals) skip this. */
+  /** Per-metric all-time Wikipedia sources that override pulselive. */
+  wikipediaMetrics?: Partial<Record<Metric, WikiMetricSource>>;
+  /** Coverage disclosure for metrics still sourced from pulselive with a limited
+   *  window (e.g. "since 2004/05" for CL). Applied only to non-Wikipedia metrics. */
   pulseliveEraNote?: string;
 }
 
 const WIKI_CL_SCORERS_URL = 'https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers';
+const WIKI_CL_APPS_URL =
+  'https://en.wikipedia.org/wiki/List_of_footballers_with_100_or_more_UEFA_Champions_League_appearances';
 
 const COMPETITIONS: CompetitionConfig[] = [
   {
@@ -86,7 +94,13 @@ const COMPETITIONS: CompetitionConfig[] = [
     hasClubs: false,
     sourceName: 'Premier League',
     sourceUrl: PL_SOURCE_URL,
-    wikipediaGoals: true,
+    // Goals + appearances are all-time from Wikipedia (with names). Assists and
+    // clean sheets have no clean all-time source, so they stay on pulselive
+    // (2004/05+) and keep the era disclosure.
+    wikipediaMetrics: {
+      goals: { fetch: fetchChampionsLeagueScorers, url: WIKI_CL_SCORERS_URL },
+      appearances: { fetch: fetchChampionsLeagueAppearances, url: WIKI_CL_APPS_URL },
+    },
     pulseliveEraNote: 'since 2004/05',
   },
 ];
@@ -121,10 +135,12 @@ async function buildAnswerBank(cfg: CompetitionConfig): Promise<AnswerBank> {
   if (cfg.hasClubs) console.log(`  ${teams.length} clubs`);
   const byMetric = new Map<Metric, PlayerRow[]>();
   for (const metric of SUPPORTED_METRICS) {
-    // CL goals come from Wikipedia's all-time list (pulselive only has 2004/05+,
-    // which undercounts older players like Crespo). Other metrics stay pulselive.
-    if (metric === 'goals' && cfg.wikipediaGoals) {
-      const rows = await fetchChampionsLeagueScorers();
+    // Metrics with an all-time Wikipedia source (CL goals + appearances) use it
+    // instead of pulselive (which for CL only has 2004/05+, undercounting older
+    // players like Crespo/Maldini). Assists/clean sheets have no such source.
+    const wiki = cfg.wikipediaMetrics?.[metric];
+    if (wiki) {
+      const rows = await wiki.fetch();
       byMetric.set(metric, rows);
       console.log(`  bank[${cfg.competition}/${metric}] = ${rows.length} players (Wikipedia)`);
       continue;
@@ -224,13 +240,13 @@ function buildListQuestions(bank: AnswerBank): ListQuestion[] {
     const id = `list_${t.competition}_${t.metric}_${t.scopeType}_${t.scopeValue || 'all'}_${topN}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '_');
-    // CL goals are sourced all-time from Wikipedia; other CL metrics come from
-    // pulselive (2004/05+) and get a coverage disclosure in the prompt.
-    const usesWiki = t.metric === 'goals' && bank.cfg.wikipediaGoals;
-    const source = usesWiki
-      ? { name: 'Wikipedia', url: WIKI_CL_SCORERS_URL, retrievedAt: NOW }
+    // Metrics with an all-time Wikipedia source are attributed to Wikipedia and
+    // carry no era note; pulselive-sourced metrics get the coverage disclosure.
+    const wiki = bank.cfg.wikipediaMetrics?.[t.metric];
+    const source = wiki
+      ? { name: 'Wikipedia', url: wiki.url, retrievedAt: NOW }
       : { name: bank.cfg.sourceName, url: bank.cfg.sourceUrl, retrievedAt: NOW };
-    const eraNote = usesWiki ? undefined : bank.cfg.pulseliveEraNote;
+    const eraNote = wiki ? undefined : bank.cfg.pulseliveEraNote;
     out.push({
       id,
       category: bank.cfg.competition,

@@ -71,6 +71,22 @@ describe('generated questions.json', () => {
     expect(cl.length).toBeGreaterThan(0);
   });
 
+  it('CL goals & appearances are all-time (Wikipedia); assists & clean sheets note the era', () => {
+    const cl = bundle.questions.filter(
+      (q): q is ListQuestion => q.category === 'CHAMPIONS_LEAGUE' && q.format === 'LIST',
+    );
+    for (const q of cl) {
+      const metric = q.id.replace('list_champions_league_', '').split('_')[0];
+      if (metric === 'goals' || metric === 'appearances') {
+        expect(q.source.name).toBe('Wikipedia');
+        expect(q.prompt).not.toContain('since 2004/05');
+      } else {
+        // assists / cleansheets — pulselive, era-disclosed
+        expect(q.prompt).toContain('since 2004/05');
+      }
+    }
+  });
+
   it('every question (both formats) has a valid difficulty', () => {
     for (const q of bundle.questions) {
       expect(q.difficulty === 'STANDARD' || q.difficulty === 'HARD').toBe(true);

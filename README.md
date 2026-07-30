@@ -56,14 +56,15 @@ src/
 tests/                       matcher unit tests + generated-data guards
 ```
 
-**Two data sources, one player model.**
-- **LIST questions** come from the **pulselive stats API** (`footballapi.pulselive.com`, the Premier
-  League's own backend) — all-time, all players, for goals, assists, appearances, and clean sheets.
-  `comps=1` serves the Premier League (with correct per-club and per-country totals); `comps=2`
-  serves the all-time **Champions League** (overall + per-country only — the API's team IDs are
-  English-club-only, so CL has no per-club scope).
-- **CAREER questions** come from **Wikipedia infoboxes** (the API has no career history outside its
-  competition). The pool is the top-K players per metric across both competitions.
+**Data sources, one player model.**
+- **Premier League LIST** — the **pulselive stats API** (`footballapi.pulselive.com`, comps=1):
+  all-time, all players, per-club and per-country, for goals/assists/appearances/clean sheets.
+- **Champions League LIST** — mixed, because pulselive's CL data (comps=2) only goes back to
+  2004/05: **goals** and **appearances** come from Wikipedia's all-time ranked lists (genuinely
+  all-time — Di Stéfano, Maldini, Crespo included); **assists** and **clean sheets** stay on
+  pulselive and are labeled "since 2004/05" in the prompt (no clean all-time source exists yet —
+  see roadmap). CL is overall + per-country only (no per-club).
+- **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
 
 The PL API is undocumented/internal, so the pipeline insulates the game from it: it's called at
 build time only, every response is cached on disk, and output is validated before questions.json is
@@ -141,6 +142,10 @@ Everton, Villa, West Ham, Newcastle, Leeds, Leicester, Southampton, Forest, Wolv
   supports them) need a different source — the pulselive API doesn't cover them.
 - **Champions League has no per-club questions.** The API's team IDs are English-club-only, so CL is
   overall + per-country only.
+- **CL assists & clean sheets are "since 2004/05".** pulselive only holds CL data from 2004/05; CL
+  goals & appearances are fixed to all-time via Wikipedia, but no clean all-time source exists yet
+  for CL assists/clean sheets. Roadmap: UEFA's own stats API (`compstats.uefa.com`) has all-time
+  data for all metrics but returns only player IDs — pending a reliable ID→name resolver.
 - **Undocumented API.** The pulselive stats API could change format without notice. Mitigated by
   build-time caching + validation; the shipped game reads only the generated JSON, so a break never
   affects players, only refreshes.
