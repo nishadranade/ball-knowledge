@@ -18,9 +18,21 @@ question formats and forgiving answer matching.
   one career path) each day, picked deterministically from the calendar date (no backend). The day
   rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
   same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
-  result** (emoji grid + "Ball Knowledge #N") via the Web Share API / clipboard. Progress and a streak
-  are kept in `localStorage`.
-- **Practice** — free-play endless deck with all the filters below.
+  result** (emoji grid + "Ball Knowledge #N" + per-question time) via the Web Share API / clipboard.
+  Progress and a streak are kept in `localStorage`. Daily lists are trimmed to **top 5** to keep the
+  round short.
+- **Practice** — free-play endless deck with all the filters below. Finishing a question also offers
+  a **shareable result + deep link** to that exact question (`?q=<token>`), so you can send a
+  favourite question to a friend.
+
+**Frozen dailies.** Each day's two questions are appended to a committed
+`public/data/daily.json` as *full question objects*, so a day that has been played can never change
+underneath players when the data is regenerated. Days not yet frozen fall back to hashing the live
+pool. See `scripts/build-daily.ts`.
+
+**Share links don't spoil answers.** List deep links keep a readable id (it only restates the visible
+prompt), but career-path ids are derived from the player's name, so career links use an **opaque hash
+token** instead — `?q=ckkzpn`, not `?q=career_alan_shearer` (`questionParam` in `src/game/daily.ts`).
 
 ## Filters (Practice)
 
@@ -44,16 +56,22 @@ scripts/                     data-prep pipeline (Node, run at build time)
   question-templates.ts      WHAT questions can be asked (metrics, competitions, countries, clubs, prompts)
   fetch/premierLeague.ts     pulselive API client (comps=1 PL, comps=2 CL); disk cache
   fetch/plAggregate.ts       API responses → PlayerRow[] per metric (overall + per-club splits)
+  fetch/clScorers.ts         Wikipedia all-time CL ranked lists (goals, appearances)
   fetch/wikipedia.ts         infobox → career stints (career-path questions)
   build-questions.ts         orchestrates: per-competition banks → generate → validate → write JSON
+  build-daily.ts             append-only freeze of daily.json (epoch → today); never rewrites a past day
 public/data/questions.json   generated answer bank shipped to the browser
+public/data/daily.json       frozen per-day challenge (full question objects)
+public/data/manifest.json    sources, retrieval dates, generated counts
 src/
   game/types.ts              shared contract between pipeline and UI
   game/matching.ts           fuzzy last-name matcher (normalize + Levenshtein)
-  game/useGame.ts            round state (lives, found answers, win/lose)
-  components/                ListQuestion, CareerPathQuestion, GuessInput, Lives, QuestionRouter
-  App.tsx                    loads JSON, competition + format filters, question flow
-tests/                       matcher unit tests + generated-data guards
+  game/useGame.ts            round state (lives, found answers, win/lose) — clock-free reducer
+  game/daily.ts              date→question selection, frozen-schedule resolution, share text, deep links
+  game/loadQuestions.ts      fetches the generated JSON under import.meta.env.BASE_URL
+  components/                ListQuestion, CareerPathQuestion, GuessInput, Lives, QuestionRouter, DailyView
+  App.tsx                    Daily/Practice modes, filters, deck, ?q= deep links
+tests/                       matcher unit tests, daily/share/link tests, generated-data guards
 ```
 
 **Data sources, one player model.**
@@ -78,10 +96,11 @@ written. If the API ever changes, the shipped game keeps working from the last g
 ```bash
 npm install          # first-time setup
 npm run dev          # dev server
-npm run build:data   # regenerate public/data/questions.json (PL API + Wikipedia; several min cold cache)
+npm run build:data   # regenerate questions.json + daily.json (PL API + Wikipedia; several min cold cache)
+npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
 npm run build:app    # typecheck + production bundle (uses the committed questions.json)
 npm run build        # build:data + build:app (full local rebuild)
-npm test             # run tests (matcher + generated-data guards)
+npm test             # run tests (matcher, daily/share/links, generated-data guards)
 npm run preview      # serve the production build
 ```
 
@@ -91,6 +110,9 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
 (→ https://nishadranade.github.io/ball-knowledge/). CI runs `build:app` only — it ships the
 **committed** `public/data/questions.json` and never calls the live data pipeline. Vite's `base` is
 `/ball-knowledge/` (override with the `BASE_PATH` env var for other hosts, e.g. `BASE_PATH=/`).
+
+Pull requests run `.github/workflows/ci.yml` (`npm ci` → `npm test` → `npm run build:app`) without
+deploying. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR workflow.
 
 **To refresh the data:** run `npm run build:data` locally, commit the updated
 `public/data/questions.json`, and push — the next deploy ships it.
@@ -113,10 +135,10 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: ~1,811
-questions (368 list, 1,443 career) across two competitions — **Premier League** and **Champions
-League** — covering 48 nationalities and all PL clubs with enough qualifying players. Questions are
-split **Standard** (~885) / **Hard** (~926) across both formats (see difficulty tiers below).
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **1,644
+questions** (354 list, 1,290 career) across two competitions — **Premier League** (1,105) and
+**Champions League** (539) — covering 48 nationalities and 46 clubs. Questions are split **Standard**
+(807) / **Hard** (837) across both formats (see difficulty tiers below).
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more
@@ -153,5 +175,5 @@ Everton, Villa, West Ham, Newcastle, Leeds, Leicester, Southampton, Forest, Wolv
   (429). The fetch retries with backoff and caches, so re-running `npm run build:data` recovers any
   players skipped on a prior run (the cache makes repeat runs cheap).
 
-**Out of scope (future):** multiplayer across devices; La Liga / World Cup categories;
-accounts, scoring, timers.
+**Out of scope (future):** multiplayer across devices; La Liga / World Cup categories; accounts and
+persistent scoring (a per-question timer already ships in the share text, but there's no leaderboard).
