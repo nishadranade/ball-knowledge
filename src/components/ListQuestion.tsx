@@ -23,6 +23,9 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
   useEffect(() => {
     if (over && !reported.current) {
       reported.current = true;
+      const foundIdx = new Set(state.found.map((f) => f.index));
+      // Per-slot found/missed in answer (rank) order for the share grid.
+      const slots = question.answers.map((_, i) => foundIdx.has(i));
       onComplete?.({
         format: 'LIST',
         found: state.found.length,
@@ -30,6 +33,7 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
         wrong: state.wrong,
         maxWrong: question.maxWrong,
         won: state.status === 'won',
+        slots,
       });
     }
   }, [over, onComplete, state, question]);

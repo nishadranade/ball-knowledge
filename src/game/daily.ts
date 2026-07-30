@@ -155,6 +155,8 @@ export interface RoundResult {
   wrong: number; // wrong guesses used
   maxWrong: number;
   won: boolean;
+  /** LIST only: per-slot found/missed in answer (rank) order — true = found. */
+  slots?: boolean[];
 }
 
 export interface DailyResult {
@@ -168,13 +170,18 @@ export interface DailyResult {
 export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
   const rows = result.results.map((r) => {
     if (r.format === 'LIST') {
-      // One square per answer slot: 🟩 found, 🟥 missed.
-      const grid = '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
+      // One square per answer slot IN RANK ORDER: 🟩 found, 🟥 missed. Fall back
+      // to count-based (all found first) if slot order wasn't captured.
+      const grid = r.slots
+        ? r.slots.map((f) => (f ? '🟩' : '🟥')).join('')
+        : '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
       return `📋 List: ${grid} (${r.found}/${r.total})`;
     }
-    const mark = r.won ? '🟩' : '🟥';
+    // Career: one 🟥 per wrong guess, then 🟩 if solved — the guess sequence.
+    // e.g. first try → 🟩; second try → 🟥🟩; missed → 🟥🟥.
+    const grid = '🟥'.repeat(r.wrong) + (r.won ? '🟩' : '');
     const guesses = r.won ? `${r.wrong + 1} guess${r.wrong === 0 ? '' : 'es'}` : 'missed';
-    return `👤 Career: ${mark} (${guesses})`;
+    return `👤 Career: ${grid} (${guesses})`;
   });
   return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }

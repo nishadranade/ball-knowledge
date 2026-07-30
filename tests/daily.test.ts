@@ -137,12 +137,40 @@ describe('buildShareText', () => {
     };
     const text = buildShareText(result);
     expect(text).toContain('Ball Knowledge #42');
-    expect(text).toContain('🟩🟩🟩🟥'); // 4 found, 1 missed
     expect(text).toContain('4/5');
     expect(text).toContain('(1 guess)');
     // no player names leaked (share text is only emojis, stats, and the title)
     expect(text).not.toContain('Shearer');
     expect(text).not.toContain('Beckham');
+  });
+
+  it('LIST grid follows slot (rank) order, not just counts', () => {
+    const result: DailyResult = {
+      day: 1,
+      results: [
+        // found ranks 1, 3, 5 (missed 2 and 4) → 🟩🟥🟩🟥🟩
+        {
+          format: 'LIST',
+          found: 3,
+          total: 5,
+          wrong: 3,
+          maxWrong: 3,
+          won: false,
+          slots: [true, false, true, false, true],
+        },
+      ],
+    };
+    expect(buildShareText(result)).toContain('🟩🟥🟩🟥🟩 (3/5)');
+  });
+
+  it('career grid shows a red square per wrong guess before the green', () => {
+    const mk = (wrong: number, won: boolean): DailyResult => ({
+      day: 1,
+      results: [{ format: 'CAREER_PATH', found: won ? 1 : 0, total: 1, wrong, maxWrong: 2, won }],
+    });
+    expect(buildShareText(mk(0, true))).toContain('👤 Career: 🟩 (1 guess)'); // first try
+    expect(buildShareText(mk(1, true))).toContain('👤 Career: 🟥🟩 (2 guesses)'); // second try
+    expect(buildShareText(mk(2, false))).toContain('👤 Career: 🟥🟥 (missed)'); // both wrong
   });
 
   it('has blank lines separating header, rows, and url', () => {
