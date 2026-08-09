@@ -115,6 +115,28 @@ Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy
 Pull requests run `.github/workflows/ci.yml` (`npm ci` → `npm test` → `npm run build:app`) without
 deploying. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR workflow.
 
+> ### ⚠️ Pages must deploy from **GitHub Actions**, not from a branch
+>
+> Settings → Pages → Source must stay on **GitHub Actions** (`build_type: workflow`). If it is set
+> to *"Deploy from a branch"* instead, GitHub serves the **repo root verbatim** — and the root
+> `index.html` is the Vite *source* file, which loads `/src/main.tsx` (nonexistent in a build) and
+> expects data at `data/`, not `public/data/`. The result is a blank page with
+> `Loading module … was blocked because of a disallowed MIME type ("text/html")` in the console.
+>
+> The trap is that **both publishers can be active at once and race**, with the last one to finish
+> winning — so `deploy.yml` goes green while the legacy build quietly overwrites it. This broke the
+> live site on 2026-08-09. Check with:
+>
+> ```bash
+> gh api repos/nishadranade/ball-knowledge/pages --jq .build_type   # must be "workflow"
+> ```
+>
+> and fix with `gh api -X PUT repos/nishadranade/ball-knowledge/pages -f build_type=workflow`, then
+> re-run the deploy. `deploy.yml` now smoke-checks the live URL after publishing and fails if the
+> served HTML references `/src/main.tsx` or the JSON files 404, so this can't regress silently again.
+> (`public/.nojekyll` is a leftover from the old branch-based setup — harmless, and not a sign that
+> branch publishing is intended.)
+
 **To refresh the data:** run `npm run build:data` locally, commit the updated
 `public/data/questions.json`, and push — the next deploy ships it.
 

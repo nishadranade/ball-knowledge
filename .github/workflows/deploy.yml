@@ -46,3 +46,61 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # A green deploy is NOT proof the site works. If Pages is ever switched
+      # back to the legacy branch build ("Deploy from a branch"), GitHub serves
+      # the repo root verbatim — i.e. the Vite SOURCE index.html, whose
+      # /src/main.tsx doesn't exist in a build — and every data file 404s, while
+      # this workflow still reports success. That silently broke the live site on
+      # 2026-08-09. Fetch the real page and fail loudly instead.
+      - name: Smoke-check the deployed site
+        run: |
+          set -uo pipefail
+          URL="${{ steps.deployment.outputs.page_url }}"
+          ORIGIN=$(printf '%s' "$URL" | cut -d/ -f1-3)
+          echo "Checking $URL"
+
+          # Pages can take a few seconds to start serving the new deploy.
+          html=""
+          for i in $(seq 1 10); do
+            html=$(curl -fsSL --max-time 20 "$URL" || true)
+            case "$html" in *"assets/index-"*) break ;; esac
+            # Raw source is a Pages *config* problem, not propagation lag —
+            # retrying can't fix it. Allow a couple of attempts in case a stale
+            # copy is still cached, then stop rather than burning the full minute.
+            if [ "$i" -ge 3 ] && printf '%s' "$html" | grep -q 'src/main\.tsx'; then break; fi
+            echo "  attempt $i: built bundle not visible yet, retrying…"
+            sleep 6
+          done
+
+          if printf '%s' "$html" | grep -q 'src/main\.tsx'; then
+            echo "::error::Live site is serving the Vite SOURCE index.html (/src/main.tsx)."
+            echo "::error::Pages is on the legacy branch build. Fix: Settings → Pages → Source = 'GitHub Actions' (build_type=workflow)."
+            exit 1
+          fi
+
+          bundle=$(printf '%s' "$html" | grep -oE '/[^"]*assets/index-[^"]+\.js' | head -1)
+          if [ -z "$bundle" ]; then
+            echo "::error::No hashed asset bundle found in the deployed index.html."
+            printf '%s\n' "$html" | head -30
+            exit 1
+          fi
+
+          # Each URL must return 200. The two JSON files are what the app fetches
+          # at runtime; a 404 there means a blank game even if the HTML is right.
+          fail=0
+          for target in "$ORIGIN$bundle" "${URL}data/questions.json" "${URL}data/daily.json"; do
+            code=000
+            for i in 1 2 3 4 5; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$target")
+              [ "$code" = "200" ] && break
+              sleep 5
+            done
+            if [ "$code" = "200" ]; then
+              echo "  ok   $target"
+            else
+              echo "::error::$target returned HTTP $code (expected 200)"
+              fail=1
+            fi
+          done
+          exit $fail
