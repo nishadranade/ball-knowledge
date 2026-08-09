@@ -100,10 +100,12 @@ describe('generated questions.json', () => {
     expect(hard.length).toBeGreaterThan(0);
   });
 
-  it('the daily (Standard-only) pool has both a list and a career question', () => {
+  it('the daily (Standard-only) pool has a list and at least two career questions', () => {
+    // The daily asks one list + TWO distinct career paths, so the Standard pool
+    // must be able to supply two.
     const std = bundle.questions.filter((q) => q.difficulty === 'STANDARD');
     expect(std.some((q) => q.format === 'LIST')).toBe(true);
-    expect(std.some((q) => q.format === 'CAREER_PATH')).toBe(true);
+    expect(std.filter((q) => q.format === 'CAREER_PATH').length).toBeGreaterThanOrEqual(2);
   });
 
   it('lesser clubs/countries are Hard and capped at top 5', () => {

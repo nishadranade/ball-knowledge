@@ -16,7 +16,7 @@ import {
   type DailySchedule,
   type RoundResult,
 } from '../src/game/daily';
-import type { Question, ListQuestion } from '../src/game/types';
+import type { Question, ListQuestion, CareerPathQuestion } from '../src/game/types';
 
 const list = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
   id,
@@ -85,16 +85,36 @@ describe('hashString', () => {
 });
 
 describe('selectDaily', () => {
-  it('returns one LIST and one CAREER', () => {
+  it('returns one LIST and two CAREER questions', () => {
     const d = selectDaily(pool, '2026-03-05');
     expect(d.list?.format).toBe('LIST');
     expect(d.career?.format).toBe('CAREER_PATH');
+    expect(d.career2?.format).toBe('CAREER_PATH');
+  });
+  it('never repeats the same career twice in a day', () => {
+    // Every date must draw two DIFFERENT players, not the same one twice.
+    for (let i = 1; i <= 60; i++) {
+      const d = selectDaily(pool, `2026-03-${String(i % 28 || 28).padStart(2, '0')}`);
+      expect(d.career2?.id).not.toBe(d.career?.id);
+    }
   });
   it('is stable for the same date key', () => {
     const a = selectDaily(pool, '2026-03-05');
     const b = selectDaily(pool, '2026-03-05');
     expect(a.list?.id).toBe(b.list?.id);
     expect(a.career?.id).toBe(b.career?.id);
+    expect(a.career2?.id).toBe(b.career2?.id);
+  });
+  it('the second career varies across dates', () => {
+    const keys = ['2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08'];
+    const ids = new Set(keys.map((k) => selectDaily(pool, k).career2?.id));
+    expect(ids.size).toBeGreaterThan(1);
+  });
+  it('leaves career2 null rather than duplicating when only one career exists', () => {
+    const thin: Question[] = [list('l0'), career('c0')];
+    const d = selectDaily(thin, '2026-03-05');
+    expect(d.career?.id).toBe('c0');
+    expect(d.career2).toBeNull();
   });
   it('differs across dates (at least sometimes)', () => {
     const keys = ['2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08'];
@@ -119,6 +139,7 @@ describe('selectDaily', () => {
     const d = selectDaily([], '2026-03-05');
     expect(d.list).toBeNull();
     expect(d.career).toBeNull();
+    expect(d.career2).toBeNull();
   });
 });
 
@@ -132,6 +153,22 @@ describe('resolveDaily (frozen schedule)', () => {
     const d = resolveDaily(pool, schedule, '2026-03-05');
     expect(d.list?.id).toBe('frozen-list');
     expect(d.career).toBeNull();
+  });
+
+  it('keeps a day frozen before career2 existed as a two-question round', () => {
+    // daily.json entries written pre-change have no `career2`. Those days were
+    // played as two questions and must stay that way — never back-filled from
+    // the live pool, which is the whole point of freezing.
+    const schedule: DailySchedule = {
+      '2026-03-05': {
+        list: list('frozen-list') as ListQuestion,
+        career: career('frozen-career') as CareerPathQuestion,
+      },
+    };
+    const d = resolveDaily(pool, schedule, '2026-03-05');
+    expect(d.list?.id).toBe('frozen-list');
+    expect(d.career?.id).toBe('frozen-career');
+    expect(d.career2).toBeNull();
   });
 
   it('falls back to live selection when the date is not frozen', () => {

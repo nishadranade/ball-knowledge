@@ -14,8 +14,8 @@ question formats and forgiving answer matching.
 
 ## Modes
 
-- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 2 questions (one list +
-  one career path) each day, picked deterministically from the calendar date (no backend). The day
+- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 3 questions (one list +
+  two career paths) each day, picked deterministically from the calendar date (no backend). The day
   rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
   same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
   result** (emoji grid + "Ball Knowledge #N" + per-question time) via the Web Share API / clipboard.
@@ -25,7 +25,7 @@ question formats and forgiving answer matching.
   a **shareable result + deep link** to that exact question (`?q=<token>`), so you can send a
   favourite question to a friend.
 
-**Frozen dailies.** Each day's two questions are appended to a committed
+**Frozen dailies.** Each day's questions are appended to a committed
 `public/data/daily.json` as *full question objects*, so a day that has been played can never change
 underneath players when the data is regenerated. Days not yet frozen fall back to hashing the live
 pool. See `scripts/build-daily.ts`.
@@ -43,8 +43,9 @@ adds rarer career players (rank 201–500) and lists for lesser clubs/countries 
 their obscure rank 6–10 tail never shows in Standard). The daily challenge is always Standard-only.
 
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
-(`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). Career-path answers also
-accept the player's commonly-used first name (e.g. `Alisson`).
+(`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). A **first name** on its own
+also counts, for players nobody calls by their stored surname (`Vinicius` for Vinícius Júnior,
+`Alisson` for Alisson Becker). Name fragments don't — `van` alone won't answer van Persie.
 
 ## Architecture
 

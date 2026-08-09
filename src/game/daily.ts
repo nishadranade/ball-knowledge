@@ -3,7 +3,7 @@
  * a given day, seeded only by the calendar date — no backend. Also builds the
  * spoiler-free share text.
  *
- * The daily is 2 questions: one LIST + one CAREER_PATH. Selection is fixed by
+ * The daily is 3 questions: one LIST + two CAREER_PATHs. Selection is fixed by
  * the date (ignores the user's practice-mode filters), so every visitor gets
  * an identical daily. The "day" is **US Pacific** (America/Los_Angeles), so the
  * puzzle rolls over at Pacific midnight regardless of the visitor's own
@@ -53,11 +53,15 @@ export function hashString(s: string): number {
 export interface DailySelection {
   list: ListQuestion | null;
   career: CareerPathQuestion | null;
+  /** Second career path. OPTIONAL on purpose: days frozen before the daily grew
+   *  to three questions have no `career2`, and must keep rendering as the
+   *  two-question round they were actually played as. */
+  career2?: CareerPathQuestion | null;
 }
 
 /**
  * Pick the day's questions from the full pool, seeded by the date key. Uses
- * different salts for the two slots so they don't move in lockstep. Returns
+ * different salts for the three slots so they don't move in lockstep. Returns
  * null for a slot if the pool has none of that format.
  */
 /** Max answers a daily LIST question shows — keeps the daily snappy. A top-10
@@ -116,9 +120,19 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
   const pick = <T>(pool: T[], salt: string): T | null =>
     pool.length ? pool[hashString(key + salt) % pool.length] : null;
   const list = pick(lists, ':list');
+  // Two career paths per day. The second is drawn from the pool MINUS the first,
+  // so a day can never ask the same player twice. Note the ':list' and ':career'
+  // draws are untouched by this — a day's list and first career resolve to
+  // exactly what they did when the daily was two questions.
+  const career = pick(careers, ':career');
+  const career2 = pick(
+    careers.filter((q) => q.id !== career?.id),
+    ':career2',
+  );
   return {
     list: list ? truncateDailyList(list) : null,
-    career: pick(careers, ':career'),
+    career,
+    career2,
   };
 }
 
@@ -129,7 +143,7 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
  * public/data/daily.json. See scripts/build-daily.ts.
  */
 export interface DailySchedule {
-  [dateKey: string]: { list: ListQuestion | null; career: CareerPathQuestion | null };
+  [dateKey: string]: DailySelection;
 }
 
 /**
@@ -143,7 +157,9 @@ export function resolveDaily(
   key: string = dateKey(),
 ): DailySelection {
   const frozen = schedule?.[key];
-  if (frozen) return { list: frozen.list, career: frozen.career };
+  // `career2` is absent on days frozen before the daily became three questions;
+  // those stay two-question rounds forever, which is the whole point of freezing.
+  if (frozen) return { list: frozen.list, career: frozen.career, career2: frozen.career2 ?? null };
   return selectDaily(all, key);
 }
 
