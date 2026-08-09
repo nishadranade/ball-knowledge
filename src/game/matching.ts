@@ -17,7 +17,7 @@ import type { Player } from './types';
 /** Special Latin letters that NFD does NOT decompose to ASCII + combining marks,
  *  so we transliterate them explicitly (e.g. German ß → ss: "Groß" ↔ "Gross"). */
 const SPECIAL_LETTERS: Array<[RegExp, string]> = [
-  [/ß/g, 'ss'],
+  [/ß/gi, 'ss'], // also uppercase ẞ (U+1E9E)
   [/æ/gi, 'ae'],
   [/œ/gi, 'oe'],
   [/ø/gi, 'o'],
@@ -58,9 +58,16 @@ export function acceptableTokens(player: Player): string[] {
   if (full) tokens.add(full);
   const last = normalize(player.lastName);
   if (last) tokens.add(last);
-  // The last whitespace token of the full name (covers multi-word surnames loosely).
   const parts = full.split(' ');
-  if (parts.length > 1) tokens.add(parts[parts.length - 1]);
+  if (parts.length > 1) {
+    // The last whitespace token of the full name (covers multi-word surnames loosely).
+    tokens.add(parts[parts.length - 1]);
+    // The first name, for players commonly known by it (Vinícius, Alisson) —
+    // their stored surname ("Júnior", "Becker") is often not what anyone says.
+    // Guarded at 3+ chars, which also keeps surname particles ("El Hadji Diouf")
+    // and initials from becoming answers on their own.
+    if (parts[0].length >= 3) tokens.add(parts[0]);
+  }
   for (const alias of player.aliases ?? []) {
     const a = normalize(alias);
     if (a) tokens.add(a);

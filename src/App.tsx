@@ -264,7 +264,8 @@ export default function App() {
 
       <footer>
         <p>
-          Player data from Wikipedia (CC BY-SA). Surnames alone count; minor typos are forgiven.
+          Player data from Wikipedia (CC BY-SA). First or last name alone counts; minor typos are
+          forgiven.
         </p>
       </footer>
     </div>

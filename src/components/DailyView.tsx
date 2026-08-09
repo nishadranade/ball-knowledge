@@ -67,15 +67,21 @@ export function DailyView({ all, schedule }: Props) {
   const day = dayNumber();
   const daily = useMemo(() => resolveDaily(all, schedule, date), [all, schedule, date]);
 
-  // Ordered daily questions (list first, then career).
+  // Ordered daily questions (list first, then the two career paths). Days frozen
+  // before the daily grew to three have no `career2` and stay at two questions.
   const questions = useMemo(
-    () => [daily.list, daily.career].filter((q): q is Question => q != null),
+    () => [daily.list, daily.career, daily.career2].filter((q): q is Question => q != null),
     [daily],
   );
 
   const stored = useMemo(() => loadStored(date), [date]);
   const [results, setResults] = useState<RoundResult[]>(stored?.results ?? []);
-  const [step, setStep] = useState(stored?.completed ? questions.length : 0);
+  // Resume where they left off: one step per round already recorded. Starting at
+  // 0 would replay finished questions and double-append to `results` — and would
+  // strand anyone who was mid-daily on the day this became a three-question round.
+  const [step, setStep] = useState(
+    stored?.completed ? questions.length : (stored?.results.length ?? 0),
+  );
   const [streak, setStreak] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
 

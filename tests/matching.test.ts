@@ -112,3 +112,61 @@ describe('matchAnswer — aliases', () => {
     expect(isMatch('Ederson Moraes', player)).toBe(true);
   });
 });
+
+describe('matchAnswer — first name', () => {
+  // Some players are universally known by their first name, while the stored
+  // surname is something nobody says ("Júnior", "Becker"). Both must count.
+  const vinicius = p('Vinícius Júnior', 'Júnior');
+  const alisson = p('Alisson Becker', 'Becker');
+
+  it('accepts the first name alone', () => {
+    expect(isMatch('Vinicius', vinicius)).toBe(true);
+    expect(isMatch('Alisson', alisson)).toBe(true);
+  });
+  it('still accepts the surname and the full name', () => {
+    expect(isMatch('Junior', vinicius)).toBe(true);
+    expect(isMatch('Vinicius Junior', vinicius)).toBe(true);
+    expect(isMatch('Becker', alisson)).toBe(true);
+  });
+  it('does not accept a middle name', () => {
+    expect(isMatch('Maria', p('José María Giménez', 'Giménez'))).toBe(false);
+  });
+  it('does not turn a surname particle into an answer', () => {
+    // "van"/"de" are name fragments, not guesses — they must never score.
+    expect(isMatch('van', p('Robin van Persie', 'van Persie'))).toBe(false);
+    expect(isMatch('de', p('Kevin De Bruyne', 'De Bruyne'))).toBe(false);
+    // ...and a sub-3-char first token is not added either.
+    expect(isMatch('El', p('El Hadji Diouf', 'Diouf'))).toBe(false);
+  });
+  it('picks the right player when two share a first name', () => {
+    const jesus = p('Gabriel Jesus', 'Jesus');
+    const martinelli = p('Gabriel Martinelli', 'Martinelli');
+    // Ambiguous on "Gabriel", but the surnames still resolve exactly.
+    expect(matchAnswer('Martinelli', [jesus, martinelli])?.candidate.lastName).toBe('Martinelli');
+    expect(matchAnswer('Jesus', [jesus, martinelli])?.candidate.lastName).toBe('Jesus');
+  });
+});
+
+describe('matchAnswer — accented names accept their plain spelling', () => {
+  // Regression guard: every diacritic present in the generated dataset must fold
+  // to ASCII, so a player never has to type an accent they can't reach.
+  const cases: Array<[string, Player]> = [
+    ['Vinicius', p('Vinícius Júnior', 'Júnior')],
+    ['Junior', p('Vinícius Júnior', 'Júnior')],
+    ['Higuain', p('Gonzalo Higuaín', 'Higuaín')],
+    ['Ismaila', p('Ismaïla Sarr', 'Sarr')],
+    ['Gundogan', p('İlkay Gündoğan', 'Gündoğan')], // dotted capital I + g-breve
+    ['Di Maria', p('Ángel Di María', 'Di María')],
+    ['Martinez', p('Emiliano Martínez', 'Martínez')],
+    ['Hojlund', p('Rasmus Højlund', 'Højlund')], // ø via transliteration
+  ];
+  for (const [guess, player] of cases) {
+    it(`accepts "${guess}" for ${player.fullName}`, () => {
+      expect(isMatch(guess, player)).toBe(true);
+    });
+  }
+  it('accepts the original accented spelling too', () => {
+    expect(isMatch('Higuaín', p('Gonzalo Higuaín', 'Higuaín'))).toBe(true);
+    expect(isMatch('Vinícius', p('Vinícius Júnior', 'Júnior'))).toBe(true);
+  });
+});
