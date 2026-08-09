@@ -92,7 +92,7 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
       <p className="source">
         Source:{' '}
         <a href={question.source.url} target="_blank" rel="noreferrer">
-          Wikipedia
+          {question.source.name}
         </a>
       </p>
     </div>
