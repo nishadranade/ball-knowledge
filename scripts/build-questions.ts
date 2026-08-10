@@ -15,6 +15,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { writeBankFile } from './bank.js';
 import { fetchWikitext, hasCached, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
 import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
@@ -432,10 +433,11 @@ async function main() {
   };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
-  await fs.writeFile(
-    path.join(OUT_DIR, 'questions.json'),
-    JSON.stringify({ generatedAt: NOW, questions }, null, 2),
-  );
+  // The bank is split one file per format so the browser can fetch just what a
+  // view needs (see scripts/bank.ts). This script owns LIST and CAREER_PATH;
+  // build-matches.ts owns MATCH and is left untouched here.
+  await writeBankFile('LIST', listQs, NOW);
+  await writeBankFile('CAREER_PATH', careerQs, NOW);
   await fs.writeFile(
     path.join(OUT_DIR, 'manifest.json'),
     JSON.stringify(
@@ -457,7 +459,7 @@ async function main() {
     ),
   );
   console.log(
-    `\nWrote ${questions.length} questions (${listQs.length} list, ${careerQs.length} career) to ${OUT_DIR}/questions.json`,
+    `\nWrote ${listQs.length} list + ${careerQs.length} career questions to ${OUT_DIR}/q-list.json and q-career.json`,
   );
 }
 

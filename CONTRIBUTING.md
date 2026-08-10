@@ -26,8 +26,10 @@ project, so the branch-and-merge ceremony added round trips without adding revie
 
 ## Ground rules
 
-- **Don't hand-edit generated data.** `public/data/questions.json`, `daily.json`, and
-  `manifest.json` are produced by the pipeline — never edit them by hand.
+- **Don't hand-edit generated data.** `public/data/q-list.json`, `q-career.json`, `q-match.json`,
+  `daily.json` and `manifest.json` are produced by the pipeline — never edit them by hand. The bank
+  is split one file per format so the browser fetches only what a view needs; there is no combined
+  file, and `public/data/questions.json` is gitignored so a stale local copy can't be committed.
 - **Refreshing data** (only when changing players/stats/sources): run `npm run build:data` (fetches
   from the PL/CL APIs + Wikipedia, then chains `build:matches` and `build:daily`), then commit the
   updated `public/data/*.json` **together with** your code change. `build:data` also freezes today's

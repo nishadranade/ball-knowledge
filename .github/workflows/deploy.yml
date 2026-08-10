@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
 # Builds the static site and publishes it to GitHub Pages on every push to main.
-# The committed public/data/questions.json is shipped as-is — CI does NOT call
+# The committed public/data/*.json bank is shipped as-is — CI does NOT call
 # the data pipeline (build:data), so no live API/Wikipedia calls happen in CI.
 # To refresh the dataset: run `npm run build:data` locally and commit the result.
 
@@ -86,10 +86,16 @@ jobs:
             exit 1
           fi
 
-          # Each URL must return 200. The two JSON files are what the app fetches
-          # at runtime; a 404 there means a blank game even if the HTML is right.
+          # Each URL must return 200. The JSON files are what the app fetches at
+          # runtime; a 404 there means a blank game even if the HTML is right.
+          # daily.json is the boot fetch (a frozen daily needs nothing else); the
+          # q-*.json bank files are pulled on demand per view.
           fail=0
-          for target in "$ORIGIN$bundle" "${URL}data/questions.json" "${URL}data/daily.json"; do
+          for target in "$ORIGIN$bundle" \
+            "${URL}data/daily.json" \
+            "${URL}data/q-list.json" \
+            "${URL}data/q-career.json" \
+            "${URL}data/q-match.json"; do
             code=000
             for i in 1 2 3 4 5; do
               code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$target")

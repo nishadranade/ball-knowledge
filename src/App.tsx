@@ -3,11 +3,12 @@ import type { Question, Format, Category, Difficulty } from './game/types';
 import {
   buildPracticeShareText,
   buildQuestionLink,
+  dateKey,
   resolveQuestionParam,
   type DailySchedule,
   type RoundResult,
 } from './game/daily';
-import { loadQuestions, loadDailySchedule } from './game/loadQuestions';
+import { loadFormats, loadDailySchedule, formatsNeeded } from './game/loadQuestions';
 import { QuestionRouter } from './components/QuestionRouter';
 import { DailyView } from './components/DailyView';
 
@@ -50,8 +51,15 @@ function shuffle<T>(arr: T[], seed: number): T[] {
 type Mode = 'DAILY' | 'PRACTICE';
 
 export default function App() {
-  const [all, setAll] = useState<Question[] | null>(null);
+  // The bank is fetched per format, on demand — `all` holds whatever the current
+  // view has needed so far, not the whole 5.2MB bank. See game/loadQuestions.ts.
+  const [all, setAll] = useState<Question[]>([]);
   const [schedule, setSchedule] = useState<DailySchedule | null>(null);
+  /** The schedule fetch has settled (whether or not it produced a schedule). */
+  const [scheduleReady, setScheduleReady] = useState(false);
+  /** Which format set `all` currently holds, so we can tell "loaded" from
+   *  "loaded something else" — switching filters narrows the bank. */
+  const [loadedKey, setLoadedKey] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<Mode>('DAILY');
   const [formatFilter, setFormatFilter] = useState<FormatFilter>('ALL');
@@ -71,25 +79,55 @@ export default function App() {
   const [practiceResult, setPracticeResult] = useState<RoundResult | null>(null);
   const [copied, setCopied] = useState(false);
 
+  // Any deep link (?q=) opens Practice.
   useEffect(() => {
-    loadQuestions()
-      .then((b) => {
-        setAll(b.questions);
-        // Any deep link (?q=) opens Practice; if it doesn't resolve we still
-        // switch to Practice and show a "not available" note + the deck.
-        if (linkedId) {
-          setMode('PRACTICE');
-          if (!resolveQuestionParam(linkedId, b.questions)) setLinkMissing(true);
-        }
-      })
-      .catch((e) => setError(String(e)));
-    // Best-effort: the frozen daily schedule (null if absent → live fallback).
-    loadDailySchedule().then(setSchedule).catch(() => setSchedule(null));
+    if (linkedId) setMode('PRACTICE');
   }, [linkedId]);
+
+  // The frozen daily schedule is the FIRST and often ONLY fetch: a frozen day
+  // carries its questions as full objects, so the daily needs no bank at all.
+  useEffect(() => {
+    loadDailySchedule()
+      .then(setSchedule)
+      .catch(() => setSchedule(null))
+      .finally(() => setScheduleReady(true));
+  }, []);
+
+  // Is today's daily already frozen? null until we know, so we don't fetch the
+  // bank speculatively and then discover it wasn't needed.
+  const dayIsFrozen = scheduleReady ? Boolean(schedule?.[dateKey()]) : null;
+
+  // Exactly the formats this view requires — the whole point of the split.
+  const needed = formatsNeeded({ mode, formatFilter, linkedToken: linkedId, dayIsFrozen });
+  const neededKey = needed.join(',');
+
+  useEffect(() => {
+    if (!neededKey) return; // nothing to fetch for this view
+    let cancelled = false;
+    loadFormats(neededKey.split(',') as Format[])
+      .then((qs) => {
+        if (cancelled) return;
+        setAll(qs);
+        setLoadedKey(neededKey);
+        setError(null);
+      })
+      .catch((e) => !cancelled && setError(String(e)));
+    return () => {
+      cancelled = true;
+    };
+  }, [neededKey]);
+
+  /** Everything this view needs is in `all`. */
+  const bankReady = neededKey === '' || loadedKey === neededKey;
+
+  // A deep link that doesn't resolve once its format has loaded is stale.
+  useEffect(() => {
+    if (!linkedId || !bankReady) return;
+    setLinkMissing(!resolveQuestionParam(linkedId, all));
+  }, [linkedId, bankReady, all]);
 
   // Which categories actually exist in the loaded data (drives the chip row).
   const categories = useMemo<Category[]>(() => {
-    if (!all) return [];
     const order: Category[] = ['PREMIER_LEAGUE', 'CHAMPIONS_LEAGUE', 'WORLD_CUP'];
     const present = new Set(all.map((q) => q.category));
     return order.filter((c) => present.has(c));
@@ -98,12 +136,11 @@ export default function App() {
   // A resolved deep link pins the deck to that single question (played fresh);
   // otherwise the deck is the filtered + shuffled set.
   const linkedQuestion = useMemo(
-    () => (linkedId && all ? resolveQuestionParam(linkedId, all) : null),
+    () => (linkedId ? resolveQuestionParam(linkedId, all) : null),
     [linkedId, all],
   );
 
   const deck = useMemo(() => {
-    if (!all) return [];
     if (linkedQuestion) return [linkedQuestion];
     const filtered = all.filter(
       (q) =>
@@ -161,7 +198,11 @@ export default function App() {
   };
 
   if (error) return <div className="app"><p className="result lose">Error: {error}</p></div>;
-  if (!all) return <div className="app"><p>Loading questions…</p></div>;
+  // Wait only for what this view actually needs. The daily additionally blocks
+  // on the schedule, since that decides whether the bank is needed at all — a
+  // frozen day renders without a single byte of it being fetched.
+  const waiting = (mode === 'DAILY' && !scheduleReady) || !bankReady;
+  if (waiting) return <div className="app"><p>Loading…</p></div>;
 
   return (
     <div className="app">

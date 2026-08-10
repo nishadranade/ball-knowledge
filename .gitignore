@@ -8,3 +8,7 @@ playwright-responses/
 .env
 .env.*
 .DS_Store
+
+# Superseded by the per-format bank files (q-list/q-career/q-match.json).
+# Kept ignored so a stale local copy can never be committed or served.
+public/data/questions.json

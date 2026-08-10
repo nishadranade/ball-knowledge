@@ -13,11 +13,11 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { readBank } from './bank.js';
 import { selectDaily, dateKey, type DailySchedule } from '../src/game/daily.js';
-import type { Question, QuestionBundle } from '../src/game/types.js';
+import type { Question } from '../src/game/types.js';
 
 const OUT_DIR = 'public/data';
-const QUESTIONS_PATH = path.join(OUT_DIR, 'questions.json');
 const SCHEDULE_PATH = path.join(OUT_DIR, 'daily.json');
 const EPOCH_KEY = '2026-07-28'; // must match daily.ts EPOCH_KEY
 
@@ -42,8 +42,9 @@ async function readSchedule(): Promise<DailySchedule> {
 }
 
 async function main() {
-  const bundle = JSON.parse(await fs.readFile(QUESTIONS_PATH, 'utf8')) as QuestionBundle;
-  const questions: Question[] = bundle.questions;
+  // The whole bank: a frozen day embeds full question objects, so selection has
+  // to see every format.
+  const questions: Question[] = await readBank();
 
   const schedule = await readSchedule();
   const today = dateKey();

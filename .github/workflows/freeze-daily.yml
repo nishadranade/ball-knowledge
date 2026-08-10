@@ -2,7 +2,7 @@ name: Freeze daily
 
 # Appends each new day to public/data/daily.json and commits it.
 #
-# WHY: an unfrozen day is served by hashing the live questions.json at runtime.
+# WHY: an unfrozen day is served by hashing the live question bank at runtime.
 # That's stable while the data is, but the next `build:data` would retroactively
 # reshuffle every day nobody had frozen yet — including days people had already
 # played. Freezing is append-only (build-daily.ts never rewrites an existing
@@ -35,7 +35,7 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # No network: build-daily.ts only reads the committed questions.json.
+      # No network: build-daily.ts only reads the committed bank files.
       - run: npm run build:daily
 
       - id: commit

@@ -5,21 +5,40 @@ import { dirname, resolve } from 'node:path';
 import type { QuestionBundle, ListQuestion, MatchQuestion } from '../src/game/types';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const dataPath = resolve(here, '../public/data/questions.json');
+// The bank is split one file per format so the browser can fetch just what it
+// needs (see scripts/bank.ts). These tests read all three and validate the union.
+const BANK_FILES = ['q-list.json', 'q-career.json', 'q-match.json'];
+const bankPaths = BANK_FILES.map((f) => resolve(here, '../public/data', f));
 
 // These tests validate the generated answer bank. They guard against
 // data-aggregation regressions (e.g. a player's ranking value being wrong),
 // which unit tests on pure logic can't catch.
-const bundle: QuestionBundle | null = existsSync(dataPath)
-  ? (JSON.parse(readFileSync(dataPath, 'utf8')) as QuestionBundle)
+const bundle: QuestionBundle | null = bankPaths.every(existsSync)
+  ? {
+      generatedAt: '',
+      questions: bankPaths.flatMap(
+        (p) => (JSON.parse(readFileSync(p, 'utf8')) as QuestionBundle).questions,
+      ),
+    }
   : null;
 
-describe('generated questions.json', () => {
-  it('exists (run `npm run build:data` if this fails)', () => {
+describe('generated answer bank', () => {
+  it('all three format files exist (run `npm run build:data` if this fails)', () => {
     expect(bundle).not.toBeNull();
   });
 
   if (!bundle) return;
+
+  it('each format file contains ONLY that format', () => {
+    // The browser fetches these individually, so a stray question in the wrong
+    // file would be invisible to the view that should show it.
+    const expected = ['LIST', 'CAREER_PATH', 'MATCH'];
+    bankPaths.forEach((p, i) => {
+      const qs = (JSON.parse(readFileSync(p, 'utf8')) as QuestionBundle).questions;
+      expect(qs.length).toBeGreaterThan(0);
+      for (const q of qs) expect(q.format).toBe(expected[i]);
+    });
+  });
 
   const lists = bundle.questions.filter((q): q is ListQuestion => q.format === 'LIST');
 

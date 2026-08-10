@@ -79,9 +79,12 @@ scripts/                     data-prep pipeline (Node, run at build time)
   fetch/wikipedia.ts         infobox → career stints (career-path questions)
   fetch/plFixtures.ts        pulselive fixtures + per-match events → named, team-attributed scorers
   build-questions.ts         orchestrates: per-competition banks → generate → validate → write JSON
-  build-matches.ts           MATCH questions only; MERGES into questions.json, leaving list/career untouched
+  build-matches.ts           MATCH questions only; rewrites just q-match.json, leaving list/career untouched
   build-daily.ts             append-only freeze of daily.json (epoch → today); never rewrites a past day
-public/data/questions.json   generated answer bank shipped to the browser
+  bank.ts                    read/write the per-format bank files (single source of truth)
+public/data/q-list.json      generated LIST questions   \
+public/data/q-career.json    generated CAREER questions  > fetched per view, not all at once
+public/data/q-match.json     generated MATCH questions  /
 public/data/daily.json       frozen per-day challenge (full question objects)
 public/data/manifest.json    sources, retrieval dates, generated counts
 src/
@@ -89,7 +92,7 @@ src/
   game/matching.ts           fuzzy last-name matcher (normalize + Levenshtein)
   game/useGame.ts            round state (lives, found answers, win/lose) — clock-free reducer
   game/daily.ts              date→question selection, frozen-schedule resolution, share text, deep links
-  game/loadQuestions.ts      fetches the generated JSON under import.meta.env.BASE_URL
+  game/loadQuestions.ts      lazy per-format bank fetches + the policy for which are needed
   components/                ListQuestion, CareerPathQuestion, MatchQuestion, GuessInput, Lives, QuestionRouter, DailyView
   App.tsx                    Daily/Practice modes, filters, deck, ?q= deep links
 tests/                       matcher unit tests, daily/share/link tests, generated-data guards
@@ -123,7 +126,7 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   game decided entirely by own goals.
 
 The PL API is undocumented/internal, so the pipeline insulates the game from it: it's called at
-build time only, every response is cached on disk, and output is validated before questions.json is
+build time only, every response is cached on disk, and output is validated before the bank is
 written. If the API ever changes, the shipped game keeps working from the last generated JSON.
 
 ## Commands
@@ -134,10 +137,10 @@ written. If the API ever changes, the shipped game keeps working from the last g
 ```bash
 npm install          # first-time setup
 npm run dev          # dev server
-npm run build:data   # regenerate questions.json + daily.json (PL API + Wikipedia; several min cold cache)
-npm run build:matches # regenerate ONLY the MATCH questions and merge them in (MATCH_SEASONS=n to limit)
+npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedia; several min cold cache)
+npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
-npm run build:app    # typecheck + production bundle (uses the committed questions.json)
+npm run build:app    # typecheck + production bundle (uses the committed bank)
 npm run build        # build:data + build:app (full local rebuild)
 npm test             # run tests (matcher, daily/share/links, generated-data guards)
 npm run preview      # serve the production build
@@ -147,7 +150,7 @@ npm run preview      # serve the production build
 
 Pushing to `main` auto-deploys to **GitHub Pages** via `.github/workflows/deploy.yml`
 (→ https://nishadranade.github.io/ball-knowledge/). CI runs `build:app` only — it ships the
-**committed** `public/data/questions.json` and never calls the live data pipeline. Vite's `base` is
+**committed** `public/data/q-*.json` bank and never calls the live data pipeline. Vite's `base` is
 `/ball-knowledge/` (override with the `BASE_PATH` env var for other hosts, e.g. `BASE_PATH=/`).
 
 Pull requests run `.github/workflows/ci.yml` (`npm ci` → `npm test` → `npm run build:app`) without
@@ -176,7 +179,7 @@ deploying. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR workflow.
 > branch publishing is intended.)
 
 **To refresh the data:** run `npm run build:data` locally, commit the updated
-`public/data/questions.json`, and push — the next deploy ships it.
+`public/data/q-*.json`, and push — the next deploy ships it.
 
 > Note: pinned to Vite 4 / Vitest 0.34 because the build host runs glibc 2.26, which Vite 5's
 > native Rollup binary does not support.
@@ -202,10 +205,27 @@ questions** (354 list, 1,290 career, 2,342 match) across two competitions — **
 **2012-08-18 to 2026-05-30**. Questions are split **Standard** (1,691) / **Hard** (2,295) across all
 three formats (see difficulty tiers below).
 
-> ⚠️ **`questions.json` is now 5.2 MB** and every visitor downloads all of it before the game can
-> start — match questions took it from 2.56 MB, roughly doubling the payload. Splitting the bank per
-> format and fetching on demand is the clear next step; until then the cheapest lever is lowering
-> `MATCH_SEASONS`.
+**The bank is split by format and fetched lazily**, because 5.2 MB in one file meant every visitor
+downloaded all of it before the game could start — including the 2.6 MB of match questions someone
+who only plays the daily never sees.
+
+| File | Size | Fetched when |
+|---|---|---|
+| `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
+| `q-list.json` | 0.5 MB | Practice with lists (or All), or an unfrozen daily |
+| `q-career.json` | 2.0 MB | Practice with career paths (or All), a career deep link, or an unfrozen daily |
+| `q-match.json` | 2.6 MB | Practice with match scorers (or All), a match deep link, or an unfrozen daily |
+
+So the default view — the daily — now costs **34 KB instead of 5,060 KB**. `formatsNeeded()` in
+`src/game/loadQuestions.ts` is the single decision point and is unit-tested, including the rule that
+nothing is fetched until the schedule says whether the day is frozen (guessing would defeat the
+purpose). Fetches are memoised per format, and failures deliberately aren't, so a later view retries.
+
+> ⚠️ **Next payload concern: `daily.json` grows forever.** It's the one file every visitor fetches
+> eagerly, and it gains a full day of question objects each night — currently ~2.6 KB/day, more now
+> that days embed a match question too, so roughly **1 MB/year**. The fix is to serve one file per
+> day (`data/daily/YYYY-MM-DD.json`) so the browser fetches only today's, falling back to live
+> selection on a 404. Not urgent at 34 KB; will be within a year.
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more

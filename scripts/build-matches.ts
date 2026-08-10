@@ -27,6 +27,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { readBankFile, writeBankFile, bankSizes, BANK_FORMATS } from './bank.js';
 import {
   COMPS,
   fetchSeasons,
@@ -36,16 +37,9 @@ import {
   type FixtureSummary,
 } from './fetch/plFixtures.js';
 import type { CompsId } from './fetch/premierLeague.js';
-import type {
-  Question,
-  QuestionBundle,
-  MatchQuestion,
-  MatchScorer,
-  Difficulty,
-} from '../src/game/types.js';
+import type { MatchQuestion, MatchScorer, Difficulty } from '../src/game/types.js';
 
 const OUT_DIR = 'public/data';
-const QUESTIONS_PATH = path.join(OUT_DIR, 'questions.json');
 const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json');
 const NOW = new Date().toISOString();
 const PL_SOURCE_URL = 'https://www.premierleague.com/results';
@@ -215,9 +209,10 @@ function validate(questions: MatchQuestion[]): string[] {
 }
 
 async function main() {
-  const bundle = JSON.parse(await fs.readFile(QUESTIONS_PATH, 'utf8')) as QuestionBundle;
-  const existing = bundle.questions.filter((q) => q.format !== 'MATCH');
-  console.log(`Existing bank: ${bundle.questions.length} questions (${existing.length} non-match)`);
+  // Only the other formats' files are read — this script owns MATCH entirely and
+  // rewrites that one file, so list/career questions are never even touched.
+  const existing = [...(await readBankFile('LIST')), ...(await readBankFile('CAREER_PATH'))];
+  console.log(`Existing bank: ${existing.length} list + career questions`);
 
   const matches = [
     ...(await buildForCompetition(COMPS.PREMIER_LEAGUE, 'PREMIER_LEAGUE')),
@@ -243,11 +238,8 @@ async function main() {
     ids.add(q.id);
   }
 
-  const questions: Question[] = [...existing, ...matches];
-  await fs.writeFile(
-    QUESTIONS_PATH,
-    JSON.stringify({ generatedAt: bundle.generatedAt, questions }, null, 2),
-  );
+  await writeBankFile('MATCH', matches, NOW);
+  const questions = [...existing, ...matches];
 
   // Keep the manifest's counts honest about what actually shipped.
   try {
@@ -272,9 +264,15 @@ async function main() {
     console.warn('  (no manifest.json to update)');
   }
 
-  const bytes = (await fs.stat(QUESTIONS_PATH)).size;
+  console.log(`\nWrote ${matches.length} match questions. Bank is now ${questions.length} total:`);
+  let totalBytes = 0;
+  for (const { format, bytes } of await bankSizes()) {
+    totalBytes += bytes;
+    console.log(`  ${format.padEnd(12)} ${(bytes / 1e6).toFixed(2)} MB`);
+  }
   console.log(
-    `\nWrote ${questions.length} questions (${matches.length} match) to ${QUESTIONS_PATH} — ${(bytes / 1e6).toFixed(2)} MB`,
+    `  ${'TOTAL'.padEnd(12)} ${(totalBytes / 1e6).toFixed(2)} MB across ${BANK_FORMATS.length} files ` +
+      `— a visitor fetches only the ones their view needs.`,
   );
 }
 

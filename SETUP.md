@@ -16,7 +16,7 @@ are the same on Linux).
    git clone https://github.com/nishadranade/ball-knowledge.git
    cd ball-knowledge
    ```
-   The generated data (`public/data/questions.json`, `daily.json`, `manifest.json`) is committed, so
+   The generated data (`public/data/q-*.json`, `daily.json`, `manifest.json`) is committed, so
    the game runs immediately — no data fetch needed. `node_modules/`, `dist/`, and the
    `scripts/.cache/` API cache are gitignored and don't need to be transferred.
 
@@ -72,7 +72,7 @@ Do this only if desired; the app works as-is without it.
   `npm install`.
 - **Port 5173 in use** — Vite will pick the next free port and print it; use that URL. Or run
   `npm run dev -- --port 3000`.
-- **Blank page / questions don't load** — confirm `public/data/questions.json` exists. If missing,
+- **Blank page / questions don't load** — confirm `public/data/q-list.json` and its siblings exist. If missing,
   run `npm run build:data` (needs internet to reach the PL API + Wikipedia).
 - **Assets 404 under `npm run preview`** — the production `base` is `/ball-knowledge/`, so the preview
   URL includes that path (`http://localhost:4173/ball-knowledge/`). For a root-path build, run
