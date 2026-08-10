@@ -1419,5 +1419,235 @@
         ]
       }
     }
+  },
+  "2026-08-10": {
+    "list": {
+      "id": "list_premier_league_goals_club_leicester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Leicester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jamie Vardy",
+          "lastName": "Vardy",
+          "value": 145,
+          "rank": 1
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 43,
+          "rank": 2
+        },
+        {
+          "fullName": "Riyad Mahrez",
+          "lastName": "Mahrez",
+          "value": 39,
+          "rank": 3
+        },
+        {
+          "fullName": "Harvey Barnes",
+          "lastName": "Barnes",
+          "value": 35,
+          "rank": 4
+        },
+        {
+          "fullName": "Emile Heskey",
+          "lastName": "Heskey",
+          "value": 33,
+          "rank": 5
+        },
+        {
+          "fullName": "Muzzy Izzet",
+          "lastName": "Izzet",
+          "value": 33,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_harvey_barnes",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harvey_Barnes",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2016–2023",
+          "club": "Leicester City",
+          "appearances": 146,
+          "goals": 35
+        },
+        {
+          "years": "2017",
+          "club": "Milton Keynes Dons",
+          "appearances": 21,
+          "goals": 6,
+          "loan": true
+        },
+        {
+          "years": "2017–2018",
+          "club": "Barnsley",
+          "appearances": 23,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "West Bromwich Albion",
+          "appearances": 26,
+          "goals": 9,
+          "loan": true
+        },
+        {
+          "years": "2023–",
+          "club": "Newcastle United",
+          "appearances": 91,
+          "goals": 21
+        }
+      ],
+      "answer": {
+        "fullName": "Harvey Barnes",
+        "lastName": "Barnes",
+        "aliases": [
+          "Harvey",
+          "Barnes"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_mikel_merino",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mikel_Merino",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014",
+          "club": "Osasuna B",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2014–2016",
+          "club": "Osasuna",
+          "appearances": 63,
+          "goals": 5
+        },
+        {
+          "years": "2016–2017",
+          "club": "Borussia Dortmund",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2017",
+          "club": "Newcastle United",
+          "appearances": 7,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2017–2018",
+          "club": "Newcastle United",
+          "appearances": 17,
+          "goals": 1
+        },
+        {
+          "years": "2018–2024",
+          "club": "Real Sociedad",
+          "appearances": 190,
+          "goals": 20
+        },
+        {
+          "years": "2024–",
+          "club": "Arsenal",
+          "appearances": 50,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "Mikel Merino",
+        "lastName": "Merino",
+        "aliases": [
+          "Mikel",
+          "Merino"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-10-25_brentford_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Brentford",
+        "awayTeam": "Liverpool",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2025-10-25",
+        "dateLabel": "25 October 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Dango Ouattara",
+          "lastName": "Ouattara",
+          "goals": 1,
+          "team": "Brentford"
+        },
+        {
+          "fullName": "Kevin Schade",
+          "lastName": "Schade",
+          "goals": 1,
+          "team": "Brentford"
+        },
+        {
+          "fullName": "Milos Kerkez",
+          "lastName": "Kerkez",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Igor Thiago",
+          "lastName": "Nascimento Rodrigues",
+          "goals": 1,
+          "team": "Brentford"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    }
   }
 }
