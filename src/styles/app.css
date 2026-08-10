@@ -164,3 +164,31 @@ footer { color: var(--muted); font-size: 0.8rem; margin-top: 1.5rem; }
 /* Practice share affordance under a finished question */
 .practice-share { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; }
 .link-missing { color: var(--warn); font-size: 0.9rem; margin: 0 0 1rem; }
+
+/* Match questions: fixture header, score entry, scorer prompt */
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.match-team { flex: 1 1 0; min-width: 6rem; }
+.match-team.home { text-align: right; }
+.match-team.away { text-align: left; }
+.match-score {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.match-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+.match-ask { margin: 0.75rem 0 0.5rem; }
+.match-og { color: var(--muted); font-size: 0.9rem; }

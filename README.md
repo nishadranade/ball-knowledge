@@ -1,6 +1,6 @@
 # ⚽ Ball Knowledge
 
-A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with two
+A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with three
 question formats and forgiving answer matching.
 
 **▶ Play it live: https://nishadranade.github.io/ball-knowledge/**
@@ -11,11 +11,18 @@ question formats and forgiving answer matching.
    tied); up to **3 wrong guesses**.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
+3. **Match scorers** — a real fixture shown in full (teams, score, date, competition round): name
+   everyone who scored in it, with up to **3 wrong guesses**. The score frames the question rather
+   than being part of it.
+   - **One slot per distinct scorer**, not per goal — a brace is a single slot, with the goal count
+     shown on reveal. So a 4–2 can have four slots, and the prompt says how many to name.
+   - **Own goals are excluded** from the answers (the scorer plays for the other side, which makes a
+     rotten answer) but are counted and disclosed, so the arithmetic still adds up.
 
 ## Modes
 
-- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 3 questions (one list +
-  two career paths) each day, picked deterministically from the calendar date (no backend). The day
+- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 4 questions (one list, two
+  career paths, one match) each day, picked deterministically from the calendar date (no backend). The day
   rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
   same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
   result** (emoji grid + "Ball Knowledge #N" + per-question time) via the Web Share API / clipboard.
@@ -30,17 +37,24 @@ question formats and forgiving answer matching.
 underneath players when the data is regenerated. Days not yet frozen fall back to hashing the live
 pool. See `scripts/build-daily.ts`.
 
-**Share links don't spoil answers.** List deep links keep a readable id (it only restates the visible
-prompt), but career-path ids are derived from the player's name, so career links use an **opaque hash
-token** instead — `?q=ckkzpn`, not `?q=career_alan_shearer` (`questionParam` in `src/game/daily.ts`).
+Each slot is **optional in the frozen schedule**, which is what lets the daily grow without
+rewriting history: a day frozen before `career2` or `match` existed simply lacks that key and stays
+the length it was actually played at. Each slot also draws on its own hash salt, so adding one never
+shifts the others.
+
+**Share links don't spoil answers.** A link is only obfuscated when its id would otherwise spell an
+answer. List and match ids restate what's already on screen (the prompt; the fixture and date), so
+they stay readable. Career-path ids *are* the player's name, so those use an **opaque hash token** —
+`?q=ckkzpn`, not `?q=career_alan_shearer` (`questionParam` in `src/game/daily.ts`).
 
 ## Filters (Practice)
 
-Filter by **competition** (Premier League / Champions League), **format** (lists / career paths),
-and **difficulty**. **Difficulty applies to both formats:** **Standard** is approachable — famous
-career players (best rank ≤200) and lists for major clubs/nations + overall (full top 10). **Hard**
-adds rarer career players (rank 201–500) and lists for lesser clubs/countries (capped at top 5, so
-their obscure rank 6–10 tail never shows in Standard). The daily challenge is always Standard-only.
+Filter by **competition** (Premier League / Champions League), **format** (lists / career paths /
+match scorers), and **difficulty**. **Difficulty applies to every format:** **Standard** is
+approachable — famous career players (best rank ≤200), lists for major clubs/nations + overall (full
+top 10), and matches from the last 5 years. **Hard** adds rarer career players (rank 201–500), lists
+for lesser clubs/countries (capped at top 5, so their obscure rank 6–10 tail never shows in
+Standard), and older matches. The daily challenge is always Standard-only.
 
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
 (`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). A **first name** on its own
@@ -59,7 +73,9 @@ scripts/                     data-prep pipeline (Node, run at build time)
   fetch/plAggregate.ts       API responses → PlayerRow[] per metric (overall + per-club splits)
   fetch/clScorers.ts         Wikipedia all-time CL ranked lists (goals, appearances)
   fetch/wikipedia.ts         infobox → career stints (career-path questions)
+  fetch/plFixtures.ts        pulselive fixtures + per-match events → named, team-attributed scorers
   build-questions.ts         orchestrates: per-competition banks → generate → validate → write JSON
+  build-matches.ts           MATCH questions only; MERGES into questions.json, leaving list/career untouched
   build-daily.ts             append-only freeze of daily.json (epoch → today); never rewrites a past day
 public/data/questions.json   generated answer bank shipped to the browser
 public/data/daily.json       frozen per-day challenge (full question objects)
@@ -70,7 +86,7 @@ src/
   game/useGame.ts            round state (lives, found answers, win/lose) — clock-free reducer
   game/daily.ts              date→question selection, frozen-schedule resolution, share text, deep links
   game/loadQuestions.ts      fetches the generated JSON under import.meta.env.BASE_URL
-  components/                ListQuestion, CareerPathQuestion, GuessInput, Lives, QuestionRouter, DailyView
+  components/                ListQuestion, CareerPathQuestion, MatchQuestion, GuessInput, Lives, QuestionRouter, DailyView
   App.tsx                    Daily/Practice modes, filters, deck, ?q= deep links
 tests/                       matcher unit tests, daily/share/link tests, generated-data guards
 ```
@@ -84,6 +100,23 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   pulselive and are labeled "since 2004/05" in the prompt (no clean all-time source exists yet —
   see roadmap). CL is overall + per-country only (no per-club).
 - **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
+- **MATCH questions** — the same pulselive API, via two endpoints: `/fixtures` (teams, scores, and a
+  `goals[]` of person ids) to decide which matches qualify, then `/fixtures/{id}` for the ones that
+  do, whose `teamLists` turn those ids into named scorers attributed to a side. A fixture whose
+  scorer can't be found in either team list is dropped rather than shipped with a gap.
+
+  Covered: the last 15 seasons, filtered so the fixture is one a fan would plausibly remember —
+
+  | Fixture | Kept when |
+  |---|---|
+  | PL, **big vs big** | always — the marquee games |
+  | PL, **big vs anyone else** | 3+ goals, **or** the non-big side won (an upset is memorable however few goals it took) |
+  | PL, neither side big | never |
+  | **Champions League** | knockout ties (the round is its own quality filter, and it avoids brittle matching on European club names) |
+
+  "Big" is Arsenal, Chelsea, Liverpool, Manchester City, Manchester United, Tottenham Hotspur.
+  Everything additionally needs **at least one nameable scorer**, which drops 0–0s and the freak
+  game decided entirely by own goals.
 
 The PL API is undocumented/internal, so the pipeline insulates the game from it: it's called at
 build time only, every response is cached on disk, and output is validated before questions.json is
@@ -98,6 +131,7 @@ written. If the API ever changes, the shipped game keeps working from the last g
 npm install          # first-time setup
 npm run dev          # dev server
 npm run build:data   # regenerate questions.json + daily.json (PL API + Wikipedia; several min cold cache)
+npm run build:matches # regenerate ONLY the MATCH questions and merge them in (MATCH_SEASONS=n to limit)
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
 npm run build:app    # typecheck + production bundle (uses the committed questions.json)
 npm run build        # build:data + build:app (full local rebuild)
@@ -158,10 +192,16 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **1,644
-questions** (354 list, 1,290 career) across two competitions — **Premier League** (1,105) and
-**Champions League** (539) — covering 48 nationalities and 46 clubs. Questions are split **Standard**
-(807) / **Hard** (837) across both formats (see difficulty tiers below).
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **3,986
+questions** (354 list, 1,290 career, 2,342 match) across two competitions — **Premier League**
+(3,044) and **Champions League** (942) — covering 48 nationalities, 46 clubs, and matches from
+**2012-08-18 to 2026-05-30**. Questions are split **Standard** (1,691) / **Hard** (2,295) across all
+three formats (see difficulty tiers below).
+
+> ⚠️ **`questions.json` is now 5.2 MB** and every visitor downloads all of it before the game can
+> start — match questions took it from 2.56 MB, roughly doubling the payload. Splitting the bank per
+> format and fetching on demand is the clear next step; until then the cheapest lever is lowering
+> `MATCH_SEASONS`.
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more

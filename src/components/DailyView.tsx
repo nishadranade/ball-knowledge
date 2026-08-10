@@ -9,8 +9,7 @@ import {
   type DailyResult,
   type DailySchedule,
 } from '../game/daily';
-import { ListQuestion } from './ListQuestion';
-import { CareerPathQuestion } from './CareerPathQuestion';
+import { QuestionRouter } from './QuestionRouter';
 
 interface Props {
   all: Question[];
@@ -67,10 +66,14 @@ export function DailyView({ all, schedule }: Props) {
   const day = dayNumber();
   const daily = useMemo(() => resolveDaily(all, schedule, date), [all, schedule, date]);
 
-  // Ordered daily questions (list first, then the two career paths). Days frozen
-  // before the daily grew to three have no `career2` and stay at two questions.
+  // Ordered daily questions: list, the two career paths, then the match. Days
+  // frozen before a slot existed simply lack it and stay the length they were
+  // actually played at.
   const questions = useMemo(
-    () => [daily.list, daily.career, daily.career2].filter((q): q is Question => q != null),
+    () =>
+      [daily.list, daily.career, daily.career2, daily.match].filter(
+        (q): q is Question => q != null,
+      ),
     [daily],
   );
 
@@ -145,17 +148,15 @@ export function DailyView({ all, schedule }: Props) {
       <p className="daily-progress">
         Daily · question {step + 1} of {questions.length}
       </p>
-      {q.format === 'LIST' ? (
-        <ListQuestion key={q.id} question={q} onComplete={handleComplete} onNext={advance} nextLabel={nextLabel} />
-      ) : (
-        <CareerPathQuestion
-          key={q.id}
-          question={q}
-          onComplete={handleComplete}
-          onNext={advance}
-          nextLabel={nextLabel}
-        />
-      )}
+      {/* Routed rather than branched here, so every format the game supports is
+          dispatched from ONE place — a new format can't be silently misrendered
+          as a career path, which is exactly what the old branch did. */}
+      <QuestionRouter
+        question={q}
+        onComplete={handleComplete}
+        onNext={advance}
+        nextLabel={nextLabel}
+      />
     </div>
   );
 }

@@ -24,6 +24,7 @@ const FORMAT_LABELS: Record<FormatFilter, string> = {
   ALL: 'All',
   LIST: 'Top-N lists',
   CAREER_PATH: 'Career paths',
+  MATCH: 'Match scorers',
 };
 
 const DIFFICULTY_LABELS: Record<Difficulty, string> = {
@@ -218,7 +219,7 @@ export default function App() {
           )}
 
           <nav className="filters">
-            {(['ALL', 'LIST', 'CAREER_PATH'] as FormatFilter[]).map((f) => (
+            {(['ALL', 'LIST', 'CAREER_PATH', 'MATCH'] as FormatFilter[]).map((f) => (
               <button
                 key={f}
                 className={formatFilter === f ? 'chip active' : 'chip'}

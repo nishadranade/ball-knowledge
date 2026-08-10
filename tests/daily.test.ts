@@ -16,7 +16,12 @@ import {
   type DailySchedule,
   type RoundResult,
 } from '../src/game/daily';
-import type { Question, ListQuestion, CareerPathQuestion } from '../src/game/types';
+import type {
+  Question,
+  ListQuestion,
+  CareerPathQuestion,
+  MatchQuestion,
+} from '../src/game/types';
 
 const list = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
   id,
@@ -40,9 +45,32 @@ const career = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Quest
   answer: { fullName: 'A B', lastName: 'B' },
 });
 
+const match = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
+  id,
+  category: 'PREMIER_LEAGUE',
+  format: 'MATCH',
+  prompt: 'p',
+  maxWrong: 3,
+  difficulty,
+  source: { name: 'x', url: 'x', retrievedAt: 'x' },
+  match: {
+    homeTeam: 'H',
+    awayTeam: 'A',
+    homeScore: 2,
+    awayScore: 1,
+    date: '2019-01-12',
+    dateLabel: '12 January 2019',
+  },
+  answers: [
+    { fullName: 'A B', lastName: 'B', goals: 2, team: 'H' },
+    { fullName: 'C D', lastName: 'D', goals: 1, team: 'A' },
+  ],
+});
+
 const pool: Question[] = [
   ...Array.from({ length: 10 }, (_, i) => list(`l${i}`)),
   ...Array.from({ length: 10 }, (_, i) => career(`c${i}`)),
+  ...Array.from({ length: 10 }, (_, i) => match(`m${i}`)),
 ];
 
 describe('dateKey / dayNumber (US Pacific)', () => {
@@ -110,6 +138,23 @@ describe('selectDaily', () => {
     const ids = new Set(keys.map((k) => selectDaily(pool, k).career2?.id));
     expect(ids.size).toBeGreaterThan(1);
   });
+  it('includes a MATCH question', () => {
+    const d = selectDaily(pool, '2026-03-05');
+    expect(d.match?.format).toBe('MATCH');
+  });
+  it('adding the match slot did not disturb the other draws', () => {
+    // The list / career / career2 salts are independent of ':match', so a pool
+    // with no match questions must resolve those three exactly as before.
+    const noMatches = pool.filter((q) => q.format !== 'MATCH');
+    for (const key of ['2026-03-05', '2026-07-04', '2027-01-01']) {
+      const full = selectDaily(pool, key);
+      const without = selectDaily(noMatches, key);
+      expect(full.list?.id).toBe(without.list?.id);
+      expect(full.career?.id).toBe(without.career?.id);
+      expect(full.career2?.id).toBe(without.career2?.id);
+      expect(without.match).toBeNull();
+    }
+  });
   it('leaves career2 null rather than duplicating when only one career exists', () => {
     const thin: Question[] = [list('l0'), career('c0')];
     const d = selectDaily(thin, '2026-03-05');
@@ -169,6 +214,20 @@ describe('resolveDaily (frozen schedule)', () => {
     expect(d.list?.id).toBe('frozen-list');
     expect(d.career?.id).toBe('frozen-career');
     expect(d.career2).toBeNull();
+    // Nor may a match be back-filled into a day frozen before matches existed.
+    expect(d.match).toBeNull();
+  });
+
+  it('keeps a frozen match question and never re-draws it', () => {
+    const schedule: DailySchedule = {
+      '2026-03-05': {
+        list: null,
+        career: null,
+        match: match('frozen-match') as MatchQuestion,
+      },
+    };
+    const d = resolveDaily(pool, schedule, '2026-03-05');
+    expect(d.match?.id).toBe('frozen-match');
   });
 
   it('falls back to live selection when the date is not frozen', () => {
@@ -228,6 +287,35 @@ describe('buildShareText', () => {
     expect(buildShareText(mk(0, true))).toContain('👤 Career: 🟩 (1 guess)'); // first try
     expect(buildShareText(mk(1, true))).toContain('👤 Career: 🟥🟩 (2 guesses)'); // second try
     expect(buildShareText(mk(2, false))).toContain('👤 Career: 🟥🟥 (missed)'); // both wrong
+  });
+
+  it('match row is a scorer grid in slot order', () => {
+    const result: DailyResult = {
+      day: 3,
+      results: [
+        {
+          format: 'MATCH',
+          found: 2,
+          total: 3,
+          wrong: 1,
+          maxWrong: 3,
+          won: false,
+          slots: [true, false, true],
+          elapsedMs: 51_000,
+        },
+      ],
+    };
+    expect(buildShareText(result)).toContain('⚽ Match: 🟩🟥🟩 (2/3 · 0:51)');
+  });
+
+  it('match row leaks neither the fixture, the score, nor any scorer', () => {
+    const text = buildShareText({
+      day: 3,
+      results: [{ format: 'MATCH', found: 3, total: 3, wrong: 0, maxWrong: 3, won: true }],
+    });
+    expect(text).not.toMatch(/\d+\s*[-–]\s*\d+/); // no scoreline
+    expect(text).not.toContain('Salah');
+    expect(text).not.toContain('Liverpool');
   });
 
   it('includes per-question time when elapsedMs is present', () => {
@@ -305,6 +393,13 @@ describe('buildQuestionLink / questionParam', () => {
   it('career token is stable for the same id', () => {
     expect(questionParam(career('career_x'))).toBe(questionParam(career('career_x')));
   });
+  it('MATCH links stay readable — the id restates the visible fixture, not an answer', () => {
+    // The score is shown, and the id names no scorer, so there is nothing to hide.
+    const q = match('match_premier_league_2019-01-12_liverpool_arsenal');
+    expect(buildQuestionLink(q, 'https://x', '/')).toBe(
+      'https://x/?q=match_premier_league_2019-01-12_liverpool_arsenal',
+    );
+  });
 });
 
 describe('resolveQuestionParam', () => {
@@ -321,6 +416,12 @@ describe('resolveQuestionParam', () => {
   it('resolves a career hash token back to the right question', () => {
     const token = questionParam(career('career_dominic_solanke'));
     expect(resolveQuestionParam(token, pool)?.id).toBe('career_dominic_solanke');
+  });
+  it('resolves a match id directly', () => {
+    const withMatch = [...pool, match('match_pl_2019-01-12_a_b')];
+    expect(resolveQuestionParam('match_pl_2019-01-12_a_b', withMatch)?.id).toBe(
+      'match_pl_2019-01-12_a_b',
+    );
   });
   it('returns null for an unknown / stale param', () => {
     expect(resolveQuestionParam('nope', pool)).toBeNull();

@@ -2,6 +2,7 @@ import type { Question } from '../game/types';
 import type { RoundResult } from '../game/daily';
 import { ListQuestion } from './ListQuestion';
 import { CareerPathQuestion } from './CareerPathQuestion';
+import { MatchQuestion } from './MatchQuestion';
 
 interface Props {
   question: Question;
@@ -16,6 +17,17 @@ export function QuestionRouter({ question, onNext, nextLabel, onComplete }: Prop
   if (question.format === 'LIST') {
     return (
       <ListQuestion
+        key={question.id}
+        question={question}
+        onNext={onNext}
+        nextLabel={nextLabel}
+        onComplete={onComplete}
+      />
+    );
+  }
+  if (question.format === 'MATCH') {
+    return (
+      <MatchQuestion
         key={question.id}
         question={question}
         onNext={onNext}

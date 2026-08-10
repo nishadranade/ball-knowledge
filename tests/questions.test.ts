@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import type { QuestionBundle, ListQuestion } from '../src/game/types';
+import type { QuestionBundle, ListQuestion, MatchQuestion } from '../src/game/types';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const dataPath = resolve(here, '../public/data/questions.json');
@@ -106,6 +106,81 @@ describe('generated questions.json', () => {
     const std = bundle.questions.filter((q) => q.difficulty === 'STANDARD');
     expect(std.some((q) => q.format === 'LIST')).toBe(true);
     expect(std.filter((q) => q.format === 'CAREER_PATH').length).toBeGreaterThanOrEqual(2);
+  });
+
+  const matches = bundle.questions.filter((q): q is MatchQuestion => q.format === 'MATCH');
+
+  it('has match questions (run `npm run build:matches` if this fails)', () => {
+    expect(matches.length).toBeGreaterThan(0);
+  });
+
+  it('every match accounts for exactly as many goals as its scoreline', () => {
+    // The single most important guard on this format: if the scorers plus own
+    // goals don't add up to the score, the question is simply wrong.
+    for (const q of matches) {
+      const tallied = q.answers.reduce((n, a) => n + a.goals, 0) + (q.ownGoals ?? 0);
+      expect(tallied).toBe(q.match.homeScore + q.match.awayScore);
+    }
+  });
+
+  it('match answers are distinct players with a team and at least one goal', () => {
+    for (const q of matches) {
+      const names = q.answers.map((a) => a.fullName);
+      expect(new Set(names).size).toBe(names.length); // a brace is ONE slot
+      for (const a of q.answers) {
+        expect(a.lastName.length).toBeGreaterThan(0);
+        expect(a.team.length).toBeGreaterThan(0);
+        expect(a.goals).toBeGreaterThanOrEqual(1);
+      }
+    }
+  });
+
+  it('every match has at least one nameable scorer', () => {
+    // Guards against 0-0s and games decided purely by own goals, which would
+    // render as a question with no slots at all.
+    for (const q of matches) expect(q.answers.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Premier League matches obey the big-team filter rules', () => {
+    const BIG = new Set([
+      'Arsenal',
+      'Chelsea',
+      'Liverpool',
+      'Manchester City',
+      'Manchester United',
+      'Tottenham Hotspur',
+    ]);
+    for (const q of matches) {
+      if (q.category !== 'PREMIER_LEAGUE') continue;
+      const { homeTeam, awayTeam, homeScore, awayScore } = q.match;
+      const homeBig = BIG.has(homeTeam);
+      const awayBig = BIG.has(awayTeam);
+      // At least one big side, always.
+      expect(homeBig || awayBig).toBe(true);
+      if (homeBig && awayBig) continue; // big vs big: no further constraint
+      // Mixed fixture: either the non-big side won, or it was a 3+ goal game.
+      const nonBigWon = homeBig ? awayScore > homeScore : homeScore > awayScore;
+      expect(nonBigWon || homeScore + awayScore >= 3).toBe(true);
+    }
+  });
+
+  it('each scorer played for one of the two teams in the fixture', () => {
+    for (const q of matches) {
+      const sides = new Set([q.match.homeTeam, q.match.awayTeam]);
+      for (const a of q.answers) expect(sides.has(a.team)).toBe(true);
+    }
+  });
+
+  it('match dates are ISO and the daily pool has Standard matches', () => {
+    for (const q of matches) expect(q.match.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(matches.some((q) => q.difficulty === 'STANDARD')).toBe(true);
+  });
+
+  it('Champions League matches are knockout ties, Premier League ones are not', () => {
+    for (const q of matches) {
+      if (q.category === 'CHAMPIONS_LEAGUE') expect(q.match.round).toBeTruthy();
+      else expect(q.match.round).toBeUndefined();
+    }
   });
 
   it('lesser clubs/countries are Hard and capped at top 5', () => {

@@ -18,13 +18,20 @@ export interface GameState {
 
 type Action = { type: 'guess'; value: string } | { type: 'giveUp' } | { type: 'reset' };
 
-/** Candidate players for the current question (all answers for LIST, the one for CAREER). */
+/** Candidate players for the current question: every answer for LIST and MATCH
+ *  (MATCH = the match's distinct scorers), the single player for CAREER_PATH. */
 function candidatesOf(q: Question): Player[] {
-  return q.format === 'LIST' ? q.answers : [q.answer];
+  switch (q.format) {
+    case 'LIST':
+    case 'MATCH':
+      return q.answers;
+    case 'CAREER_PATH':
+      return [q.answer];
+  }
 }
 
 function totalTargets(q: Question): number {
-  return q.format === 'LIST' ? q.answers.length : 1;
+  return q.format === 'CAREER_PATH' ? 1 : q.answers.length;
 }
 
 function makeReducer(q: Question) {

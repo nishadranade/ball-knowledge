@@ -10,7 +10,7 @@
  * timezone (DST handled automatically by Intl).
  */
 
-import type { Question, ListQuestion, CareerPathQuestion } from './types';
+import type { Question, ListQuestion, CareerPathQuestion, MatchQuestion } from './types';
 
 const TIME_ZONE = 'America/Los_Angeles';
 /** Launch epoch (Pacific) — the date that is day 1 of "Ball Knowledge #N". */
@@ -57,6 +57,9 @@ export interface DailySelection {
    *  to three questions have no `career2`, and must keep rendering as the
    *  two-question round they were actually played as. */
   career2?: CareerPathQuestion | null;
+  /** Match question. OPTIONAL for the same reason — days frozen before the match
+   *  format existed have no `match` and stay at whatever length they were. */
+  match?: MatchQuestion | null;
 }
 
 /**
@@ -129,10 +132,14 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
     careers.filter((q) => q.id !== career?.id),
     ':career2',
   );
+  // One match question per day. Its own salt, so adding it left every existing
+  // slot's draw untouched.
+  const matches = standard.filter((q): q is MatchQuestion => q.format === 'MATCH');
   return {
     list: list ? truncateDailyList(list) : null,
     career,
     career2,
+    match: pick(matches, ':match'),
   };
 }
 
@@ -157,21 +164,29 @@ export function resolveDaily(
   key: string = dateKey(),
 ): DailySelection {
   const frozen = schedule?.[key];
-  // `career2` is absent on days frozen before the daily became three questions;
-  // those stay two-question rounds forever, which is the whole point of freezing.
-  if (frozen) return { list: frozen.list, career: frozen.career, career2: frozen.career2 ?? null };
+  // `career2` and `match` are absent on days frozen before those slots existed;
+  // such a day keeps the length it was actually played at, which is the whole
+  // point of freezing.
+  if (frozen) {
+    return {
+      list: frozen.list,
+      career: frozen.career,
+      career2: frozen.career2 ?? null,
+      match: frozen.match ?? null,
+    };
+  }
   return selectDaily(all, key);
 }
 
 /** Per-question outcome captured when a round ends. */
 export interface RoundResult {
-  format: 'LIST' | 'CAREER_PATH';
+  format: 'LIST' | 'CAREER_PATH' | 'MATCH';
   found: number; // answers found (1 or 0 for career)
   total: number; // total answers (1 for career)
   wrong: number; // wrong guesses used
   maxWrong: number;
   won: boolean;
-  /** LIST only: per-slot found/missed in answer (rank) order — true = found. */
+  /** LIST and MATCH: per-slot found/missed in answer order — true = found. */
   slots?: boolean[];
   /** Wall-clock time on this question, ms (mount → round end). Optional so old
    *  stored results / tests without timing still work. */
@@ -195,16 +210,22 @@ export interface DailyResult {
  *  in any app (no monospace alignment): header, blank line, one line per
  *  question, blank line, URL. */
 /** One spoiler-free result line for a single round (shared by daily + practice).
- *  e.g. "📋 List: 🟩🟥🟩🟥🟩 (3/5 · 1:07)" or "👤 Career: 🟥🟩 (2 guesses · 0:24)". */
+ *  e.g. "📋 List: 🟩🟥🟩🟥🟩 (3/5 · 1:07)", "👤 Career: 🟥🟩 (2 guesses · 0:24)",
+ *  or "⚽ Match: 🟩🟥🟩 (2/3 · 0:51)". */
 export function formatRoundRow(r: RoundResult): string {
   const time = r.elapsedMs != null ? ` · ${formatDuration(r.elapsedMs)}` : '';
-  if (r.format === 'LIST') {
-    // One square per answer slot IN RANK ORDER: 🟩 found, 🟥 missed. Fall back
-    // to count-based (all found first) if slot order wasn't captured.
-    const grid = r.slots
+  /** One square per answer slot in answer order: 🟩 found, 🟥 missed. Falls back
+   *  to count-based (all found first) if slot order wasn't captured. */
+  const slotGrid = () =>
+    r.slots
       ? r.slots.map((f) => (f ? '🟩' : '🟥')).join('')
       : '🟩'.repeat(r.found) + '🟥'.repeat(Math.max(0, r.total - r.found));
-    return `📋 List: ${grid} (${r.found}/${r.total}${time})`;
+  if (r.format === 'LIST') {
+    return `📋 List: ${slotGrid()} (${r.found}/${r.total}${time})`;
+  }
+  if (r.format === 'MATCH') {
+    // Spoiler-free: which slots were filled, but never a name or the fixture.
+    return `⚽ Match: ${slotGrid()} (${r.found}/${r.total}${time})`;
   }
   // Career: one 🟥 per wrong guess, then 🟩 if solved — the guess sequence.
   // e.g. first try → 🟩; second try → 🟥🟩; missed → 🟥🟥.
@@ -218,18 +239,19 @@ export function buildShareText(result: DailyResult, url = 'nishadranade.github.i
   return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
 }
 
-/** The `?q=` token for a question. LIST ids just restate the (visible) prompt,
- *  so they stay readable. CAREER ids are derived from the player's name, which
- *  would spell the answer — so career links use an OPAQUE hash token instead. */
+/** The `?q=` token for a question. Only hashed when the id would otherwise spell
+ *  an answer. LIST ids just restate the (visible) prompt, and MATCH ids name the
+ *  fixture and date — both already on screen, and neither names a scorer. CAREER
+ *  ids ARE the player's name, so those use an OPAQUE hash token instead. */
 export function questionParam(q: Question): string {
   return q.format === 'CAREER_PATH' ? `c${hashString(q.id).toString(36)}` : q.id;
 }
 
-/** Resolve a `?q=` param back to a question. List ids match directly; career
- *  tokens match by hashing each career question's id. Returns null if unknown
- *  (stale link) → caller falls back to the practice deck. */
+/** Resolve a `?q=` param back to a question. List and match ids match directly;
+ *  career tokens match by hashing each career question's id. Returns null if
+ *  unknown (stale link) → caller falls back to the practice deck. */
 export function resolveQuestionParam(param: string, questions: Question[]): Question | null {
-  // Direct id match (list links, and a safety net for any literal id).
+  // Direct id match (list/match links, and a safety net for any literal id).
   const byId = questions.find((q) => q.id === param);
   if (byId) return byId;
   // Career hash token, e.g. "c1a2b3".

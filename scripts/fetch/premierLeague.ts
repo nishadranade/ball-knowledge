@@ -51,6 +51,15 @@ export interface PlRankedEntry {
 let lastAt = 0;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+export const PL_BASE = BASE;
+
+/** Throttled + disk-cached GET against the pulselive API. Exported so other
+ *  fetchers (see plFixtures.ts) share one cache, one rate limit, one header set
+ *  rather than each re-implementing the politeness rules. */
+export async function cachedGet(url: string, cacheKey: string): Promise<any> {
+  return cachedFetch(url, cacheKey);
+}
+
 async function cachedFetch(url: string, cacheKey: string): Promise<any> {
   const file = path.join(CACHE_DIR, `${cacheKey}.json`);
   try {
