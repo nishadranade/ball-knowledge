@@ -37,6 +37,10 @@ question formats and forgiving answer matching.
 underneath players when the data is regenerated. Days not yet frozen fall back to hashing the live
 pool. See `scripts/build-daily.ts`.
 
+`.github/workflows/freeze-daily.yml` runs this nightly at 09:30 UTC (after Pacific midnight
+year-round) and commits the result, so the unfrozen window stays one day rather than growing until
+someone remembers. The freeze is append-only, so it can never disturb a day already recorded.
+
 Each slot is **optional in the frozen schedule**, which is what lets the daily grow without
 rewriting history: a day frozen before `career2` or `match` existed simply lacks that key and stays
 the length it was actually played at. Each slot also draws on its own hash salt, so adding one never

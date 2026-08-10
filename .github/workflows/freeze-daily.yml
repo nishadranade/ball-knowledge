@@ -1,0 +1,65 @@
+name: Freeze daily
+
+# Appends each new day to public/data/daily.json and commits it.
+#
+# WHY: an unfrozen day is served by hashing the live questions.json at runtime.
+# That's stable while the data is, but the next `build:data` would retroactively
+# reshuffle every day nobody had frozen yet — including days people had already
+# played. Freezing is append-only (build-daily.ts never rewrites an existing
+# entry), so running this daily just closes that window.
+#
+# 09:30 UTC is after Pacific midnight all year (02:30 PDT / 01:30 PST), so the
+# day being frozen is always the one that has just started.
+
+on:
+  schedule:
+    - cron: '30 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write # commit daily.json back to main
+  actions: write # dispatch the deploy below
+
+concurrency:
+  group: freeze-daily
+  cancel-in-progress: false
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # No network: build-daily.ts only reads the committed questions.json.
+      - run: npm run build:daily
+
+      - id: commit
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- public/data/daily.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "daily.json already up to date — nothing to freeze."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/daily.json
+          git commit -m "Freeze daily for $(date -u +%Y-%m-%d)
+
+          Automated append-only freeze so a later build:data can't retroactively
+          change a day that has already been played. See .github/workflows/freeze-daily.yml"
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # A push made with GITHUB_TOKEN does NOT trigger other workflows, so the
+      # deploy has to be asked for explicitly — otherwise the freeze would sit
+      # committed but unpublished until the next manual push.
+      - if: steps.commit.outputs.changed == 'true'
+        run: gh workflow run "Deploy to GitHub Pages" --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
