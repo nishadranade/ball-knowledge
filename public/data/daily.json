@@ -1874,5 +1874,190 @@
         }
       ]
     }
+  },
+  "2026-08-12": {
+    "list": {
+      "id": "list_premier_league_appearances_club_manchester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "David Silva",
+          "lastName": "Silva",
+          "value": 309,
+          "rank": 1
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Silva",
+          "value": 304,
+          "rank": 2
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 285,
+          "rank": 3
+        },
+        {
+          "fullName": "Ederson",
+          "lastName": "Ederson",
+          "value": 276,
+          "rank": 4
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 275,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_claudio_marchisio",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 126,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Claudio_Marchisio",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2005–2018",
+          "club": "Juventus",
+          "appearances": 294,
+          "goals": 33
+        },
+        {
+          "years": "2007–2008",
+          "club": "Empoli",
+          "appearances": 26,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "Zenit Saint Petersburg",
+          "appearances": 9,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Claudio Marchisio",
+        "lastName": "Marchisio",
+        "aliases": [
+          "Claudio",
+          "Marchisio"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_alphonso_davies",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 81,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Alphonso_Davies",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2015–2016",
+          "club": "Whitecaps FC 2",
+          "appearances": 11,
+          "goals": 2
+        },
+        {
+          "years": "2016–2018",
+          "club": "Vancouver Whitecaps FC",
+          "appearances": 65,
+          "goals": 8
+        },
+        {
+          "years": "2018–2019",
+          "club": "Bayern Munich II",
+          "appearances": 6,
+          "goals": 0
+        },
+        {
+          "years": "2019–",
+          "club": "Bayern Munich",
+          "appearances": 167,
+          "goals": 10
+        }
+      ],
+      "answer": {
+        "fullName": "Alphonso Davies",
+        "lastName": "Davies",
+        "aliases": [
+          "Alphonso",
+          "Davies"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-12-03_chelsea_brighton_hove_albion",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Brighton & Hove Albion",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2023-12-03",
+        "dateLabel": "3 December 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "goals": 2,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Levi Colwill",
+          "lastName": "Colwill",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Facundo Buonanotte",
+          "lastName": "Buonanotte",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        },
+        {
+          "fullName": "João Pedro",
+          "lastName": "Junqueira de Jesus",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        }
+      ]
+    }
   }
 }
