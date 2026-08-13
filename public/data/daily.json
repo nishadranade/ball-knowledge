@@ -2059,5 +2059,238 @@
         }
       ]
     }
+  },
+  "2026-08-13": {
+    "list": {
+      "id": "list_premier_league_goals_country_sweden_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Swedish goalscorers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Alexander Isak",
+          "lastName": "Isak",
+          "value": 57,
+          "rank": 1
+        },
+        {
+          "fullName": "Freddie Ljungberg",
+          "lastName": "Ljungberg",
+          "value": 48,
+          "rank": 2
+        },
+        {
+          "fullName": "Sebastian Larsson",
+          "lastName": "Larsson",
+          "value": 26,
+          "rank": 3
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "value": 22,
+          "rank": 4
+        },
+        {
+          "fullName": "Johan Elmander",
+          "lastName": "Elmander",
+          "value": 19,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_chris_sutton",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 57,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Chris_Sutton",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1991–1994",
+          "club": "Norwich City",
+          "appearances": 102,
+          "goals": 35
+        },
+        {
+          "years": "1994–1999",
+          "club": "Blackburn Rovers",
+          "appearances": 130,
+          "goals": 47
+        },
+        {
+          "years": "1999–2000",
+          "club": "Chelsea",
+          "appearances": 28,
+          "goals": 1
+        },
+        {
+          "years": "2000–2006",
+          "club": "Celtic",
+          "appearances": 130,
+          "goals": 63
+        },
+        {
+          "years": "2006",
+          "club": "Birmingham City",
+          "appearances": 10,
+          "goals": 1
+        },
+        {
+          "years": "2006–2007",
+          "club": "Aston Villa",
+          "appearances": 8,
+          "goals": 1
+        },
+        {
+          "years": "2012",
+          "club": "Wroxham",
+          "appearances": 1,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Chris Sutton",
+        "lastName": "Sutton",
+        "aliases": [
+          "Chris",
+          "Sutton"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_pascal_gro_",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 58,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Pascal_Groß",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2011",
+          "club": "TSG Hoffenheim",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2009–2011",
+          "club": "TSG Hoffenheim II",
+          "appearances": 17,
+          "goals": 4
+        },
+        {
+          "years": "2011–2012",
+          "club": "Karlsruher SC",
+          "appearances": 25,
+          "goals": 3
+        },
+        {
+          "years": "2011",
+          "club": "Karlsruher SC II",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "2012–2017",
+          "club": "FC Ingolstadt",
+          "appearances": 158,
+          "goals": 17
+        },
+        {
+          "years": "2013",
+          "club": "FC Ingolstadt II",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2017–2024",
+          "club": "Brighton & Hove Albion",
+          "appearances": 228,
+          "goals": 30
+        },
+        {
+          "years": "2024–2026",
+          "club": "Borussia Dortmund",
+          "appearances": 41,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Brighton & Hove Albion",
+          "appearances": 19,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Pascal Groß",
+        "lastName": "Groß",
+        "aliases": [
+          "Pascal",
+          "Groß"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-09-20_brighton_hove_albion_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Brighton & Hove Albion",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2025-09-20",
+        "dateLabel": "20 September 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Yankuba Minteh",
+          "lastName": "Minteh",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        },
+        {
+          "fullName": "Yasin Ayari",
+          "lastName": "Ayari",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        }
+      ],
+      "ownGoals": 1
+    }
   }
 }
