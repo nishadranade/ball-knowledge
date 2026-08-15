@@ -2498,5 +2498,185 @@
         }
       ]
     }
+  },
+  "2026-08-15": {
+    "list": {
+      "id": "list_premier_league_goals_club_liverpool_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Liverpool in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 191,
+          "rank": 1
+        },
+        {
+          "fullName": "Robbie Fowler",
+          "lastName": "Fowler",
+          "value": 128,
+          "rank": 2
+        },
+        {
+          "fullName": "Steven Gerrard",
+          "lastName": "Gerrard",
+          "value": 120,
+          "rank": 3
+        },
+        {
+          "fullName": "Michael Owen",
+          "lastName": "Owen",
+          "value": 118,
+          "rank": 4
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 90,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_gabriel_agbonlahor",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 68,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Agbonlahor",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2005–2018",
+          "club": "Aston Villa",
+          "appearances": 341,
+          "goals": 76
+        },
+        {
+          "years": "2005",
+          "club": "Watford",
+          "appearances": 2,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2005",
+          "club": "Sheffield Wednesday",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Gabriel Agbonlahor",
+        "lastName": "Agbonlahor",
+        "aliases": [
+          "Gabriel",
+          "Agbonlahor"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_granit_xhaka",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 86,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Granit_Xhaka",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2012",
+          "club": "Basel",
+          "appearances": 42,
+          "goals": 1
+        },
+        {
+          "years": "2012–2016",
+          "club": "Borussia Mönchengladbach",
+          "appearances": 108,
+          "goals": 6
+        },
+        {
+          "years": "2016–2023",
+          "club": "Arsenal",
+          "appearances": 225,
+          "goals": 17
+        },
+        {
+          "years": "2023–2025",
+          "club": "Bayer Leverkusen",
+          "appearances": 66,
+          "goals": 5
+        },
+        {
+          "years": "2025–",
+          "club": "Sunderland",
+          "appearances": 34,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Granit Xhaka",
+        "lastName": "Xhaka",
+        "aliases": [
+          "Granit",
+          "Xhaka"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-11-25_manchester_city_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Liverpool",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2023-11-25",
+        "dateLabel": "25 November 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    }
   }
 }
