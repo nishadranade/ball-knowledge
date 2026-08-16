@@ -2678,5 +2678,221 @@
         }
       ]
     }
+  },
+  "2026-08-16": {
+    "list": {
+      "id": "list_premier_league_goals_club_manchester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 112,
+          "rank": 2
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "value": 91,
+          "rank": 3
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "value": 68,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_jordan_ayew",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 151,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jordan_Ayew",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2014",
+          "club": "Marseille",
+          "appearances": 111,
+          "goals": 14
+        },
+        {
+          "years": "2014",
+          "club": "Sochaux",
+          "appearances": 17,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2014–2015",
+          "club": "Lorient",
+          "appearances": 31,
+          "goals": 12
+        },
+        {
+          "years": "2015–2017",
+          "club": "Aston Villa",
+          "appearances": 51,
+          "goals": 9
+        },
+        {
+          "years": "2017–2019",
+          "club": "Swansea City",
+          "appearances": 50,
+          "goals": 8
+        },
+        {
+          "years": "2018–2019",
+          "club": "Crystal Palace",
+          "appearances": 20,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2019–2024",
+          "club": "Crystal Palace",
+          "appearances": 175,
+          "goals": 21
+        },
+        {
+          "years": "2024–2026",
+          "club": "Leicester City",
+          "appearances": 72,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "Jordan Ayew",
+        "lastName": "Ayew",
+        "aliases": [
+          "Jordan",
+          "Ayew"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_kevin_nolan",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 44,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kevin_Nolan",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2009",
+          "club": "Bolton Wanderers",
+          "appearances": 296,
+          "goals": 40
+        },
+        {
+          "years": "2009–2011",
+          "club": "Newcastle United",
+          "appearances": 85,
+          "goals": 29
+        },
+        {
+          "years": "2011–2015",
+          "club": "West Ham United",
+          "appearances": 141,
+          "goals": 30
+        },
+        {
+          "years": "2016",
+          "club": "Leyton Orient",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2017–2018",
+          "club": "Notts County",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kevin Nolan",
+        "lastName": "Nolan",
+        "aliases": [
+          "Kevin",
+          "Nolan"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-02-11_manchester_city_fulham",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Fulham",
+        "homeScore": 3,
+        "awayScore": 0,
+        "date": "2026-02-11",
+        "dateLabel": "11 February 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Nico O'Reilly",
+          "lastName": "O'Reilly",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    }
   }
 }
