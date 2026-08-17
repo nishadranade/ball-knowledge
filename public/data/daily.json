@@ -2894,5 +2894,203 @@
         }
       ]
     }
+  },
+  "2026-08-17": {
+    "list": {
+      "id": "list_premier_league_appearances_club_manchester_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Manchester United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Giggs",
+          "lastName": "Giggs",
+          "value": 632,
+          "rank": 1
+        },
+        {
+          "fullName": "Paul Scholes",
+          "lastName": "Scholes",
+          "value": 499,
+          "rank": 2
+        },
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "value": 415,
+          "rank": 3
+        },
+        {
+          "fullName": "Gary Neville",
+          "lastName": "Neville",
+          "value": 400,
+          "rank": 4
+        },
+        {
+          "fullName": "Wayne Rooney",
+          "lastName": "Rooney",
+          "value": 393,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_morgan_gibbs_white",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 157,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morgan_Gibbs-White",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2017–2022",
+          "club": "Wolverhampton Wanderers",
+          "appearances": 68,
+          "goals": 1
+        },
+        {
+          "years": "2020–2021",
+          "club": "Swansea City",
+          "appearances": 5,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2021–2022",
+          "club": "Sheffield United",
+          "appearances": 35,
+          "goals": 11,
+          "loan": true
+        },
+        {
+          "years": "2022–",
+          "club": "Nottingham Forest",
+          "appearances": 143,
+          "goals": 32
+        }
+      ],
+      "answer": {
+        "fullName": "Morgan Gibbs-White",
+        "lastName": "Gibbs-White",
+        "aliases": [
+          "Morgan",
+          "Gibbs-White"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_maxi_pereira",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maxi_Pereira",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2002–2007",
+          "club": "Defensor",
+          "appearances": 125,
+          "goals": 25
+        },
+        {
+          "years": "2007–2015",
+          "club": "Benfica",
+          "appearances": 212,
+          "goals": 13
+        },
+        {
+          "years": "2015–2019",
+          "club": "Porto",
+          "appearances": 89,
+          "goals": 3
+        },
+        {
+          "years": "2021",
+          "club": "Peñarol",
+          "appearances": 20,
+          "goals": 1
+        },
+        {
+          "years": "2022–2023",
+          "club": "River Plate (UY)",
+          "appearances": 46,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Maxi Pereira",
+        "lastName": "Pereira",
+        "aliases": [
+          "Maxi",
+          "Pereira"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-12-18_leeds_united_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Leeds United",
+        "awayTeam": "Arsenal",
+        "homeScore": 1,
+        "awayScore": 4,
+        "date": "2021-12-18",
+        "dateLabel": "18 December 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "goals": 2,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Raphinha",
+          "lastName": "Dias Belloli",
+          "goals": 1,
+          "team": "Leeds United"
+        },
+        {
+          "fullName": "Emile Smith Rowe",
+          "lastName": "Smith Rowe",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    }
   }
 }
