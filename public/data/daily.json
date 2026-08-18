@@ -3092,5 +3092,204 @@
         }
       ]
     }
+  },
+  "2026-08-18": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_everton_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Everton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Tim Howard",
+          "lastName": "Howard",
+          "value": 116,
+          "rank": 1
+        },
+        {
+          "fullName": "Jordan Pickford",
+          "lastName": "Pickford",
+          "value": 94,
+          "rank": 2
+        },
+        {
+          "fullName": "Neville Southall",
+          "lastName": "Southall",
+          "value": 62,
+          "rank": 3
+        },
+        {
+          "fullName": "Nigel Martyn",
+          "lastName": "Martyn",
+          "value": 30,
+          "rank": 4
+        },
+        {
+          "fullName": "Thomas Myhre",
+          "lastName": "Myhre",
+          "value": 24,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_gary_pallister",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 60,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gary_Pallister",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1984–1989",
+          "club": "Middlesbrough",
+          "appearances": 156,
+          "goals": 5
+        },
+        {
+          "years": "1985",
+          "club": "Darlington",
+          "appearances": 7,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "1989–1998",
+          "club": "Manchester United",
+          "appearances": 317,
+          "goals": 12
+        },
+        {
+          "years": "1998–2001",
+          "club": "Middlesbrough",
+          "appearances": 55,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Gary Pallister",
+        "lastName": "Pallister",
+        "aliases": [
+          "Gary",
+          "Pallister"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ayoze_p_rez",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 159,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ayoze_Pérez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2013",
+          "club": "Tenerife B",
+          "appearances": 35,
+          "goals": 11
+        },
+        {
+          "years": "2012–2014",
+          "club": "Tenerife",
+          "appearances": 50,
+          "goals": 17
+        },
+        {
+          "years": "2014–2019",
+          "club": "Newcastle United",
+          "appearances": 179,
+          "goals": 42
+        },
+        {
+          "years": "2019–2023",
+          "club": "Leicester City",
+          "appearances": 80,
+          "goals": 12
+        },
+        {
+          "years": "2023",
+          "club": "Betis",
+          "appearances": 19,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2023–2024",
+          "club": "Betis",
+          "appearances": 31,
+          "goals": 9
+        },
+        {
+          "years": "2024–",
+          "club": "Villarreal",
+          "appearances": 55,
+          "goals": 24
+        }
+      ],
+      "answer": {
+        "fullName": "Ayoze Pérez",
+        "lastName": "Pérez",
+        "aliases": [
+          "Ayoze",
+          "Pérez"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2026-03-11_bayer_04_leverkusen_arsenal",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Bayer 04 Leverkusen",
+        "awayTeam": "Arsenal",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2026-03-11",
+        "dateLabel": "11 March 2026",
+        "round": "Round of 16, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Andrich",
+          "lastName": "Andrich",
+          "goals": 1,
+          "team": "Bayer 04 Leverkusen"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    }
   }
 }
