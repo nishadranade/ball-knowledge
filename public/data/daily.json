@@ -3291,5 +3291,254 @@
         }
       ]
     }
+  },
+  "2026-08-19": {
+    "list": {
+      "id": "list_champions_league_assists_country_portugal_10",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Portuguese assist providers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "Ronaldo",
+          "value": 32,
+          "rank": 1
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Silva",
+          "value": 12,
+          "rank": 2
+        },
+        {
+          "fullName": "João Cancelo",
+          "lastName": "Cancelo",
+          "value": 11,
+          "rank": 3
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 10,
+          "rank": 4
+        },
+        {
+          "fullName": "João Moutinho",
+          "lastName": "Moutinho",
+          "value": 7,
+          "rank": 5
+        },
+        {
+          "fullName": "Luís Figo",
+          "lastName": "Figo",
+          "value": 7,
+          "rank": 6
+        },
+        {
+          "fullName": "João Mário",
+          "lastName": "Mário",
+          "value": 7,
+          "rank": 7
+        }
+      ]
+    },
+    "career": {
+      "id": "career_frank_sinclair",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 172,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Frank_Sinclair",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1990–1998",
+          "club": "Chelsea",
+          "appearances": 169,
+          "goals": 7
+        },
+        {
+          "years": "1991–1992",
+          "club": "West Bromwich Albion",
+          "appearances": 6,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "1998–2004",
+          "club": "Leicester City",
+          "appearances": 164,
+          "goals": 3
+        },
+        {
+          "years": "2004–2007",
+          "club": "Burnley",
+          "appearances": 92,
+          "goals": 1
+        },
+        {
+          "years": "2007",
+          "club": "Huddersfield Town",
+          "appearances": 13,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2007–2008",
+          "club": "Huddersfield Town",
+          "appearances": 29,
+          "goals": 0
+        },
+        {
+          "years": "2008–2009",
+          "club": "Lincoln City",
+          "appearances": 23,
+          "goals": 0
+        },
+        {
+          "years": "2009",
+          "club": "Wycombe Wanderers",
+          "appearances": 9,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2009–2011",
+          "club": "Wrexham",
+          "appearances": 57,
+          "goals": 0
+        },
+        {
+          "years": "2011",
+          "club": "Hendon",
+          "appearances": 10,
+          "goals": 0
+        },
+        {
+          "years": "2012–2015",
+          "club": "Colwyn Bay",
+          "appearances": 66,
+          "goals": 8
+        },
+        {
+          "years": "2015",
+          "club": "Brackley Town",
+          "appearances": 13,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Frank Sinclair",
+        "lastName": "Sinclair",
+        "aliases": [
+          "Frank",
+          "Sinclair"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_fabi_n_ruiz",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Fabián_Ruiz",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2016",
+          "club": "Betis B",
+          "appearances": 23,
+          "goals": 2
+        },
+        {
+          "years": "2014–2018",
+          "club": "Betis",
+          "appearances": 56,
+          "goals": 3
+        },
+        {
+          "years": "2017",
+          "club": "Elche",
+          "appearances": 18,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2018–2022",
+          "club": "Napoli",
+          "appearances": 125,
+          "goals": 18
+        },
+        {
+          "years": "2022–",
+          "club": "Paris Saint-Germain",
+          "appearances": 98,
+          "goals": 9
+        }
+      ],
+      "answer": {
+        "fullName": "Fabián Ruiz",
+        "lastName": "Ruiz",
+        "aliases": [
+          "Fabián",
+          "Ruiz"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-02-03_chelsea_west_ham_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "West Ham United",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2025-02-03",
+        "dateLabel": "3 February 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "goals": 1,
+          "team": "West Ham United"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ],
+      "ownGoals": 1
+    }
   }
 }
