@@ -67,8 +67,8 @@ result saved before per-question timing existed won't falsely look instant):
 | 5:00 or more | none |
 
 The `/max` half of the score is the best achievable on that exact set of results — it varies with the
-day's question/slot count (which has grown over time, and will again if SQUAD ever joins the daily),
-so it's computed alongside the score rather than being a fixed constant.
+day's question/slot count, which has grown over time (career2, then match, then squad from
+2026-08-20), so it's computed alongside the score rather than being a fixed constant.
 
 **No backend, no leaderboard.** The score is computed client-side and compared by pasting share text,
 the same way the emoji grid already is — there's nowhere it's collected or ranked across visitors. See
