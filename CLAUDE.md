@@ -51,6 +51,13 @@ the container exits. Check `git status` after.
 - **A frozen day in `daily.json` is immutable.** `build-daily.ts` is append-only and must stay that
   way; players have already played those rounds. Every daily slot is optional in the schedule, which
   is what lets the daily grow without rewriting history.
+- **`SPEED_TIERS` in `computeDailyScore` (`src/game/daily.ts`) does NOT self-adjust.** The accuracy
+  side of the score scales automatically with each question's own `maxWrong`, but the speed bonus is
+  a flat time budget for the WHOLE day. This already broke once: squad joined the daily and the top
+  speed tier (a leftover from the 4-question day) went from "fast" to "basically unreachable" in the
+  same breath, since typing 11 names takes real time. Adding, removing, or reordering a daily slot —
+  or changing a format's own answer count — should come with a check of whether `SPEED_TIERS` still
+  makes sense, not just whether the code compiles.
 - **Keep `src/game/useGame.ts` pure** — no timers, no `Date.now()`, no side effects. Timing and IO
   belong in components.
 - **No new runtime dependencies** without discussion; this ships to the browser.
