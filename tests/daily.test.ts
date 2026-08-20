@@ -439,54 +439,86 @@ describe('formatRoundRow (SQUAD)', () => {
 });
 
 describe('computeDailyScore', () => {
-  const win = (format: RoundResult['format'], found: number, total: number, wrong = 0): RoundResult => ({
+  const win = (
+    format: RoundResult['format'],
+    found: number,
+    total: number,
+    wrong = 0,
+    maxWrong = 3,
+  ): RoundResult => ({
     format,
     found,
     total,
     wrong,
-    maxWrong: 3,
+    maxWrong,
     won: found === total,
   });
 
-  it('a perfect, untimed round earns 10/slot plus the perfect bonus', () => {
-    const { points, max } = computeDailyScore([win('LIST', 5, 5)]);
-    expect(points).toBe(5 * 10 + 10); // 60
-    expect(max).toBe(5 * 10 + 10 + 40); // + best-tier speed bonus headroom
+  it('a perfect, untimed round earns the full per-question ceiling plus a maxWrong-scaled bonus', () => {
+    const { points, max } = computeDailyScore([win('LIST', 5, 5, 0, 3)]);
+    expect(points).toBe(40 + 3 * 4); // 40 accuracy + (maxWrong 3 × 4) perfect bonus = 52
+    expect(max).toBe(40 + 3 * 4 + 40); // + best-tier speed bonus headroom
   });
 
-  it('a wrong-guess penalty is floored at that round\'s own accuracy points — never negative', () => {
-    // 2 slots found (20 accuracy points) but 50 wrong guesses (150-point penalty
-    // at 3/wrong) — the floor must clip the penalty to 20, not let it go to -130.
-    const disaster = win('LIST', 2, 5, 50);
-    const { points } = computeDailyScore([disaster]);
-    expect(points).toBe(0); // floored exactly at zero, not negative
+  it('every question has the same accuracy ceiling, independent of its slot count', () => {
+    // won: false is artificial here (found===total would really mean a win) —
+    // it isolates the accuracy term from the perfect-round bonus so the
+    // slot-count-independence claim can be checked on its own, unmuddied.
+    const oneSlot: RoundResult = { format: 'CAREER_PATH', found: 1, total: 1, wrong: 0, maxWrong: 2, won: false };
+    const elevenSlots: RoundResult = { format: 'SQUAD', found: 11, total: 11, wrong: 0, maxWrong: 6, won: false };
+    expect(computeDailyScore([oneSlot]).points).toBe(computeDailyScore([elevenSlots]).points);
+  });
+
+  it('a bigger wrong-guess budget earns a bigger perfect-round bonus', () => {
+    const smallBudget = computeDailyScore([win('CAREER_PATH', 1, 1, 0, 2)]).points;
+    const bigBudget = computeDailyScore([win('SQUAD', 11, 11, 0, 6)]).points;
+    expect(bigBudget).toBeGreaterThan(smallBudget);
+  });
+
+  it("using a question's WHOLE wrong-guess budget always cancels its accuracy points, whatever the format", () => {
+    // Penalty-per-wrong is POINTS_PER_QUESTION / maxWrong, so using every
+    // wrong guess cancels exactly POINTS_PER_QUESTION of accuracy — same
+    // relative cost whether the budget is 3 (list) or 6 (squad).
+    const list = computeDailyScore([win('LIST', 3, 5, 3, 3)]).points;
+    const squad = computeDailyScore([win('SQUAD', 6, 11, 6, 6)]).points;
+    expect(list).toBe(0);
+    expect(squad).toBe(0);
+  });
+
+  it('a wrong-guess penalty never drags a round below zero', () => {
+    // More wrong guesses logged than the format's own maxWrong shouldn't
+    // happen in real play (the round ends at maxWrong), but the formula must
+    // stay non-negative even so — no defensive floor should be needed for
+    // realistic inputs, but this pins it for corrupted/legacy data too.
+    const disaster = win('LIST', 2, 5, 50, 3);
+    expect(computeDailyScore([disaster]).points).toBe(0);
   });
 
   it('no perfect bonus once a wrong guess is logged, even if the round was won', () => {
-    const a = computeDailyScore([win('LIST', 5, 5, 0)]).points;
-    const b = computeDailyScore([win('LIST', 5, 5, 1)]).points;
+    const a = computeDailyScore([win('LIST', 5, 5, 0, 3)]).points;
+    const b = computeDailyScore([win('LIST', 5, 5, 1, 3)]).points;
     expect(b).toBeLessThan(a);
   });
 
   it('awards a speed bonus only when every question recorded a time', () => {
-    const timed: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 60_000 };
-    const untimed: RoundResult = win('CAREER_PATH', 1, 1); // no elapsedMs
+    const timed: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 60_000 };
+    const untimed: RoundResult = win('CAREER_PATH', 1, 1, 0, 2); // no elapsedMs
+    const timedWithoutSpeedBonus = computeDailyScore([{ ...timed, elapsedMs: undefined }]).points;
+    const untimedAlone = computeDailyScore([untimed]).points;
+    const timedAlone = computeDailyScore([timed]).points;
     const withBoth = computeDailyScore([timed, untimed]).points;
-    const timedOnly = computeDailyScore([timed]).points;
-    // withBoth has one FEWER round's worth of points than timedOnly + untimed's
-    // own points would suggest, specifically because the missing time voids
-    // the speed bonus that timedOnly enjoys alone.
-    expect(withBoth).toBe(timedOnly + 10 + 10 - 40); // untimed round's points, no speed bonus
+    expect(timedAlone).toBeGreaterThan(timedWithoutSpeedBonus); // sanity: the bonus is real
+    expect(withBoth).toBe(timedWithoutSpeedBonus + untimedAlone); // but voided once ANY round lacks a time
   });
 
   it('faster total time earns a bigger speed tier', () => {
-    const fast: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 30_000 };
-    const slow: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 400_000 };
+    const fast: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 60_000 };
+    const slow: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 700_000 };
     expect(computeDailyScore([fast]).points).toBeGreaterThan(computeDailyScore([slow]).points);
   });
 
   it('is a pure function of its input (same results → same score)', () => {
-    const results = [win('LIST', 5, 5), win('MATCH', 2, 3, 1)];
+    const results = [win('LIST', 5, 5, 0, 3), win('MATCH', 2, 3, 1, 3)];
     expect(computeDailyScore(results)).toEqual(computeDailyScore(results));
   });
 

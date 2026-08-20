@@ -44,31 +44,36 @@ pool. See `scripts/build-daily.ts`.
 
 ## Scoring
 
-The daily's results screen shows a **points score** (e.g. `268/300 pts`) alongside the emoji grid, so
+The daily's results screen shows a **points score** (e.g. `210/304 pts`) alongside the emoji grid, so
 friends who played the same day have a number to compare, not just a grid to eyeball —
 `computeDailyScore` in `src/game/daily.ts`, a pure function of that day's stored `RoundResult`s.
 
-**Accuracy**, per question:
+**Accuracy**, per question — every question is worth the same, whatever format it is or how many
+answer slots it has, so a 1-slot career round can't be structurally worth less than a 5-slot list
+just for having fewer slots, and a wrong guess costs roughly the same *relative* to the format's own
+guess budget rather than a flat amount that's brutal against career's 2 lives and invisible against
+squad's 6:
 
 | | Points |
 |---|---|
-| Each answer slot found | **+10** |
-| Each wrong guess | **−3**, floored so a question can't score below 0 |
-| Finished the question with zero wrong guesses | **+10** perfect-round bonus |
+| Completion | **up to 40**, scaled by `found / total` (partial credit for a partly-found list/match/squad) |
+| Each wrong guess | **−(40 ÷ that question's own `maxWrong`)** — using the *whole* guess budget always cancels the question's accuracy entirely, whatever the budget is |
+| Finished with zero wrong guesses | **+(4 × that question's own `maxWrong`)** perfect-round bonus — a flawless squad round (6 lives) is worth more than a flawless career round (2 lives), since it's a bigger feat |
 
 **Speed**, once per day — only awarded if *every* question in the day recorded a time (an old
 result saved before per-question timing existed won't falsely look instant):
 
 | Total time across the whole day | Bonus |
 |---|---|
-| under 1:30 | **+40** |
-| under 3:00 | **+25** |
-| under 5:00 | **+10** |
-| 5:00 or more | none |
+| under 3:00 | **+40** |
+| under 6:00 | **+25** |
+| under 10:00 | **+10** |
+| 10:00 or more | none |
 
 The `/max` half of the score is the best achievable on that exact set of results — it varies with the
-day's question/slot count, which has grown over time (career2, then match, then squad from
-2026-08-20), so it's computed alongside the score rather than being a fixed constant.
+day's question count and each question's own `maxWrong` (which has grown over time: career2, then
+match, then squad from 2026-08-20), so it's computed alongside the score rather than being a fixed
+constant.
 
 **No backend, no leaderboard.** The score is computed client-side and compared by pasting share text,
 the same way the emoji grid already is — there's nowhere it's collected or ranked across visitors. See

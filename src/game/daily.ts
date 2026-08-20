@@ -246,36 +246,46 @@ export function formatRoundRow(r: RoundResult): string {
   return `👤 Career: ${grid} (${guesses}${time})`;
 }
 
-/** Points for each answer slot found — the same weight regardless of question
- *  type, so a career "found" and a squad "found" count the same. */
-const POINTS_PER_SLOT = 10;
-/** Deducted per wrong guess, floored at 0 for that question — a disastrous
- *  round can't drag the rest of the day's score negative. */
-const WRONG_PENALTY = 3;
-/** Bonus for finishing a question with zero wrong guesses. */
-const PERFECT_BONUS = 10;
+/**
+ * Accuracy points a QUESTION is worth, regardless of format or slot count —
+ * a 1-slot career and an 11-slot squad both max out at this. Scored by
+ * completion fraction (found/total), not a flat amount per slot, precisely
+ * so a 5-answer list can't outweigh a 1-answer career just for having more
+ * slots: every round is an equal-sized share of the day.
+ */
+const POINTS_PER_QUESTION = 40;
+/**
+ * Perfect-round bonus, scaled to the question's OWN wrong-guess budget
+ * (`maxWrong`) rather than a flat amount — a flawless squad round (6 lives)
+ * is a bigger feat than a flawless career round (2 lives), and should be
+ * worth more.
+ */
+const PERFECT_BONUS_PER_WRONG_BUDGET = 4;
 
 /** Speed bonus tiers for the WHOLE day's total time, fastest first. Tuned for
- *  the current ~4-question daily; revisit if the daily's length changes a lot. */
+ *  a 5-question daily that includes an 11-name Starting XI round — retune
+ *  again if the daily's length or format mix changes a lot. */
 const SPEED_TIERS: { underMs: number; bonus: number }[] = [
-  { underMs: 90_000, bonus: 40 }, // under 1:30
-  { underMs: 180_000, bonus: 25 }, // under 3:00
-  { underMs: 300_000, bonus: 10 }, // under 5:00
+  { underMs: 180_000, bonus: 40 }, // under 3:00
+  { underMs: 360_000, bonus: 25 }, // under 6:00
+  { underMs: 600_000, bonus: 10 }, // under 10:00
 ];
 
 export interface DailyScore {
   points: number;
   /** The best score achievable on this exact set of results — varies with the
-   *  day's question count/slot totals, so it's computed alongside `points`
-   *  rather than being a fixed constant. */
+   *  day's question count and each question's own maxWrong, so it's computed
+   *  alongside `points` rather than being a fixed constant. */
   max: number;
 }
 
 /**
- * Score a completed daily: accuracy (per-slot points, minus a wrong-guess
- * penalty, plus a perfect-round bonus) plus a speed bonus for finishing the
- * whole day quickly. Pure function of the stored results, so it's safe to
- * recompute at share time rather than needing to be stored itself.
+ * Score a completed daily: accuracy (completion fraction × a flat
+ * per-question ceiling, minus a wrong-guess penalty scaled to that
+ * question's own guess budget, plus a perfect-round bonus scaled the same
+ * way) plus a speed bonus for finishing the whole day quickly. Pure function
+ * of the stored results, so it's safe to recompute at share time rather than
+ * needing to be stored itself.
  *
  * No backend — this is meant to be compared by pasting it in a chat with
  * friends who played the same day, the same way the emoji grid already is.
@@ -285,11 +295,18 @@ export function computeDailyScore(results: RoundResult[]): DailyScore {
   let points = 0;
   let max = 0;
   for (const r of results) {
-    const accuracy = r.found * POINTS_PER_SLOT;
-    const penalty = Math.min(accuracy, r.wrong * WRONG_PENALTY);
+    const accuracy = r.total > 0 ? (r.found / r.total) * POINTS_PER_QUESTION : 0;
+    // Using the question's WHOLE wrong-guess budget cancels its accuracy
+    // points entirely, wherever that budget happens to sit (2 for career, 3
+    // for list/match, 6 for squad) — so a miss costs roughly the same
+    // *relative* to the format's own difficulty, not a flat amount that's
+    // brutal against a 2-guess budget and invisible against a 6-guess one.
+    const penaltyPerWrong = r.maxWrong > 0 ? POINTS_PER_QUESTION / r.maxWrong : 0;
+    const penalty = Math.min(accuracy, r.wrong * penaltyPerWrong);
     points += accuracy - penalty;
-    if (r.won && r.wrong === 0) points += PERFECT_BONUS;
-    max += r.total * POINTS_PER_SLOT + PERFECT_BONUS;
+    const perfectBonus = r.maxWrong * PERFECT_BONUS_PER_WRONG_BUDGET;
+    if (r.won && r.wrong === 0) points += perfectBonus;
+    max += POINTS_PER_QUESTION + perfectBonus;
   }
   // Only award a speed bonus if every question actually recorded a time — an
   // old stored result without elapsedMs would otherwise look impossibly fast.
@@ -299,7 +316,10 @@ export function computeDailyScore(results: RoundResult[]): DailyScore {
     points += SPEED_TIERS.find((t) => totalMs < t.underMs)?.bonus ?? 0;
   }
   max += SPEED_TIERS[0].bonus;
-  return { points, max };
+  // Fractional accuracy (e.g. 2 of 3 match slots → 26.67 of 40) is real math
+  // but an ugly display; round only the final total, not the running sum, so
+  // rounding error can't compound across questions.
+  return { points: Math.round(points), max };
 }
 
 export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
