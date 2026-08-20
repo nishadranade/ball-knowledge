@@ -36,8 +36,9 @@ import {
   type CompSeason,
   type FixtureSummary,
 } from './fetch/plFixtures.js';
+import { qualifies, roundLabel, difficultyFor, slug } from './fetch/matchFilters.js';
 import type { CompsId } from './fetch/premierLeague.js';
-import type { MatchQuestion, MatchScorer, Difficulty } from '../src/game/types.js';
+import type { MatchQuestion, MatchScorer } from '../src/game/types.js';
 
 const OUT_DIR = 'public/data';
 const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json');
@@ -50,63 +51,15 @@ const SEASONS = Number(process.env.MATCH_SEASONS ?? 15);
  *  1-0 with a single scorer is a perfectly fair question — but a 0-0, or a game
  *  whose only goal was an own goal, would have nothing to ask. */
 const MIN_SCORERS = 1;
-/** Goal threshold for a big-vs-non-big fixture that wasn't an upset. */
-const MIN_GOALS_MIXED = 3;
-/** Matches within this many years are STANDARD; older ones are HARD. Recency is
- *  a rough but decent proxy for how memorable a scoreline is. */
-const STANDARD_WITHIN_YEARS = 5;
 
-/** PL clubs whose matches are well-known enough to ask about. Exact pulselive
- *  team names — a typo here silently drops every match for that club. */
-const BIG_SIX = new Set([
-  'Arsenal',
-  'Chelsea',
-  'Liverpool',
-  'Manchester City',
-  'Manchester United',
-  'Tottenham Hotspur',
-]);
-
-function qualifies(f: FixtureSummary, comps: CompsId): boolean {
-  // Champions League: knockout ties only.
-  if (comps !== COMPS.PREMIER_LEAGUE) return Boolean(f.knockoutRound);
-
-  const homeBig = BIG_SIX.has(f.homeTeam);
-  const awayBig = BIG_SIX.has(f.awayTeam);
-  if (homeBig && awayBig) return true; // marquee fixture — no threshold
-  if (!homeBig && !awayBig) return false;
-
-  // Exactly one big side. An upset is worth asking about however dull the
-  // scoreline; otherwise the game has to have had some goals in it.
-  const nonBigWon = homeBig ? f.awayScore > f.homeScore : f.homeScore > f.awayScore;
-  return nonBigWon || f.homeScore + f.awayScore >= MIN_GOALS_MIXED;
-}
+/** Which fixtures qualify at all (BIG_SIX, knockout-ties, etc.) lives in
+ *  fetch/matchFilters.ts — shared with build-squads.ts so the two formats
+ *  draw from the same "worth asking about" pool of games. */
 
 /** Cheap pre-filter on the LIST response, before paying for the detail call.
  *  Own goals (type O) are not nameable scorers, so they don't count. */
 function distinctScorersInSummary(f: FixtureSummary): number {
   return new Set(f.goals.filter((g) => g.type !== 'O').map((g) => g.personId)).size;
-}
-
-/** "Round of 16" + FIRST_LEG → "Round of 16, first leg". */
-function roundLabel(f: FixtureSummary): string | undefined {
-  if (!f.knockoutRound) return undefined;
-  const leg =
-    f.fixtureType === 'FIRST_LEG'
-      ? ', first leg'
-      : f.fixtureType === 'SECOND_LEG'
-        ? ', second leg'
-        : '';
-  return `${f.knockoutRound}${leg}`;
-}
-
-function difficultyFor(date: string): Difficulty {
-  const years = (Date.now() - new Date(`${date}T00:00:00Z`).getTime()) / (365.25 * 24 * 3600 * 1000);
-  return years <= STANDARD_WITHIN_YEARS ? 'STANDARD' : 'HARD';
-}
-
-function slug(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 }
 
 async function buildForCompetition(
@@ -210,9 +163,16 @@ function validate(questions: MatchQuestion[]): string[] {
 
 async function main() {
   // Only the other formats' files are read — this script owns MATCH entirely and
-  // rewrites that one file, so list/career questions are never even touched.
-  const existing = [...(await readBankFile('LIST')), ...(await readBankFile('CAREER_PATH'))];
-  console.log(`Existing bank: ${existing.length} list + career questions`);
+  // rewrites that one file, so list/career/squad questions are never touched.
+  // SQUAD is included here purely so the manifest recompute below (and the
+  // duplicate-id check) stay accurate if this script is ever re-run standalone
+  // after q-squad.json already exists.
+  const existing = [
+    ...(await readBankFile('LIST')),
+    ...(await readBankFile('CAREER_PATH')),
+    ...(await readBankFile('SQUAD')),
+  ];
+  console.log(`Existing bank: ${existing.length} list + career + squad questions`);
 
   const matches = [
     ...(await buildForCompetition(COMPS.PREMIER_LEAGUE, 'PREMIER_LEAGUE')),

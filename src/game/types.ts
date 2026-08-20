@@ -4,7 +4,7 @@
  */
 
 export type Category = 'PREMIER_LEAGUE' | 'CHAMPIONS_LEAGUE' | 'WORLD_CUP';
-export type Format = 'LIST' | 'CAREER_PATH' | 'MATCH';
+export type Format = 'LIST' | 'CAREER_PATH' | 'MATCH' | 'SQUAD';
 /** Career-path difficulty: STANDARD = famous players, HARD = rarer ones. */
 export type Difficulty = 'STANDARD' | 'HARD';
 
@@ -43,7 +43,7 @@ export interface BaseQuestion {
   format: Format;
   prompt: string;
   /** Allowed wrong guesses before the round ends. 3 for LIST and MATCH, 2 for
-   *  CAREER_PATH. */
+   *  CAREER_PATH, 6 for SQUAD (11 unknowns needs a bigger budget). */
   maxWrong: number;
   source: SourceRef;
   /**
@@ -108,7 +108,41 @@ export interface MatchQuestion extends BaseQuestion {
   ownGoals?: number;
 }
 
-export type Question = ListQuestion | CareerPathQuestion | MatchQuestion;
+export interface SquadPlayer extends Player {
+  shirtNumber: number;
+  /** G / D / M / F, from the source data's matchPosition. Only used to sanity
+   *  check the pitch layout at build time — never shown to the player. */
+  position: string;
+}
+
+/** The fixture a SQUAD question's starting XI is drawn from. Shown for context
+ *  (which game, which side) — never part of the answer. */
+export interface SquadInfo {
+  team: string;
+  opponent: string;
+  home: boolean;
+  teamScore: number;
+  opponentScore: number;
+  /** ISO date "YYYY-MM-DD". */
+  date: string;
+  dateLabel: string;
+  round?: string;
+  /** e.g. "4-3-3" — a caption only; the pitch rows come from `lines`. */
+  formation: string;
+}
+
+export interface SquadQuestion extends BaseQuestion {
+  format: 'SQUAD';
+  squad: SquadInfo;
+  /** The starting XI, exactly 11. Order is arbitrary — `lines` gives the pitch
+   *  layout (goalkeeper row first). */
+  answers: SquadPlayer[];
+  /** Pitch rows as indices into `answers`, goalkeeper first. Every index 0..10
+   *  appears in exactly one row. */
+  lines: number[][];
+}
+
+export type Question = ListQuestion | CareerPathQuestion | MatchQuestion | SquadQuestion;
 
 export interface QuestionBundle {
   generatedAt: string;

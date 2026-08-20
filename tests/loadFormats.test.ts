@@ -62,6 +62,18 @@ describe('what the browser actually downloads', () => {
     ).toEqual(['q-match.json']);
   });
 
+  it('practice with the squad filter fetches exactly the squad file', async () => {
+    expect(
+      await fetchFor({ ...base, mode: 'PRACTICE', formatFilter: 'SQUAD', dayIsFrozen: true }),
+    ).toEqual(['q-squad.json']);
+  });
+
+  it('practice with ALL fetches every format, including squad', async () => {
+    expect(
+      (await fetchFor({ ...base, mode: 'PRACTICE', formatFilter: 'ALL', dayIsFrozen: true })).sort(),
+    ).toEqual(['q-career.json', 'q-list.json', 'q-match.json', 'q-squad.json']);
+  });
+
   it('a shared career link fetches only the career file', async () => {
     expect(
       await fetchFor({ ...base, mode: 'PRACTICE', linkedToken: 'c1a2b3', dayIsFrozen: true }),
@@ -77,6 +89,17 @@ describe('what the browser actually downloads', () => {
         dayIsFrozen: true,
       }),
     ).toEqual(['q-match.json']);
+  });
+
+  it('a shared squad link fetches only the squad file', async () => {
+    expect(
+      await fetchFor({
+        ...base,
+        mode: 'PRACTICE',
+        linkedToken: 'squad_premier_league_2019-01-12_a_b_home',
+        dayIsFrozen: true,
+      }),
+    ).toEqual(['q-squad.json']);
   });
 });
 

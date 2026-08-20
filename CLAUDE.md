@@ -32,10 +32,20 @@ the container exits. Check `git status` after.
   the live URL after publishing, so it can't regress silently.
 - **A green deploy is not proof the site works.** Verify by fetching the live page, not by trusting
   the check mark.
-- **The answer bank is split one file per format** (`public/data/q-list|q-career|q-match.json`) so
-  the browser fetches only what a view needs. Never reintroduce a combined `questions.json` — it is
-  gitignored precisely so a stale copy can't be committed or served. All build scripts go through
-  `scripts/bank.ts`.
+- **The answer bank is split one file per format**
+  (`public/data/q-list|q-career|q-match|q-squad.json`) so the browser fetches only what a view needs.
+  Never reintroduce a combined `questions.json` — it is gitignored precisely so a stale copy can't be
+  committed or served. All build scripts go through `scripts/bank.ts`.
+- **SQUAD's fixture filter is stricter than MATCH's, on purpose.** Both start from the same
+  `qualifies()` in `scripts/fetch/matchFilters.ts`, but SQUAD additionally requires a marquee side in
+  CL fixtures (`isBigClFixture`/`BIG_EUROPE`) and always asks about the bigger side when only one
+  qualifies (`isBigTeam`) — naming a full unfamiliar XI is a much bigger ask than naming a scorer.
+  Don't "simplify" SQUAD to just reuse `qualifies()` outright; that would reintroduce asking players
+  to name Bodø/Glimt's back four.
+- **SQUAD is practice-only.** `selectDaily()` doesn't draw a squad slot, and `loadQuestions.ts`
+  deliberately keeps `SQUAD` out of `DAILY_FORMATS` (the unfrozen-daily fetch list) even though it's
+  in `ALL_FORMATS` (Practice). If SQUAD ever joins the daily, both of those need updating together —
+  otherwise the daily either 404s on a slot it can't fill, or silently fetches a file it never uses.
 - **A frozen day in `daily.json` is immutable.** `build-daily.ts` is append-only and must stay that
   way; players have already played those rounds. Every daily slot is optional in the schedule, which
   is what lets the daily grow without rewriting history.
@@ -55,7 +65,8 @@ Run `npm test` and `npm run build:app` locally first.
 | Changed | Run | Notes |
 |---|---|---|
 | Only match fixtures | `npm run build:matches` | Rewrites just `q-match.json`. `MATCH_SEASONS=n` to limit. |
-| Players / stats / sources | `npm run build:data` | Chains matches + daily. Several minutes; hits the PL API and Wikipedia. |
+| Only squad line-ups | `npm run build:squads` | Rewrites just `q-squad.json`. Run after `build:matches` — same fixture detail endpoint, so it reuses that disk cache for free. `SQUAD_SEASONS=n` to limit. |
+| Players / stats / sources | `npm run build:data` | Chains matches + squads + daily. Several minutes; hits the PL API and Wikipedia. |
 | Nothing — just freezing today | `npm run build:daily` | No network. Runs nightly via `freeze-daily.yml`. |
 
 Prefer `build:matches` when only fixtures changed: `build:data` also re-crawls Wikipedia, and that

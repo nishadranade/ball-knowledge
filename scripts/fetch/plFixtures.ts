@@ -253,4 +253,97 @@ export async function fetchFixtureDetail(
   };
 }
 
+export interface SquadPlayerRaw {
+  id: number;
+  fullName: string;
+  lastName: string;
+  shirtNumber: number;
+  /** matchPosition from the source data: G / D / M / F. */
+  position: string;
+}
+
+export interface TeamSquad {
+  teamId: number;
+  teamName: string;
+  /** e.g. "4-3-3". */
+  formation: string;
+  /** Pitch rows, goalkeeper first, exactly matching the source's formation
+   *  grouping — that's what makes the pitch layout come out right. */
+  lines: SquadPlayerRaw[][];
+}
+
+/**
+ * Both sides' starting XI + formation for a fixture, from the same detail
+ * endpoint `fetchFixtureDetail` uses (and the same disk cache — free if that
+ * fixture's detail was already fetched for a MATCH question, since
+ * build-squads.ts is meant to run after build-matches.ts).
+ *
+ * Returns null if either side's line-up doesn't resolve to a clean 11 named,
+ * numbered players — better to drop the fixture than ask about a squad with a
+ * blank shirt in it.
+ */
+export async function fetchFixtureSquads(
+  fixtureId: number,
+  comps: CompsId,
+): Promise<{ home: TeamSquad; away: TeamSquad } | null> {
+  const slug = COMP_SLUG[comps] ?? `c${comps}`;
+  let json: any;
+  try {
+    json = await cachedGet(`${PL_BASE}/fixtures/${fixtureId}`, `${slug}_fixture_${fixtureId}`);
+  } catch {
+    return null;
+  }
+
+  const teamNames = new Map<number, string>();
+  for (const t of json?.teams ?? []) {
+    const id = Number(t?.team?.id ?? 0);
+    if (id) teamNames.set(id, String(t.team.name));
+  }
+
+  const squads: TeamSquad[] = [];
+  for (const tl of json?.teamLists ?? []) {
+    const teamId = Number(tl?.teamId ?? 0);
+    const players = new Map<number, SquadPlayerRaw>();
+    for (const p of tl?.lineup ?? []) {
+      const id = Number(p?.id ?? 0);
+      const fullName = p?.name?.display;
+      if (!id || !fullName) continue;
+      players.set(id, {
+        id,
+        fullName,
+        lastName: p?.name?.last || deriveLastName(fullName),
+        shirtNumber: Number(p?.matchShirtNumber ?? p?.info?.shirtNum ?? 0),
+        position: String(p?.matchPosition ?? p?.info?.position ?? ''),
+      });
+    }
+
+    const rows: number[][] = tl?.formation?.players ?? [];
+    if (rows.flat().length !== 11) return null; // incomplete formation data
+
+    const lines: SquadPlayerRaw[][] = [];
+    for (const row of rows) {
+      const resolved: SquadPlayerRaw[] = [];
+      for (const pid of row) {
+        const p = players.get(Number(pid));
+        if (!p || !p.shirtNumber) return null; // can't ask about an unnamed/numberless player
+        resolved.push(p);
+      }
+      lines.push(resolved);
+    }
+    squads.push({
+      teamId,
+      teamName: teamNames.get(teamId) ?? '',
+      formation: String(tl?.formation?.label ?? ''),
+      lines,
+    });
+  }
+  if (squads.length !== 2) return null;
+
+  // `teams[0]` is home — same assumption parseFixture makes on the list endpoint.
+  const homeTeamId = Number(json?.teams?.[0]?.team?.id ?? 0);
+  const home = squads.find((s) => s.teamId === homeTeamId) ?? squads[0];
+  const away = squads.find((s) => s !== home) ?? squads[1];
+  return { home, away };
+}
+
 export { COMPS };

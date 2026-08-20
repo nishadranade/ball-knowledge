@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatsNeeded, formatForToken, ALL_FORMATS } from '../src/game/loadQuestions';
+import { formatsNeeded, formatForToken, ALL_FORMATS, DAILY_FORMATS } from '../src/game/loadQuestions';
 import { questionParam } from '../src/game/daily';
 import type { Question } from '../src/game/types';
 
@@ -23,15 +23,22 @@ describe('formatsNeeded — daily', () => {
     expect(formatsNeeded({ ...base, dayIsFrozen: true })).toEqual([]);
   });
 
-  it('fetches everything for an unfrozen day, which must hash the live pool', () => {
-    expect(formatsNeeded({ ...base, dayIsFrozen: false })).toEqual(ALL_FORMATS);
+  it('fetches every format the daily actually draws from for an unfrozen day', () => {
+    expect(formatsNeeded({ ...base, dayIsFrozen: false })).toEqual(DAILY_FORMATS);
   });
 
   it('ignores the practice format filter while in daily mode', () => {
     expect(formatsNeeded({ ...base, formatFilter: 'LIST', dayIsFrozen: true })).toEqual([]);
     expect(formatsNeeded({ ...base, formatFilter: 'LIST', dayIsFrozen: false })).toEqual(
-      ALL_FORMATS,
+      DAILY_FORMATS,
     );
+  });
+
+  it('never fetches SQUAD for the daily — selectDaily does not draw one', () => {
+    // SQUAD is practice-only. If it ever joins the daily, DAILY_FORMATS must be
+    // updated deliberately — this pins the current, narrower behavior.
+    expect(DAILY_FORMATS).not.toContain('SQUAD');
+    expect(ALL_FORMATS).toContain('SQUAD'); // but it IS a real practice format
   });
 });
 
@@ -42,6 +49,7 @@ describe('formatsNeeded — practice', () => {
     expect(formatsNeeded({ ...practice, formatFilter: 'LIST' })).toEqual(['LIST']);
     expect(formatsNeeded({ ...practice, formatFilter: 'CAREER_PATH' })).toEqual(['CAREER_PATH']);
     expect(formatsNeeded({ ...practice, formatFilter: 'MATCH' })).toEqual(['MATCH']);
+    expect(formatsNeeded({ ...practice, formatFilter: 'SQUAD' })).toEqual(['SQUAD']);
   });
 
   it('fetches everything only when the filter is ALL', () => {
@@ -64,6 +72,9 @@ describe('formatsNeeded — deep links', () => {
       expect(
         formatsNeeded({ ...base, mode, linkedToken: 'match_premier_league_2019-01-12_a_b' }),
       ).toEqual(['MATCH']);
+      expect(
+        formatsNeeded({ ...base, mode, linkedToken: 'squad_premier_league_2019-01-12_a_b_home' }),
+      ).toEqual(['SQUAD']);
       expect(formatsNeeded({ ...base, mode, linkedToken: 'c1a2b3' })).toEqual(['CAREER_PATH']);
     }
   });
@@ -76,6 +87,7 @@ describe('formatForToken', () => {
   it('maps each id prefix to its file', () => {
     expect(formatForToken('list_premier_league_goals_overall_all_10')).toBe('LIST');
     expect(formatForToken('match_premier_league_2019-01-12_liverpool_arsenal')).toBe('MATCH');
+    expect(formatForToken('squad_premier_league_2019-01-12_liverpool_arsenal_home')).toBe('SQUAD');
     expect(formatForToken('career_alan_shearer')).toBe('CAREER_PATH');
   });
 
@@ -92,6 +104,7 @@ describe('formatForToken', () => {
     // would fetch the wrong file and 404 the question.
     expect(formatForToken(questionParam(q('list_x_y_z', 'LIST')))).toBe('LIST');
     expect(formatForToken(questionParam(q('match_x_y_z', 'MATCH')))).toBe('MATCH');
+    expect(formatForToken(questionParam(q('squad_x_y_z', 'SQUAD')))).toBe('SQUAD');
   });
 
   it('falls back to career for an unrecognised token rather than throwing', () => {

@@ -147,6 +147,13 @@ footer { color: var(--muted); font-size: 0.8rem; margin-top: 1.5rem; }
 /* Daily view */
 .daily-progress { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.5rem; }
 .daily-result h2 { margin: 0 0 0.75rem; }
+.daily-score {
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.75rem;
+}
 .share-grid {
   font-family: inherit;
   font-size: 1.05rem;
@@ -192,3 +199,68 @@ footer { color: var(--muted); font-size: 0.8rem; margin-top: 1.5rem; }
 }
 .match-ask { margin: 0.75rem 0 0.5rem; }
 .match-og { color: var(--muted); font-size: 0.9rem; }
+
+/* Squad questions: a pitch of shirt numbers, one row per formation line,
+   attackers at the top (nearest the "away" end) down to the keeper. */
+.pitch {
+  background: linear-gradient(180deg, #2f7a3d, #235c29);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1.1rem;
+  min-height: 20rem;
+  position: relative;
+}
+.pitch::before {
+  /* Halfway line */
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.pitch-row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+}
+.pitch-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 3.4rem;
+}
+.shirt {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+.pitch-slot.filled .shirt { background: var(--win); border-color: var(--win); color: #06202a; }
+.pitch-slot.revealed .shirt { background: rgba(248, 113, 113, 0.35); border-color: var(--lose); }
+.pitch-name {
+  font-size: 0.68rem;
+  line-height: 1.1;
+  text-align: center;
+  color: #fff;
+  max-width: 3.6rem;
+}
+.pitch-slot.revealed .pitch-name { color: rgba(255, 255, 255, 0.75); }
+.squad-header { text-align: center; margin: 0.5rem 0 0.25rem; font-size: 1.1rem; font-weight: 600; }
+.squad-meta { color: var(--muted); font-size: 0.85rem; text-align: center; margin: 0 0 0.75rem; }

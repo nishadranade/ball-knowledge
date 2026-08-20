@@ -12,6 +12,8 @@ import {
   questionParam,
   resolveQuestionParam,
   formatDuration,
+  formatRoundRow,
+  computeDailyScore,
   type DailyResult,
   type DailySchedule,
   type RoundResult,
@@ -331,6 +333,16 @@ describe('buildShareText', () => {
     expect(text).toContain('(2 guesses · 0:24)');
   });
 
+  it('header includes the score, matching computeDailyScore', () => {
+    const result: DailyResult = {
+      day: 9,
+      results: [{ format: 'LIST', found: 5, total: 5, wrong: 0, maxWrong: 3, won: true }],
+    };
+    const { points, max } = computeDailyScore(result.results);
+    const header = buildShareText(result).split('\n')[0];
+    expect(header).toBe(`⚽ Ball Knowledge #9 — ${points}/${max} pts`);
+  });
+
   it('has blank lines separating header, rows, and url', () => {
     const result: DailyResult = {
       day: 7,
@@ -344,6 +356,79 @@ describe('buildShareText', () => {
     expect(lines[1]).toBe(''); // blank after header
     expect(lines[lines.length - 2]).toBe(''); // blank before url
     expect(lines[lines.length - 1]).toContain('ball-knowledge'); // url last
+  });
+});
+
+describe('formatRoundRow (SQUAD)', () => {
+  it('renders a shirt-emoji slot grid', () => {
+    const r: RoundResult = {
+      format: 'SQUAD',
+      found: 8,
+      total: 11,
+      wrong: 5,
+      maxWrong: 6,
+      won: false,
+      slots: [true, true, false, true, true, false, true, true, false, true, true],
+      elapsedMs: 134_000,
+    };
+    expect(formatRoundRow(r)).toBe('👕 Squad: 🟩🟩🟥🟩🟩🟥🟩🟩🟥🟩🟩 (8/11 · 2:14)');
+  });
+});
+
+describe('computeDailyScore', () => {
+  const win = (format: RoundResult['format'], found: number, total: number, wrong = 0): RoundResult => ({
+    format,
+    found,
+    total,
+    wrong,
+    maxWrong: 3,
+    won: found === total,
+  });
+
+  it('a perfect, untimed round earns 10/slot plus the perfect bonus', () => {
+    const { points, max } = computeDailyScore([win('LIST', 5, 5)]);
+    expect(points).toBe(5 * 10 + 10); // 60
+    expect(max).toBe(5 * 10 + 10 + 40); // + best-tier speed bonus headroom
+  });
+
+  it('a wrong-guess penalty is floored at that round\'s own accuracy points — never negative', () => {
+    // 2 slots found (20 accuracy points) but 50 wrong guesses (150-point penalty
+    // at 3/wrong) — the floor must clip the penalty to 20, not let it go to -130.
+    const disaster = win('LIST', 2, 5, 50);
+    const { points } = computeDailyScore([disaster]);
+    expect(points).toBe(0); // floored exactly at zero, not negative
+  });
+
+  it('no perfect bonus once a wrong guess is logged, even if the round was won', () => {
+    const a = computeDailyScore([win('LIST', 5, 5, 0)]).points;
+    const b = computeDailyScore([win('LIST', 5, 5, 1)]).points;
+    expect(b).toBeLessThan(a);
+  });
+
+  it('awards a speed bonus only when every question recorded a time', () => {
+    const timed: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 60_000 };
+    const untimed: RoundResult = win('CAREER_PATH', 1, 1); // no elapsedMs
+    const withBoth = computeDailyScore([timed, untimed]).points;
+    const timedOnly = computeDailyScore([timed]).points;
+    // withBoth has one FEWER round's worth of points than timedOnly + untimed's
+    // own points would suggest, specifically because the missing time voids
+    // the speed bonus that timedOnly enjoys alone.
+    expect(withBoth).toBe(timedOnly + 10 + 10 - 40); // untimed round's points, no speed bonus
+  });
+
+  it('faster total time earns a bigger speed tier', () => {
+    const fast: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 30_000 };
+    const slow: RoundResult = { ...win('LIST', 5, 5), elapsedMs: 400_000 };
+    expect(computeDailyScore([fast]).points).toBeGreaterThan(computeDailyScore([slow]).points);
+  });
+
+  it('is a pure function of its input (same results → same score)', () => {
+    const results = [win('LIST', 5, 5), win('MATCH', 2, 3, 1)];
+    expect(computeDailyScore(results)).toEqual(computeDailyScore(results));
+  });
+
+  it('an empty day scores zero with zero max', () => {
+    expect(computeDailyScore([])).toEqual({ points: 0, max: 0 });
   });
 });
 

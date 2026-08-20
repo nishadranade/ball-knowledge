@@ -18,18 +18,21 @@ export interface GameState {
 
 type Action = { type: 'guess'; value: string } | { type: 'giveUp' } | { type: 'reset' };
 
-/** Candidate players for the current question: every answer for LIST and MATCH
- *  (MATCH = the match's distinct scorers), the single player for CAREER_PATH. */
+/** Candidate players for the current question: every answer for LIST, MATCH
+ *  (its distinct scorers) and SQUAD (its starting XI); the single player for
+ *  CAREER_PATH. */
 function candidatesOf(q: Question): Player[] {
   switch (q.format) {
     case 'LIST':
     case 'MATCH':
+    case 'SQUAD':
       return q.answers;
     case 'CAREER_PATH':
       return [q.answer];
   }
 }
 
+/** LIST, MATCH and SQUAD all key off q.answers.length — only CAREER_PATH differs. */
 function totalTargets(q: Question): number {
   return q.format === 'CAREER_PATH' ? 1 : q.answers.length;
 }

@@ -180,13 +180,13 @@ export function resolveDaily(
 
 /** Per-question outcome captured when a round ends. */
 export interface RoundResult {
-  format: 'LIST' | 'CAREER_PATH' | 'MATCH';
+  format: 'LIST' | 'CAREER_PATH' | 'MATCH' | 'SQUAD';
   found: number; // answers found (1 or 0 for career)
   total: number; // total answers (1 for career)
   wrong: number; // wrong guesses used
   maxWrong: number;
   won: boolean;
-  /** LIST and MATCH: per-slot found/missed in answer order — true = found. */
+  /** LIST, MATCH and SQUAD: per-slot found/missed in answer order — true = found. */
   slots?: boolean[];
   /** Wall-clock time on this question, ms (mount → round end). Optional so old
    *  stored results / tests without timing still work. */
@@ -211,7 +211,7 @@ export interface DailyResult {
  *  question, blank line, URL. */
 /** One spoiler-free result line for a single round (shared by daily + practice).
  *  e.g. "📋 List: 🟩🟥🟩🟥🟩 (3/5 · 1:07)", "👤 Career: 🟥🟩 (2 guesses · 0:24)",
- *  or "⚽ Match: 🟩🟥🟩 (2/3 · 0:51)". */
+ *  "⚽ Match: 🟩🟥🟩 (2/3 · 0:51)", or "👕 Squad: 🟩🟩🟥... (8/11 · 2:14)". */
 export function formatRoundRow(r: RoundResult): string {
   const time = r.elapsedMs != null ? ` · ${formatDuration(r.elapsedMs)}` : '';
   /** One square per answer slot in answer order: 🟩 found, 🟥 missed. Falls back
@@ -227,6 +227,9 @@ export function formatRoundRow(r: RoundResult): string {
     // Spoiler-free: which slots were filled, but never a name or the fixture.
     return `⚽ Match: ${slotGrid()} (${r.found}/${r.total}${time})`;
   }
+  if (r.format === 'SQUAD') {
+    return `👕 Squad: ${slotGrid()} (${r.found}/${r.total}${time})`;
+  }
   // Career: one 🟥 per wrong guess, then 🟩 if solved — the guess sequence.
   // e.g. first try → 🟩; second try → 🟥🟩; missed → 🟥🟥.
   const grid = '🟥'.repeat(r.wrong) + (r.won ? '🟩' : '');
@@ -234,9 +237,66 @@ export function formatRoundRow(r: RoundResult): string {
   return `👤 Career: ${grid} (${guesses}${time})`;
 }
 
+/** Points for each answer slot found — the same weight regardless of question
+ *  type, so a career "found" and a squad "found" count the same. */
+const POINTS_PER_SLOT = 10;
+/** Deducted per wrong guess, floored at 0 for that question — a disastrous
+ *  round can't drag the rest of the day's score negative. */
+const WRONG_PENALTY = 3;
+/** Bonus for finishing a question with zero wrong guesses. */
+const PERFECT_BONUS = 10;
+
+/** Speed bonus tiers for the WHOLE day's total time, fastest first. Tuned for
+ *  the current ~4-question daily; revisit if the daily's length changes a lot. */
+const SPEED_TIERS: { underMs: number; bonus: number }[] = [
+  { underMs: 90_000, bonus: 40 }, // under 1:30
+  { underMs: 180_000, bonus: 25 }, // under 3:00
+  { underMs: 300_000, bonus: 10 }, // under 5:00
+];
+
+export interface DailyScore {
+  points: number;
+  /** The best score achievable on this exact set of results — varies with the
+   *  day's question count/slot totals, so it's computed alongside `points`
+   *  rather than being a fixed constant. */
+  max: number;
+}
+
+/**
+ * Score a completed daily: accuracy (per-slot points, minus a wrong-guess
+ * penalty, plus a perfect-round bonus) plus a speed bonus for finishing the
+ * whole day quickly. Pure function of the stored results, so it's safe to
+ * recompute at share time rather than needing to be stored itself.
+ *
+ * No backend — this is meant to be compared by pasting it in a chat with
+ * friends who played the same day, the same way the emoji grid already is.
+ */
+export function computeDailyScore(results: RoundResult[]): DailyScore {
+  if (results.length === 0) return { points: 0, max: 0 };
+  let points = 0;
+  let max = 0;
+  for (const r of results) {
+    const accuracy = r.found * POINTS_PER_SLOT;
+    const penalty = Math.min(accuracy, r.wrong * WRONG_PENALTY);
+    points += accuracy - penalty;
+    if (r.won && r.wrong === 0) points += PERFECT_BONUS;
+    max += r.total * POINTS_PER_SLOT + PERFECT_BONUS;
+  }
+  // Only award a speed bonus if every question actually recorded a time — an
+  // old stored result without elapsedMs would otherwise look impossibly fast.
+  const timed = results.length > 0 && results.every((r) => r.elapsedMs != null);
+  if (timed) {
+    const totalMs = results.reduce((sum, r) => sum + (r.elapsedMs ?? 0), 0);
+    points += SPEED_TIERS.find((t) => totalMs < t.underMs)?.bonus ?? 0;
+  }
+  max += SPEED_TIERS[0].bonus;
+  return { points, max };
+}
+
 export function buildShareText(result: DailyResult, url = 'nishadranade.github.io/ball-knowledge'): string {
   const rows = result.results.map(formatRoundRow);
-  return [`⚽ Ball Knowledge #${result.day}`, '', ...rows, '', url].join('\n');
+  const { points, max } = computeDailyScore(result.results);
+  return [`⚽ Ball Knowledge #${result.day} — ${points}/${max} pts`, '', ...rows, '', url].join('\n');
 }
 
 /** The `?q=` token for a question. Only hashed when the id would otherwise spell

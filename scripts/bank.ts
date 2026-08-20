@@ -22,6 +22,7 @@ export const BANK_FILES: Record<Format, string> = {
   LIST: 'q-list.json',
   CAREER_PATH: 'q-career.json',
   MATCH: 'q-match.json',
+  SQUAD: 'q-squad.json',
 };
 
 export const BANK_FORMATS = Object.keys(BANK_FILES) as Format[];

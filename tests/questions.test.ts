@@ -2,12 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import type { QuestionBundle, ListQuestion, MatchQuestion } from '../src/game/types';
+import type { QuestionBundle, ListQuestion, MatchQuestion, SquadQuestion } from '../src/game/types';
 
 const here = dirname(fileURLToPath(import.meta.url));
 // The bank is split one file per format so the browser can fetch just what it
-// needs (see scripts/bank.ts). These tests read all three and validate the union.
-const BANK_FILES = ['q-list.json', 'q-career.json', 'q-match.json'];
+// needs (see scripts/bank.ts). These tests read all four and validate the union.
+const BANK_FILES = ['q-list.json', 'q-career.json', 'q-match.json', 'q-squad.json'];
 const bankPaths = BANK_FILES.map((f) => resolve(here, '../public/data', f));
 
 // These tests validate the generated answer bank. They guard against
@@ -23,7 +23,7 @@ const bundle: QuestionBundle | null = bankPaths.every(existsSync)
   : null;
 
 describe('generated answer bank', () => {
-  it('all three format files exist (run `npm run build:data` if this fails)', () => {
+  it('all four format files exist (run `npm run build:data` if this fails)', () => {
     expect(bundle).not.toBeNull();
   });
 
@@ -32,7 +32,7 @@ describe('generated answer bank', () => {
   it('each format file contains ONLY that format', () => {
     // The browser fetches these individually, so a stray question in the wrong
     // file would be invisible to the view that should show it.
-    const expected = ['LIST', 'CAREER_PATH', 'MATCH'];
+    const expected = ['LIST', 'CAREER_PATH', 'MATCH', 'SQUAD'];
     bankPaths.forEach((p, i) => {
       const qs = (JSON.parse(readFileSync(p, 'utf8')) as QuestionBundle).questions;
       expect(qs.length).toBeGreaterThan(0);
@@ -199,6 +199,111 @@ describe('generated answer bank', () => {
     for (const q of matches) {
       if (q.category === 'CHAMPIONS_LEAGUE') expect(q.match.round).toBeTruthy();
       else expect(q.match.round).toBeUndefined();
+    }
+  });
+
+  const squads = bundle.questions.filter((q): q is SquadQuestion => q.format === 'SQUAD');
+
+  it('has squad questions (run `npm run build:squads` if this fails)', () => {
+    expect(squads.length).toBeGreaterThan(0);
+  });
+
+  it('every squad is exactly 11 named, numbered players', () => {
+    for (const q of squads) {
+      expect(q.answers.length).toBe(11);
+      for (const a of q.answers) {
+        expect(a.lastName.length).toBeGreaterThan(0);
+        expect(a.shirtNumber).toBeGreaterThanOrEqual(1);
+      }
+    }
+  });
+
+  it('squad shirt numbers are distinct within a squad', () => {
+    for (const q of squads) {
+      const nums = q.answers.map((a) => a.shirtNumber);
+      expect(new Set(nums).size).toBe(nums.length);
+    }
+  });
+
+  it("squad `lines` index every answer exactly once (the pitch layout is complete)", () => {
+    for (const q of squads) {
+      const flat = q.lines.flat();
+      expect(flat.length).toBe(11);
+      expect(new Set(flat).size).toBe(11);
+      for (const i of flat) {
+        expect(i).toBeGreaterThanOrEqual(0);
+        expect(i).toBeLessThan(q.answers.length);
+      }
+    }
+  });
+
+  it('SQUAD maxWrong is 6', () => {
+    for (const q of squads) expect(q.maxWrong).toBe(6);
+  });
+
+  it('squad dates are ISO and the pool has Standard squads', () => {
+    for (const q of squads) expect(q.squad.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(squads.some((q) => q.difficulty === 'STANDARD')).toBe(true);
+  });
+
+  it('Premier League squads obey the same big-team filter as matches', () => {
+    const BIG = new Set([
+      'Arsenal',
+      'Chelsea',
+      'Liverpool',
+      'Manchester City',
+      'Manchester United',
+      'Tottenham Hotspur',
+    ]);
+    for (const q of squads) {
+      if (q.category !== 'PREMIER_LEAGUE') continue;
+      const { team, opponent, teamScore, opponentScore } = q.squad;
+      const teamBig = BIG.has(team);
+      const oppBig = BIG.has(opponent);
+      expect(teamBig || oppBig).toBe(true);
+      if (teamBig && oppBig) continue;
+      const nonBigWon = teamBig ? opponentScore > teamScore : teamScore > opponentScore;
+      expect(nonBigWon || teamScore + opponentScore >= 3).toBe(true);
+    }
+  });
+
+  it('Champions League squads are knockout ties, Premier League ones are not', () => {
+    for (const q of squads) {
+      if (q.category === 'CHAMPIONS_LEAGUE') expect(q.squad.round).toBeTruthy();
+      else expect(q.squad.round).toBeUndefined();
+    }
+  });
+
+  // Bigger than PL's BIG_SIX: SQUAD applies an extra filter MATCH doesn't
+  // (see fetch/matchFilters.ts) — a CL knockout tie between two nobody clubs
+  // isn't a fair "name the XI" question even though it IS a fair "who
+  // scored" one, so it must have at least a continental heavyweight in it.
+  const BIG_SIX = new Set([
+    'Arsenal', 'Chelsea', 'Liverpool', 'Manchester City', 'Manchester United', 'Tottenham Hotspur',
+  ]);
+  const BIG_EUROPE = new Set([
+    'Real Madrid', 'FC Barcelona', 'Atlético Madrid', 'FC Bayern München', 'Borussia Dortmund',
+    'Paris Saint Germain', 'Juventus', 'Internazionale', 'Milan',
+  ]);
+  const isBig = (team: string) => BIG_SIX.has(team) || BIG_EUROPE.has(team);
+
+  it('every Champions League squad has a marquee side in the fixture', () => {
+    for (const q of squads) {
+      if (q.category !== 'CHAMPIONS_LEAGUE') continue;
+      expect(isBig(q.squad.team) || isBig(q.squad.opponent)).toBe(true);
+    }
+  });
+
+  it('when only one side of a squad fixture is big, the question is always about THAT side', () => {
+    // Naming a full unfamiliar starting XI is a much bigger ask than naming a
+    // scorer — a Bodø/Glimt-vs-Man-City tie must always ask about Man City,
+    // never Bodø/Glimt, even though MATCH would happily ask about either.
+    for (const q of squads) {
+      const teamBig = isBig(q.squad.team);
+      const oppBig = isBig(q.squad.opponent);
+      if (oppBig && !teamBig) {
+        throw new Error(`${q.id}: asks about the smaller side (${q.squad.team}) over the big one (${q.squad.opponent})`);
+      }
     }
   });
 

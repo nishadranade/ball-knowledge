@@ -1,6 +1,6 @@
 # ⚽ Ball Knowledge
 
-A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with three
+A browser-based soccer quiz game covering the **Premier League** and **Champions League**, with four
 question formats and forgiving answer matching.
 
 **▶ Play it live: https://nishadranade.github.io/ball-knowledge/**
@@ -18,6 +18,10 @@ question formats and forgiving answer matching.
      shown on reveal. So a 4–2 can have four slots, and the prompt says how many to name.
    - **Own goals are excluded** from the answers (the scorer plays for the other side, which makes a
      rotten answer) but are counted and disclosed, so the arithmetic still adds up.
+4. **Starting XI** — a real fixture's line-up for one side, laid out on a pitch by shirt number and
+   formation row: name all **11** starters, with up to **6 wrong guesses**. Drawn from the same
+   fixture pool as match scorers (see below), one side per fixture chosen deterministically.
+   **Practice-only for now** — not yet part of the daily.
 
 ## Modes
 
@@ -25,9 +29,9 @@ question formats and forgiving answer matching.
   career paths, one match) each day, picked deterministically from the calendar date (no backend). The day
   rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
   same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
-  result** (emoji grid + "Ball Knowledge #N" + per-question time) via the Web Share API / clipboard.
-  Progress and a streak are kept in `localStorage`. Daily lists are trimmed to **top 5** to keep the
-  round short.
+  result** (emoji grid + "Ball Knowledge #N" + per-question time + a **points score** — see Scoring
+  below) via the Web Share API / clipboard. Progress and a streak are kept in `localStorage`. Daily
+  lists are trimmed to **top 5** to keep the round short.
 - **Practice** — free-play endless deck with all the filters below. Finishing a question also offers
   a **shareable result + deep link** to that exact question (`?q=<token>`), so you can send a
   favourite question to a friend.
@@ -36,6 +40,38 @@ question formats and forgiving answer matching.
 `public/data/daily.json` as *full question objects*, so a day that has been played can never change
 underneath players when the data is regenerated. Days not yet frozen fall back to hashing the live
 pool. See `scripts/build-daily.ts`.
+
+## Scoring
+
+The daily's results screen shows a **points score** (e.g. `268/300 pts`) alongside the emoji grid, so
+friends who played the same day have a number to compare, not just a grid to eyeball —
+`computeDailyScore` in `src/game/daily.ts`, a pure function of that day's stored `RoundResult`s.
+
+**Accuracy**, per question:
+
+| | Points |
+|---|---|
+| Each answer slot found | **+10** |
+| Each wrong guess | **−3**, floored so a question can't score below 0 |
+| Finished the question with zero wrong guesses | **+10** perfect-round bonus |
+
+**Speed**, once per day — only awarded if *every* question in the day recorded a time (an old
+result saved before per-question timing existed won't falsely look instant):
+
+| Total time across the whole day | Bonus |
+|---|---|
+| under 1:30 | **+40** |
+| under 3:00 | **+25** |
+| under 5:00 | **+10** |
+| 5:00 or more | none |
+
+The `/max` half of the score is the best achievable on that exact set of results — it varies with the
+day's question/slot count (which has grown over time, and will again if SQUAD ever joins the daily),
+so it's computed alongside the score rather than being a fixed constant.
+
+**No backend, no leaderboard.** The score is computed client-side and compared by pasting share text,
+the same way the emoji grid already is — there's nowhere it's collected or ranked across visitors. See
+[Known limitations & roadmap](#known-limitations--roadmap).
 
 `.github/workflows/freeze-daily.yml` runs this nightly at 09:30 UTC (after Pacific midnight
 year-round) and commits the result, so the unfrozen window stays one day rather than growing until
@@ -54,11 +90,11 @@ they stay readable. Career-path ids *are* the player's name, so those use an **o
 ## Filters (Practice)
 
 Filter by **competition** (Premier League / Champions League), **format** (lists / career paths /
-match scorers), and **difficulty**. **Difficulty applies to every format:** **Standard** is
-approachable — famous career players (best rank ≤200), lists for major clubs/nations + overall (full
-top 10), and matches from the last 5 years. **Hard** adds rarer career players (rank 201–500), lists
-for lesser clubs/countries (capped at top 5, so their obscure rank 6–10 tail never shows in
-Standard), and older matches. The daily challenge is always Standard-only.
+match scorers / starting XI), and **difficulty**. **Difficulty applies to every format:** **Standard**
+is approachable — famous career players (best rank ≤200), lists for major clubs/nations + overall
+(full top 10), and matches/squads from the last 5 years. **Hard** adds rarer career players (rank
+201–500), lists for lesser clubs/countries (capped at top 5, so their obscure rank 6–10 tail never
+shows in Standard), and older matches/squads. The daily challenge is always Standard-only.
 
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
 (`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). A **first name** on its own
@@ -77,14 +113,17 @@ scripts/                     data-prep pipeline (Node, run at build time)
   fetch/plAggregate.ts       API responses → PlayerRow[] per metric (overall + per-club splits)
   fetch/clScorers.ts         Wikipedia all-time CL ranked lists (goals, appearances)
   fetch/wikipedia.ts         infobox → career stints (career-path questions)
-  fetch/plFixtures.ts        pulselive fixtures + per-match events → named, team-attributed scorers
+  fetch/plFixtures.ts        pulselive fixtures + per-match events → named, team-attributed scorers; + starting XIs/formations
+  fetch/matchFilters.ts      "is this fixture worth asking about" — shared by build-matches.ts and build-squads.ts
   build-questions.ts         orchestrates: per-competition banks → generate → validate → write JSON
   build-matches.ts           MATCH questions only; rewrites just q-match.json, leaving list/career untouched
+  build-squads.ts            SQUAD questions only; rewrites just q-squad.json (practice-only format)
   build-daily.ts             append-only freeze of daily.json (epoch → today); never rewrites a past day
   bank.ts                    read/write the per-format bank files (single source of truth)
 public/data/q-list.json      generated LIST questions   \
-public/data/q-career.json    generated CAREER questions  > fetched per view, not all at once
-public/data/q-match.json     generated MATCH questions  /
+public/data/q-career.json    generated CAREER questions  \
+public/data/q-match.json     generated MATCH questions   > fetched per view, not all at once
+public/data/q-squad.json     generated SQUAD questions   /
 public/data/daily.json       frozen per-day challenge (full question objects)
 public/data/manifest.json    sources, retrieval dates, generated counts
 src/
@@ -93,7 +132,7 @@ src/
   game/useGame.ts            round state (lives, found answers, win/lose) — clock-free reducer
   game/daily.ts              date→question selection, frozen-schedule resolution, share text, deep links
   game/loadQuestions.ts      lazy per-format bank fetches + the policy for which are needed
-  components/                ListQuestion, CareerPathQuestion, MatchQuestion, GuessInput, Lives, QuestionRouter, DailyView
+  components/                ListQuestion, CareerPathQuestion, MatchQuestion, SquadQuestion, GuessInput, Lives, QuestionRouter, DailyView
   App.tsx                    Daily/Practice modes, filters, deck, ?q= deep links
 tests/                       matcher unit tests, daily/share/link tests, generated-data guards
 ```
@@ -124,6 +163,22 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   "Big" is Arsenal, Chelsea, Liverpool, Manchester City, Manchester United, Tottenham Hotspur.
   Everything additionally needs **at least one nameable scorer**, which drops 0–0s and the freak
   game decided entirely by own goals.
+- **SQUAD questions** — the same fixture-detail response MATCH uses also carries each side's
+  `teamLists[].formation` (e.g. `{label: "4-3-3", players: [[gk],[def...],[mid...],[fwd...]]}`) and
+  each starting player's shirt number and position, so no new API surface was needed. Draws from the
+  same base fixture pool as MATCH (`fetch/matchFilters.ts` `qualifies()`), plus one filter of its own:
+  naming a full unfamiliar starting XI is a bigger ask than naming a scorer, so
+  - **PL** stays BIG_SIX-only, same as MATCH.
+  - **CL** additionally requires a marquee side — BIG_SIX **or** a continental heavyweight
+    (`BIG_EUROPE`: Real Madrid, Barcelona, Atlético Madrid, Bayern Munich, Dortmund, PSG, Juventus,
+    Inter, Milan) — where MATCH asks about any knockout tie regardless.
+  - **Which side gets asked about**: if only one side of the fixture is big, it's always THAT side
+    (Bodø/Glimt vs Man City always asks Man City's line-up, never Bodø/Glimt's). Only when both sides
+    are big does it fall back to a deterministic coin flip (hashed from the fixture, not
+    `Math.random()`, so the build stays reproducible).
+
+  A fixture whose formation doesn't resolve to a clean, fully-numbered 11 is dropped rather than
+  shipped with a gap.
 
 The PL API is undocumented/internal, so the pipeline insulates the game from it: it's called at
 build time only, every response is cached on disk, and output is validated before the bank is
@@ -139,6 +194,7 @@ npm install          # first-time setup
 npm run dev          # dev server
 npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedia; several min cold cache)
 npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
+npm run build:squads  # regenerate ONLY q-squad.json (SQUAD_SEASONS=n to limit); cheap after build:matches
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
 npm run build:app    # typecheck + production bundle (uses the committed bank)
 npm run build        # build:data + build:app (full local rebuild)
@@ -199,27 +255,30 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **3,986
-questions** (354 list, 1,290 career, 2,342 match) across two competitions — **Premier League**
-(3,044) and **Champions League** (942) — covering 48 nationalities, 46 clubs, and matches from
-**2012-08-18 to 2026-05-30**. Questions are split **Standard** (1,691) / **Hard** (2,295) across all
-three formats (see difficulty tiers below).
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **5,963
+questions** (354 list, 1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier
+League** (4,739) and **Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches
+from **2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,558) / **Hard** (3,405) across
+all four formats (see difficulty tiers below).
 
-**The bank is split by format and fetched lazily**, because 5.2 MB in one file meant every visitor
-downloaded all of it before the game could start — including the 2.6 MB of match questions someone
-who only plays the daily never sees.
+**The bank is split by format and fetched lazily**, because one combined file would mean every
+visitor downloaded all **10.4 MB** of it before the game could start — including the 5.2 MB of squad
+questions someone who only plays the daily never sees at all (SQUAD isn't a daily slot).
 
 | File | Size | Fetched when |
 |---|---|---|
 | `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
 | `q-list.json` | 0.5 MB | Practice with lists (or All), or an unfrozen daily |
-| `q-career.json` | 2.0 MB | Practice with career paths (or All), a career deep link, or an unfrozen daily |
+| `q-career.json` | 2.1 MB | Practice with career paths (or All), a career deep link, or an unfrozen daily |
 | `q-match.json` | 2.6 MB | Practice with match scorers (or All), a match deep link, or an unfrozen daily |
+| `q-squad.json` | 5.2 MB | Practice with starting XI (or All), or a squad deep link — **never** for the daily (SQUAD isn't a daily slot; see `DAILY_FORMATS`) |
 
-So the default view — the daily — now costs **34 KB instead of 5,060 KB**. `formatsNeeded()` in
+So the default view — the daily — now costs **34 KB instead of 10.4 MB**. `formatsNeeded()` in
 `src/game/loadQuestions.ts` is the single decision point and is unit-tested, including the rule that
 nothing is fetched until the schedule says whether the day is frozen (guessing would defeat the
-purpose). Fetches are memoised per format, and failures deliberately aren't, so a later view retries.
+purpose), and the separate rule that an unfrozen day only fetches the three formats it actually draws
+from (`DAILY_FORMATS`), not the full `ALL_FORMATS` Practice can serve. Fetches are memoised per
+format, and failures deliberately aren't, so a later view retries.
 
 > ⚠️ **Next payload concern: `daily.json` grows forever.** It's the one file every visitor fetches
 > eagerly, and it gains a full day of question objects each night — currently ~2.6 KB/day, more now
@@ -262,5 +321,7 @@ Everton, Villa, West Ham, Newcastle, Leeds, Leicester, Southampton, Forest, Wolv
   (429). The fetch retries with backoff and caches, so re-running `npm run build:data` recovers any
   players skipped on a prior run (the cache makes repeat runs cheap).
 
-**Out of scope (future):** multiplayer across devices; La Liga / World Cup categories; accounts and
-persistent scoring (a per-question timer already ships in the share text, but there's no leaderboard).
+**Out of scope (future):** multiplayer across devices; La Liga / World Cup categories; accounts and a
+real cross-visitor leaderboard. The daily score (`computeDailyScore`) is a genuine number now, but
+it's computed client-side and compared by pasting share text, the same as the emoji grid — there's no
+backend collecting or ranking it.

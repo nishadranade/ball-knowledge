@@ -5,6 +5,7 @@ import {
   dateKey,
   dayNumber,
   buildShareText,
+  computeDailyScore,
   type RoundResult,
   type DailyResult,
   type DailySchedule,
@@ -72,7 +73,7 @@ export function DailyView({ all, schedule }: Props) {
   const questions = useMemo(
     () =>
       [daily.list, daily.career, daily.career2, daily.match].filter(
-        (q): q is Question => q != null,
+        (q): q is NonNullable<typeof q> => q != null,
       ),
     [daily],
   );
@@ -128,9 +129,13 @@ export function DailyView({ all, schedule }: Props) {
 
   // Results / share screen (fresh completion or already played today).
   if (done) {
+    const score = computeDailyScore(results);
     return (
       <div className="question card daily-result">
         <h2>Ball Knowledge #{day}</h2>
+        <p className="daily-score">
+          {score.points}/{score.max} pts
+        </p>
         <pre className="share-grid">{buildShareText(dailyResult)}</pre>
         {streak != null && streak > 1 && <p className="streak">🔥 {streak}-day streak</p>}
         <button onClick={share}>{copied ? 'Copied!' : 'Share result'}</button>

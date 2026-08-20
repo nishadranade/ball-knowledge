@@ -11,9 +11,17 @@ const BANK_FILES: Record<Format, string> = {
   LIST: 'q-list.json',
   CAREER_PATH: 'q-career.json',
   MATCH: 'q-match.json',
+  SQUAD: 'q-squad.json',
 };
 
-export const ALL_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH'];
+/** Every format Practice can serve. */
+export const ALL_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH', 'SQUAD'];
+
+/** Formats `selectDaily` actually draws from. SQUAD isn't part of the daily
+ *  yet (practice-only), so an unfrozen day's live-selection fallback must NOT
+ *  fetch q-squad.json — that would defeat the point of the per-format split
+ *  for a format the daily never even looks at. Keep in sync with daily.ts. */
+export const DAILY_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH'];
 
 /** In-flight and completed fetches, so a format is never downloaded twice. */
 const cache = new Map<Format, Promise<Question[]>>();
@@ -53,6 +61,7 @@ export async function loadFormats(formats: Format[]): Promise<Question[]> {
 export function formatForToken(token: string): Format {
   if (token.startsWith('list_')) return 'LIST';
   if (token.startsWith('match_')) return 'MATCH';
+  if (token.startsWith('squad_')) return 'SQUAD';
   return 'CAREER_PATH';
 }
 
@@ -84,9 +93,9 @@ export function formatsNeeded({
   if (linkedToken) return [formatForToken(linkedToken)];
   if (mode === 'DAILY') {
     // Unknown yet → fetch nothing; frozen → nothing needed; otherwise the live
-    // selection has to hash the whole pool.
+    // selection has to hash the pool of formats it actually draws from.
     if (dayIsFrozen === null || dayIsFrozen) return [];
-    return ALL_FORMATS;
+    return DAILY_FORMATS;
   }
   return formatFilter === 'ALL' ? ALL_FORMATS : [formatFilter];
 }

@@ -95,7 +95,8 @@ jobs:
             "${URL}data/daily.json" \
             "${URL}data/q-list.json" \
             "${URL}data/q-career.json" \
-            "${URL}data/q-match.json"; do
+            "${URL}data/q-match.json" \
+            "${URL}data/q-squad.json"; do
             code=000
             for i in 1 2 3 4 5; do
               code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$target")
