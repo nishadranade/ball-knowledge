@@ -23,6 +23,7 @@ import type {
   ListQuestion,
   CareerPathQuestion,
   MatchQuestion,
+  SquadQuestion,
 } from '../src/game/types';
 
 const list = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
@@ -69,10 +70,38 @@ const match = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Questi
   ],
 });
 
+const squad = (id: string, difficulty: 'STANDARD' | 'HARD' = 'STANDARD'): Question => ({
+  id,
+  category: 'PREMIER_LEAGUE',
+  format: 'SQUAD',
+  prompt: 'Name the starting XI.',
+  maxWrong: 6,
+  difficulty,
+  source: { name: 'x', url: 'x', retrievedAt: 'x' },
+  squad: {
+    team: 'H',
+    opponent: 'A',
+    home: true,
+    teamScore: 2,
+    opponentScore: 1,
+    date: '2019-01-12',
+    dateLabel: '12 January 2019',
+    formation: '4-3-3',
+  },
+  answers: Array.from({ length: 11 }, (_, i) => ({
+    fullName: `P${i} Q${i}`,
+    lastName: `Q${i}`,
+    shirtNumber: i + 1,
+    position: 'D',
+  })),
+  lines: [[0], [1, 2, 3, 4], [5, 6, 7], [8, 9, 10]],
+});
+
 const pool: Question[] = [
   ...Array.from({ length: 10 }, (_, i) => list(`l${i}`)),
   ...Array.from({ length: 10 }, (_, i) => career(`c${i}`)),
   ...Array.from({ length: 10 }, (_, i) => match(`m${i}`)),
+  ...Array.from({ length: 10 }, (_, i) => squad(`s${i}`)),
 ];
 
 describe('dateKey / dayNumber (US Pacific)', () => {
@@ -157,6 +186,24 @@ describe('selectDaily', () => {
       expect(without.match).toBeNull();
     }
   });
+  it('includes a SQUAD question', () => {
+    const d = selectDaily(pool, '2026-03-05');
+    expect(d.squad?.format).toBe('SQUAD');
+  });
+  it('adding the squad slot did not disturb the other draws', () => {
+    // Same guarantee as the match slot: ':squad' is its own salt, so a pool
+    // with no squad questions must resolve every other slot exactly as before.
+    const noSquads = pool.filter((q) => q.format !== 'SQUAD');
+    for (const key of ['2026-03-05', '2026-07-04', '2027-01-01']) {
+      const full = selectDaily(pool, key);
+      const without = selectDaily(noSquads, key);
+      expect(full.list?.id).toBe(without.list?.id);
+      expect(full.career?.id).toBe(without.career?.id);
+      expect(full.career2?.id).toBe(without.career2?.id);
+      expect(full.match?.id).toBe(without.match?.id);
+      expect(without.squad).toBeNull();
+    }
+  });
   it('leaves career2 null rather than duplicating when only one career exists', () => {
     const thin: Question[] = [list('l0'), career('c0')];
     const d = selectDaily(thin, '2026-03-05');
@@ -187,6 +234,8 @@ describe('selectDaily', () => {
     expect(d.list).toBeNull();
     expect(d.career).toBeNull();
     expect(d.career2).toBeNull();
+    expect(d.match).toBeNull();
+    expect(d.squad).toBeNull();
   });
 });
 
@@ -216,8 +265,10 @@ describe('resolveDaily (frozen schedule)', () => {
     expect(d.list?.id).toBe('frozen-list');
     expect(d.career?.id).toBe('frozen-career');
     expect(d.career2).toBeNull();
-    // Nor may a match be back-filled into a day frozen before matches existed.
+    // Nor may a match or squad be back-filled into a day frozen before those
+    // slots existed.
     expect(d.match).toBeNull();
+    expect(d.squad).toBeNull();
   });
 
   it('keeps a frozen match question and never re-draws it', () => {
@@ -230,6 +281,18 @@ describe('resolveDaily (frozen schedule)', () => {
     };
     const d = resolveDaily(pool, schedule, '2026-03-05');
     expect(d.match?.id).toBe('frozen-match');
+  });
+
+  it('keeps a frozen squad question and never re-draws it', () => {
+    const schedule: DailySchedule = {
+      '2026-03-05': {
+        list: null,
+        career: null,
+        squad: squad('frozen-squad') as SquadQuestion,
+      },
+    };
+    const d = resolveDaily(pool, schedule, '2026-03-05');
+    expect(d.squad?.id).toBe('frozen-squad');
   });
 
   it('falls back to live selection when the date is not frozen', () => {

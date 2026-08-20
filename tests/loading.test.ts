@@ -34,11 +34,11 @@ describe('formatsNeeded — daily', () => {
     );
   });
 
-  it('never fetches SQUAD for the daily — selectDaily does not draw one', () => {
-    // SQUAD is practice-only. If it ever joins the daily, DAILY_FORMATS must be
-    // updated deliberately — this pins the current, narrower behavior.
-    expect(DAILY_FORMATS).not.toContain('SQUAD');
-    expect(ALL_FORMATS).toContain('SQUAD'); // but it IS a real practice format
+  it('DAILY_FORMATS matches every format selectDaily actually draws from', () => {
+    // SQUAD joined the daily on 2026-08-20. If a future format is added to
+    // Practice without joining the daily, this pins DAILY_FORMATS as the
+    // deliberate, separate list that guards against fetching it speculatively.
+    expect([...DAILY_FORMATS].sort()).toEqual([...ALL_FORMATS].sort());
   });
 });
 

@@ -20,18 +20,19 @@ question formats and forgiving answer matching.
      rotten answer) but are counted and disclosed, so the arithmetic still adds up.
 4. **Starting XI** — a real fixture's line-up for one side, laid out on a pitch by shirt number and
    formation row: name all **11** starters, with up to **6 wrong guesses**. Drawn from the same
-   fixture pool as match scorers (see below), one side per fixture chosen deterministically.
-   **Practice-only for now** — not yet part of the daily.
+   fixture pool as match scorers (see below), one side per fixture chosen deterministically, always
+   biased toward the recognizable side when only one side of the fixture is "big" (see below).
 
 ## Modes
 
-- **Daily** — a shared Wordle-style challenge: everyone gets the **same** 4 questions (one list, two
-  career paths, one match) each day, picked deterministically from the calendar date (no backend). The day
-  rolls over at **US Pacific midnight** (`America/Los_Angeles`, DST-aware), so all players share the
-  same puzzle regardless of their own timezone. Play once per day, then **share a spoiler-free
-  result** (emoji grid + "Ball Knowledge #N" + per-question time + a **points score** — see Scoring
-  below) via the Web Share API / clipboard. Progress and a streak are kept in `localStorage`. Daily
-  lists are trimmed to **top 5** to keep the round short.
+- **Daily** — a shared Wordle-style challenge: everyone gets the **same** questions each day, picked
+  deterministically from the calendar date (no backend) — a list, two career paths, a match, and (from
+  **2026-08-20** onward) a starting XI. The day rolls over at **US Pacific midnight**
+  (`America/Los_Angeles`, DST-aware), so all players share the same puzzle regardless of their own
+  timezone. Play once per day, then **share a spoiler-free result** (emoji grid + "Ball Knowledge #N"
+  + per-question time + a **points score** — see Scoring below) via the Web Share API / clipboard.
+  Progress and a streak are kept in `localStorage`. Daily lists are trimmed to **top 5** to keep the
+  round short.
 - **Practice** — free-play endless deck with all the filters below. Finishing a question also offers
   a **shareable result + deep link** to that exact question (`?q=<token>`), so you can send a
   favourite question to a friend.
@@ -78,9 +79,9 @@ year-round) and commits the result, so the unfrozen window stays one day rather 
 someone remembers. The freeze is append-only, so it can never disturb a day already recorded.
 
 Each slot is **optional in the frozen schedule**, which is what lets the daily grow without
-rewriting history: a day frozen before `career2` or `match` existed simply lacks that key and stays
-the length it was actually played at. Each slot also draws on its own hash salt, so adding one never
-shifts the others.
+rewriting history: a day frozen before `career2`, `match` or `squad` existed simply lacks that key and
+stays the length it was actually played at — days before **2026-08-20** have no `squad`, for instance.
+Each slot also draws on its own hash salt, so adding one never shifts the others.
 
 **Share links don't spoil answers.** A link is only obfuscated when its id would otherwise spell an
 answer. List and match ids restate what's already on screen (the prompt; the fixture and date), so
@@ -117,7 +118,7 @@ scripts/                     data-prep pipeline (Node, run at build time)
   fetch/matchFilters.ts      "is this fixture worth asking about" — shared by build-matches.ts and build-squads.ts
   build-questions.ts         orchestrates: per-competition banks → generate → validate → write JSON
   build-matches.ts           MATCH questions only; rewrites just q-match.json, leaving list/career untouched
-  build-squads.ts            SQUAD questions only; rewrites just q-squad.json (practice-only format)
+  build-squads.ts            SQUAD questions only; rewrites just q-squad.json
   build-daily.ts             append-only freeze of daily.json (epoch → today); never rewrites a past day
   bank.ts                    read/write the per-format bank files (single source of truth)
 public/data/q-list.json      generated LIST questions   \
@@ -262,29 +263,31 @@ from **2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,558) / **
 all four formats (see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every
-visitor downloaded all **10.4 MB** of it before the game could start — including the 5.2 MB of squad
-questions someone who only plays the daily never sees at all (SQUAD isn't a daily slot).
+visitor downloaded all **10.4 MB** of it before the game could start — most visitors play the
+**frozen** daily, which needs none of it.
 
 | File | Size | Fetched when |
 |---|---|---|
 | `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
-| `q-list.json` | 0.5 MB | Practice with lists (or All), or an unfrozen daily |
-| `q-career.json` | 2.1 MB | Practice with career paths (or All), a career deep link, or an unfrozen daily |
-| `q-match.json` | 2.6 MB | Practice with match scorers (or All), a match deep link, or an unfrozen daily |
-| `q-squad.json` | 5.2 MB | Practice with starting XI (or All), or a squad deep link — **never** for the daily (SQUAD isn't a daily slot; see `DAILY_FORMATS`) |
+| `q-list.json` | 0.5 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
+| `q-career.json` | 2.1 MB | Practice with career paths (or All), an unfrozen daily, or a career deep link |
+| `q-match.json` | 2.6 MB | Practice with match scorers (or All), an unfrozen daily, or a match deep link |
+| `q-squad.json` | 5.2 MB | Practice with starting XI (or All), an unfrozen daily, or a squad deep link |
 
 So the default view — the daily — now costs **34 KB instead of 10.4 MB**. `formatsNeeded()` in
 `src/game/loadQuestions.ts` is the single decision point and is unit-tested, including the rule that
 nothing is fetched until the schedule says whether the day is frozen (guessing would defeat the
-purpose), and the separate rule that an unfrozen day only fetches the three formats it actually draws
-from (`DAILY_FORMATS`), not the full `ALL_FORMATS` Practice can serve. Fetches are memoised per
-format, and failures deliberately aren't, so a later view retries.
+purpose). `DAILY_FORMATS` there names exactly the formats `selectDaily()` draws from — every format
+today, since SQUAD joined the daily on 2026-08-20, but kept as its own list rather than reused from
+`ALL_FORMATS` so a *future* practice-only format can't silently become an eager daily fetch just by
+existing. Fetches are memoised per format, and failures deliberately aren't, so a later view retries.
 
 > ⚠️ **Next payload concern: `daily.json` grows forever.** It's the one file every visitor fetches
-> eagerly, and it gains a full day of question objects each night — currently ~2.6 KB/day, more now
-> that days embed a match question too, so roughly **1 MB/year**. The fix is to serve one file per
-> day (`data/daily/YYYY-MM-DD.json`) so the browser fetches only today's, falling back to live
-> selection on a 404. Not urgent at 34 KB; will be within a year.
+> eagerly, and it gains a full day of question objects each night — roughly **1 MB/year** with the
+> match question in every day, and set to grow faster still from 2026-08-20 onward, when a squad
+> question (11 named, numbered players plus formation data) is added to every day's entry too. The
+> fix is to serve one file per day (`data/daily/YYYY-MM-DD.json`) so the browser fetches only today's,
+> falling back to live selection on a 404. Not urgent at 34 KB; will be within a year.
 
 > The career pool is bounded by best rank ≤500 across metrics; the Wikipedia crawl for the deepest
 > (rarest) players is partial. Re-running `npm run build:data` resumes from cache and fills in more

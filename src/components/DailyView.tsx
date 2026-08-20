@@ -67,12 +67,12 @@ export function DailyView({ all, schedule }: Props) {
   const day = dayNumber();
   const daily = useMemo(() => resolveDaily(all, schedule, date), [all, schedule, date]);
 
-  // Ordered daily questions: list, the two career paths, then the match. Days
-  // frozen before a slot existed simply lack it and stay the length they were
-  // actually played at.
+  // Ordered daily questions: list, the two career paths, the match, then the
+  // squad. Days frozen before a slot existed simply lack it and stay the
+  // length they were actually played at.
   const questions = useMemo(
     () =>
-      [daily.list, daily.career, daily.career2, daily.match].filter(
+      [daily.list, daily.career, daily.career2, daily.match, daily.squad].filter(
         (q): q is NonNullable<typeof q> => q != null,
       ),
     [daily],

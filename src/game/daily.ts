@@ -10,7 +10,7 @@
  * timezone (DST handled automatically by Intl).
  */
 
-import type { Question, ListQuestion, CareerPathQuestion, MatchQuestion } from './types';
+import type { Question, ListQuestion, CareerPathQuestion, MatchQuestion, SquadQuestion } from './types';
 
 const TIME_ZONE = 'America/Los_Angeles';
 /** Launch epoch (Pacific) — the date that is day 1 of "Ball Knowledge #N". */
@@ -60,6 +60,10 @@ export interface DailySelection {
   /** Match question. OPTIONAL for the same reason — days frozen before the match
    *  format existed have no `match` and stay at whatever length they were. */
   match?: MatchQuestion | null;
+  /** Starting-XI question. OPTIONAL for the same reason — days frozen before
+   *  2026-08-20 (when SQUAD joined the daily) have no `squad` and stay at
+   *  whatever length they were. */
+  squad?: SquadQuestion | null;
 }
 
 /**
@@ -135,11 +139,15 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
   // One match question per day. Its own salt, so adding it left every existing
   // slot's draw untouched.
   const matches = standard.filter((q): q is MatchQuestion => q.format === 'MATCH');
+  // One squad (starting XI) question per day, same pattern — its own salt, so
+  // adding it left every existing slot's draw untouched.
+  const squads = standard.filter((q): q is SquadQuestion => q.format === 'SQUAD');
   return {
     list: list ? truncateDailyList(list) : null,
     career,
     career2,
     match: pick(matches, ':match'),
+    squad: pick(squads, ':squad'),
   };
 }
 
@@ -164,15 +172,16 @@ export function resolveDaily(
   key: string = dateKey(),
 ): DailySelection {
   const frozen = schedule?.[key];
-  // `career2` and `match` are absent on days frozen before those slots existed;
-  // such a day keeps the length it was actually played at, which is the whole
-  // point of freezing.
+  // `career2`, `match` and `squad` are absent on days frozen before those
+  // slots existed; such a day keeps the length it was actually played at,
+  // which is the whole point of freezing.
   if (frozen) {
     return {
       list: frozen.list,
       career: frozen.career,
       career2: frozen.career2 ?? null,
       match: frozen.match ?? null,
+      squad: frozen.squad ?? null,
     };
   }
   return selectDaily(all, key);

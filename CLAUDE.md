@@ -42,10 +42,12 @@ the container exits. Check `git status` after.
   qualifies (`isBigTeam`) — naming a full unfamiliar XI is a much bigger ask than naming a scorer.
   Don't "simplify" SQUAD to just reuse `qualifies()` outright; that would reintroduce asking players
   to name Bodø/Glimt's back four.
-- **SQUAD is practice-only.** `selectDaily()` doesn't draw a squad slot, and `loadQuestions.ts`
-  deliberately keeps `SQUAD` out of `DAILY_FORMATS` (the unfrozen-daily fetch list) even though it's
-  in `ALL_FORMATS` (Practice). If SQUAD ever joins the daily, both of those need updating together —
-  otherwise the daily either 404s on a slot it can't fill, or silently fetches a file it never uses.
+- **SQUAD joined the daily on 2026-08-20.** `DAILY_FORMATS` in `loadQuestions.ts` must list exactly
+  the formats `selectDaily()` draws from — today that's every format, so it equals `ALL_FORMATS`, but
+  it's kept as its own list rather than reused directly: a *future* Practice-only format must NOT be
+  added to `DAILY_FORMATS` until `selectDaily()` actually draws from it, or an unfrozen daily fetches
+  a file it never uses. Days frozen before 2026-08-20 simply have no `squad` key (same optional-slot
+  pattern as `career2`/`match`) and are never back-filled.
 - **A frozen day in `daily.json` is immutable.** `build-daily.ts` is append-only and must stay that
   way; players have already played those rounds. Every daily slot is optional in the schedule, which
   is what lets the daily grow without rewriting history.
@@ -74,6 +76,7 @@ crawl is deliberately partial, so it reshuffles the career pool as a side effect
 
 ## Known next thing
 
-`daily.json` is the one file every visitor fetches eagerly and it grows ~2.6 KB/day (~1 MB/year).
-The fix is one file per day (`data/daily/YYYY-MM-DD.json`), falling back to live selection on a 404.
-Not urgent at 34 KB.
+`daily.json` is the one file every visitor fetches eagerly and it grows ~1 MB/year already — faster
+from 2026-08-20 on, once days start embedding a squad question (11 named, numbered players) too. The
+fix is one file per day (`data/daily/YYYY-MM-DD.json`), falling back to live selection on a 404. Not
+urgent at 34 KB.

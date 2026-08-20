@@ -53,6 +53,7 @@ describe('what the browser actually downloads', () => {
       'q-career.json',
       'q-list.json',
       'q-match.json',
+      'q-squad.json',
     ]);
   });
 

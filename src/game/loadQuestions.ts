@@ -17,11 +17,12 @@ const BANK_FILES: Record<Format, string> = {
 /** Every format Practice can serve. */
 export const ALL_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH', 'SQUAD'];
 
-/** Formats `selectDaily` actually draws from. SQUAD isn't part of the daily
- *  yet (practice-only), so an unfrozen day's live-selection fallback must NOT
- *  fetch q-squad.json — that would defeat the point of the per-format split
- *  for a format the daily never even looks at. Keep in sync with daily.ts. */
-export const DAILY_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH'];
+/** Formats `selectDaily` actually draws from — currently every format, so
+ *  this equals ALL_FORMATS. Kept as its own list (rather than reusing
+ *  ALL_FORMATS directly) so a FUTURE format doesn't silently become fetchable
+ *  by an unfrozen daily just because it's practice-selectable; adding one to
+ *  the daily has to be a deliberate edit here, in sync with daily.ts. */
+export const DAILY_FORMATS: Format[] = ['LIST', 'CAREER_PATH', 'MATCH', 'SQUAD'];
 
 /** In-flight and completed fetches, so a format is never downloaded twice. */
 const cache = new Map<Format, Promise<Question[]>>();

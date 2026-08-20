@@ -40,9 +40,11 @@ project, so the branch-and-merge ceremony added round trips without adding revie
   since both hit the same fixture-detail endpoint and share its disk cache). Either leaves list and
   career questions byte-identical — `build:data` would also re-crawl Wikipedia and reshuffle the
   (deliberately partial) career pool.
-- **SQUAD is practice-only for now** — `selectDaily()` doesn't draw from it, and `loadQuestions.ts`
-  keeps it out of the daily's live-selection fallback on purpose (see `DAILY_FORMATS` there) so an
-  unfrozen day never fetches `q-squad.json` for a format it doesn't use.
+- **SQUAD joined the daily on 2026-08-20.** Days frozen before that have no `squad` key and stay at
+  the length they were actually played (same pattern as `career2`/`match` before them) — never
+  back-filled. `DAILY_FORMATS` in `loadQuestions.ts` must list every format `selectDaily()` draws
+  from; if a future format is added to Practice without joining the daily, DAILY_FORMATS should NOT
+  include it, so an unfrozen day doesn't fetch a file it doesn't use.
 - **Keep `useGame` pure.** Game logic in `src/game/useGame.ts` is a pure reducer — no timers, no
   `Date.now()`, no side effects. Timing/IO belongs in components.
 - **No new runtime dependencies** without discussion — the app ships to the browser, so bundle size
