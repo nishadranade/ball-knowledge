@@ -3837,5 +3837,326 @@
         ]
       ]
     }
+  },
+  "2026-08-21": {
+    "list": {
+      "id": "list_premier_league_assists_country_scotland_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Scottish assist providers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "value": 60,
+          "rank": 1
+        },
+        {
+          "fullName": "Gary McAllister",
+          "lastName": "McAllister",
+          "value": 47,
+          "rank": 2
+        },
+        {
+          "fullName": "James Morrison",
+          "lastName": "Morrison",
+          "value": 33,
+          "rank": 3
+        },
+        {
+          "fullName": "Ryan Fraser",
+          "lastName": "Fraser",
+          "value": 31,
+          "rank": 4
+        },
+        {
+          "fullName": "Darren Fletcher",
+          "lastName": "Fletcher",
+          "value": 27,
+          "rank": 5
+        },
+        {
+          "fullName": "Don Hutchison",
+          "lastName": "Hutchison",
+          "value": 27,
+          "rank": 6
+        },
+        {
+          "fullName": "John McGinn",
+          "lastName": "McGinn",
+          "value": 27,
+          "rank": 7
+        }
+      ]
+    },
+    "career": {
+      "id": "career_javi_mart_nez",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Javi_Martínez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2005–2006",
+          "club": "Osasuna B",
+          "appearances": 32,
+          "goals": 3
+        },
+        {
+          "years": "2006–2012",
+          "club": "Athletic Bilbao",
+          "appearances": 201,
+          "goals": 22
+        },
+        {
+          "years": "2012–2021",
+          "club": "Bayern Munich",
+          "appearances": 165,
+          "goals": 9
+        },
+        {
+          "years": "2021–2025",
+          "club": "Qatar SC",
+          "appearances": 77,
+          "goals": 11
+        },
+        {
+          "years": "2025–2026",
+          "club": "Al Bidda",
+          "appearances": 10,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Javi Martínez",
+        "lastName": "Martínez",
+        "aliases": [
+          "Javi",
+          "Martínez"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_petr_cech",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 3,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Petr_Cech",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2001",
+          "club": "Chmel Blšany",
+          "appearances": 27,
+          "goals": 0
+        },
+        {
+          "years": "2001–2002",
+          "club": "Sparta Prague",
+          "appearances": 27,
+          "goals": 0
+        },
+        {
+          "years": "2002–2004",
+          "club": "Rennes",
+          "appearances": 70,
+          "goals": 0
+        },
+        {
+          "years": "2004–2015",
+          "club": "Chelsea",
+          "appearances": 333,
+          "goals": 0
+        },
+        {
+          "years": "2015–2019",
+          "club": "Arsenal",
+          "appearances": 110,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Petr Cech",
+        "lastName": "Cech",
+        "aliases": [
+          "Petr",
+          "Cech"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-09-28_chelsea_brighton_hove_albion",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Brighton & Hove Albion",
+        "homeScore": 4,
+        "awayScore": 2,
+        "date": "2024-09-28",
+        "dateLabel": "28 September 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Georginio Rutter",
+          "lastName": "Rutter",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "goals": 4,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Carlos Baleba",
+          "lastName": "Baleba",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2026-04-07_real_madrid_fc_bayern_m_nchen_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Real Madrid",
+        "opponent": "FC Bayern München",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2026-04-07",
+        "dateLabel": "7 April 2026",
+        "round": "Quarter-Finals, first leg",
+        "formation": "4-4-2"
+      },
+      "answers": [
+        {
+          "fullName": "Andrii Lunin",
+          "lastName": "Lunin",
+          "shirtNumber": 13,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "shirtNumber": 22,
+          "position": "D"
+        },
+        {
+          "fullName": "Dean Huijsen",
+          "lastName": "Huijsen",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Álvaro Carreras",
+          "lastName": "Carreras",
+          "shirtNumber": 18,
+          "position": "D"
+        },
+        {
+          "fullName": "Federico Valverde",
+          "lastName": "Valverde",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Pitarch",
+          "lastName": "Pitarch",
+          "shirtNumber": 45,
+          "position": "M"
+        },
+        {
+          "fullName": "Aurélien Tchouaméni",
+          "lastName": "Tchouaméni",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Arda Güler",
+          "lastName": "Güler",
+          "shirtNumber": 15,
+          "position": "M"
+        },
+        {
+          "fullName": "Kylian Mbappé",
+          "lastName": "Mbappé",
+          "shirtNumber": 10,
+          "position": "F"
+        },
+        {
+          "fullName": "Vinícius Júnior",
+          "lastName": "Paixão de Oliveira Júnior",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
