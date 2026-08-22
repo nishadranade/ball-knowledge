@@ -4158,5 +4158,291 @@
         ]
       ]
     }
+  },
+  "2026-08-22": {
+    "list": {
+      "id": "list_premier_league_cleansheets_country_argentina_3",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 Argentine clean-sheet keepers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Emiliano Martínez",
+          "lastName": "Martínez",
+          "value": 66,
+          "rank": 1
+        },
+        {
+          "fullName": "Julian Speroni",
+          "lastName": "Speroni",
+          "value": 20,
+          "rank": 2
+        },
+        {
+          "fullName": "Willy Caballero",
+          "lastName": "Caballero",
+          "value": 11,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_darijo_srna",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 57,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Darijo_Srna",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2003",
+          "club": "Hajduk Split",
+          "appearances": 64,
+          "goals": 4
+        },
+        {
+          "years": "2003–2018",
+          "club": "Shakhtar Donetsk",
+          "appearances": 339,
+          "goals": 33
+        },
+        {
+          "years": "2018–2019",
+          "club": "Cagliari",
+          "appearances": 26,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Darijo Srna",
+        "lastName": "Srna",
+        "aliases": [
+          "Darijo",
+          "Srna"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_virgil_van_dijk",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 29,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Virgil_van_Dijk",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2013",
+          "club": "Groningen",
+          "appearances": 62,
+          "goals": 7
+        },
+        {
+          "years": "2013–2015",
+          "club": "Celtic",
+          "appearances": 76,
+          "goals": 9
+        },
+        {
+          "years": "2015–2018",
+          "club": "Southampton",
+          "appearances": 67,
+          "goals": 4
+        },
+        {
+          "years": "2018–",
+          "club": "Liverpool",
+          "appearances": 272,
+          "goals": 27
+        }
+      ],
+      "answer": {
+        "fullName": "Virgil van Dijk",
+        "lastName": "van Dijk",
+        "aliases": [
+          "Virgil",
+          "van",
+          "Dijk"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-03-12_arsenal_psv_eindhoven",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "PSV Eindhoven",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2025-03-12",
+        "dateLabel": "12 March 2025",
+        "round": "Round of 16, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Ivan Perisic",
+          "lastName": "Perisic",
+          "goals": 1,
+          "team": "PSV Eindhoven"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Couhaib Driouech",
+          "lastName": "Driouech",
+          "goals": 1,
+          "team": "PSV Eindhoven"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-01-30_nottingham_forest_arsenal_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Nottingham Forest",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2024-01-30",
+        "dateLabel": "30 January 2024",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Emile Smith Rowe",
+          "lastName": "Smith Rowe",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "de Jesus",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
