@@ -4444,5 +4444,313 @@
         ]
       ]
     }
+  },
+  "2026-08-23": {
+    "list": {
+      "id": "list_champions_league_assists_overall_all_10",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ángel Di María",
+          "lastName": "Di María",
+          "value": 37,
+          "rank": 1
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "Ronaldo",
+          "value": 32,
+          "rank": 2
+        },
+        {
+          "fullName": "Lionel Messi",
+          "lastName": "Messi",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Neymar",
+          "lastName": "Neymar",
+          "value": 30,
+          "rank": 4
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 27,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_pierre_emile_h_jbjerg",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 135,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Pierre-Emile_Højbjerg",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2014",
+          "club": "Bayern Munich II",
+          "appearances": 44,
+          "goals": 12
+        },
+        {
+          "years": "2013–2016",
+          "club": "Bayern Munich",
+          "appearances": 17,
+          "goals": 0
+        },
+        {
+          "years": "2015",
+          "club": "FC Augsburg",
+          "appearances": 16,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2015–2016",
+          "club": "Schalke 04",
+          "appearances": 23,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2016–2020",
+          "club": "Southampton",
+          "appearances": 109,
+          "goals": 4
+        },
+        {
+          "years": "2020–2025",
+          "club": "Tottenham Hotspur",
+          "appearances": 145,
+          "goals": 8
+        },
+        {
+          "years": "2024–2025",
+          "club": "Marseille",
+          "appearances": 30,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2025–",
+          "club": "Marseille",
+          "appearances": 32,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Pierre-Emile Højbjerg",
+        "lastName": "Højbjerg",
+        "aliases": [
+          "Pierre-Emile",
+          "Højbjerg"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_phil_neville",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 10,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Phil_Neville",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1994–2005",
+          "club": "Manchester United",
+          "appearances": 263,
+          "goals": 5
+        },
+        {
+          "years": "2005–2013",
+          "club": "Everton",
+          "appearances": 242,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Phil Neville",
+        "lastName": "Neville",
+        "aliases": [
+          "Phil",
+          "Neville"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-05-09_liverpool_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Chelsea",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2026-05-09",
+        "dateLabel": "9 May 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2022-04-06_villarreal_fc_bayern_m_nchen_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "FC Bayern München",
+        "opponent": "Villarreal",
+        "home": false,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2022-04-06",
+        "dateLabel": "6 April 2022",
+        "round": "Quarter-Finals, first leg",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Manuel Neuer",
+          "lastName": "Neuer",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Benjamin Pavard",
+          "lastName": "Pavard",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Dayot Upamecano",
+          "lastName": "Upamecano",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Lucas Hernández",
+          "lastName": "Hernández",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Alphonso Davies",
+          "lastName": "Davies",
+          "shirtNumber": 19,
+          "position": "D"
+        },
+        {
+          "fullName": "Joshua Kimmich",
+          "lastName": "Kimmich",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Jamal Musiala",
+          "lastName": "Musiala",
+          "shirtNumber": 42,
+          "position": "M"
+        },
+        {
+          "fullName": "Kingsley Coman",
+          "lastName": "Coman",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Thomas Müller",
+          "lastName": "Müller",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Serge Gnabry",
+          "lastName": "Gnabry",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Robert Lewandowski",
+          "lastName": "Lewandowski",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
