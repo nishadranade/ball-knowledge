@@ -15,6 +15,17 @@ interface Props {
 }
 
 /**
+ * Row and player order for on-screen display, as indices into `answers`:
+ * attackers-first top-to-bottom (the source data is GK-first), and each row
+ * mirrored left-right. The mirror matters because the source data lists a
+ * line right-to-left — e.g. right-back before left-back — so rendering it
+ * as-is puts the right-back on the visual LEFT. Exported for unit testing.
+ */
+export function orderPitchRows(lines: number[][]): number[][] {
+  return [...lines].reverse().map((row) => [...row].reverse());
+}
+
+/**
  * A real starting XI, laid out on a pitch by shirt number — name every player.
  * Structurally a list round (11 slots instead of a handful), so it runs on the
  * same shared `useGame` reducer as List/Match and inherits lives, duplicate
@@ -46,9 +57,7 @@ export function SquadQuestion({ question, onNext, nextLabel = 'Next question →
     }
   }, [over, onComplete, state, question, getElapsedMs]);
 
-  // Attackers at the top of the pitch, keeper at the bottom — the usual
-  // broadcast-graphic convention. `lines` comes GK-first from the data.
-  const rows = [...question.lines].reverse();
+  const rows = orderPitchRows(question.lines);
 
   return (
     <div className="question card">
