@@ -4752,5 +4752,331 @@
         ]
       ]
     }
+  },
+  "2026-08-24": {
+    "list": {
+      "id": "list_champions_league_cleansheets_country_brazil_3",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 Brazilian clean-sheet keepers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "value": 16,
+          "rank": 1
+        },
+        {
+          "fullName": "Ederson",
+          "lastName": "Ederson",
+          "value": 13,
+          "rank": 2
+        },
+        {
+          "fullName": "Artur Moraes",
+          "lastName": "Moraes",
+          "value": 10,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_kevin_nolan",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 44,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kevin_Nolan",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2009",
+          "club": "Bolton Wanderers",
+          "appearances": 296,
+          "goals": 40
+        },
+        {
+          "years": "2009–2011",
+          "club": "Newcastle United",
+          "appearances": 85,
+          "goals": 29
+        },
+        {
+          "years": "2011–2015",
+          "club": "West Ham United",
+          "appearances": 141,
+          "goals": 30
+        },
+        {
+          "years": "2016",
+          "club": "Leyton Orient",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2017–2018",
+          "club": "Notts County",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kevin Nolan",
+        "lastName": "Nolan",
+        "aliases": [
+          "Kevin",
+          "Nolan"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_wayne_bridge",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 68,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wayne_Bridge",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–2003",
+          "club": "Southampton",
+          "appearances": 151,
+          "goals": 2
+        },
+        {
+          "years": "2003–2009",
+          "club": "Chelsea",
+          "appearances": 87,
+          "goals": 1
+        },
+        {
+          "years": "2006",
+          "club": "Fulham",
+          "appearances": 12,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2009–2013",
+          "club": "Manchester City",
+          "appearances": 42,
+          "goals": 0
+        },
+        {
+          "years": "2011",
+          "club": "West Ham United",
+          "appearances": 15,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2012",
+          "club": "Sunderland",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2012–2013",
+          "club": "Brighton & Hove Albion",
+          "appearances": 37,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2013–2014",
+          "club": "Reading",
+          "appearances": 12,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Wayne Bridge",
+        "lastName": "Bridge",
+        "aliases": [
+          "Wayne",
+          "Bridge"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-12-26_manchester_united_aston_villa",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester United",
+        "awayTeam": "Aston Villa",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2023-12-26",
+        "dateLabel": "26 December 2023"
+      },
+      "answers": [
+        {
+          "fullName": "John McGinn",
+          "lastName": "McGinn",
+          "goals": 1,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "Leander Dendoncker",
+          "lastName": "Dendoncker",
+          "goals": 1,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "Alejandro Garnacho",
+          "lastName": "Garnacho",
+          "goals": 2,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Rasmus Højlund",
+          "lastName": "Højlund",
+          "goals": 1,
+          "team": "Manchester United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-11-30_crystal_palace_manchester_united_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Crystal Palace",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2025-11-30",
+        "dateLabel": "30 November 2025",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Senne Lammens",
+          "lastName": "Lammens",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Leny Yoro",
+          "lastName": "Yoro",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Matthijs de Ligt",
+          "lastName": "de Ligt",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 2,
+          "position": "M"
+        },
+        {
+          "fullName": "Bryan Mbeumo",
+          "lastName": "Mbeumo",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Joshua Zirkzee",
+          "lastName": "Zirkzee",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
