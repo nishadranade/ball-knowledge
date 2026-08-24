@@ -511,10 +511,31 @@ describe('computeDailyScore', () => {
     expect(withBoth).toBe(timedWithoutSpeedBonus + untimedAlone); // but voided once ANY round lacks a time
   });
 
-  it('faster total time earns a bigger speed tier', () => {
+  it('faster total time earns a bigger speed bonus', () => {
     const fast: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 60_000 };
     const slow: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 700_000 };
     expect(computeDailyScore([fast]).points).toBeGreaterThan(computeDailyScore([slow]).points);
+  });
+
+  it('the speed bonus decays SMOOTHLY — a couple of seconds moves the score by a fraction of a point, not a double-digit cliff', () => {
+    // 179s vs 181s straddles where the old discrete tiers used to jump by 15
+    // points at the 3:00 mark. The continuous formula must not reproduce that.
+    const justUnder: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 179_000 };
+    const justOver: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 181_000 };
+    const diff = computeDailyScore([justUnder]).points - computeDailyScore([justOver]).points;
+    expect(diff).toBeLessThanOrEqual(1);
+  });
+
+  it('a perfect, instant (0ms) round scores exactly max', () => {
+    const perfect: RoundResult = { ...win('LIST', 5, 5, 0, 3), elapsedMs: 0 };
+    const { points, max } = computeDailyScore([perfect]);
+    expect(points).toBe(max);
+  });
+
+  it('the speed bonus is exactly zero at the cutoff and stays zero beyond it', () => {
+    const atCutoff = computeDailyScore([{ ...win('LIST', 5, 5, 1, 3), elapsedMs: 600_000 }]).points;
+    const wellBeyond = computeDailyScore([{ ...win('LIST', 5, 5, 1, 3), elapsedMs: 6_000_000 }]).points;
+    expect(atCutoff).toBe(wellBeyond); // no further penalty once it's already floored at zero
   });
 
   it('is a pure function of its input (same results → same score)', () => {

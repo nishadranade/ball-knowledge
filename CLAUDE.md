@@ -51,13 +51,23 @@ the container exits. Check `git status` after.
 - **A frozen day in `daily.json` is immutable.** `build-daily.ts` is append-only and must stay that
   way; players have already played those rounds. Every daily slot is optional in the schedule, which
   is what lets the daily grow without rewriting history.
-- **`SPEED_TIERS` in `computeDailyScore` (`src/game/daily.ts`) does NOT self-adjust.** The accuracy
-  side of the score scales automatically with each question's own `maxWrong`, but the speed bonus is
-  a flat time budget for the WHOLE day. This already broke once: squad joined the daily and the top
-  speed tier (a leftover from the 4-question day) went from "fast" to "basically unreachable" in the
-  same breath, since typing 11 names takes real time. Adding, removing, or reordering a daily slot —
-  or changing a format's own answer count — should come with a check of whether `SPEED_TIERS` still
-  makes sense, not just whether the code compiles.
+- **`ZERO_SPEED_BONUS_AT_MS` in `computeDailyScore` (`src/game/daily.ts`) does NOT self-adjust.** The
+  accuracy side of the score scales automatically with each question's own `maxWrong`, but the speed
+  bonus decays over a flat time budget for the WHOLE day. This already broke once (with the old,
+  since-replaced tiered version): squad joined the daily and the top tier — calibrated for a
+  4-question day — went from "fast" to "basically unreachable" in the same breath, since typing 11
+  names takes real time. Adding, removing, or reordering a daily slot — or changing a format's own
+  answer count — should come with a check of whether the cutoff still makes sense, not just whether
+  the code compiles.
+- **The speed bonus is a smooth decay (`speedBonus()`), not tiers — keep it that way.** It used to be
+  three discrete tiers; a couple of seconds near a cutoff could swing the score by 15 points, more
+  than acing an entire question. If this ever needs adjusting again, don't reintroduce fixed tiers —
+  that reintroduces the exact cliff-edge unfairness that was the point of removing them.
+- **Question timers are pause-aware (`useElapsedTime`/`elapsedTimer.ts`), not bare `Date.now()`
+  diffs.** Every question component calls `useElapsedTime()` and reports `getElapsedMs()` at round
+  end; it pauses on `visibilitychange` so switching tabs or backgrounding mid-round doesn't get scored
+  as "slow." Don't reintroduce a raw `useRef(Date.now())` timer in a new question component — it
+  silently reopens the same unfairness.
 - **Keep `src/game/useGame.ts` pure** — no timers, no `Date.now()`, no side effects. Timing and IO
   belong in components.
 - **No new runtime dependencies** without discussion; this ships to the browser.

@@ -262,14 +262,24 @@ const POINTS_PER_QUESTION = 40;
  */
 const PERFECT_BONUS_PER_WRONG_BUDGET = 4;
 
-/** Speed bonus tiers for the WHOLE day's total time, fastest first. Tuned for
- *  a 5-question daily that includes an 11-name Starting XI round — retune
- *  again if the daily's length or format mix changes a lot. */
-const SPEED_TIERS: { underMs: number; bonus: number }[] = [
-  { underMs: 180_000, bonus: 40 }, // under 3:00
-  { underMs: 360_000, bonus: 25 }, // under 6:00
-  { underMs: 600_000, bonus: 10 }, // under 10:00
-];
+/**
+ * Speed bonus for the WHOLE day's total time: decays LINEARLY from
+ * MAX_SPEED_BONUS at 0:00 to zero at ZERO_SPEED_BONUS_AT_MS, rather than
+ * jumping between fixed tiers. Continuous on purpose — with discrete tiers,
+ * a couple of seconds near a cutoff could swing the score by more than
+ * acing an entire question, which is a worse failure mode than the speed
+ * bonus mattering at all. Tuned for a 5-question daily that includes an
+ * 11-name Starting XI round — retune again if the daily's length or format
+ * mix changes a lot.
+ */
+const MAX_SPEED_BONUS = 40;
+const ZERO_SPEED_BONUS_AT_MS = 600_000; // 10:00
+
+/** MAX_SPEED_BONUS at totalMs=0, falling smoothly to 0 by ZERO_SPEED_BONUS_AT_MS. */
+function speedBonus(totalMs: number): number {
+  const fraction = Math.max(0, 1 - totalMs / ZERO_SPEED_BONUS_AT_MS);
+  return MAX_SPEED_BONUS * fraction;
+}
 
 export interface DailyScore {
   points: number;
@@ -313,9 +323,9 @@ export function computeDailyScore(results: RoundResult[]): DailyScore {
   const timed = results.length > 0 && results.every((r) => r.elapsedMs != null);
   if (timed) {
     const totalMs = results.reduce((sum, r) => sum + (r.elapsedMs ?? 0), 0);
-    points += SPEED_TIERS.find((t) => totalMs < t.underMs)?.bonus ?? 0;
+    points += speedBonus(totalMs);
   }
-  max += SPEED_TIERS[0].bonus;
+  max += MAX_SPEED_BONUS;
   // Fractional accuracy (e.g. 2 of 3 match slots → 26.67 of 40) is real math
   // but an ugly display; round only the final total, not the running sum, so
   // rounding error can't compound across questions.

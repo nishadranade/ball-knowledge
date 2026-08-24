@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { CareerPathQuestion as CareerQ } from '../game/types';
 import { useGame } from '../game/useGame';
+import { useElapsedTime } from '../game/useElapsedTime';
 import type { RoundResult } from '../game/daily';
 import { GuessInput } from './GuessInput';
 import { Lives } from './Lives';
@@ -22,8 +23,8 @@ export function CareerPathQuestion({
   const { state, guess, giveUp, livesLeft } = useGame(question);
   const over = state.status !== 'in-progress';
 
-  // Wall-clock start for this question (reset on remount via `key`).
-  const startedAt = useRef(Date.now());
+  // Paused while the tab/window isn't visible (reset on remount via `key`).
+  const getElapsedMs = useElapsedTime();
   const reported = useRef(false);
   useEffect(() => {
     if (over && !reported.current) {
@@ -35,10 +36,10 @@ export function CareerPathQuestion({
         wrong: state.wrong,
         maxWrong: question.maxWrong,
         won: state.status === 'won',
-        elapsedMs: Date.now() - startedAt.current,
+        elapsedMs: getElapsedMs(),
       });
     }
-  }, [over, onComplete, state, question]);
+  }, [over, onComplete, state, question, getElapsedMs]);
 
   return (
     <div className="question card">

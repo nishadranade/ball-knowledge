@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { ListQuestion as ListQ } from '../game/types';
 import { useGame } from '../game/useGame';
+import { useElapsedTime } from '../game/useElapsedTime';
 import type { RoundResult } from '../game/daily';
 import { GuessInput } from './GuessInput';
 import { Lives } from './Lives';
@@ -18,9 +19,9 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
   const foundByIndex = new Map(state.found.map((f) => [f.index, f.player]));
   const over = state.status !== 'in-progress';
 
-  // Wall-clock start for this question (set once when the component mounts;
-  // a new question remounts via `key`, resetting the timer).
-  const startedAt = useRef(Date.now());
+  // Paused while the tab/window isn't visible, so an interruption mid-round
+  // doesn't count against the daily's speed bonus (reset on remount via `key`).
+  const getElapsedMs = useElapsedTime();
   // Report the outcome exactly once when the round ends.
   const reported = useRef(false);
   useEffect(() => {
@@ -37,10 +38,10 @@ export function ListQuestion({ question, onNext, nextLabel = 'Next question →'
         maxWrong: question.maxWrong,
         won: state.status === 'won',
         slots,
-        elapsedMs: Date.now() - startedAt.current,
+        elapsedMs: getElapsedMs(),
       });
     }
-  }, [over, onComplete, state, question]);
+  }, [over, onComplete, state, question, getElapsedMs]);
 
   return (
     <div className="question card">

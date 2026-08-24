@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { MatchQuestion as MatchQ } from '../game/types';
 import { useGame } from '../game/useGame';
+import { useElapsedTime } from '../game/useElapsedTime';
 import type { RoundResult } from '../game/daily';
 import { GuessInput } from './GuessInput';
 import { Lives } from './Lives';
@@ -24,7 +25,7 @@ export function MatchQuestion({ question, onNext, nextLabel = 'Next question →
   const foundByIndex = new Map(state.found.map((f) => [f.index, f.player]));
   const over = state.status !== 'in-progress';
 
-  const startedAt = useRef(Date.now());
+  const getElapsedMs = useElapsedTime();
   const reported = useRef(false);
 
   useEffect(() => {
@@ -39,10 +40,10 @@ export function MatchQuestion({ question, onNext, nextLabel = 'Next question →
         maxWrong: question.maxWrong,
         won: state.status === 'won',
         slots: question.answers.map((_, i) => foundIdx.has(i)),
-        elapsedMs: Date.now() - startedAt.current,
+        elapsedMs: getElapsedMs(),
       });
     }
-  }, [over, onComplete, state, question]);
+  }, [over, onComplete, state, question, getElapsedMs]);
 
   return (
     <div className="question card">

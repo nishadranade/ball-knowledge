@@ -60,15 +60,25 @@ squad's 6:
 | Each wrong guess | **−(40 ÷ that question's own `maxWrong`)** — using the *whole* guess budget always cancels the question's accuracy entirely, whatever the budget is |
 | Finished with zero wrong guesses | **+(4 × that question's own `maxWrong`)** perfect-round bonus — a flawless squad round (6 lives) is worth more than a flawless career round (2 lives), since it's a bigger feat |
 
-**Speed**, once per day — only awarded if *every* question in the day recorded a time (an old
-result saved before per-question timing existed won't falsely look instant):
+**Speed**, once per day — decays **smoothly**, from +40 at 0:00 down to 0 by 10:00, rather than
+jumping between fixed tiers. It used to be tiered, and that meant a couple of seconds near a cutoff
+(e.g. 2:59 → 3:01) could cost 15 points — more than acing an entire question flawlessly. A continuous
+formula can't produce a cliff like that: a few seconds near any point on the curve costs a few tenths
+of a point, not a double-digit swing.
 
 | Total time across the whole day | Bonus |
 |---|---|
-| under 3:00 | **+40** |
-| under 6:00 | **+25** |
-| under 10:00 | **+10** |
-| 10:00 or more | none |
+| 0:00 | +40 |
+| 2:30 | +30 |
+| 5:00 | +20 |
+| 7:30 | +10 |
+| 10:00 or more | 0 |
+
+Only awarded if *every* question in the day recorded a time (an old result saved before per-question
+timing existed won't falsely look instant). The timer itself **pauses while the tab/window isn't
+visible** — switching apps, a notification, backgrounding on mobile — so stepping away mid-round
+doesn't get scored the same as not knowing the answer (`useElapsedTime`/`elapsedTimer.ts` in
+`src/game/`).
 
 The `/max` half of the score is the best achievable on that exact set of results — it varies with the
 day's question count and each question's own `maxWrong` (which has grown over time: career2, then
@@ -136,7 +146,8 @@ src/
   game/types.ts              shared contract between pipeline and UI
   game/matching.ts           fuzzy last-name matcher (normalize + Levenshtein)
   game/useGame.ts            round state (lives, found answers, win/lose) — clock-free reducer
-  game/daily.ts              date→question selection, frozen-schedule resolution, share text, deep links
+  game/elapsedTimer.ts       pure pause-aware time accumulator (no DOM); game/useElapsedTime.ts wires it to visibilitychange
+  game/daily.ts              date→question selection, frozen-schedule resolution, scoring, share text, deep links
   game/loadQuestions.ts      lazy per-format bank fetches + the policy for which are needed
   components/                ListQuestion, CareerPathQuestion, MatchQuestion, SquadQuestion, GuessInput, Lives, QuestionRouter, DailyView
   App.tsx                    Daily/Practice modes, filters, deck, ?q= deep links
