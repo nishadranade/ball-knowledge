@@ -5078,5 +5078,334 @@
         ]
       ]
     }
+  },
+  "2026-08-25": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_manchester_city_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ederson",
+          "lastName": "Ederson",
+          "value": 122,
+          "rank": 1
+        },
+        {
+          "fullName": "Joe Hart",
+          "lastName": "Hart",
+          "value": 109,
+          "rank": 2
+        },
+        {
+          "fullName": "Tony Coton",
+          "lastName": "Coton",
+          "value": 26,
+          "rank": 3
+        },
+        {
+          "fullName": "David James",
+          "lastName": "James",
+          "value": 20,
+          "rank": 4
+        },
+        {
+          "fullName": "Gianluigi Donnarumma",
+          "lastName": "Donnarumma",
+          "value": 15,
+          "rank": 5
+        },
+        {
+          "fullName": "Nicky Weaver",
+          "lastName": "Weaver",
+          "value": 15,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_kylian_mbapp_",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 7,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kylian_Mbappé",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2015–2016",
+          "club": "Monaco II",
+          "appearances": 12,
+          "goals": 4
+        },
+        {
+          "years": "2015–2018",
+          "club": "Monaco",
+          "appearances": 41,
+          "goals": 16
+        },
+        {
+          "years": "2017–2018",
+          "club": "Paris Saint-Germain",
+          "appearances": 27,
+          "goals": 13,
+          "loan": true
+        },
+        {
+          "years": "2018–2024",
+          "club": "Paris Saint-Germain",
+          "appearances": 178,
+          "goals": 162
+        },
+        {
+          "years": "2024–",
+          "club": "Real Madrid",
+          "appearances": 65,
+          "goals": 56
+        }
+      ],
+      "answer": {
+        "fullName": "Kylian Mbappé",
+        "lastName": "Mbappé",
+        "aliases": [
+          "Kylian",
+          "Mbappé"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_aaron_hughes",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 23,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Aaron_Hughes",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1997–2005",
+          "club": "Newcastle United",
+          "appearances": 205,
+          "goals": 4
+        },
+        {
+          "years": "2005–2007",
+          "club": "Aston Villa",
+          "appearances": 54,
+          "goals": 0
+        },
+        {
+          "years": "2007–2014",
+          "club": "Fulham",
+          "appearances": 196,
+          "goals": 1
+        },
+        {
+          "years": "2014",
+          "club": "Queens Park Rangers",
+          "appearances": 11,
+          "goals": 0
+        },
+        {
+          "years": "2014–2015",
+          "club": "Brighton & Hove Albion",
+          "appearances": 10,
+          "goals": 0
+        },
+        {
+          "years": "2015–2016",
+          "club": "Melbourne City",
+          "appearances": 6,
+          "goals": 1
+        },
+        {
+          "years": "2016–2017",
+          "club": "Kerala Blasters",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "2017–2019",
+          "club": "Heart of Midlothian",
+          "appearances": 32,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Aaron Hughes",
+        "lastName": "Hughes",
+        "aliases": [
+          "Aaron",
+          "Hughes"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-01-21_bournemouth_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Bournemouth",
+        "awayTeam": "Liverpool",
+        "homeScore": 0,
+        "awayScore": 4,
+        "date": "2024-01-21",
+        "dateLabel": "21 January 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "goals": 2,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-03-02_tottenham_hotspur_crystal_palace_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Crystal Palace",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2024-03-02",
+        "dateLabel": "2 March 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 13,
+          "position": "G"
+        },
+        {
+          "fullName": "Emerson Royal",
+          "lastName": "Leite de Souza Júnior",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Destiny Udogie",
+          "lastName": "Udogie",
+          "shirtNumber": 38,
+          "position": "D"
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrigo Bentancur",
+          "lastName": "Bentancur",
+          "shirtNumber": 30,
+          "position": "M"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "M"
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Timo Werner",
+          "lastName": "Werner",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
