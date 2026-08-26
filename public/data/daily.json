@@ -5407,5 +5407,290 @@
         ]
       ]
     }
+  },
+  "2026-08-26": {
+    "list": {
+      "id": "list_champions_league_appearances_country_france_3",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 French appearance makers in Champions League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_footballers_with_100_or_more_UEFA_Champions_League_appearances",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Karim Benzema",
+          "lastName": "Benzema",
+          "value": 152,
+          "rank": 1
+        },
+        {
+          "fullName": "Antoine Griezmann",
+          "lastName": "Griezmann",
+          "value": 120,
+          "rank": 2
+        },
+        {
+          "fullName": "Thierry Henry",
+          "lastName": "Henry",
+          "value": 112,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_leroy_san_",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 21,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Leroy_Sané",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2016",
+          "club": "Schalke 04",
+          "appearances": 47,
+          "goals": 11
+        },
+        {
+          "years": "2016–2020",
+          "club": "Manchester City",
+          "appearances": 90,
+          "goals": 25
+        },
+        {
+          "years": "2020–2025",
+          "club": "Bayern Munich",
+          "appearances": 153,
+          "goals": 40
+        },
+        {
+          "years": "2025–",
+          "club": "Galatasaray",
+          "appearances": 28,
+          "goals": 7
+        }
+      ],
+      "answer": {
+        "fullName": "Leroy Sané",
+        "lastName": "Sané",
+        "aliases": [
+          "Leroy",
+          "Sané"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_marco_verratti",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 81,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marco_Verratti",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2012",
+          "club": "Pescara",
+          "appearances": 74,
+          "goals": 2
+        },
+        {
+          "years": "2012–2023",
+          "club": "Paris Saint-Germain",
+          "appearances": 276,
+          "goals": 7
+        },
+        {
+          "years": "2023–2025",
+          "club": "Al-Arabi",
+          "appearances": 33,
+          "goals": 4
+        },
+        {
+          "years": "2025–",
+          "club": "Al Duhail",
+          "appearances": 10,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Marco Verratti",
+        "lastName": "Verratti",
+        "aliases": [
+          "Marco",
+          "Verratti"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-05-07_chelsea_wolverhampton_wanderers",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Wolverhampton Wanderers",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2022-05-07",
+        "dateLabel": "7 May 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Romelu Lukaku",
+          "lastName": "Lukaku",
+          "goals": 2,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Trincão",
+          "lastName": "Machado Mota de Castro Trincão",
+          "goals": 1,
+          "team": "Wolverhampton Wanderers"
+        },
+        {
+          "fullName": "Conor Coady",
+          "lastName": "Coady",
+          "goals": 1,
+          "team": "Wolverhampton Wanderers"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2022-03-16_lille_chelsea_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Lille",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2022-03-16",
+        "dateLabel": "16 March 2022",
+        "round": "Round of 16, second leg",
+        "formation": "3-5-2"
+      },
+      "answers": [
+        {
+          "fullName": "Édouard Mendy",
+          "lastName": "Mendy",
+          "shirtNumber": 16,
+          "position": "G"
+        },
+        {
+          "fullName": "Andreas Christensen",
+          "lastName": "Christensen",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Thiago Silva",
+          "lastName": "Emiliano da Silva",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "shirtNumber": 28,
+          "position": "M"
+        },
+        {
+          "fullName": "N'Golo Kanté",
+          "lastName": "Kanté",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Frello Filho",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "shirtNumber": 29,
+          "position": "F"
+        },
+        {
+          "fullName": "Christian Pulisic",
+          "lastName": "Pulisic",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
