@@ -5692,5 +5692,306 @@
         ]
       ]
     }
+  },
+  "2026-08-27": {
+    "list": {
+      "id": "list_premier_league_goals_club_manchester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 112,
+          "rank": 2
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "value": 91,
+          "rank": 3
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "value": 68,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_ryan_fraser",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 157,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ryan_Fraser",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2013",
+          "club": "Aberdeen",
+          "appearances": 21,
+          "goals": 0
+        },
+        {
+          "years": "2013–2020",
+          "club": "Bournemouth",
+          "appearances": 183,
+          "goals": 20
+        },
+        {
+          "years": "2015–2016",
+          "club": "Ipswich Town",
+          "appearances": 18,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2020–2024",
+          "club": "Newcastle United",
+          "appearances": 53,
+          "goals": 2
+        },
+        {
+          "years": "2023–2024",
+          "club": "Southampton",
+          "appearances": 39,
+          "goals": 6,
+          "loan": true
+        },
+        {
+          "years": "2024–2026",
+          "club": "Southampton",
+          "appearances": 24,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Western Sydney Wanderers",
+          "appearances": 12,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Ryan Fraser",
+        "lastName": "Fraser",
+        "aliases": [
+          "Ryan",
+          "Fraser"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_stephen_carr",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 61,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Stephen_Carr",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–2004",
+          "club": "Tottenham Hotspur",
+          "appearances": 226,
+          "goals": 7
+        },
+        {
+          "years": "2004–2008",
+          "club": "Newcastle United",
+          "appearances": 78,
+          "goals": 1
+        },
+        {
+          "years": "2009–2013",
+          "club": "Birmingham City",
+          "appearances": 106,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Stephen Carr",
+        "lastName": "Carr",
+        "aliases": [
+          "Stephen",
+          "Carr"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-04-29_arsenal_paris_saint_germain",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "Paris Saint Germain",
+        "homeScore": 0,
+        "awayScore": 1,
+        "date": "2025-04-29",
+        "dateLabel": "29 April 2025",
+        "round": "Semi-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Ousmane Dembélé",
+          "lastName": "Dembélé",
+          "goals": 1,
+          "team": "Paris Saint Germain"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-08-26_manchester_united_nottingham_forest_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Nottingham Forest",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 2,
+        "date": "2023-08-26",
+        "dateLabel": "26 August 2023",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "André Onana",
+          "lastName": "Onana",
+          "shirtNumber": 24,
+          "position": "G"
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Raphaël Varane",
+          "lastName": "Varane",
+          "shirtNumber": 19,
+          "position": "D"
+        },
+        {
+          "fullName": "Lisandro Martínez",
+          "lastName": "Martínez",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 20,
+          "position": "D"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Antony",
+          "lastName": "dos Santos",
+          "shirtNumber": 21,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Anthony Martial",
+          "lastName": "Martial",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
