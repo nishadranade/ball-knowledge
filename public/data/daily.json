@@ -6314,5 +6314,315 @@
         ]
       ]
     }
+  },
+  "2026-08-29": {
+    "list": {
+      "id": "list_premier_league_goals_club_chelsea_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Chelsea in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Frank Lampard",
+          "lastName": "Lampard",
+          "value": 147,
+          "rank": 1
+        },
+        {
+          "fullName": "Didier Drogba",
+          "lastName": "Drogba",
+          "value": 104,
+          "rank": 2
+        },
+        {
+          "fullName": "Eden Hazard",
+          "lastName": "Hazard",
+          "value": 85,
+          "rank": 3
+        },
+        {
+          "fullName": "Jimmy Floyd Hasselbaink",
+          "lastName": "Hasselbaink",
+          "value": 69,
+          "rank": 4
+        },
+        {
+          "fullName": "Gianfranco Zola",
+          "lastName": "Zola",
+          "value": 59,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_gabriel_magalh_es",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 76,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Magalhães",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2016–2017",
+          "club": "Avaí",
+          "appearances": 34,
+          "goals": 2
+        },
+        {
+          "years": "2017–2018",
+          "club": "Lille II",
+          "appearances": 7,
+          "goals": 0
+        },
+        {
+          "years": "2017–2020",
+          "club": "Lille",
+          "appearances": 39,
+          "goals": 2
+        },
+        {
+          "years": "2017–2018",
+          "club": "Troyes",
+          "appearances": 1,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2018",
+          "club": "Dinamo Zagreb",
+          "appearances": 1,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2020–",
+          "club": "Arsenal",
+          "appearances": 192,
+          "goals": 20
+        }
+      ],
+      "answer": {
+        "fullName": "Gabriel Magalhães",
+        "lastName": "Magalhães",
+        "aliases": [
+          "Gabriel",
+          "Magalhães"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_gianluigi_donnarumma",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 94,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gianluigi_Donnarumma",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2015–2021",
+          "club": "AC Milan",
+          "appearances": 215,
+          "goals": 0
+        },
+        {
+          "years": "2021–2025",
+          "club": "Paris Saint-Germain",
+          "appearances": 104,
+          "goals": 0
+        },
+        {
+          "years": "2025–",
+          "club": "Manchester City",
+          "appearances": 34,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Gianluigi Donnarumma",
+        "lastName": "Donnarumma",
+        "aliases": [
+          "Gianluigi",
+          "Donnarumma"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-12-16_liverpool_newcastle_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Newcastle United",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2021-12-16",
+        "dateLabel": "16 December 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Jonjo Shelvey",
+          "lastName": "Shelvey",
+          "goals": 1,
+          "team": "Newcastle United"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-11-11_arsenal_burnley_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Burnley",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2023-11-11",
+        "dateLabel": "11 November 2023",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Takehiro Tomiyasu",
+          "lastName": "Tomiyasu",
+          "shirtNumber": 18,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Frello Filho",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
