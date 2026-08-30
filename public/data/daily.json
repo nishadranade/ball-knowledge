@@ -6624,5 +6624,400 @@
         ]
       ]
     }
+  },
+  "2026-08-30": {
+    "list": {
+      "id": "list_premier_league_appearances_country_denmark_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Danish appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Thomas Sørensen",
+          "lastName": "Sørensen",
+          "value": 363,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 310,
+          "rank": 2
+        },
+        {
+          "fullName": "Peter Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 310,
+          "rank": 3
+        },
+        {
+          "fullName": "Kasper Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 284,
+          "rank": 4
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "value": 254,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_jussi_j_skel_inen",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 31,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jussi_Jääskeläinen",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1992–1995",
+          "club": "MP",
+          "appearances": 64,
+          "goals": 0
+        },
+        {
+          "years": "1995–1997",
+          "club": "VPS",
+          "appearances": 54,
+          "goals": 0
+        },
+        {
+          "years": "1997–2012",
+          "club": "Bolton Wanderers",
+          "appearances": 474,
+          "goals": 0
+        },
+        {
+          "years": "2012–2015",
+          "club": "West Ham United",
+          "appearances": 57,
+          "goals": 0
+        },
+        {
+          "years": "2015–2017",
+          "club": "Wigan Athletic",
+          "appearances": 44,
+          "goals": 0
+        },
+        {
+          "years": "2017–2018",
+          "club": "ATK",
+          "appearances": 1,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Jussi Jääskeläinen",
+        "lastName": "Jääskeläinen",
+        "aliases": [
+          "Jussi",
+          "Jääskeläinen"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_andros_townsend",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 157,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Andros_Townsend",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2016",
+          "club": "Tottenham Hotspur",
+          "appearances": 50,
+          "goals": 3
+        },
+        {
+          "years": "2009",
+          "club": "Yeovil Town",
+          "appearances": 10,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2009",
+          "club": "Leyton Orient",
+          "appearances": 22,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Milton Keynes Dons",
+          "appearances": 9,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Ipswich Town",
+          "appearances": 13,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Watford",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Millwall",
+          "appearances": 11,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2012",
+          "club": "Leeds United",
+          "appearances": 6,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2012",
+          "club": "Birmingham City",
+          "appearances": 15,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2013",
+          "club": "Queens Park Rangers",
+          "appearances": 12,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2016",
+          "club": "Newcastle United",
+          "appearances": 13,
+          "goals": 4
+        },
+        {
+          "years": "2016–2021",
+          "club": "Crystal Palace",
+          "appearances": 168,
+          "goals": 13
+        },
+        {
+          "years": "2021–2023",
+          "club": "Everton",
+          "appearances": 21,
+          "goals": 3
+        },
+        {
+          "years": "2023–2024",
+          "club": "Luton Town",
+          "appearances": 28,
+          "goals": 1
+        },
+        {
+          "years": "2024–2025",
+          "club": "Antalyaspor",
+          "appearances": 18,
+          "goals": 0
+        },
+        {
+          "years": "2025–",
+          "club": "Kanchanaburi Power",
+          "appearances": 30,
+          "goals": 3
+        }
+      ],
+      "answer": {
+        "fullName": "Andros Townsend",
+        "lastName": "Townsend",
+        "aliases": [
+          "Andros",
+          "Townsend"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-01-25_liverpool_ipswich_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Ipswich Town",
+        "homeScore": 4,
+        "awayScore": 1,
+        "date": "2025-01-25",
+        "dateLabel": "25 January 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Jacob Greaves",
+          "lastName": "Greaves",
+          "goals": 1,
+          "team": "Ipswich Town"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-11-10_tottenham_hotspur_ipswich_town_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Ipswich Town",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2024-11-10",
+        "dateLabel": "10 November 2024",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Radu Dragusin",
+          "lastName": "Dragusin",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Destiny Udogie",
+          "lastName": "Udogie",
+          "shirtNumber": 13,
+          "position": "D"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrigo Bentancur",
+          "lastName": "Bentancur",
+          "shirtNumber": 30,
+          "position": "M"
+        },
+        {
+          "fullName": "Pape Matar Sarr",
+          "lastName": "Sarr",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Brennan Johnson",
+          "lastName": "Johnson",
+          "shirtNumber": 22,
+          "position": "F"
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
