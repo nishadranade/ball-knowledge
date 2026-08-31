@@ -7019,5 +7019,334 @@
         ]
       ]
     }
+  },
+  "2026-08-31": {
+    "list": {
+      "id": "list_premier_league_cleansheets_country_argentina_3",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 Argentine clean-sheet keepers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Emiliano Martínez",
+          "lastName": "Martínez",
+          "value": 66,
+          "rank": 1
+        },
+        {
+          "fullName": "Julian Speroni",
+          "lastName": "Speroni",
+          "value": 20,
+          "rank": 2
+        },
+        {
+          "fullName": "Willy Caballero",
+          "lastName": "Caballero",
+          "value": 11,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_leroy_san_",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 21,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Leroy_Sané",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2016",
+          "club": "Schalke 04",
+          "appearances": 47,
+          "goals": 11
+        },
+        {
+          "years": "2016–2020",
+          "club": "Manchester City",
+          "appearances": 90,
+          "goals": 25
+        },
+        {
+          "years": "2020–2025",
+          "club": "Bayern Munich",
+          "appearances": 153,
+          "goals": 40
+        },
+        {
+          "years": "2025–",
+          "club": "Galatasaray",
+          "appearances": 28,
+          "goals": 7
+        }
+      ],
+      "answer": {
+        "fullName": "Leroy Sané",
+        "lastName": "Sané",
+        "aliases": [
+          "Leroy",
+          "Sané"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_luis_su_rez",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 18,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Luis_Suárez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2005–2006",
+          "club": "Nacional",
+          "appearances": 27,
+          "goals": 10
+        },
+        {
+          "years": "2006–2007",
+          "club": "Groningen",
+          "appearances": 29,
+          "goals": 10
+        },
+        {
+          "years": "2007–2011",
+          "club": "Ajax",
+          "appearances": 110,
+          "goals": 81
+        },
+        {
+          "years": "2011–2014",
+          "club": "Liverpool",
+          "appearances": 110,
+          "goals": 69
+        },
+        {
+          "years": "2014–2020",
+          "club": "Barcelona",
+          "appearances": 191,
+          "goals": 147
+        },
+        {
+          "years": "2020–2022",
+          "club": "Atlético Madrid",
+          "appearances": 67,
+          "goals": 32
+        },
+        {
+          "years": "2022–2023",
+          "club": "Nacional",
+          "appearances": 14,
+          "goals": 8
+        },
+        {
+          "years": "2023–2024",
+          "club": "Grêmio",
+          "appearances": 45,
+          "goals": 24
+        },
+        {
+          "years": "2024–",
+          "club": "Inter Miami",
+          "appearances": 68,
+          "goals": 39
+        }
+      ],
+      "answer": {
+        "fullName": "Luis Suárez",
+        "lastName": "Suárez",
+        "aliases": [
+          "Luis",
+          "Suárez"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-04-13_manchester_city_luton_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Luton Town",
+        "homeScore": 5,
+        "awayScore": 1,
+        "date": "2024-04-13",
+        "dateLabel": "13 April 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Ross Barkley",
+          "lastName": "Barkley",
+          "goals": 1,
+          "team": "Luton Town"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-04-03_manchester_city_aston_villa_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester City",
+        "opponent": "Aston Villa",
+        "home": true,
+        "teamScore": 4,
+        "opponentScore": 1,
+        "date": "2024-04-03",
+        "dateLabel": "3 April 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Stefan Ortega",
+          "lastName": "Ortega",
+          "shirtNumber": 18,
+          "position": "G"
+        },
+        {
+          "fullName": "Rico Lewis",
+          "lastName": "Lewis",
+          "shirtNumber": 82,
+          "position": "D"
+        },
+        {
+          "fullName": "Manuel Akanji",
+          "lastName": "Akanji",
+          "shirtNumber": 25,
+          "position": "D"
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "dos Santos Gato Alves Dias",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Rodri",
+          "lastName": "Hernández Cascante",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "shirtNumber": 47,
+          "position": "M"
+        },
+        {
+          "fullName": "Jack Grealish",
+          "lastName": "Grealish",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Julián Alvarez",
+          "lastName": "Alvarez",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
