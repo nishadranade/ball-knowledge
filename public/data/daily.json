@@ -7348,5 +7348,344 @@
         ]
       ]
     }
+  },
+  "2026-09-01": {
+    "list": {
+      "id": "list_premier_league_appearances_club_wolverhampton_wanderers_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Wolverhampton Wanderers in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 177,
+          "rank": 1
+        },
+        {
+          "fullName": "João Moutinho",
+          "lastName": "Moutinho",
+          "value": 175,
+          "rank": 2
+        },
+        {
+          "fullName": "Nélson Semedo",
+          "lastName": "Semedo",
+          "value": 165,
+          "rank": 3
+        },
+        {
+          "fullName": "José Sá",
+          "lastName": "Sá",
+          "value": 160,
+          "rank": 4
+        },
+        {
+          "fullName": "Adama Traoré",
+          "lastName": "Traoré",
+          "value": 157,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_yannick_carrasco",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 183,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Yannick_Carrasco",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2012",
+          "club": "Monaco B",
+          "appearances": 30,
+          "goals": 8
+        },
+        {
+          "years": "2012–2015",
+          "club": "Monaco",
+          "appearances": 81,
+          "goals": 15
+        },
+        {
+          "years": "2015–2018",
+          "club": "Atlético Madrid",
+          "appearances": 81,
+          "goals": 17
+        },
+        {
+          "years": "2018–2020",
+          "club": "Dalian Yifang",
+          "appearances": 50,
+          "goals": 24
+        },
+        {
+          "years": "2020",
+          "club": "Atlético Madrid",
+          "appearances": 15,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2020–2023",
+          "club": "Atlético Madrid",
+          "appearances": 102,
+          "goals": 19
+        },
+        {
+          "years": "2023–",
+          "club": "Al-Shabab",
+          "appearances": 69,
+          "goals": 27
+        }
+      ],
+      "answer": {
+        "fullName": "Yannick Carrasco",
+        "lastName": "Carrasco",
+        "aliases": [
+          "Yannick",
+          "Carrasco"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_kenny_cunningham",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 96,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kenny_Cunningham",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1988–1989",
+          "club": "Tolka Rovers"
+        },
+        {
+          "years": "1989–1994",
+          "club": "Millwall",
+          "appearances": 136,
+          "goals": 1
+        },
+        {
+          "years": "1994–2002",
+          "club": "Wimbledon",
+          "appearances": 250,
+          "goals": 0
+        },
+        {
+          "years": "2002–2006",
+          "club": "Birmingham City",
+          "appearances": 134,
+          "goals": 0
+        },
+        {
+          "years": "2006–2007",
+          "club": "Sunderland",
+          "appearances": 11,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kenny Cunningham",
+        "lastName": "Cunningham",
+        "aliases": [
+          "Kenny",
+          "Cunningham"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-05-28_southampton_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Southampton",
+        "awayTeam": "Liverpool",
+        "homeScore": 4,
+        "awayScore": 4,
+        "date": "2023-05-28",
+        "dateLabel": "28 May 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "goals": 1,
+          "team": "Southampton"
+        },
+        {
+          "fullName": "Kamaldeen Sulemana",
+          "lastName": "Sulemana",
+          "goals": 2,
+          "team": "Southampton"
+        },
+        {
+          "fullName": "Adam Armstrong",
+          "lastName": "Armstrong",
+          "goals": 1,
+          "team": "Southampton"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-01-25_crystal_palace_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Crystal Palace",
+        "home": false,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2026-01-25",
+        "dateLabel": "25 January 2026",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Trevoh Chalobah",
+          "lastName": "Chalobah",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Benoît Badiashile",
+          "lastName": "Badiashile",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Andrey Santos",
+          "lastName": "Nascimento dos Santos",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Estêvão",
+          "lastName": "Almeida de Oliveira Gonçalves",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "João Pedro",
+          "lastName": "Junqueira de Jesus",
+          "shirtNumber": 20,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
