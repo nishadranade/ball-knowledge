@@ -51,6 +51,13 @@ the container exits. Check `git status` after.
 - **A frozen day in `daily.json` is immutable.** `build-daily.ts` is append-only and must stay that
   way; players have already played those rounds. Every daily slot is optional in the schedule, which
   is what lets the daily grow without rewriting history.
+- **`selectDaily`'s repeat guards only bite going forward, not backward.** It excludes ids used in the
+  last 30 frozen days (`recentlyUsedIds`) and won't let a day's squad question share the match
+  question's fixture (`fixtureKeyOf`) — both with a safety-net fallback if the exclusion would leave a
+  slot empty. `build-daily.ts`'s freeze loop mutates `schedule` in place as it goes, so freezing
+  several days in one run still avoids repeats among them, not just against what was already
+  committed. If you add a new daily slot, thread its ids into `recentlyUsedIds` too, or it silently
+  won't be covered by the cooldown.
 - **`ZERO_SPEED_BONUS_AT_MS` in `computeDailyScore` (`src/game/daily.ts`) does NOT self-adjust.** The
   accuracy side of the score scales automatically with each question's own `maxWrong`, but the speed
   bonus decays over a flat time budget for the WHOLE day. This already broke once (with the old,

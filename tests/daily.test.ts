@@ -5,6 +5,7 @@ import {
   hashString,
   selectDaily,
   resolveDaily,
+  recentlyUsedIds,
   truncateDailyList,
   buildShareText,
   buildPracticeShareText,
@@ -236,6 +237,146 @@ describe('selectDaily', () => {
     expect(d.career2).toBeNull();
     expect(d.match).toBeNull();
     expect(d.squad).toBeNull();
+  });
+});
+
+// A day's match and squad questions are near-certain to share a fixture if
+// picked independently — 98.5% of the real STANDARD squad pool overlaps a
+// STANDARD match fixture — so this needs its own dedicated fixture builders
+// (the shared `match`/`squad` helpers above always use the same fixture,
+// which would make every test case here a no-op).
+const matchAt = (id: string, date: string, home: string, away: string): Question => ({
+  id,
+  category: 'PREMIER_LEAGUE',
+  format: 'MATCH',
+  prompt: 'p',
+  maxWrong: 3,
+  difficulty: 'STANDARD',
+  source: { name: 'x', url: 'x', retrievedAt: 'x' },
+  match: { homeTeam: home, awayTeam: away, homeScore: 2, awayScore: 1, date, dateLabel: date },
+  answers: [{ fullName: 'A B', lastName: 'B', goals: 2, team: home }],
+});
+const squadAt = (id: string, date: string, team: string, opponent: string): Question => ({
+  id,
+  category: 'PREMIER_LEAGUE',
+  format: 'SQUAD',
+  prompt: 'Name the starting XI.',
+  maxWrong: 6,
+  difficulty: 'STANDARD',
+  source: { name: 'x', url: 'x', retrievedAt: 'x' },
+  squad: { team, opponent, home: true, teamScore: 2, opponentScore: 1, date, dateLabel: date, formation: '4-3-3' },
+  answers: Array.from({ length: 11 }, (_, i) => ({
+    fullName: `P${i}`,
+    lastName: `P${i}`,
+    shirtNumber: i + 1,
+    position: 'D',
+  })),
+  lines: [[0], [1, 2, 3, 4], [5, 6, 7], [8, 9, 10]],
+});
+
+describe('selectDaily — match/squad same-fixture guard', () => {
+  it("never picks a squad about the day's match fixture, when an alternative exists", () => {
+    const theMatch = matchAt('match-1', '2020-05-01', 'H', 'A');
+    const collidingSquad = squadAt('squad-colliding', '2020-05-01', 'H', 'A'); // same game as theMatch
+    const okSquad = squadAt('squad-ok', '2021-06-02', 'X', 'Y'); // a different game
+    const testPool: Question[] = [list('l0'), career('c0'), theMatch, collidingSquad, okSquad];
+    for (const key of ['2026-03-05', '2026-07-04', '2027-01-01']) {
+      const d = selectDaily(testPool, key);
+      expect(d.match?.id).toBe('match-1'); // only match candidate, so this is deterministic
+      expect(d.squad?.id).toBe('squad-ok'); // the colliding one is excluded, leaving only this
+    }
+  });
+
+  it('falls back to the collision rather than returning no squad, if every candidate shares the fixture', () => {
+    const theMatch = matchAt('match-1', '2020-05-01', 'H', 'A');
+    const onlySquad = squadAt('squad-1', '2020-05-01', 'H', 'A'); // same game, no alternative exists
+    const testPool: Question[] = [list('l0'), career('c0'), theMatch, onlySquad];
+    const d = selectDaily(testPool, '2026-03-05');
+    expect(d.match?.id).toBe('match-1');
+    expect(d.squad?.id).toBe('squad-1'); // still picked — excluding it would leave the slot empty
+  });
+
+  it('does not apply the fixture guard when there is no match question at all', () => {
+    const onlySquad = squadAt('squad-1', '2020-05-01', 'H', 'A');
+    const testPool: Question[] = [list('l0'), career('c0'), onlySquad];
+    const d = selectDaily(testPool, '2026-03-05');
+    expect(d.match).toBeNull();
+    expect(d.squad?.id).toBe('squad-1');
+  });
+});
+
+describe('selectDaily excludeIds (cross-day repeat guard)', () => {
+  const testPool: Question[] = [list('l0'), list('l1'), career('c0'), career('c1')];
+
+  it('avoids an excluded id when an alternative exists in the pool', () => {
+    const plain = selectDaily(testPool, '2026-03-05');
+    const withExclusion = selectDaily(testPool, '2026-03-05', new Set([plain.list!.id]));
+    expect(withExclusion.list?.id).not.toBe(plain.list?.id);
+  });
+
+  it("career2's own dedup against career still applies on top of excludeIds", () => {
+    const d = selectDaily(testPool, '2026-03-05', new Set());
+    expect(d.career2?.id).not.toBe(d.career?.id);
+  });
+
+  it('falls back to allowing the repeat rather than returning null, if excluding leaves nothing', () => {
+    const thin: Question[] = [list('l0')]; // only one candidate
+    const d = selectDaily(thin, '2026-03-05', new Set(['l0']));
+    expect(d.list?.id).toBe('l0'); // still picked — excluding it would leave the slot empty
+  });
+});
+
+describe('recentlyUsedIds', () => {
+  it('collects ids from every slot of the days before key, within the cooldown window', () => {
+    const schedule: DailySchedule = {
+      '2026-03-04': { list: list('yesterday-list') as ListQuestion, career: null },
+      '2026-02-01': { list: list('too-old-list') as ListQuestion, career: null }, // > 30 days before 03-05
+    };
+    const used = recentlyUsedIds(schedule, '2026-03-05');
+    expect(used.has('yesterday-list')).toBe(true);
+    expect(used.has('too-old-list')).toBe(false);
+  });
+
+  it('respects an explicit cooldownDays window', () => {
+    const schedule: DailySchedule = {
+      '2026-03-01': { list: list('four-days-back') as ListQuestion, career: null },
+    };
+    expect(recentlyUsedIds(schedule, '2026-03-05', 3).has('four-days-back')).toBe(false);
+    expect(recentlyUsedIds(schedule, '2026-03-05', 10).has('four-days-back')).toBe(true);
+  });
+
+  it('looks at every slot, not just list/career', () => {
+    const schedule: DailySchedule = {
+      '2026-03-04': {
+        list: null,
+        career: null,
+        career2: career('c2-recent') as CareerPathQuestion,
+        match: match('m-recent') as MatchQuestion,
+        squad: squad('s-recent') as SquadQuestion,
+      },
+    };
+    const used = recentlyUsedIds(schedule, '2026-03-05');
+    expect(used.has('c2-recent')).toBe(true);
+    expect(used.has('m-recent')).toBe(true);
+    expect(used.has('s-recent')).toBe(true);
+  });
+
+  it('returns an empty set for a null schedule or no history', () => {
+    expect(recentlyUsedIds(null, '2026-03-05').size).toBe(0);
+    expect(recentlyUsedIds({}, '2026-03-05').size).toBe(0);
+  });
+});
+
+describe("resolveDaily's live fallback respects recentlyUsedIds", () => {
+  it("avoids repeating a question a recent frozen day already used", () => {
+    const testPool: Question[] = [list('l0'), list('l1'), career('c0'), career('c1')];
+    const plain = selectDaily(testPool, '2026-03-06');
+    // Pretend yesterday happened to freeze exactly what today would naively pick.
+    const schedule: DailySchedule = {
+      '2026-03-05': { list: plain.list as ListQuestion, career: plain.career as CareerPathQuestion },
+    };
+    const d = resolveDaily(testPool, schedule, '2026-03-06');
+    expect(d.list?.id).not.toBe(plain.list?.id);
   });
 });
 

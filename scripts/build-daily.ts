@@ -14,7 +14,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { readBank } from './bank.js';
-import { selectDaily, dateKey, type DailySchedule } from '../src/game/daily.js';
+import { selectDaily, recentlyUsedIds, dateKey, type DailySchedule } from '../src/game/daily.js';
 import type { Question } from '../src/game/types.js';
 
 const OUT_DIR = 'public/data';
@@ -51,7 +51,11 @@ async function main() {
   let added = 0;
   for (const key of dateRange(EPOCH_KEY, today)) {
     if (schedule[key]) continue; // never overwrite a frozen day
-    schedule[key] = selectDaily(questions, key);
+    // `schedule` already holds every day frozen so far in this loop (it's
+    // mutated below), so freezing day N+1 sees day N's fresh pick too — a
+    // run that freezes several days at once still avoids repeats among them,
+    // not just against what was already committed.
+    schedule[key] = selectDaily(questions, key, recentlyUsedIds(schedule, key));
     added++;
   }
 

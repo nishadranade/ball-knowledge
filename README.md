@@ -98,6 +98,20 @@ rewriting history: a day frozen before `career2`, `match` or `squad` existed sim
 stays the length it was actually played at — days before **2026-08-20** have no `squad`, for instance.
 Each slot also draws on its own hash salt, so adding one never shifts the others.
 
+**Repeat guards.** Two things stop a day from feeling like a rerun:
+- **A day's match and its squad question can't be the same fixture.** They're independent hash draws,
+  and 98.5% of the STANDARD squad pool shares a fixture with a STANDARD match question — without a
+  guard, "who scored in Arsenal 3–1 Chelsea" and "name Arsenal's starting XI" (same game) could land
+  on the same day. `selectDaily` excludes the match's fixture from the squad pool before drawing,
+  falling back to allowing it only if that would leave the squad slot with nothing (`fixtureKeyOf` in
+  `src/game/daily.ts`).
+- **No question repeats within 30 days of itself, per slot.** `recentlyUsedIds` scans the last 30
+  frozen days for ids already used (any slot, so a repeated *fixture* across formats counts too) and
+  `selectDaily` avoids them, same fallback-if-empty safety net. Pool sizes comfortably support this —
+  even the smallest STANDARD pool (list, ~156) leaves well over 100 choices after a month is excluded.
+  This only affects days frozen going forward — an already-frozen day is immutable, so it can't be
+  retroactively de-duplicated against.
+
 **Share links don't spoil answers.** A link is only obfuscated when its id would otherwise spell an
 answer. List and match ids restate what's already on screen (the prompt; the fixture and date), so
 they stay readable. Career-path ids *are* the player's name, so those use an **opaque hash token** —

@@ -17,6 +17,12 @@ const TIME_ZONE = 'America/Los_Angeles';
 const EPOCH_KEY = '2026-07-28';
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
+/** How many previous days a question is excluded from repeating in, per
+ *  format (see `recentlyUsedIds`). Pool sizes comfortably support this —
+ *  even the smallest STANDARD pool (list, ~156) leaves well over 100 choices
+ *  after a month is excluded. */
+const REPEAT_COOLDOWN_DAYS = 30;
+
 /** Calendar date key "YYYY-MM-DD" in US Pacific time for a given instant. */
 export function dateKey(now: Date = new Date()): string {
   // en-CA formats as YYYY-MM-DD; timeZone shifts the instant to Pacific first.
@@ -38,6 +44,13 @@ function daysBetween(aKey: string, bKey: string): number {
 /** Day number since launch epoch (1-based) → the "#N" in the share header. */
 export function dayNumber(now: Date = new Date()): number {
   return daysBetween(EPOCH_KEY, dateKey(now)) + 1;
+}
+
+/** "YYYY-MM-DD" `days` before `key` — same UTC-anchored parsing as daysBetween. */
+function daysBefore(key: string, days: number): string {
+  const d = new Date(Date.UTC(+key.slice(0, 4), +key.slice(5, 7) - 1, +key.slice(8, 10)));
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString().slice(0, 10);
 }
 
 /** Deterministic 32-bit hash of a string (FNV-1a). Stable across sessions/browsers. */
@@ -114,16 +127,59 @@ export function isDailyCareer(q: CareerPathQuestion): boolean {
   return famous || recent;
 }
 
-export function selectDaily(all: Question[], key: string = dateKey()): DailySelection {
+/**
+ * A match and a squad question are near-guaranteed to share a fixture — 98.5%
+ * of the STANDARD squad pool is drawn from a fixture that ALSO has a STANDARD
+ * match question, since both come from the same qualifying-fixture filter.
+ * Ids don't reveal that (`match_..._arsenal_chelsea` vs
+ * `squad_..._arsenal_chelsea_home` are different strings), so the collision
+ * has to be checked on the underlying game, not the id.
+ */
+function fixtureKeyOf(q: MatchQuestion | SquadQuestion): string {
+  if (q.format === 'MATCH') return `${q.match.date}_${q.match.homeTeam}_${q.match.awayTeam}`;
+  const home = q.squad.home ? q.squad.team : q.squad.opponent;
+  const away = q.squad.home ? q.squad.opponent : q.squad.team;
+  return `${q.squad.date}_${home}_${away}`;
+}
+
+/** Drop any pool member whose id is in `excludeIds` — but never let that
+ *  leave a slot with nothing to draw from; the exclusion is a "prefer not
+ *  to repeat" preference, not a hard requirement that could break a day. */
+function excluding<T extends { id: string }>(pool: T[], excludeIds: ReadonlySet<string>): T[] {
+  if (!excludeIds.size) return pool;
+  const filtered = pool.filter((q) => !excludeIds.has(q.id));
+  return filtered.length ? filtered : pool;
+}
+
+/**
+ * Pick the day's questions from the full pool, seeded by the date key. Uses
+ * different salts for each slot so they don't move in lockstep. Returns null
+ * for a slot if the pool has none of that format.
+ *
+ * `excludeIds` — ids to skip if at all possible, e.g. questions used on
+ * recent days (see `recentlyUsedIds`). Pure and optional so `selectDaily` on
+ * its own is still a plain hash of the date, easy to test and reason about;
+ * the recency behavior is layered on by the caller (`resolveDaily`,
+ * `build-daily.ts`), not hidden inside this function.
+ */
+export function selectDaily(
+  all: Question[],
+  key: string = dateKey(),
+  excludeIds: ReadonlySet<string> = new Set(),
+): DailySelection {
   // The daily is Standard-only so everyone's shared challenge stays approachable
   // (famous clubs/countries/players — no obscure Hard slices).
   const standard = all.filter((q) => q.difficulty === 'STANDARD');
-  const lists = standard.filter((q): q is ListQuestion => q.format === 'LIST');
+  const lists = excluding(
+    standard.filter((q): q is ListQuestion => q.format === 'LIST'),
+    excludeIds,
+  );
   let careers = standard.filter((q): q is CareerPathQuestion => q.format === 'CAREER_PATH');
   // Prefer daily-appropriate (famous OR recent) career players; fall back to the
   // full Standard set only if the filter somehow leaves nothing (safety net).
   const dailyCareers = careers.filter(isDailyCareer);
   if (dailyCareers.length) careers = dailyCareers;
+  careers = excluding(careers, excludeIds);
   const pick = <T>(pool: T[], salt: string): T | null =>
     pool.length ? pool[hashString(key + salt) % pool.length] : null;
   const list = pick(lists, ':list');
@@ -138,17 +194,56 @@ export function selectDaily(all: Question[], key: string = dateKey()): DailySele
   );
   // One match question per day. Its own salt, so adding it left every existing
   // slot's draw untouched.
-  const matches = standard.filter((q): q is MatchQuestion => q.format === 'MATCH');
+  const matches = excluding(
+    standard.filter((q): q is MatchQuestion => q.format === 'MATCH'),
+    excludeIds,
+  );
+  const match = pick(matches, ':match');
   // One squad (starting XI) question per day, same pattern — its own salt, so
-  // adding it left every existing slot's draw untouched.
-  const squads = standard.filter((q): q is SquadQuestion => q.format === 'SQUAD');
+  // adding it left every existing slot's draw untouched. Additionally excludes
+  // whichever fixture `match` landed on, so the day can't ask "who scored"
+  // and "name the XI" about the exact same game (see fixtureKeyOf above).
+  let squads = excluding(
+    standard.filter((q): q is SquadQuestion => q.format === 'SQUAD'),
+    excludeIds,
+  );
+  if (match) {
+    const matchFixture = fixtureKeyOf(match);
+    const withoutMatchFixture = squads.filter((q) => fixtureKeyOf(q) !== matchFixture);
+    if (withoutMatchFixture.length) squads = withoutMatchFixture;
+  }
+  const squad = pick(squads, ':squad');
   return {
     list: list ? truncateDailyList(list) : null,
     career,
     career2,
-    match: pick(matches, ':match'),
-    squad: pick(squads, ':squad'),
+    match,
+    squad,
   };
+}
+
+/**
+ * Ids used anywhere in the `cooldownDays` before `key` (every slot, not just
+ * same-format — a repeated fixture across formats is just as repetitive to a
+ * player as a literal repeated question). Only looks at what's already in
+ * `schedule`, so it's just as safe to call from the browser (which has the
+ * committed schedule) as from build-daily.ts (which is building it).
+ */
+export function recentlyUsedIds(
+  schedule: DailySchedule | null,
+  key: string = dateKey(),
+  cooldownDays = REPEAT_COOLDOWN_DAYS,
+): Set<string> {
+  const used = new Set<string>();
+  if (!schedule) return used;
+  for (let i = 1; i <= cooldownDays; i++) {
+    const entry = schedule[daysBefore(key, i)];
+    if (!entry) continue;
+    for (const q of [entry.list, entry.career, entry.career2, entry.match, entry.squad]) {
+      if (q) used.add(q.id);
+    }
+  }
+  return used;
 }
 
 /**
@@ -184,7 +279,10 @@ export function resolveDaily(
       squad: frozen.squad ?? null,
     };
   }
-  return selectDaily(all, key);
+  // Avoid repeating a recently-frozen question, using the same schedule data
+  // build-daily.ts will use when it actually freezes this day — so the live
+  // preview a visitor sees before freezing matches what they'll get after.
+  return selectDaily(all, key, recentlyUsedIds(schedule, key));
 }
 
 /** Per-question outcome captured when a round ends. */
