@@ -7687,5 +7687,384 @@
         ]
       ]
     }
+  },
+  "2026-09-02": {
+    "list": {
+      "id": "list_premier_league_appearances_club_southampton_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Southampton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "value": 343,
+          "rank": 1
+        },
+        {
+          "fullName": "Jason Dodd",
+          "lastName": "Dodd",
+          "value": 329,
+          "rank": 2
+        },
+        {
+          "fullName": "Claus Lundekvam",
+          "lastName": "Lundekvam",
+          "value": 290,
+          "rank": 3
+        },
+        {
+          "fullName": "Matthew Le Tissier",
+          "lastName": "Le Tissier",
+          "value": 270,
+          "rank": 4
+        },
+        {
+          "fullName": "Francis Benali",
+          "lastName": "Benali",
+          "value": 243,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_danny_simpson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 135,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Danny_Simpson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2010",
+          "club": "Manchester United",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2006",
+          "club": "Royal Antwerp",
+          "appearances": 30,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2007",
+          "club": "Sunderland",
+          "appearances": 14,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2008",
+          "club": "Ipswich Town",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2008–2009",
+          "club": "Blackburn Rovers",
+          "appearances": 12,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2009–2010",
+          "club": "Newcastle United",
+          "appearances": 20,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2010–2013",
+          "club": "Newcastle United",
+          "appearances": 103,
+          "goals": 0
+        },
+        {
+          "years": "2013–2014",
+          "club": "Queens Park Rangers",
+          "appearances": 37,
+          "goals": 0
+        },
+        {
+          "years": "2014–2019",
+          "club": "Leicester City",
+          "appearances": 113,
+          "goals": 0
+        },
+        {
+          "years": "2019–2020",
+          "club": "Huddersfield Town",
+          "appearances": 24,
+          "goals": 0
+        },
+        {
+          "years": "2021–2022",
+          "club": "Bristol City",
+          "appearances": 7,
+          "goals": 0
+        },
+        {
+          "years": "2023–2024",
+          "club": "Macclesfield",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2026",
+          "club": "Stretford Paddock",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Arabian Falcons",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Danny Simpson",
+        "lastName": "Simpson",
+        "aliases": [
+          "Danny",
+          "Simpson"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_mark_viduka",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 41,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mark_Viduka",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1995",
+          "club": "Melbourne Knights",
+          "appearances": 48,
+          "goals": 40
+        },
+        {
+          "years": "1995–1998",
+          "club": "Dinamo Zagreb",
+          "appearances": 84,
+          "goals": 40
+        },
+        {
+          "years": "1998–2000",
+          "club": "Celtic",
+          "appearances": 48,
+          "goals": 35
+        },
+        {
+          "years": "2000–2004",
+          "club": "Leeds United",
+          "appearances": 130,
+          "goals": 59
+        },
+        {
+          "years": "2004–2007",
+          "club": "Middlesbrough",
+          "appearances": 72,
+          "goals": 26
+        },
+        {
+          "years": "2007–2009",
+          "club": "Newcastle United",
+          "appearances": 38,
+          "goals": 7
+        }
+      ],
+      "answer": {
+        "fullName": "Mark Viduka",
+        "lastName": "Viduka",
+        "aliases": [
+          "Mark",
+          "Viduka"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-02-22_everton_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Everton",
+        "awayTeam": "Manchester United",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2025-02-22",
+        "dateLabel": "22 February 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Beto",
+          "lastName": "Gomes Betuncal",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Abdoulaye Doucouré",
+          "lastName": "Doucouré",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Manuel Ugarte",
+          "lastName": "Ugarte",
+          "goals": 1,
+          "team": "Manchester United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-09-29_manchester_united_tottenham_hotspur_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Manchester United",
+        "home": false,
+        "teamScore": 3,
+        "opponentScore": 0,
+        "date": "2024-09-29",
+        "dateLabel": "29 September 2024",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Destiny Udogie",
+          "lastName": "Udogie",
+          "shirtNumber": 13,
+          "position": "D"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrigo Bentancur",
+          "lastName": "Bentancur",
+          "shirtNumber": 30,
+          "position": "M"
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Brennan Johnson",
+          "lastName": "Johnson",
+          "shirtNumber": 22,
+          "position": "F"
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Timo Werner",
+          "lastName": "Werner",
+          "shirtNumber": 16,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
