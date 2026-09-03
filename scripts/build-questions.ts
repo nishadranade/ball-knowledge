@@ -53,7 +53,11 @@ const PL_SOURCE_URL = 'https://www.premierleague.com/stats';
  * under them, since it otherwise treats its own output as q-list.json's
  * complete contents. Keep in sync with each such script's own ID_PREFIX.
  */
-const FOREIGN_LIST_PREFIXES = ['list_premier_league_stat_', 'list_premier_league_club_'];
+const FOREIGN_LIST_PREFIXES = [
+  'list_premier_league_stat_',
+  'list_premier_league_club_',
+  'list_premier_league_manager_',
+];
 /** Career-path difficulty bands, by a player's BEST rank across all metrics and
  *  competitions. STANDARD = famous (best rank ≤ this); HARD = rarer (best rank in
  *  (STANDARD_MAX, HARD_MAX]). Players past HARD_MAX are excluded (too obscure). */

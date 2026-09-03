@@ -79,12 +79,13 @@ describe('generated answer bank', () => {
   });
 
   it('every tiered/season-stat LIST answer has a positive value', () => {
-    // Club-history answers are the deliberate exception: relegated/promoted
-    // carry final points as `value`, but all-time top-N-finish answers carry
-    // none (a bare position number wasn't meaningful to show) — see the
-    // dedicated club-history block below.
+    // Deliberate exceptions, both without a meaningful single number to show:
+    // club-history answers (relegated/promoted carry points, but all-time
+    // top-N-finish answers carry none) and manager answers (a person's name,
+    // same convention as CAREER_PATH — no ranking value at all).
     for (const q of lists) {
       if (q.id.startsWith('list_premier_league_club_')) continue;
+      if (q.id.startsWith('list_premier_league_manager_')) continue;
       for (const a of q.answers) expect(a.value ?? 0).toBeGreaterThan(0);
     }
   });
@@ -437,5 +438,29 @@ describe('generated answer bank', () => {
     for (const club of ['Manchester United', 'Arsenal', 'Chelsea', 'Manchester City', 'Liverpool', 'Leicester City', 'Blackburn Rovers']) {
       expect(names).toContain(club);
     }
+  });
+
+  const managers = bundle.questions.filter(
+    (q): q is ListQuestion => q.format === 'LIST' && q.id.startsWith('list_premier_league_manager_'),
+  );
+
+  it('has manager questions (run `npm run build:managers` if this fails)', () => {
+    expect(managers.length).toBeGreaterThan(0);
+  });
+
+  it('every manager question names exactly 3 distinct people', () => {
+    for (const q of managers) {
+      expect(q.answers.length).toBe(3);
+      expect(q.prompt).toContain('last 3 managers');
+      const names = q.answers.map((a) => a.fullName);
+      expect(new Set(names).size).toBe(3);
+      for (const a of q.answers) expect(a.lastName.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('manager answers do NOT set noAutoTokens — these are people, not clubs', () => {
+    // Distinguishes this LIST sub-type from the club-history one: a person's
+    // first/last-name matching heuristic is exactly what SHOULD apply here.
+    for (const q of managers) for (const a of q.answers) expect(a.noAutoTokens).toBeFalsy();
   });
 });

@@ -33,21 +33,25 @@ project, so the branch-and-merge ceremony added round trips without adding revie
   committed.
 - **Refreshing data** (only when changing players/stats/sources): run `npm run build:data` (fetches
   from the PL/CL APIs + Wikipedia, then chains `build:season-stats`, `build:club-history`,
-  `build:matches`, `build:squads` and `build:daily`), then commit the updated `public/data/*.json`
-  **together with** your code change. `build:data` also freezes today's daily into `daily.json` —
-  commit that too so the current day's puzzle stays locked.
-- **Only touching match/squad/season-stat/club-history questions?** Run `npm run build:matches`
+  `build:managers`, `build:matches`, `build:squads` and `build:daily`), then commit the updated
+  `public/data/*.json` **together with** your code change. `build:data` also freezes today's daily
+  into `daily.json` — commit that too so the current day's puzzle stays locked.
+- **Only touching match/squad/season-stat/club-history/manager questions?** Run `npm run build:matches`
   (rewrites `q-match.json`), `npm run build:squads` (rewrites `q-squad.json`, cheap right after
-  `build:matches` since both share the fixture-detail disk cache), `npm run build:season-stats`, or
-  `npm run build:club-history` (each rewrites its own slice of `q-list.json`, id-prefixed
-  `list_premier_league_stat_`/`list_premier_league_club_`). Any of these leaves the rest of the bank
-  byte-identical — `build:data` would also re-crawl Wikipedia and reshuffle the (deliberately
-  partial) career pool.
+  `build:matches` since both share the fixture-detail disk cache), `npm run build:season-stats`,
+  `npm run build:club-history`, or `npm run build:managers` (each rewrites its own slice of
+  `q-list.json`, id-prefixed `list_premier_league_stat_`/`_club_`/`_manager_`). Any of these leaves the
+  rest of the bank byte-identical — `build:data` would also re-crawl Wikipedia and reshuffle the
+  (deliberately partial) career pool.
 - **`q-list.json` has more than one owner.** `build-questions.ts` generates the all-time metrics;
-  `build-season-stats.ts` and `build-club-history.ts` (and any future script that adds more LIST
-  sub-types) each own their own slice by id prefix. `build-questions.ts` knows to preserve slices it
-  doesn't own (`FOREIGN_LIST_PREFIXES`) — if you add another such script, add its prefix there too, or
-  a `build-questions.ts` rerun will silently wipe it.
+  `build-season-stats.ts`, `build-club-history.ts` and `build-managers.ts` (and any future script that
+  adds more LIST sub-types) each own their own slice by id prefix. `build-questions.ts` knows to
+  preserve slices it doesn't own (`FOREIGN_LIST_PREFIXES`) — if you add another such script, add its
+  prefix there too, or a `build-questions.ts` rerun will silently wipe it.
+- **`build:managers` only covers 18 of 51 clubs, on purpose.** Wikipedia's per-club managerial-history
+  pages are far less consistently formatted than career-path infoboxes — see the README data-source
+  section and `scripts/fetch/wikiManagers.ts`'s comments for the real inconsistencies found. A club
+  without a clean-enough table is skipped rather than shipped with a guessed/stale answer.
 - **SQUAD joined the daily on 2026-08-20.** Days frozen before that have no `squad` key and stay at
   the length they were actually played (same pattern as `career2`/`match` before them) — never
   back-filled. `DAILY_FORMATS` in `loadQuestions.ts` must list every format `selectDaily()` draws
@@ -69,6 +73,8 @@ project, so the branch-and-merge ceremony added round trips without adding revie
 | `npm run build:app` | Typecheck + bundle (what CI runs) |
 | `npm run build:data` | Regenerate questions + matches + daily from sources (several min cold cache) |
 | `npm run build:season-stats` | Regenerate ONLY per-season stat questions (`SEASON_STATS_SEASONS=n` to limit) |
+| `npm run build:club-history` | Regenerate ONLY relegated/promoted/top-N club questions |
+| `npm run build:managers` | Regenerate ONLY "last 3 managers" questions (18/51 clubs currently pass validation) |
 | `npm run build:matches` | Regenerate ONLY match questions and merge them in (`MATCH_SEASONS=n` to limit) |
 | `npm run build:squads` | Regenerate ONLY squad (starting XI) questions (`SQUAD_SEASONS=n` to limit) |
 | `npm run build:daily` | Freeze today's daily into `daily.json` (append-only; no network) |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T02:14:55.778Z",
+  "generatedAt": "2026-09-03T03:00:51.099Z",
   "questions": [
     {
       "id": "list_premier_league_goals_overall_all_10",
@@ -25394,6 +25394,492 @@
           "fullName": "Leicester City",
           "lastName": "Leicester",
           "noAutoTokens": true
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Arsenal.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Arsenal_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mikel Arteta",
+          "lastName": "Arteta"
+        },
+        {
+          "fullName": "Unai Emery",
+          "lastName": "Emery"
+        },
+        {
+          "fullName": "Arsène Wenger",
+          "lastName": "Wenger"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_birmingham_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Birmingham City.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Birmingham_City_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Chris Davies",
+          "lastName": "Davies"
+        },
+        {
+          "fullName": "Tony Mowbray",
+          "lastName": "Mowbray"
+        },
+        {
+          "fullName": "Wayne Rooney",
+          "lastName": "Rooney"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_blackburn_rovers",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Blackburn Rovers.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Blackburn_Rovers_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Tony Mowbray",
+          "lastName": "Mowbray"
+        },
+        {
+          "fullName": "Michael O'Neill",
+          "lastName": "O'Neill"
+        },
+        {
+          "fullName": "Damien Johnson",
+          "lastName": "Johnson"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_bolton_wanderers",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Bolton Wanderers.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Bolton_Wanderers_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Steven Schumacher",
+          "lastName": "Schumacher"
+        },
+        {
+          "fullName": "Ian Evatt",
+          "lastName": "Evatt"
+        },
+        {
+          "fullName": "Keith Hill",
+          "lastName": "Hill"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_burnley",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Burnley.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Burnley_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Nicky Hayen",
+          "lastName": "Hayen"
+        },
+        {
+          "fullName": "Mike Jackson",
+          "lastName": "Jackson"
+        },
+        {
+          "fullName": "Scott Parker",
+          "lastName": "Parker"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_coventry_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Coventry City.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Coventry_City_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Frank Lampard",
+          "lastName": "Lampard"
+        },
+        {
+          "fullName": "Rhys Carr",
+          "lastName": "Carr"
+        },
+        {
+          "fullName": "Mark Robins",
+          "lastName": "Robins"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_everton",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Everton.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Everton_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "David Moyes",
+          "lastName": "Moyes"
+        },
+        {
+          "fullName": "Leighton Baines",
+          "lastName": "Baines"
+        },
+        {
+          "fullName": "Sean Dyche",
+          "lastName": "Dyche"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_huddersfield_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Huddersfield Town.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Huddersfield_Town_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jon Stead",
+          "lastName": "Stead"
+        },
+        {
+          "fullName": "Neil Warnock",
+          "lastName": "Warnock"
+        },
+        {
+          "fullName": "Narcís Pèlach",
+          "lastName": "Pèlach"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_ipswich_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Ipswich Town.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Ipswich_Town_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Gary O'Neil",
+          "lastName": "O'Neil"
+        },
+        {
+          "fullName": "Kieran McKenna",
+          "lastName": "McKenna"
+        },
+        {
+          "fullName": "John McGreal",
+          "lastName": "McGreal"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_leeds_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Leeds United.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Leeds_United_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Javi Gracia",
+          "lastName": "Gracia"
+        },
+        {
+          "fullName": "Daniel Farke",
+          "lastName": "Farke"
+        },
+        {
+          "fullName": "Sam Allardyce",
+          "lastName": "Allardyce"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Liverpool.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Liverpool_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Andoni Iraola",
+          "lastName": "Iraola"
+        },
+        {
+          "fullName": "Arne Slot",
+          "lastName": "Slot"
+        },
+        {
+          "fullName": "Jürgen Klopp",
+          "lastName": "Klopp"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_luton_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Luton Town.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Luton_Town_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jack Wilshere",
+          "lastName": "Wilshere"
+        },
+        {
+          "fullName": "Matt Bloomfield",
+          "lastName": "Bloomfield"
+        },
+        {
+          "fullName": "Rob Edwards",
+          "lastName": "Edwards"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_manchester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Manchester City.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Manchester_City_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Enzo Maresca",
+          "lastName": "Maresca"
+        },
+        {
+          "fullName": "Pep Guardiola",
+          "lastName": "Guardiola"
+        },
+        {
+          "fullName": "Manuel Pellegrini",
+          "lastName": "Pellegrini"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Manchester United.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Manchester_United_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Michael Carrick",
+          "lastName": "Carrick"
+        },
+        {
+          "fullName": "Ruben Amorim",
+          "lastName": "Amorim"
+        },
+        {
+          "fullName": "Erik ten Hag",
+          "lastName": "Hag"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_middlesbrough",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Middlesbrough.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Middlesbrough_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Kim Hellberg",
+          "lastName": "Hellberg"
+        },
+        {
+          "fullName": "Michael Carrick",
+          "lastName": "Carrick"
+        },
+        {
+          "fullName": "Chris Wilder",
+          "lastName": "Wilder"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_norwich_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Norwich City.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Norwich_City_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Philippe Clement",
+          "lastName": "Clement"
+        },
+        {
+          "fullName": "Liam Manning",
+          "lastName": "Manning"
+        },
+        {
+          "fullName": "Jack Wilshere",
+          "lastName": "Wilshere"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_portsmouth",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Portsmouth.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Portsmouth_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "John Mousinho",
+          "lastName": "Mousinho"
+        },
+        {
+          "fullName": "Danny Cowley",
+          "lastName": "Cowley"
+        },
+        {
+          "fullName": "Kenny Jackett",
+          "lastName": "Jackett"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_manager_sheffield_wednesday",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Sheffield Wednesday.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Sheffield_Wednesday_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Henrik Pedersen",
+          "lastName": "Pedersen"
+        },
+        {
+          "fullName": "Danny Röhl",
+          "lastName": "Röhl"
+        },
+        {
+          "fullName": "Xisco Muñoz",
+          "lastName": "Muñoz"
         }
       ]
     }

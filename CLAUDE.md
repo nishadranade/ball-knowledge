@@ -53,6 +53,17 @@ the container exits. Check `git status` after.
   two different clubs sharing a word (Manchester United/City, the three "___ United"s) is the norm.
   Use the API's own `club.shortName` as `lastName`; it's already unique per club, no alias curation
   needed.
+- **`fetch/wikiManagers.ts` is fragile — read its comments before touching it, and re-run
+  `build:managers` + `npm test` after any change, not just typecheck.** This page family is far less
+  consistently templated than career-path infoboxes; every quirk in that file's comments was a REAL
+  bug that shipped wrong data at some point during development, caught by manually spot-checking
+  output against known football history rather than by any test failing (there were no tests yet).
+  The two worst: an empty "To" cell is ambiguous between "still in charge" and "old row, departure
+  date just never recorded" — resolving that wrong once put a 1928 Crystal Palace manager at the top
+  of "most recent"; and a club's history can be split across two separate wikitables (confirmed:
+  Birmingham City), so "who's current" has to be resolved ONCE, globally, not per-table. `tests/
+  wikiManagers.test.ts` pins each of these with a fixture reproducing the real page snippet that broke
+  — treat a new club failing validation as the correct, safe outcome, not a bug to route around.
 - **SQUAD's fixture filter is stricter than MATCH's, on purpose.** Both start from the same
   `qualifies()` in `scripts/fetch/matchFilters.ts`, but SQUAD additionally requires a marquee side in
   CL fixtures (`isBigClFixture`/`BIG_EUROPE`) and always asks about the bigger side when only one
@@ -109,6 +120,7 @@ Run `npm test` and `npm run build:app` locally first.
 |---|---|---|
 | Only per-season stats | `npm run build:season-stats` | Rewrites just its own slice of `q-list.json`. `SEASON_STATS_SEASONS=n` to limit. |
 | Only club history (relegated/promoted/top-N) | `npm run build:club-history` | Rewrites just its own slice of `q-list.json`. No env override — always uses full PL standings history. |
+| Only manager questions | `npm run build:managers` | Rewrites just its own slice of `q-list.json`. Attempts all 51 clubs, keeps only the ~18 that validate cleanly — see the note below. |
 | Only match fixtures | `npm run build:matches` | Rewrites just `q-match.json`. `MATCH_SEASONS=n` to limit. |
 | Only squad line-ups | `npm run build:squads` | Rewrites just `q-squad.json`. Run after `build:matches` — same fixture detail endpoint, so it reuses that disk cache for free. `SQUAD_SEASONS=n` to limit. |
 | Players / stats / sources | `npm run build:data` | Chains matches + squads + daily. Several minutes; hits the PL API and Wikipedia. |

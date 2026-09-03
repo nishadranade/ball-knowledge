@@ -19,6 +19,11 @@ question formats and forgiving answer matching.
    for a given season, and which clubs have ever finished in the top 1/2/3/4 of the table. Recency-
    banded difficulty for relegated/promoted (same 5-year threshold as match/squad); the all-time
    top-N-finish questions are always HARD.
+
+   And a **managers** slice — "Name the last 3 managers of Arsenal" — from Wikipedia's per-club
+   managerial history. Only 18 of the 51 clubs ever in the Premier League have a table clean enough to
+   answer this reliably (see the data-source section below for why); STANDARD for a major club,
+   otherwise HARD.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
 3. **Match scorers** — a real fixture shown in full (teams, score, date, competition round): name
@@ -206,6 +211,26 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   the API's own `club.shortName` (e.g. "Man Utd", "Spurs", "Sheff Weds") — already unique per club, no
   manual alias curation needed. See `scripts/build-club-history.ts` and `fetch/plStandings.ts`; owns
   the `list_premier_league_club_` slice of `q-list.json` the same way season-stats does.
+- **Manager LIST questions** — Wikipedia's "List of X managers" page family, which turned out to be
+  far less consistently templated than career-path infoboxes: confirmed real variance across clubs in
+  the page title (with/without "F.C."; one club, Brighton, has no dedicated page at all — the table
+  lives in a section of the main club article), the date cells (`{{dts|...}}` vs plain text; a
+  positional `{{dts|format=dmy|Y|M|D}}` with some parts blank; an incumbent's cell being literally
+  "Present" for some clubs and simply *empty* for others), the caretaker marker (`{{dagger}}`,
+  `(interim)`, a `background:` style, or a `bgcolor=` attribute — four different conventions found),
+  and even the table being split across two separate wikitables for one history (confirmed on
+  Birmingham City: an early-era table and a modern one, which independently looked "ongoing" at each
+  one's own last row until the parser was taught to resolve "who's current" once, globally, across
+  every table on the page). `fetch/wikiManagers.ts` has the full account of what broke and why in its
+  comments — worth reading before touching that file, since several of these look like edge cases
+  right up until you find the club that hits them.
+
+  Given that inconsistency, this validates aggressively and **skips a club entirely** rather than ship
+  a questionable "last 3" — of the 51 clubs ever in the Premier League, only **18** currently have a
+  table clean enough to pass (a name must be wrapped in `{{sortname}}`/`{{sort|}}`, the 3 most recent
+  non-caretaker managers must chronologically connect, and the most recent one must be the *current*
+  incumbent — a table that doesn't reflect that looks stale, not just short). See
+  `scripts/build-managers.ts`; owns the `list_premier_league_manager_` slice of `q-list.json`.
 - **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
 - **MATCH questions** — the same pulselive API, via two endpoints: `/fixtures` (teams, scores, and a
   `goals[]` of person ids) to decide which matches qualify, then `/fixtures/{id}` for the ones that
@@ -256,6 +281,7 @@ npm run dev          # dev server
 npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedia; several min cold cache)
 npm run build:season-stats # regenerate ONLY the per-season stat questions (SEASON_STATS_SEASONS=n to limit)
 npm run build:club-history # regenerate ONLY relegated/promoted/top-N club questions
+npm run build:managers # regenerate ONLY "last 3 managers" questions (18/51 clubs currently pass validation)
 npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
 npm run build:squads  # regenerate ONLY q-squad.json (SQUAD_SEASONS=n to limit); cheap after build:matches
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
@@ -318,11 +344,11 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,083
-questions** (474 list — including 50 per-season stat and 70 club-history questions — 1,290 career,
-2,342 match, 1,977 squad) across two competitions — **Premier League** (4,859) and **Champions
-League** (1,224) — covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to
-2026-05-30**. Questions are split **Standard** (2,569) / **Hard** (3,514) across all four formats
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,101
+questions** (492 list — including 50 per-season stat, 70 club-history, and 18 manager questions —
+1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier League** (4,877) and
+**Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to
+2026-05-30**. Questions are split **Standard** (2,575) / **Hard** (3,526) across all four formats
 (see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every
@@ -332,7 +358,7 @@ visitor downloaded all **10.5 MB** of it before the game could start — most vi
 | File | Size | Fetched when |
 |---|---|---|
 | `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
-| `q-list.json` | 0.64 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
+| `q-list.json` | 0.66 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
 | `q-career.json` | 2.1 MB | Practice with career paths (or All), an unfrozen daily, or a career deep link |
 | `q-match.json` | 2.6 MB | Practice with match scorers (or All), an unfrozen daily, or a match deep link |
 | `q-squad.json` | 5.2 MB | Practice with starting XI (or All), an unfrozen daily, or a squad deep link |
