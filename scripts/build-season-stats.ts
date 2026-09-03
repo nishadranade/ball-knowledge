@@ -12,10 +12,14 @@
  * all-time metrics (goals/assists/appearances/clean sheets); adding it here
  * too would multiply into a huge number of thin, rarely-useful questions.
  *
- * All HARD difficulty by design: these are more detailed/niche stats than
- * the classic all-time metrics, so — like a minor club's obscure rank 6-10
- * tail — they stay out of the Standard/daily pool, but are fully playable
- * in Practice (Hard filter).
+ * STANDARD difficulty by design: unlike a minor club's obscure rank 6-10
+ * tail, a season's top-10 shooters/tacklers/interceptors/savers are all
+ * players who actually had a real Premier League season, and every season
+ * covered is complete and recent (see recentCompleteSeasons below) — so
+ * these are eligible for the daily list-question draw, not just Practice.
+ * (Originally shipped HARD-only; promoted to STANDARD once the daily
+ * rotation needed more list-question variety than the all-time metrics
+ * alone provided.)
  *
  * This script owns a SLICE of q-list.json (every id starting with
  * `list_premier_league_stat_`), merging into whatever build-questions.ts
@@ -99,7 +103,7 @@ async function buildForSeason(season: CompSeason): Promise<{ questions: ListQues
       format: 'LIST',
       prompt: `Name the top ${TOP_N} players with the most ${SEASON_STAT_LABELS[metric]} in the Premier League in the ${season.label} season.`,
       maxWrong: 3,
-      difficulty: 'HARD',
+      difficulty: 'STANDARD',
       source: { name: 'Premier League', url: PL_SOURCE_URL, retrievedAt: NOW },
       answers,
     });
@@ -111,7 +115,7 @@ function validate(questions: ListQuestion[]): string[] {
   const errors: string[] = [];
   for (const q of questions) {
     if (!q.id.startsWith(ID_PREFIX)) errors.push(`${q.id}: missing expected id prefix`);
-    if (q.difficulty !== 'HARD') errors.push(`${q.id}: season stats should be HARD`);
+    if (q.difficulty !== 'STANDARD') errors.push(`${q.id}: season stats should be STANDARD`);
     if (q.maxWrong !== 3) errors.push(`${q.id}: maxWrong should be 3`);
     if (q.answers.length < TOP_N) errors.push(`${q.id}: only ${q.answers.length} answers, expected ≥${TOP_N}`);
     for (const a of q.answers) {

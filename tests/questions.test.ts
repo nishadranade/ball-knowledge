@@ -327,10 +327,11 @@ describe('generated answer bank', () => {
   it('lesser clubs/countries are Hard and capped at top 5', () => {
     // Any LIST question tagged STANDARD for a country/club scope must be a major
     // one; and no HARD list should exceed top 5 — EXCEPT the per-season "deep
-    // stat" questions (build-season-stats.ts), which are HARD for a different
-    // reason (a niche stat category, not a thin tail) and are always top 10; and
-    // EXCEPT club-history questions (build-club-history.ts), whose trailing id
-    // digits are a season fragment or a topN threshold, not a tiered list size.
+    // stat" questions (build-season-stats.ts), which are excluded here for a
+    // different reason (always top 10, and STANDARD rather than HARD, so the
+    // "n<=5" rule doesn't apply to them at all); and EXCEPT club-history
+    // questions (build-club-history.ts), whose trailing id digits are a season
+    // fragment or a topN threshold, not a tiered list size.
     const lists = bundle.questions.filter(
       (q): q is ListQuestion =>
         q.format === 'LIST' &&
@@ -352,9 +353,9 @@ describe('generated answer bank', () => {
     expect(seasonStats.length).toBeGreaterThan(0);
   });
 
-  it('per-season stat questions are HARD, top 10, with a positive value per answer', () => {
+  it('per-season stat questions are STANDARD (daily-eligible), top 10, with a positive value per answer', () => {
     for (const q of seasonStats) {
-      expect(q.difficulty).toBe('HARD');
+      expect(q.difficulty).toBe('STANDARD');
       expect(q.maxWrong).toBe(3);
       expect(q.answers.length).toBeGreaterThanOrEqual(10);
       for (const a of q.answers) {

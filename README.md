@@ -11,8 +11,8 @@ question formats and forgiving answer matching.
    tied); up to **3 wrong guesses**. Includes a **per-season** slice for detailed stats pulselive
    tracks by season rather than all-time — shots, shots on target, tackles, interceptions, saves —
    e.g. "Name the top 10 players with the most shots on target in the Premier League in the 2020/21
-   season," covering the last 10 complete seasons. Always **HARD** difficulty and overall-only (no
-   per-club/per-country split) — see the data-source section below.
+   season," covering the last 10 complete seasons. **STANDARD** difficulty (daily-eligible) and
+   overall-only (no per-club/per-country split) — see the data-source section below.
 
    Also includes a **club-history** slice, where the answers are clubs rather than players, drawn
    from the final league table every PL season since 1992/93: which clubs were relegated or promoted
@@ -368,7 +368,7 @@ Sources and retrieval dates are recorded in `public/data/manifest.json`. Current
 questions** (499 list — including 50 per-season stat, 70 club-history, 18 manager, and 7 transfer-fee
 questions — 1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier League**
 (4,884) and **Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches from
-**2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,580) / **Hard** (3,528) across all
+**2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,630) / **Hard** (3,478) across all
 four formats
 (see difficulty tiers below).
 

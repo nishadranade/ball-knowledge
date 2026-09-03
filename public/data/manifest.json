@@ -9,8 +9,8 @@
       "CHAMPIONS_LEAGUE": 1224
     },
     "byDifficulty": {
-      "STANDARD": 2580,
-      "HARD": 3528
+      "STANDARD": 2630,
+      "HARD": 3478
     },
     "match": 2342,
     "squad": 1977
@@ -22,7 +22,7 @@
   ],
   "matchesGeneratedAt": "2026-08-10T04:04:44.112Z",
   "squadsGeneratedAt": "2026-08-20T02:59:25.884Z",
-  "seasonStatsGeneratedAt": "2026-09-03T00:27:20.066Z",
+  "seasonStatsGeneratedAt": "2026-09-03T03:42:33.096Z",
   "clubHistoryGeneratedAt": "2026-09-03T02:14:55.778Z",
   "clubHistorySeasons": "1992/93 … 2025/26",
   "managersGeneratedAt": "2026-09-03T03:00:51.099Z",
