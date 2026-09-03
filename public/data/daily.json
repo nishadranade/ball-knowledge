@@ -8066,5 +8066,309 @@
         ]
       ]
     }
+  },
+  "2026-09-03": {
+    "list": {
+      "id": "list_premier_league_appearances_country_sweden_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Swedish appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sebastian Larsson",
+          "lastName": "Larsson",
+          "value": 282,
+          "rank": 1
+        },
+        {
+          "fullName": "Freddie Ljungberg",
+          "lastName": "Ljungberg",
+          "value": 241,
+          "rank": 2
+        },
+        {
+          "fullName": "Olof Mellberg",
+          "lastName": "Mellberg",
+          "value": 232,
+          "rank": 3
+        },
+        {
+          "fullName": "Victor Lindelöf",
+          "lastName": "Lindelöf",
+          "value": 213,
+          "rank": 4
+        },
+        {
+          "fullName": "Jonas Olsson",
+          "lastName": "Olsson",
+          "value": 201,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_patrick_vieira",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 51,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Patrick_Vieira",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1995",
+          "club": "Cannes",
+          "appearances": 49,
+          "goals": 2
+        },
+        {
+          "years": "1995–1996",
+          "club": "AC Milan",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "1996–2005",
+          "club": "Arsenal",
+          "appearances": 279,
+          "goals": 29
+        },
+        {
+          "years": "2005–2006",
+          "club": "Juventus",
+          "appearances": 31,
+          "goals": 5
+        },
+        {
+          "years": "2006–2010",
+          "club": "Inter Milan",
+          "appearances": 67,
+          "goals": 6
+        },
+        {
+          "years": "2010–2011",
+          "club": "Manchester City",
+          "appearances": 28,
+          "goals": 3
+        }
+      ],
+      "answer": {
+        "fullName": "Patrick Vieira",
+        "lastName": "Vieira",
+        "aliases": [
+          "Patrick",
+          "Vieira"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_gabriel_martinelli",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 184,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Martinelli",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2018–2019",
+          "club": "Ituano",
+          "appearances": 17,
+          "goals": 6
+        },
+        {
+          "years": "2019–",
+          "club": "Arsenal",
+          "appearances": 191,
+          "goals": 41
+        }
+      ],
+      "answer": {
+        "fullName": "Gabriel Martinelli",
+        "lastName": "Martinelli",
+        "aliases": [
+          "Gabriel",
+          "Martinelli"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-01-19_everton_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Everton",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2025-01-19",
+        "dateLabel": "19 January 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Dominic Calvert-Lewin",
+          "lastName": "Calvert-Lewin",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Iliman Ndiaye",
+          "lastName": "Ndiaye",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_champions_league_2026-02-24_internazionale_bod_glimt_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Internazionale",
+        "opponent": "Bodø/Glimt",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2026-02-24",
+        "dateLabel": "24 February 2026",
+        "round": "Play-Offs, second leg",
+        "formation": "3-5-2"
+      },
+      "answers": [
+        {
+          "fullName": "Yann Sommer",
+          "lastName": "Sommer",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Yann Bisseck",
+          "lastName": "Bisseck",
+          "shirtNumber": 31,
+          "position": "D"
+        },
+        {
+          "fullName": "Manuel Akanji",
+          "lastName": "Akanji",
+          "shirtNumber": 25,
+          "position": "D"
+        },
+        {
+          "fullName": "Alessandro Bastoni",
+          "lastName": "Bastoni",
+          "shirtNumber": 95,
+          "position": "D"
+        },
+        {
+          "fullName": "Luis Henrique",
+          "lastName": "de Lima",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Davide Frattesi",
+          "lastName": "Frattesi",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Piotr Zielinski",
+          "lastName": "Zielinski",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Nicolò Barella",
+          "lastName": "Barella",
+          "shirtNumber": 23,
+          "position": "M"
+        },
+        {
+          "fullName": "Federico Dimarco",
+          "lastName": "Dimarco",
+          "shirtNumber": 32,
+          "position": "M"
+        },
+        {
+          "fullName": "Francesco Pio Esposito",
+          "lastName": "Esposito",
+          "shirtNumber": 94,
+          "position": "F"
+        },
+        {
+          "fullName": "Marcus Thuram",
+          "lastName": "Thuram",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
