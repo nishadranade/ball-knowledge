@@ -170,3 +170,45 @@ describe('matchAnswer — accented names accept their plain spelling', () => {
     expect(isMatch('Vinícius', p('Vinícius Júnior', 'Júnior'))).toBe(true);
   });
 });
+
+describe('matchAnswer — noAutoTokens (club answers)', () => {
+  // A club-shaped Player: fullName is the full club name, lastName is the
+  // API's own club-specific short name (never a derived word split).
+  const club = (fullName: string, shortName: string, aliases?: string[]): Player => ({
+    fullName,
+    lastName: shortName,
+    aliases,
+    noAutoTokens: true,
+  });
+
+  it('still accepts the full name and the short name', () => {
+    const manUtd = club('Manchester United', 'Man Utd');
+    expect(isMatch('Manchester United', manUtd)).toBe(true);
+    expect(isMatch('Man Utd', manUtd)).toBe(true);
+  });
+
+  it('does NOT accept a bare word shared with another club\'s full name', () => {
+    // Without noAutoTokens, "United" would be auto-derived from BOTH full
+    // names and ambiguously match whichever club is checked first — the
+    // exact failure mode this flag exists to prevent.
+    const manUtd = club('Manchester United', 'Man Utd');
+    const newcastle = club('Newcastle United', 'Newcastle');
+    expect(isMatch('United', manUtd)).toBe(false);
+    expect(isMatch('United', newcastle)).toBe(false);
+    // ...whereas the SAME shape without the flag would wrongly accept it.
+    const unguarded: Player = { fullName: 'Manchester United', lastName: 'Man Utd' };
+    expect(isMatch('United', unguarded)).toBe(true);
+  });
+
+  it('does not derive a bare first word either (Manchester City vs Manchester United)', () => {
+    const manUtd = club('Manchester United', 'Man Utd');
+    expect(isMatch('Manchester', manUtd)).toBe(false);
+  });
+
+  it('two clubs sharing a word each resolve only to their own short name', () => {
+    const manUtd = club('Manchester United', 'Man Utd');
+    const manCity = club('Manchester City', 'Man City');
+    expect(matchAnswer('Man Utd', [manUtd, manCity])?.candidate.lastName).toBe('Man Utd');
+    expect(matchAnswer('Man City', [manUtd, manCity])?.candidate.lastName).toBe('Man City');
+  });
+});

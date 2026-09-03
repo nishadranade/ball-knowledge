@@ -15,7 +15,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { writeBankFile } from './bank.js';
+import { readBankFile, writeBankFile } from './bank.js';
 import { fetchWikitext, hasCached, parseCareerInfobox, type CareerStint } from './fetch/wikipedia.js';
 import { fetchTeams, COMPS, type CompsId } from './fetch/premierLeague.js';
 import { aggregateMetric, type PlayerRow } from './fetch/plAggregate.js';
@@ -44,6 +44,16 @@ import type {
 const OUT_DIR = 'public/data';
 const NOW = new Date().toISOString();
 const PL_SOURCE_URL = 'https://www.premierleague.com/stats';
+/**
+ * q-list.json is no longer owned by this script ALONE — build-season-stats.ts
+ * (and, over time, other scripts) also contribute their own slice, the same
+ * way build-matches.ts/build-squads.ts own MATCH/SQUAD entirely, just scoped
+ * by id prefix instead of by format since they share LIST. Without this list,
+ * a rerun of build-questions.ts would silently wipe those slices out from
+ * under them, since it otherwise treats its own output as q-list.json's
+ * complete contents. Keep in sync with each such script's own ID_PREFIX.
+ */
+const FOREIGN_LIST_PREFIXES = ['list_premier_league_stat_'];
 /** Career-path difficulty bands, by a player's BEST rank across all metrics and
  *  competitions. STANDARD = famous (best rank ≤ this); HARD = rarer (best rank in
  *  (STANDARD_MAX, HARD_MAX]). Players past HARD_MAX are excluded (too obscure). */
@@ -423,20 +433,36 @@ async function main() {
     process.exit(1);
   }
 
-  // Per-category counts for the manifest.
+  // Preserve any LIST entries owned by another script (see
+  // FOREIGN_LIST_PREFIXES above) — this run's `listQs` is authoritative only
+  // for ITS OWN ids, not for q-list.json's whole contents.
+  const foreignList = (await readBankFile('LIST')).filter((q) =>
+    FOREIGN_LIST_PREFIXES.some((p) => q.id.startsWith(p)),
+  );
+  const freshIds = new Set(listQs.map((q) => q.id));
+  const idClash = foreignList.find((q) => freshIds.has(q.id));
+  if (idClash) {
+    console.error(`Foreign list id collides with a freshly-generated one: ${idClash.id}`);
+    process.exit(1);
+  }
+  const finalListQs: Question[] = [...listQs, ...foreignList];
+  const allQuestions: Question[] = [...finalListQs, ...careerQs];
+
+  // Per-category counts for the manifest — across everything actually
+  // shipping, foreign entries included.
   const byCategory: Record<string, number> = {};
-  for (const q of questions) byCategory[q.category] = (byCategory[q.category] ?? 0) + 1;
-  // Difficulty now spans both formats.
+  for (const q of allQuestions) byCategory[q.category] = (byCategory[q.category] ?? 0) + 1;
   const byDifficulty = {
-    STANDARD: questions.filter((q) => q.difficulty === 'STANDARD').length,
-    HARD: questions.filter((q) => q.difficulty === 'HARD').length,
+    STANDARD: allQuestions.filter((q) => q.difficulty === 'STANDARD').length,
+    HARD: allQuestions.filter((q) => q.difficulty === 'HARD').length,
   };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
   // The bank is split one file per format so the browser can fetch just what a
-  // view needs (see scripts/bank.ts). This script owns LIST and CAREER_PATH;
-  // build-matches.ts owns MATCH and is left untouched here.
-  await writeBankFile('LIST', listQs, NOW);
+  // view needs (see scripts/bank.ts). This script owns LIST (minus any
+  // foreign slice preserved above) and CAREER_PATH; build-matches.ts and
+  // build-squads.ts own MATCH/SQUAD entirely and are left untouched here.
+  await writeBankFile('LIST', finalListQs, NOW);
   await writeBankFile('CAREER_PATH', careerQs, NOW);
   await fs.writeFile(
     path.join(OUT_DIR, 'manifest.json'),
@@ -444,8 +470,8 @@ async function main() {
       {
         generatedAt: NOW,
         counts: {
-          total: questions.length,
-          list: listQs.length,
+          total: allQuestions.length,
+          list: finalListQs.length,
           career: careerQs.length,
           byCategory,
           byDifficulty,
@@ -459,7 +485,8 @@ async function main() {
     ),
   );
   console.log(
-    `\nWrote ${listQs.length} list + ${careerQs.length} career questions to ${OUT_DIR}/q-list.json and q-career.json`,
+    `\nWrote ${listQs.length} list (+ ${foreignList.length} preserved from another script) + ` +
+      `${careerQs.length} career questions to ${OUT_DIR}/q-list.json and q-career.json`,
   );
 }
 

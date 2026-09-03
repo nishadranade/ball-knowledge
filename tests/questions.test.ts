@@ -309,12 +309,53 @@ describe('generated answer bank', () => {
 
   it('lesser clubs/countries are Hard and capped at top 5', () => {
     // Any LIST question tagged STANDARD for a country/club scope must be a major
-    // one; and no HARD list should exceed top 5.
-    const lists = bundle.questions.filter((q): q is ListQuestion => q.format === 'LIST');
+    // one; and no HARD list should exceed top 5 — EXCEPT the per-season "deep
+    // stat" questions (build-season-stats.ts), which are HARD for a different
+    // reason (a niche stat category, not a thin tail) and are always top 10.
+    const lists = bundle.questions.filter(
+      (q): q is ListQuestion => q.format === 'LIST' && !q.id.startsWith('list_premier_league_stat_'),
+    );
     for (const q of lists) {
       const m = q.id.match(/_(\d+)$/);
       const n = m ? Number(m[1]) : 0;
       if (q.difficulty === 'HARD') expect(n).toBeLessThanOrEqual(5);
+    }
+  });
+
+  const seasonStats = bundle.questions.filter(
+    (q): q is ListQuestion => q.format === 'LIST' && q.id.startsWith('list_premier_league_stat_'),
+  );
+
+  it('has per-season stat questions (run `npm run build:season-stats` if this fails)', () => {
+    expect(seasonStats.length).toBeGreaterThan(0);
+  });
+
+  it('per-season stat questions are HARD, top 10, with a positive value per answer', () => {
+    for (const q of seasonStats) {
+      expect(q.difficulty).toBe('HARD');
+      expect(q.maxWrong).toBe(3);
+      expect(q.answers.length).toBeGreaterThanOrEqual(10);
+      for (const a of q.answers) {
+        expect(a.lastName.length).toBeGreaterThan(0);
+        expect(a.value ?? 0).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('per-season stat prompts name a real season and stat', () => {
+    for (const q of seasonStats) {
+      expect(q.prompt).toMatch(/\b\d{4}\/\d{2}\b/); // e.g. "2020/21"
+      expect(q.prompt).toContain('Premier League');
+    }
+  });
+
+  it('covers all five stat types', () => {
+    // id shape: list_premier_league_stat_<metric>_<YYYY>_<YY>_<N>
+    const stats = new Set(
+      seasonStats.map((q) => q.id.match(/^list_premier_league_stat_(.+)_\d{4}_\d{2}_\d+$/)?.[1]),
+    );
+    for (const expected of ['shots', 'shotsontarget', 'tackles', 'interceptions', 'saves']) {
+      expect(stats).toContain(expected);
     }
   });
 });

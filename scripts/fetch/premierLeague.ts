@@ -34,8 +34,19 @@ const HEADERS = {
 };
 const MIN_GAP_MS = 200;
 
-/** Metric endpoint slugs on the PL API. */
-export type PlMetric = 'goals' | 'goal_assist' | 'clean_sheet' | 'appearances';
+/** Metric endpoint slugs on the PL API. The last five are per-season "deep
+ *  stat" metrics (see fetch/plSeasonStats.ts) — confirmed working the same
+ *  way as the first four, just additionally scoped by compSeasons. */
+export type PlMetric =
+  | 'goals'
+  | 'goal_assist'
+  | 'clean_sheet'
+  | 'appearances'
+  | 'total_scoring_att'
+  | 'ontarget_scoring_att'
+  | 'won_tackle'
+  | 'interception'
+  | 'saves';
 
 export interface PlRankedEntry {
   rank: number;
@@ -98,11 +109,12 @@ function parseEntry(raw: any): PlRankedEntry | null {
 /**
  * Fetch a full ranked leaderboard for a metric, all-time, paging until we have
  * everyone at/above `minValue` (default: down to a floor to bound requests).
- * Optionally scoped to a single team.
+ * Optionally scoped to a single team, or a single season via `compSeasons`
+ * (confirmed working — omitting it is what makes this "all-time").
  */
 export async function fetchRanked(
   metric: PlMetric,
-  opts: { comps?: CompsId; teamId?: number; maxPages?: number; pageSize?: number } = {},
+  opts: { comps?: CompsId; teamId?: number; compSeasons?: number; maxPages?: number; pageSize?: number } = {},
 ): Promise<PlRankedEntry[]> {
   const comps = opts.comps ?? COMPS.PREMIER_LEAGUE;
   const pageSize = opts.pageSize ?? 100;
@@ -111,9 +123,11 @@ export async function fetchRanked(
   const out: PlRankedEntry[] = [];
   for (let page = 0; page < maxPages; page++) {
     const teamPart = opts.teamId != null ? `&teams=${opts.teamId}` : '';
-    const url = `${BASE}/stats/ranked/players/${metric}?page=${page}&pageSize=${pageSize}&comps=${comps}${teamPart}`;
-    // Cache key namespaced by competition so PL and CL never collide.
-    const cacheKey = `${compSlug}_${metric}${opts.teamId != null ? `_team${opts.teamId}` : '_all'}_p${page}`;
+    const seasonPart = opts.compSeasons != null ? `&compSeasons=${opts.compSeasons}` : '';
+    const url = `${BASE}/stats/ranked/players/${metric}?page=${page}&pageSize=${pageSize}&comps=${comps}${teamPart}${seasonPart}`;
+    // Cache key namespaced by competition (and season, when scoped) so PL,
+    // CL and per-season queries never collide.
+    const cacheKey = `${compSlug}_${metric}${opts.teamId != null ? `_team${opts.teamId}` : '_all'}${opts.compSeasons != null ? `_s${opts.compSeasons}` : ''}_p${page}`;
     let json: any;
     try {
       json = await cachedFetch(url, cacheKey);

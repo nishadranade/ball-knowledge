@@ -15,6 +15,19 @@ export interface Player {
   lastName: string;
   /** Alternate accepted spellings / nicknames, normalized loosely. */
   aliases?: string[];
+  /**
+   * Skip matching.ts's derived-token heuristic (accept the first/last
+   * whitespace-split word of `fullName` on its own). That heuristic is built
+   * for human names ("Alisson" for Alisson Becker) and is unsafe for CLUB
+   * answers: two different clubs sharing a first or last word is the norm in
+   * English football (Manchester United/City, Newcastle/Sheffield/West Ham
+   * United), so "United" alone would ambiguously match whichever candidate
+   * happens to be checked first. Club-shaped Player values (see
+   * scripts/build-club-history.ts) set this true and rely on `lastName` (the
+   * API's own club-specific short name, e.g. "Man Utd") plus explicit
+   * `aliases` instead. Player answers should never set this.
+   */
+  noAutoTokens?: boolean;
 }
 
 export interface ListAnswer extends Player {

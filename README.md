@@ -8,7 +8,11 @@ question formats and forgiving answer matching.
 ## Question formats
 
 1. **Top-N lists** — "Name the top 5 goalscorers in Premier League history." N answers (more if
-   tied); up to **3 wrong guesses**.
+   tied); up to **3 wrong guesses**. Includes a **per-season** slice for detailed stats pulselive
+   tracks by season rather than all-time — shots, shots on target, tackles, interceptions, saves —
+   e.g. "Name the top 10 players with the most shots on target in the Premier League in the 2020/21
+   season," covering the last 10 complete seasons. Always **HARD** difficulty and overall-only (no
+   per-club/per-country split) — see the data-source section below.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
 3. **Match scorers** — a real fixture shown in full (teams, score, date, competition round): name
@@ -176,6 +180,13 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   all-time — Di Stéfano, Maldini, Crespo included); **assists** and **clean sheets** stay on
   pulselive and are labeled "since 2004/05" in the prompt (no clean all-time source exists yet —
   see roadmap). CL is overall + per-country only (no per-club).
+- **Per-season stat LIST questions** — the same pulselive endpoint as the all-time PL metrics, just
+  additionally scoped by `compSeasons` (confirmed working directly against the API before building
+  this). Five metric slugs beyond the marquee four: `total_scoring_att` (shots),
+  `ontarget_scoring_att` (shots on target), `won_tackle` (tackles), `interception`, `saves`. Owns a
+  slice of `q-list.json` by id prefix (`list_premier_league_stat_`) rather than the whole file — see
+  `scripts/build-season-stats.ts`; `build-questions.ts` knows to preserve that slice rather than wipe
+  it on its own full regeneration (`FOREIGN_LIST_PREFIXES`).
 - **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
 - **MATCH questions** — the same pulselive API, via two endpoints: `/fixtures` (teams, scores, and a
   `goals[]` of person ids) to decide which matches qualify, then `/fixtures/{id}` for the ones that
@@ -224,6 +235,7 @@ written. If the API ever changes, the shipped game keeps working from the last g
 npm install          # first-time setup
 npm run dev          # dev server
 npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedia; several min cold cache)
+npm run build:season-stats # regenerate ONLY the per-season stat questions (SEASON_STATS_SEASONS=n to limit)
 npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
 npm run build:squads  # regenerate ONLY q-squad.json (SQUAD_SEASONS=n to limit); cheap after build:matches
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
@@ -286,20 +298,20 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **5,963
-questions** (354 list, 1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier
-League** (4,739) and **Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches
-from **2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,558) / **Hard** (3,405) across
-all four formats (see difficulty tiers below).
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,013
+questions** (404 list — including 50 per-season stat questions — 1,290 career, 2,342 match, 1,977
+squad) across two competitions — **Premier League** (4,789) and **Champions League** (1,224) —
+covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to 2026-05-30**. Questions are
+split **Standard** (2,558) / **Hard** (3,455) across all four formats (see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every
-visitor downloaded all **10.4 MB** of it before the game could start — most visitors play the
+visitor downloaded all **10.5 MB** of it before the game could start — most visitors play the
 **frozen** daily, which needs none of it.
 
 | File | Size | Fetched when |
 |---|---|---|
 | `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
-| `q-list.json` | 0.5 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
+| `q-list.json` | 0.57 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
 | `q-career.json` | 2.1 MB | Practice with career paths (or All), an unfrozen daily, or a career deep link |
 | `q-match.json` | 2.6 MB | Practice with match scorers (or All), an unfrozen daily, or a match deep link |
 | `q-squad.json` | 5.2 MB | Practice with starting XI (or All), an unfrozen daily, or a squad deep link |
