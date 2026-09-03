@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T00:27:20.066Z",
+  "generatedAt": "2026-09-03T02:14:55.778Z",
   "questions": [
     {
       "id": "list_premier_league_goals_overall_all_10",
@@ -22936,6 +22936,2464 @@
           "lastName": "Sels",
           "value": 95,
           "rank": 11
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1992_93",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1992/93 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 49
+        },
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 44
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1993_94",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1993/94 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true,
+          "value": 77
+        },
+        {
+          "fullName": "West Ham United",
+          "lastName": "West Ham",
+          "noAutoTokens": true,
+          "value": 52
+        },
+        {
+          "fullName": "Swindon Town",
+          "lastName": "Swindon",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1993_94",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1993/94 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 42
+        },
+        {
+          "fullName": "Oldham Athletic",
+          "lastName": "Oldham",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Swindon Town",
+          "lastName": "Swindon",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1994_95",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1994/95 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 77
+        },
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 29
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1994_95",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1994/95 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 43
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 29
+        },
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 27
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1995_96",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1995/96 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 43
+        },
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 29
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1995_96",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1995/96 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true,
+          "value": 38
+        },
+        {
+          "fullName": "Queens Park Rangers",
+          "lastName": "QPR",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 29
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1996_97",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1996/97 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 47
+        },
+        {
+          "fullName": "Derby County",
+          "lastName": "Derby",
+          "noAutoTokens": true,
+          "value": 46
+        },
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1996_97",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1996/97 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 39
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 34
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1997_98",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1997/98 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Barnsley",
+          "lastName": "Barnsley",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1997_98",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1997/98 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Barnsley",
+          "lastName": "Barnsley",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1998_99",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1998/99 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 51
+        },
+        {
+          "fullName": "Charlton Athletic",
+          "lastName": "Charlton",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1998_99",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1998/99 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Charlton Athletic",
+          "lastName": "Charlton",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_1999_00",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 1999/00 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 58
+        },
+        {
+          "fullName": "Bradford City",
+          "lastName": "Bradford",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_1999_00",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 1999/00 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wimbledon",
+          "lastName": "Wimbledon",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Sheffield Wednesday",
+          "lastName": "Sheffield Wed",
+          "noAutoTokens": true,
+          "value": 31
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2000_01",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2000/01 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 66
+        },
+        {
+          "fullName": "Charlton Athletic",
+          "lastName": "Charlton",
+          "noAutoTokens": true,
+          "value": 52
+        },
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true,
+          "value": 34
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2000_01",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2000/01 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Coventry City",
+          "lastName": "Coventry",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Bradford City",
+          "lastName": "Bradford",
+          "noAutoTokens": true,
+          "value": 26
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2001_02",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2001/02 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true,
+          "value": 46
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 44
+        },
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2001_02",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2001/02 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Derby County",
+          "lastName": "Derby",
+          "noAutoTokens": true,
+          "value": 30
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2002_03",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2002/03 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true,
+          "value": 51
+        },
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 48
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 26
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2002_03",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2002/03 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "West Ham United",
+          "lastName": "West Ham",
+          "noAutoTokens": true,
+          "value": 42
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 19
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2003_04",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2003/04 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Portsmouth",
+          "lastName": "Portsmouth",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Wolverhampton Wanderers",
+          "lastName": "Wolves",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2003_04",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2003/04 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Wolverhampton Wanderers",
+          "lastName": "Wolves",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2004_05",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2004/05 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2004_05",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2004/05 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 32
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2005_06",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2005/06 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "West Ham United",
+          "lastName": "West Ham",
+          "noAutoTokens": true,
+          "value": 55
+        },
+        {
+          "fullName": "Wigan Athletic",
+          "lastName": "Wigan",
+          "noAutoTokens": true,
+          "value": 51
+        },
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2005_06",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2005/06 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 30
+        },
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2006_07",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2006/07 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Reading",
+          "lastName": "Reading",
+          "noAutoTokens": true,
+          "value": 55
+        },
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 38
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2006_07",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2006/07 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 38
+        },
+        {
+          "fullName": "Charlton Athletic",
+          "lastName": "Charlton",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2007_08",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2007/08 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 39
+        },
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Derby County",
+          "lastName": "Derby",
+          "noAutoTokens": true,
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2007_08",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2007/08 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Reading",
+          "lastName": "Reading",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Derby County",
+          "lastName": "Derby",
+          "noAutoTokens": true,
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2008_09",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2008/09 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Stoke City",
+          "lastName": "Stoke",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 32
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2008_09",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2008/09 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 32
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 32
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2009_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2009/10 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 50
+        },
+        {
+          "fullName": "Wolverhampton Wanderers",
+          "lastName": "Wolves",
+          "noAutoTokens": true,
+          "value": 38
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2009_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2009/10 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 30
+        },
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 30
+        },
+        {
+          "fullName": "Portsmouth",
+          "lastName": "Portsmouth",
+          "noAutoTokens": true,
+          "value": 19
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2010_11",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2010/11 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 47
+        },
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true,
+          "value": 46
+        },
+        {
+          "fullName": "Blackpool",
+          "lastName": "Blackpool",
+          "noAutoTokens": true,
+          "value": 39
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2010_11",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2010/11 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Birmingham City",
+          "lastName": "Birmingham",
+          "noAutoTokens": true,
+          "value": 39
+        },
+        {
+          "fullName": "Blackpool",
+          "lastName": "Blackpool",
+          "noAutoTokens": true,
+          "value": 39
+        },
+        {
+          "fullName": "West Ham United",
+          "lastName": "West Ham",
+          "noAutoTokens": true,
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2011_12",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2011/12 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Swansea City",
+          "lastName": "Swansea",
+          "noAutoTokens": true,
+          "value": 47
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 47
+        },
+        {
+          "fullName": "Queens Park Rangers",
+          "lastName": "QPR",
+          "noAutoTokens": true,
+          "value": 37
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2011_12",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2011/12 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bolton Wanderers",
+          "lastName": "Bolton",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true,
+          "value": 31
+        },
+        {
+          "fullName": "Wolverhampton Wanderers",
+          "lastName": "Wolves",
+          "noAutoTokens": true,
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2012_13",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2012/13 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "West Ham United",
+          "lastName": "West Ham",
+          "noAutoTokens": true,
+          "value": 46
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 41
+        },
+        {
+          "fullName": "Reading",
+          "lastName": "Reading",
+          "noAutoTokens": true,
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2012_13",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2012/13 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wigan Athletic",
+          "lastName": "Wigan",
+          "noAutoTokens": true,
+          "value": 36
+        },
+        {
+          "fullName": "Reading",
+          "lastName": "Reading",
+          "noAutoTokens": true,
+          "value": 28
+        },
+        {
+          "fullName": "Queens Park Rangers",
+          "lastName": "QPR",
+          "noAutoTokens": true,
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2013_14",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2013/14 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Crystal Palace",
+          "lastName": "Crystal Palace",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 37
+        },
+        {
+          "fullName": "Cardiff City",
+          "lastName": "Cardiff",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2013_14",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2013/14 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 32
+        },
+        {
+          "fullName": "Cardiff City",
+          "lastName": "Cardiff",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2014_15",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2014/15 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 41
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Queens Park Rangers",
+          "lastName": "QPR",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2014_15",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2014/15 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Queens Park Rangers",
+          "lastName": "QPR",
+          "noAutoTokens": true,
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2015_16",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2015/16 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 45
+        },
+        {
+          "fullName": "Bournemouth",
+          "lastName": "Bournemouth",
+          "noAutoTokens": true,
+          "value": 42
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 34
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2015_16",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2015/16 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true,
+          "value": 37
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Aston Villa",
+          "lastName": "Aston Villa",
+          "noAutoTokens": true,
+          "value": 17
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2016_17",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2016_17",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Hull City",
+          "lastName": "Hull",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Middlesbrough",
+          "lastName": "Middlesbrough",
+          "noAutoTokens": true,
+          "value": 28
+        },
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2017_18",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true,
+          "value": 44
+        },
+        {
+          "fullName": "Brighton & Hove Albion",
+          "lastName": "Brighton",
+          "noAutoTokens": true,
+          "value": 40
+        },
+        {
+          "fullName": "Huddersfield Town",
+          "lastName": "Huddersfield",
+          "noAutoTokens": true,
+          "value": 37
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2017_18",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Swansea City",
+          "lastName": "Swansea",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "Stoke City",
+          "lastName": "Stoke",
+          "noAutoTokens": true,
+          "value": 33
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 31
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2018_19",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wolverhampton Wanderers",
+          "lastName": "Wolves",
+          "noAutoTokens": true,
+          "value": 57
+        },
+        {
+          "fullName": "Cardiff City",
+          "lastName": "Cardiff",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 26
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2018_19",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Cardiff City",
+          "lastName": "Cardiff",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Huddersfield Town",
+          "lastName": "Huddersfield",
+          "noAutoTokens": true,
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2019_20",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 54
+        },
+        {
+          "fullName": "Aston Villa",
+          "lastName": "Aston Villa",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 21
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2019_20",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bournemouth",
+          "lastName": "Bournemouth",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 21
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2020_21",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true,
+          "value": 59
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 28
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 26
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2020_21",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 28
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 23
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2021_22",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Brentford",
+          "lastName": "Brentford",
+          "noAutoTokens": true,
+          "value": 46
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 23
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2021_22",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 35
+        },
+        {
+          "fullName": "Watford",
+          "lastName": "Watford",
+          "noAutoTokens": true,
+          "value": 23
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true,
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2022_23",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 52
+        },
+        {
+          "fullName": "Bournemouth",
+          "lastName": "Bournemouth",
+          "noAutoTokens": true,
+          "value": 39
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true,
+          "value": 38
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2022_23",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 34
+        },
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true,
+          "value": 31
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2023_24",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Luton Town",
+          "lastName": "Luton",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 24
+        },
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2023_24",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Luton Town",
+          "lastName": "Luton",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 24
+        },
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2024_25",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 25
+        },
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 22
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_relegated_2024_25",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 25
+        },
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 22
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_promoted_2025_26",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sunderland",
+          "lastName": "Sunderland",
+          "noAutoTokens": true,
+          "value": 54
+        },
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true,
+          "value": 47
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_topn_1",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name every club that has won the Premier League since it began in 1992/93.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester United",
+          "lastName": "Man Utd",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Arsenal",
+          "lastName": "Arsenal",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Chelsea",
+          "lastName": "Chelsea",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Liverpool",
+          "lastName": "Liverpool",
+          "noAutoTokens": true
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_topn_2",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name every club that has finished in the top 2 of the Premier League at least once since it began in 1992/93.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester United",
+          "lastName": "Man Utd",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Aston Villa",
+          "lastName": "Aston Villa",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Arsenal",
+          "lastName": "Arsenal",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Liverpool",
+          "lastName": "Liverpool",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Chelsea",
+          "lastName": "Chelsea",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Tottenham Hotspur",
+          "lastName": "Spurs",
+          "noAutoTokens": true
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_topn_3",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name every club that has finished in the top 3 of the Premier League at least once since it began in 1992/93.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester United",
+          "lastName": "Man Utd",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Aston Villa",
+          "lastName": "Aston Villa",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Liverpool",
+          "lastName": "Liverpool",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Arsenal",
+          "lastName": "Arsenal",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Chelsea",
+          "lastName": "Chelsea",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Tottenham Hotspur",
+          "lastName": "Spurs",
+          "noAutoTokens": true
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_club_topn_4",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name every club that has finished in the top 4 of the Premier League at least once since it began in 1992/93.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Manchester United",
+          "lastName": "Man Utd",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Aston Villa",
+          "lastName": "Aston Villa",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Norwich City",
+          "lastName": "Norwich",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Blackburn Rovers",
+          "lastName": "Blackburn",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Newcastle United",
+          "lastName": "Newcastle",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Arsenal",
+          "lastName": "Arsenal",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Nottingham Forest",
+          "lastName": "Nott'm Forest",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Liverpool",
+          "lastName": "Liverpool",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Chelsea",
+          "lastName": "Chelsea",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Everton",
+          "lastName": "Everton",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Tottenham Hotspur",
+          "lastName": "Spurs",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Manchester City",
+          "lastName": "Man City",
+          "noAutoTokens": true
+        },
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true
         }
       ]
     }

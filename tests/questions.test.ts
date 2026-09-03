@@ -54,8 +54,16 @@ describe('generated answer bank', () => {
     }
   });
 
+  // build-season-stats.ts and build-club-history.ts own their own LIST id
+  // shapes (a trailing season fragment like "..._1992_93", not a tiered
+  // "...topN"), so the "id ends in the requested N" convention below only
+  // applies to the classic tiered lists build-questions.ts itself generates.
+  const tieredLists = lists.filter(
+    (q) => !q.id.startsWith('list_premier_league_stat_') && !q.id.startsWith('list_premier_league_club_'),
+  );
+
   it('LIST questions have at least the requested N answers', () => {
-    for (const q of lists) {
+    for (const q of tieredLists) {
       // id ends with the requested N, e.g. ..._10
       const m = q.id.match(/_(\d+)$/);
       if (!m) continue;
@@ -64,12 +72,20 @@ describe('generated answer bank', () => {
     }
   });
 
-  it('every LIST answer has a positive value and a surname', () => {
+  it('every LIST answer has a surname', () => {
     for (const q of lists) {
-      for (const a of q.answers) {
-        expect(a.lastName.length).toBeGreaterThan(0);
-        expect(a.value ?? 0).toBeGreaterThan(0);
-      }
+      for (const a of q.answers) expect(a.lastName.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('every tiered/season-stat LIST answer has a positive value', () => {
+    // Club-history answers are the deliberate exception: relegated/promoted
+    // carry final points as `value`, but all-time top-N-finish answers carry
+    // none (a bare position number wasn't meaningful to show) — see the
+    // dedicated club-history block below.
+    for (const q of lists) {
+      if (q.id.startsWith('list_premier_league_club_')) continue;
+      for (const a of q.answers) expect(a.value ?? 0).toBeGreaterThan(0);
     }
   });
 
@@ -311,9 +327,14 @@ describe('generated answer bank', () => {
     // Any LIST question tagged STANDARD for a country/club scope must be a major
     // one; and no HARD list should exceed top 5 — EXCEPT the per-season "deep
     // stat" questions (build-season-stats.ts), which are HARD for a different
-    // reason (a niche stat category, not a thin tail) and are always top 10.
+    // reason (a niche stat category, not a thin tail) and are always top 10; and
+    // EXCEPT club-history questions (build-club-history.ts), whose trailing id
+    // digits are a season fragment or a topN threshold, not a tiered list size.
     const lists = bundle.questions.filter(
-      (q): q is ListQuestion => q.format === 'LIST' && !q.id.startsWith('list_premier_league_stat_'),
+      (q): q is ListQuestion =>
+        q.format === 'LIST' &&
+        !q.id.startsWith('list_premier_league_stat_') &&
+        !q.id.startsWith('list_premier_league_club_'),
     );
     for (const q of lists) {
       const m = q.id.match(/_(\d+)$/);
@@ -356,6 +377,65 @@ describe('generated answer bank', () => {
     );
     for (const expected of ['shots', 'shotsontarget', 'tackles', 'interceptions', 'saves']) {
       expect(stats).toContain(expected);
+    }
+  });
+
+  const clubHistory = bundle.questions.filter(
+    (q): q is ListQuestion => q.format === 'LIST' && q.id.startsWith('list_premier_league_club_'),
+  );
+  const relegated = clubHistory.filter((q) => q.id.includes('_relegated_'));
+  const promoted = clubHistory.filter((q) => q.id.includes('_promoted_'));
+  const topN = clubHistory.filter((q) => q.id.includes('_topn_'));
+
+  it('has club-history questions (run `npm run build:club-history` if this fails)', () => {
+    expect(clubHistory.length).toBeGreaterThan(0);
+    expect(relegated.length).toBeGreaterThan(0);
+    expect(promoted.length).toBeGreaterThan(0);
+    expect(topN.length).toBeGreaterThan(0);
+  });
+
+  it('club answers set noAutoTokens, so matching.ts never derives an ambiguous bare-word guess', () => {
+    for (const q of clubHistory) {
+      for (const a of q.answers) {
+        expect(a.noAutoTokens).toBe(true);
+        expect(a.lastName.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('relegated/promoted answers carry a positive points value; all-time top-N answers carry none', () => {
+    for (const q of relegated) for (const a of q.answers) expect(a.value ?? 0).toBeGreaterThan(0);
+    for (const q of promoted) for (const a of q.answers) expect(a.value ?? 0).toBeGreaterThan(0);
+    for (const q of topN) for (const a of q.answers) expect(a.value).toBeUndefined();
+  });
+
+  it('relegated/promoted counts stay within the historically possible range', () => {
+    // Almost always 3 (3-down-3-up); the ONE exception is the 1994/95 shrink
+    // from 22 to 20 clubs (4 relegated, 2 promoted) — the set-difference logic
+    // isn't hardcoded to "always 3", so this pins that it never drifts beyond
+    // what PL history has actually produced.
+    for (const q of [...relegated, ...promoted]) {
+      expect(q.answers.length).toBeGreaterThanOrEqual(1);
+      expect(q.answers.length).toBeLessThanOrEqual(4);
+    }
+  });
+
+  it('all-time top-N clubs grow monotonically with N (every top-1 club is also in top-4)', () => {
+    const byN = new Map(topN.map((q) => [q.id.match(/_topn_(\d+)$/)?.[1], new Set(q.answers.map((a) => a.fullName))]));
+    const n1 = byN.get('1');
+    const n4 = byN.get('4');
+    if (n1 && n4) for (const club of n1) expect(n4.has(club)).toBe(true);
+  });
+
+  it('the Premier League champions list matches known history (regression pin)', () => {
+    const champions = topN.find((q) => q.id.endsWith('_topn_1'));
+    expect(champions).toBeTruthy();
+    const names = new Set(champions!.answers.map((a) => a.fullName));
+    // Facts, not opinions — every club that has ever won the Premier League
+    // as of when this test was written. New winners only ever ADD to this
+    // set, so a shrinking result here means something broke upstream.
+    for (const club of ['Manchester United', 'Arsenal', 'Chelsea', 'Manchester City', 'Liverpool', 'Leicester City', 'Blackburn Rovers']) {
+      expect(names).toContain(club);
     }
   });
 });

@@ -13,6 +13,12 @@ question formats and forgiving answer matching.
    e.g. "Name the top 10 players with the most shots on target in the Premier League in the 2020/21
    season," covering the last 10 complete seasons. Always **HARD** difficulty and overall-only (no
    per-club/per-country split) — see the data-source section below.
+
+   Also includes a **club-history** slice, where the answers are clubs rather than players, drawn
+   from the final league table every PL season since 1992/93: which clubs were relegated or promoted
+   for a given season, and which clubs have ever finished in the top 1/2/3/4 of the table. Recency-
+   banded difficulty for relegated/promoted (same 5-year threshold as match/squad); the all-time
+   top-N-finish questions are always HARD.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
 3. **Match scorers** — a real fixture shown in full (teams, score, date, competition round): name
@@ -133,7 +139,12 @@ shows in Standard), and older matches/squads. The daily challenge is always Stan
 **Answer matching is forgiving:** a surname alone is enough, diacritics are optional
 (`Ozil` = `Özil`), and minor typos are tolerated (`Lamperd` → Lampard). A **first name** on its own
 also counts, for players nobody calls by their stored surname (`Vinicius` for Vinícius Júnior,
-`Alisson` for Alisson Becker). Name fragments don't — `van` alone won't answer van Persie.
+`Alisson` for Alisson Becker). Name fragments don't — `van` alone won't answer van Persie. **Club
+answers** (relegated/promoted/top-N-finish questions) work the same way EXCEPT for the first/last-word
+shortcut: two different clubs sharing a word (Manchester United/City, Newcastle/Sheffield/West Ham
+United) is the norm rather than the exception in English football, so a bare "United" or "Manchester"
+is never accepted — only the full name or the club's own short name (`Man Utd`, `Spurs`, `Sheff Weds`)
+is (`Player.noAutoTokens` in `src/game/types.ts`).
 
 ## Architecture
 
@@ -187,6 +198,14 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   slice of `q-list.json` by id prefix (`list_premier_league_stat_`) rather than the whole file — see
   `scripts/build-season-stats.ts`; `build-questions.ts` knows to preserve that slice rather than wipe
   it on its own full regeneration (`FOREIGN_LIST_PREFIXES`).
+- **Club-history LIST questions** — `/football/standings?compSeasons={id}&comps=1`, the same
+  pulselive API, confirmed working back to **1992/93** (season 1). Relegated/promoted are a straight
+  set difference between two adjacent seasons' final tables — deliberately not hardcoded to "always 3
+  clubs", since 1994/95 → 1995/96 (the league shrinking from 22 to 20 clubs) relegated 4 and promoted
+  only 2, and the set-difference approach gets that right with no special-casing. Club answers reuse
+  the API's own `club.shortName` (e.g. "Man Utd", "Spurs", "Sheff Weds") — already unique per club, no
+  manual alias curation needed. See `scripts/build-club-history.ts` and `fetch/plStandings.ts`; owns
+  the `list_premier_league_club_` slice of `q-list.json` the same way season-stats does.
 - **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
 - **MATCH questions** — the same pulselive API, via two endpoints: `/fixtures` (teams, scores, and a
   `goals[]` of person ids) to decide which matches qualify, then `/fixtures/{id}` for the ones that
@@ -236,6 +255,7 @@ npm install          # first-time setup
 npm run dev          # dev server
 npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedia; several min cold cache)
 npm run build:season-stats # regenerate ONLY the per-season stat questions (SEASON_STATS_SEASONS=n to limit)
+npm run build:club-history # regenerate ONLY relegated/promoted/top-N club questions
 npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
 npm run build:squads  # regenerate ONLY q-squad.json (SQUAD_SEASONS=n to limit); cheap after build:matches
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
@@ -298,11 +318,12 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,013
-questions** (404 list — including 50 per-season stat questions — 1,290 career, 2,342 match, 1,977
-squad) across two competitions — **Premier League** (4,789) and **Champions League** (1,224) —
-covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to 2026-05-30**. Questions are
-split **Standard** (2,558) / **Hard** (3,455) across all four formats (see difficulty tiers below).
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,083
+questions** (474 list — including 50 per-season stat and 70 club-history questions — 1,290 career,
+2,342 match, 1,977 squad) across two competitions — **Premier League** (4,859) and **Champions
+League** (1,224) — covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to
+2026-05-30**. Questions are split **Standard** (2,569) / **Hard** (3,514) across all four formats
+(see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every
 visitor downloaded all **10.5 MB** of it before the game could start — most visitors play the
@@ -311,7 +332,7 @@ visitor downloaded all **10.5 MB** of it before the game could start — most vi
 | File | Size | Fetched when |
 |---|---|---|
 | `daily.json` | 34 KB | always, first — a **frozen** day carries its questions as full objects and needs nothing else |
-| `q-list.json` | 0.57 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
+| `q-list.json` | 0.64 MB | Practice with lists (or All), an unfrozen daily, or a list deep link |
 | `q-career.json` | 2.1 MB | Practice with career paths (or All), an unfrozen daily, or a career deep link |
 | `q-match.json` | 2.6 MB | Practice with match scorers (or All), an unfrozen daily, or a match deep link |
 | `q-squad.json` | 5.2 MB | Practice with starting XI (or All), an unfrozen daily, or a squad deep link |

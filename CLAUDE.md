@@ -37,17 +37,22 @@ the container exits. Check `git status` after.
   Never reintroduce a combined `questions.json` — it is gitignored precisely so a stale copy can't be
   committed or served. All build scripts go through `scripts/bank.ts`.
 - **`q-list.json` has multiple owners, unlike the other three bank files.** `build-questions.ts`
-  generates the all-time metrics; `build-season-stats.ts` owns a separate slice by id prefix
-  (`list_premier_league_stat_`) and merges into whatever's already there rather than replacing the
-  file. `build-questions.ts` in turn preserves that foreign slice via `FOREIGN_LIST_PREFIXES` — **if
-  you add another script that contributes to `q-list.json` (club history, managers, transfer fees —
-  see README's roadmap), add its prefix to that list too**, or the next `build-questions.ts` run
-  silently wipes it. (Caught this exact class of mistake once already this session, the OTHER
-  direction: testing `build-questions.ts` with `CACHE_ONLY=1` and an empty Wikipedia cache wiped
-  `q-career.json` to 0 entries, since CAREER_PATH has no such preservation — it's fully,
-  unconditionally owned by that one script. Restored from git; nothing had been pushed. Lesson: don't
-  run `build-questions.ts` speculatively against uncommitted local state without checking `git diff`
-  after.)
+  generates the all-time metrics; `build-season-stats.ts` (`list_premier_league_stat_`) and
+  `build-club-history.ts` (`list_premier_league_club_`) each own a separate slice by id prefix and
+  merge into whatever's already there rather than replacing the file. `build-questions.ts` in turn
+  preserves those foreign slices via `FOREIGN_LIST_PREFIXES` — **if you add another script that
+  contributes to `q-list.json` (managers, transfer fees — see README's roadmap), add its prefix to
+  that list too**, or the next `build-questions.ts` run silently wipes it. (Caught this exact class of
+  mistake once already this session, the OTHER direction: testing `build-questions.ts` with
+  `CACHE_ONLY=1` and an empty Wikipedia cache wiped `q-career.json` to 0 entries, since CAREER_PATH has
+  no such preservation — it's fully, unconditionally owned by that one script. Restored from git;
+  nothing had been pushed. Lesson: don't run `build-questions.ts` speculatively against uncommitted
+  local state without checking `git diff` after.)
+- **Club-shaped `Player` answers MUST set `noAutoTokens: true`.** Without it, matching.ts derives a
+  standalone guess from the first/last word of the full name — fine for humans, wrong for clubs, where
+  two different clubs sharing a word (Manchester United/City, the three "___ United"s) is the norm.
+  Use the API's own `club.shortName` as `lastName`; it's already unique per club, no alias curation
+  needed.
 - **SQUAD's fixture filter is stricter than MATCH's, on purpose.** Both start from the same
   `qualifies()` in `scripts/fetch/matchFilters.ts`, but SQUAD additionally requires a marquee side in
   CL fixtures (`isBigClFixture`/`BIG_EUROPE`) and always asks about the bigger side when only one
@@ -103,6 +108,7 @@ Run `npm test` and `npm run build:app` locally first.
 | Changed | Run | Notes |
 |---|---|---|
 | Only per-season stats | `npm run build:season-stats` | Rewrites just its own slice of `q-list.json`. `SEASON_STATS_SEASONS=n` to limit. |
+| Only club history (relegated/promoted/top-N) | `npm run build:club-history` | Rewrites just its own slice of `q-list.json`. No env override — always uses full PL standings history. |
 | Only match fixtures | `npm run build:matches` | Rewrites just `q-match.json`. `MATCH_SEASONS=n` to limit. |
 | Only squad line-ups | `npm run build:squads` | Rewrites just `q-squad.json`. Run after `build:matches` — same fixture detail endpoint, so it reuses that disk cache for free. `SQUAD_SEASONS=n` to limit. |
 | Players / stats / sources | `npm run build:data` | Chains matches + squads + daily. Several minutes; hits the PL API and Wikipedia. |

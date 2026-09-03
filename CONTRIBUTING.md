@@ -32,21 +32,22 @@ project, so the branch-and-merge ceremony added round trips without adding revie
   no combined file, and `public/data/questions.json` is gitignored so a stale local copy can't be
   committed.
 - **Refreshing data** (only when changing players/stats/sources): run `npm run build:data` (fetches
-  from the PL/CL APIs + Wikipedia, then chains `build:season-stats`, `build:matches`, `build:squads`
-  and `build:daily`), then commit the updated `public/data/*.json` **together with** your code
-  change. `build:data` also freezes today's daily into `daily.json` — commit that too so the current
-  day's puzzle stays locked.
-- **Only touching match/squad/season-stat questions?** Run `npm run build:matches` (rewrites
-  `q-match.json`), `npm run build:squads` (rewrites `q-squad.json`, cheap right after `build:matches`
-  since both share the fixture-detail disk cache), or `npm run build:season-stats` (rewrites its own
-  slice of `q-list.json`, id-prefixed `list_premier_league_stat_`). Any of these leaves the rest of
-  the bank byte-identical — `build:data` would also re-crawl Wikipedia and reshuffle the (deliberately
+  from the PL/CL APIs + Wikipedia, then chains `build:season-stats`, `build:club-history`,
+  `build:matches`, `build:squads` and `build:daily`), then commit the updated `public/data/*.json`
+  **together with** your code change. `build:data` also freezes today's daily into `daily.json` —
+  commit that too so the current day's puzzle stays locked.
+- **Only touching match/squad/season-stat/club-history questions?** Run `npm run build:matches`
+  (rewrites `q-match.json`), `npm run build:squads` (rewrites `q-squad.json`, cheap right after
+  `build:matches` since both share the fixture-detail disk cache), `npm run build:season-stats`, or
+  `npm run build:club-history` (each rewrites its own slice of `q-list.json`, id-prefixed
+  `list_premier_league_stat_`/`list_premier_league_club_`). Any of these leaves the rest of the bank
+  byte-identical — `build:data` would also re-crawl Wikipedia and reshuffle the (deliberately
   partial) career pool.
 - **`q-list.json` has more than one owner.** `build-questions.ts` generates the all-time metrics;
-  `build-season-stats.ts` (and any future script that adds more LIST sub-types) owns its own slice by
-  id prefix. `build-questions.ts` knows to preserve slices it doesn't own
-  (`FOREIGN_LIST_PREFIXES`) — if you add another such script, add its prefix there too, or a
-  `build-questions.ts` rerun will silently wipe it.
+  `build-season-stats.ts` and `build-club-history.ts` (and any future script that adds more LIST
+  sub-types) each own their own slice by id prefix. `build-questions.ts` knows to preserve slices it
+  doesn't own (`FOREIGN_LIST_PREFIXES`) — if you add another such script, add its prefix there too, or
+  a `build-questions.ts` rerun will silently wipe it.
 - **SQUAD joined the daily on 2026-08-20.** Days frozen before that have no `squad` key and stay at
   the length they were actually played (same pattern as `career2`/`match` before them) — never
   back-filled. `DAILY_FORMATS` in `loadQuestions.ts` must list every format `selectDaily()` draws
