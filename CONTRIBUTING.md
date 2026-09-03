@@ -74,7 +74,7 @@ project, so the branch-and-merge ceremony added round trips without adding revie
 | `npm test` | Run all tests once |
 | `npm run build:app` | Typecheck + bundle (what CI runs) |
 | `npm run build:data` | Regenerate questions + matches + daily from sources (several min cold cache) |
-| `npm run build:season-stats` | Regenerate ONLY per-season stat questions (`SEASON_STATS_SEASONS=n` to limit) |
+| `npm run build:season-stats` | Regenerate ONLY per-season stat questions, overall + position-split (`SEASON_STATS_SEASONS=n` to limit) |
 | `npm run build:club-history` | Regenerate ONLY relegated/promoted/top-N club questions |
 | `npm run build:managers` | Regenerate ONLY "last 3 managers" questions (18/51 clubs currently pass validation) |
 | `npm run build:transfers` | Regenerate ONLY transfer-fee questions (7/51 clubs currently have the table) |

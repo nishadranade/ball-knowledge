@@ -12,7 +12,10 @@ question formats and forgiving answer matching.
    tracks by season rather than all-time — shots, shots on target, tackles, interceptions, saves —
    e.g. "Name the top 10 players with the most shots on target in the Premier League in the 2020/21
    season," covering the last 10 complete seasons. **STANDARD** difficulty (daily-eligible) and
-   overall-only (no per-club/per-country split) — see the data-source section below.
+   overall-only (no per-club/per-country split) — see the data-source section below. Tackles,
+   interceptions, and shots additionally get a **position-scoped** variant — "Name the top 5 forwards
+   with the most shots in the Premier League in the 2023/24 season" — for defenders/midfielders/
+   forwards; **HARD**, top 5.
 
    Also includes a **club-history** slice, where the answers are clubs rather than players, drawn
    from the final league table every PL season since 1992/93: which clubs were relegated or promoted
@@ -208,6 +211,14 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   slice of `q-list.json` by id prefix (`list_premier_league_stat_`) rather than the whole file — see
   `scripts/build-season-stats.ts`; `build-questions.ts` knows to preserve that slice rather than wipe
   it on its own full regeneration (`FOREIGN_LIST_PREFIXES`).
+
+  Tackles/interceptions/shots also get a **position-scoped** variant (defenders/midfielders/
+  forwards), reusing the `position` field the same API response already carries per player — no
+  extra request. Checked against real data across five seasons before building this: the overall
+  tackles/interceptions top 10 is already a genuine defender/midfielder mix every season (never
+  one-position-dominated), so the split isn't fixing a skew — it's a deliberately narrower extra
+  dimension, HARD/top-5 rather than STANDARD/top-10. Saves is excluded from the split since it's
+  100% goalkeepers by definition (splitting by position would just reproduce the overall list).
 - **Club-history LIST questions** — `/football/standings?compSeasons={id}&comps=1`, the same
   pulselive API, confirmed working back to **1992/93** (season 1). Relegated/promoted are a straight
   set difference between two adjacent seasons' final tables — deliberately not hardcoded to "always 3
@@ -364,12 +375,12 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,108
-questions** (499 list — including 50 per-season stat, 70 club-history, 18 manager, and 7 transfer-fee
-questions — 1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier League**
-(4,884) and **Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches from
-**2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,630) / **Hard** (3,478) across all
-four formats
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,197
+questions** (588 list — including 139 per-season stat (50 overall + 89 position-split), 70
+club-history, 18 manager, and 7 transfer-fee questions — 1,290 career, 2,342 match, 1,977 squad)
+across two competitions — **Premier League** (4,973) and **Champions League** (1,224) — covering 48
+nationalities, 46 clubs, and matches from **2012-08-18 to 2026-05-30**. Questions are split
+**Standard** (2,630) / **Hard** (3,567) across all four formats
 (see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every

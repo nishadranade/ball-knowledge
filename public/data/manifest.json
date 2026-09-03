@@ -1,16 +1,16 @@
 {
   "generatedAt": "2026-07-30T15:00:22.622Z",
   "counts": {
-    "total": 6108,
-    "list": 499,
+    "total": 6197,
+    "list": 588,
     "career": 1290,
     "byCategory": {
-      "PREMIER_LEAGUE": 4884,
+      "PREMIER_LEAGUE": 4973,
       "CHAMPIONS_LEAGUE": 1224
     },
     "byDifficulty": {
       "STANDARD": 2630,
-      "HARD": 3478
+      "HARD": 3567
     },
     "match": 2342,
     "squad": 1977
@@ -22,7 +22,7 @@
   ],
   "matchesGeneratedAt": "2026-08-10T04:04:44.112Z",
   "squadsGeneratedAt": "2026-08-20T02:59:25.884Z",
-  "seasonStatsGeneratedAt": "2026-09-03T03:42:33.096Z",
+  "seasonStatsGeneratedAt": "2026-09-03T03:48:51.222Z",
   "clubHistoryGeneratedAt": "2026-09-03T02:14:55.778Z",
   "clubHistorySeasons": "1992/93 … 2025/26",
   "managersGeneratedAt": "2026-09-03T03:00:51.099Z",

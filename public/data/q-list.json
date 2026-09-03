@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T03:42:33.096Z",
+  "generatedAt": "2026-09-03T03:48:51.222Z",
   "questions": [
     {
       "id": "list_premier_league_goals_overall_all_10",
@@ -22271,7 +22271,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22337,6 +22337,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "value": 46,
+          "rank": 1
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 34,
+          "rank": 2
+        },
+        {
+          "fullName": "Patrick van Aanholt",
+          "lastName": "van Aanholt",
+          "value": 34,
+          "rank": 3
+        },
+        {
+          "fullName": "Aleksandar Kolarov",
+          "lastName": "Kolarov",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "David Luiz",
+          "lastName": "Luiz",
+          "value": 31,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 133,
+          "rank": 1
+        },
+        {
+          "fullName": "Gylfi Sigurdsson",
+          "lastName": "Sigurdsson",
+          "value": 116,
+          "rank": 2
+        },
+        {
+          "fullName": "Philippe Coutinho",
+          "lastName": "Coutinho",
+          "value": 106,
+          "rank": 3
+        },
+        {
+          "fullName": "Dele Alli",
+          "lastName": "Alli",
+          "value": 94,
+          "rank": 4
+        },
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "value": 92,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 139,
+          "rank": 1
+        },
+        {
+          "fullName": "Alexis Sánchez",
+          "lastName": "Sánchez",
+          "value": 129,
+          "rank": 2
+        },
+        {
+          "fullName": "Zlatan Ibrahimovic",
+          "lastName": "Ibrahimovic",
+          "value": 115,
+          "rank": 3
+        },
+        {
+          "fullName": "Diego Costa",
+          "lastName": "Costa",
+          "value": 111,
+          "rank": 4
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 110,
+          "rank": 5
+        },
+        {
+          "fullName": "Romelu Lukaku",
+          "lastName": "Lukaku",
+          "value": 110,
+          "rank": 6
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2016_17_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22346,7 +22487,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22421,7 +22562,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22493,6 +22634,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Erik Pieters",
+          "lastName": "Pieters",
+          "value": 81,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Fuchs",
+          "lastName": "Fuchs",
+          "value": 79,
+          "rank": 2
+        },
+        {
+          "fullName": "Matthew Lowton",
+          "lastName": "Lowton",
+          "value": 69,
+          "rank": 3
+        },
+        {
+          "fullName": "Joel Ward",
+          "lastName": "Ward",
+          "value": 68,
+          "rank": 4
+        },
+        {
+          "fullName": "Cédric Soares",
+          "lastName": "Soares",
+          "value": 64,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 100,
+          "rank": 1
+        },
+        {
+          "fullName": "Oriol Romeu",
+          "lastName": "Romeu",
+          "value": 87,
+          "rank": 2
+        },
+        {
+          "fullName": "N'Golo Kanté",
+          "lastName": "Kanté",
+          "value": 82,
+          "rank": 3
+        },
+        {
+          "fullName": "Claudio Yacob",
+          "lastName": "Yacob",
+          "value": 65,
+          "rank": 4
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "value": 64,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "George Boyd",
+          "lastName": "Boyd",
+          "value": 65,
+          "rank": 1
+        },
+        {
+          "fullName": "Wilfried Zaha",
+          "lastName": "Zaha",
+          "value": 54,
+          "rank": 2
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Firmino",
+          "value": 44,
+          "rank": 3
+        },
+        {
+          "fullName": "Alexis Sánchez",
+          "lastName": "Sánchez",
+          "value": 40,
+          "rank": 4
+        },
+        {
+          "fullName": "Joshua King",
+          "lastName": "King",
+          "value": 38,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2016_17_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22502,7 +22778,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22568,6 +22844,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Curtis Davies",
+          "lastName": "Davies",
+          "value": 91,
+          "rank": 1
+        },
+        {
+          "fullName": "Laurent Koscielny",
+          "lastName": "Koscielny",
+          "value": 90,
+          "rank": 2
+        },
+        {
+          "fullName": "Nacho Monreal",
+          "lastName": "Monreal",
+          "value": 88,
+          "rank": 3
+        },
+        {
+          "fullName": "Nicolás Otamendi",
+          "lastName": "Otamendi",
+          "value": 83,
+          "rank": 4
+        },
+        {
+          "fullName": "Winston Reid",
+          "lastName": "Reid",
+          "value": 82,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Oriol Romeu",
+          "lastName": "Romeu",
+          "value": 90,
+          "rank": 1
+        },
+        {
+          "fullName": "N'Golo Kanté",
+          "lastName": "Kanté",
+          "value": 82,
+          "rank": 2
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 81,
+          "rank": 3
+        },
+        {
+          "fullName": "Ander Herrera",
+          "lastName": "Herrera",
+          "value": 81,
+          "rank": 4
+        },
+        {
+          "fullName": "Cheikhou Kouyaté",
+          "lastName": "Kouyaté",
+          "value": 78,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2016_17_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "George Boyd",
+          "lastName": "Boyd",
+          "value": 34,
+          "rank": 1
+        },
+        {
+          "fullName": "Wilfried Zaha",
+          "lastName": "Zaha",
+          "value": 34,
+          "rank": 2
+        },
+        {
+          "fullName": "Eden Hazard",
+          "lastName": "Hazard",
+          "value": 28,
+          "rank": 3
+        },
+        {
+          "fullName": "Riyad Mahrez",
+          "lastName": "Mahrez",
+          "value": 28,
+          "rank": 4
+        },
+        {
+          "fullName": "Michail Antonio",
+          "lastName": "Antonio",
+          "value": 27,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2016_17_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22577,7 +22988,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22652,7 +23063,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22718,6 +23129,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "value": 65,
+          "rank": 1
+        },
+        {
+          "fullName": "Patrick van Aanholt",
+          "lastName": "van Aanholt",
+          "value": 33,
+          "rank": 2
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Nicolás Otamendi",
+          "lastName": "Otamendi",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 30,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 97,
+          "rank": 1
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 94,
+          "rank": 2
+        },
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "value": 76,
+          "rank": 3
+        },
+        {
+          "fullName": "Tom Ince",
+          "lastName": "Ince",
+          "value": 70,
+          "rank": 4
+        },
+        {
+          "fullName": "Dele Alli",
+          "lastName": "Alli",
+          "value": 69,
+          "rank": 5
+        },
+        {
+          "fullName": "Xherdan Shaqiri",
+          "lastName": "Shaqiri",
+          "value": 69,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 144,
+          "rank": 2
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 95,
+          "rank": 3
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 94,
+          "rank": 4
+        },
+        {
+          "fullName": "Alexis Sánchez",
+          "lastName": "Sánchez",
+          "value": 88,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2017_18_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22727,7 +23279,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22820,7 +23372,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22886,6 +23438,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Pablo Zabaleta",
+          "lastName": "Zabaleta",
+          "value": 67,
+          "rank": 1
+        },
+        {
+          "fullName": "Christopher Schindler",
+          "lastName": "Schindler",
+          "value": 61,
+          "rank": 2
+        },
+        {
+          "fullName": "Kyle Naughton",
+          "lastName": "Naughton",
+          "value": 60,
+          "rank": 3
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "value": 59,
+          "rank": 4
+        },
+        {
+          "fullName": "Wesley Hoedt",
+          "lastName": "Hoedt",
+          "value": 51,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 93,
+          "rank": 1
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 89,
+          "rank": 2
+        },
+        {
+          "fullName": "N'Golo Kanté",
+          "lastName": "Kanté",
+          "value": 77,
+          "rank": 3
+        },
+        {
+          "fullName": "Mohamed Diamé",
+          "lastName": "Diamé",
+          "value": 64,
+          "rank": 4
+        },
+        {
+          "fullName": "Jonathan Hogg",
+          "lastName": "Hogg",
+          "value": 64,
+          "rank": 5
+        },
+        {
+          "fullName": "Oriol Romeu",
+          "lastName": "Romeu",
+          "value": 64,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 60,
+          "rank": 1
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Firmino",
+          "value": 50,
+          "rank": 2
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 44,
+          "rank": 3
+        },
+        {
+          "fullName": "Mame Diouf",
+          "lastName": "Diouf",
+          "value": 36,
+          "rank": 4
+        },
+        {
+          "fullName": "Eric Choupo-Moting",
+          "lastName": "Choupo-Moting",
+          "value": 30,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2017_18_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22895,7 +23588,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -22973,6 +23666,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Zanka",
+          "lastName": "Zanka",
+          "value": 76,
+          "rank": 1
+        },
+        {
+          "fullName": "Christopher Schindler",
+          "lastName": "Schindler",
+          "value": 75,
+          "rank": 2
+        },
+        {
+          "fullName": "Lewis Dunk",
+          "lastName": "Dunk",
+          "value": 71,
+          "rank": 3
+        },
+        {
+          "fullName": "Chris Smalling",
+          "lastName": "Smalling",
+          "value": 63,
+          "rank": 4
+        },
+        {
+          "fullName": "James Tomkins",
+          "lastName": "Tomkins",
+          "value": 63,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "N'Golo Kanté",
+          "lastName": "Kanté",
+          "value": 85,
+          "rank": 1
+        },
+        {
+          "fullName": "Yohan Cabaye",
+          "lastName": "Cabaye",
+          "value": 79,
+          "rank": 2
+        },
+        {
+          "fullName": "Luka Milivojevic",
+          "lastName": "Milivojevic",
+          "value": 71,
+          "rank": 3
+        },
+        {
+          "fullName": "Jonathan Hogg",
+          "lastName": "Hogg",
+          "value": 70,
+          "rank": 4
+        },
+        {
+          "fullName": "Oriol Romeu",
+          "lastName": "Romeu",
+          "value": 69,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2017_18_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jóhann Gudmundsson",
+          "lastName": "Gudmundsson",
+          "value": 34,
+          "rank": 1
+        },
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 24,
+          "rank": 2
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 24,
+          "rank": 3
+        },
+        {
+          "fullName": "Ayoze Pérez",
+          "lastName": "Pérez",
+          "value": 24,
+          "rank": 4
+        },
+        {
+          "fullName": "Eric Choupo-Moting",
+          "lastName": "Choupo-Moting",
+          "value": 23,
+          "rank": 5
+        },
+        {
+          "fullName": "Alexis Sánchez",
+          "lastName": "Sánchez",
+          "value": 23,
+          "rank": 6
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2017_18_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -22982,7 +23816,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23057,7 +23891,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23123,6 +23957,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Matt Doherty",
+          "lastName": "Doherty",
+          "value": 46,
+          "rank": 1
+        },
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "value": 45,
+          "rank": 2
+        },
+        {
+          "fullName": "Patrick van Aanholt",
+          "lastName": "van Aanholt",
+          "value": 45,
+          "rank": 3
+        },
+        {
+          "fullName": "Shane Duffy",
+          "lastName": "Duffy",
+          "value": 37,
+          "rank": 4
+        },
+        {
+          "fullName": "Calum Chambers",
+          "lastName": "Chambers",
+          "value": 35,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "value": 105,
+          "rank": 1
+        },
+        {
+          "fullName": "Gylfi Sigurdsson",
+          "lastName": "Sigurdsson",
+          "value": 86,
+          "rank": 2
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 83,
+          "rank": 3
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 83,
+          "rank": 4
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 74,
+          "rank": 5
+        },
+        {
+          "fullName": "Nathan Redmond",
+          "lastName": "Redmond",
+          "value": 74,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 137,
+          "rank": 1
+        },
+        {
+          "fullName": "Aleksandar Mitrovic",
+          "lastName": "Mitrovic",
+          "value": 131,
+          "rank": 2
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 118,
+          "rank": 3
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "value": 111,
+          "rank": 4
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 102,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2018_19_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23132,7 +24107,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23207,7 +24182,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23273,6 +24248,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 90,
+          "rank": 1
+        },
+        {
+          "fullName": "Ricardo Pereira",
+          "lastName": "Pereira",
+          "value": 66,
+          "rank": 2
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "value": 60,
+          "rank": 3
+        },
+        {
+          "fullName": "Willy Boly",
+          "lastName": "Boly",
+          "value": 52,
+          "rank": 4
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "value": 49,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 99,
+          "rank": 1
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 89,
+          "rank": 2
+        },
+        {
+          "fullName": "Luka Milivojevic",
+          "lastName": "Milivojevic",
+          "value": 68,
+          "rank": 3
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 60,
+          "rank": 4
+        },
+        {
+          "fullName": "João Moutinho",
+          "lastName": "Moutinho",
+          "value": 58,
+          "rank": 5
+        },
+        {
+          "fullName": "Dale Stephens",
+          "lastName": "Stephens",
+          "value": 58,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 34,
+          "rank": 1
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 28,
+          "rank": 2
+        },
+        {
+          "fullName": "Junior Hoilett",
+          "lastName": "Hoilett",
+          "value": 27,
+          "rank": 3
+        },
+        {
+          "fullName": "Nathaniel Méndez-Laing",
+          "lastName": "Méndez-Laing",
+          "value": 25,
+          "rank": 4
+        },
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 23,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2018_19_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23282,7 +24398,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23348,6 +24464,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 84,
+          "rank": 1
+        },
+        {
+          "fullName": "Sol Bamba",
+          "lastName": "Bamba",
+          "value": 81,
+          "rank": 2
+        },
+        {
+          "fullName": "Bruno Ecuele Manga",
+          "lastName": "Manga",
+          "value": 81,
+          "rank": 3
+        },
+        {
+          "fullName": "Willy Boly",
+          "lastName": "Boly",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 71,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Étienne Capoue",
+          "lastName": "Capoue",
+          "value": 86,
+          "rank": 1
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 83,
+          "rank": 2
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 75,
+          "rank": 3
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 73,
+          "rank": 4
+        },
+        {
+          "fullName": "Luka Milivojevic",
+          "lastName": "Milivojevic",
+          "value": 73,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2018_19_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2018/19 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ayoze Pérez",
+          "lastName": "Pérez",
+          "value": 42,
+          "rank": 1
+        },
+        {
+          "fullName": "Jóhann Gudmundsson",
+          "lastName": "Gudmundsson",
+          "value": 33,
+          "rank": 2
+        },
+        {
+          "fullName": "Junior Hoilett",
+          "lastName": "Hoilett",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "value": 26,
+          "rank": 4
+        },
+        {
+          "fullName": "Lucas Moura",
+          "lastName": "Moura",
+          "value": 24,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2018_19_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23357,7 +24608,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23432,7 +24683,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23498,6 +24749,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 44,
+          "rank": 1
+        },
+        {
+          "fullName": "Matt Doherty",
+          "lastName": "Doherty",
+          "value": 35,
+          "rank": 2
+        },
+        {
+          "fullName": "Lewis Dunk",
+          "lastName": "Dunk",
+          "value": 31,
+          "rank": 3
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 31,
+          "rank": 4
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "value": 31,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 99,
+          "rank": 1
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "value": 78,
+          "rank": 2
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 74,
+          "rank": 3
+        },
+        {
+          "fullName": "Jack Grealish",
+          "lastName": "Grealish",
+          "value": 73,
+          "rank": 4
+        },
+        {
+          "fullName": "Christian Pulisic",
+          "lastName": "Pulisic",
+          "value": 63,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 132,
+          "rank": 1
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "value": 118,
+          "rank": 2
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "Jesus",
+          "value": 101,
+          "rank": 3
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Firmino",
+          "value": 99,
+          "rank": 4
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "value": 99,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2019_20_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23507,7 +24893,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23606,7 +24992,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23672,6 +25058,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Sèrge Aurier",
+          "lastName": "Aurier",
+          "value": 69,
+          "rank": 2
+        },
+        {
+          "fullName": "Ricardo Pereira",
+          "lastName": "Pereira",
+          "value": 68,
+          "rank": 3
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "value": 56,
+          "rank": 4
+        },
+        {
+          "fullName": "Ryan Fredericks",
+          "lastName": "Fredericks",
+          "value": 56,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 67,
+          "rank": 1
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 60,
+          "rank": 2
+        },
+        {
+          "fullName": "James McArthur",
+          "lastName": "McArthur",
+          "value": 51,
+          "rank": 3
+        },
+        {
+          "fullName": "João Moutinho",
+          "lastName": "Moutinho",
+          "value": 50,
+          "rank": 4
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "value": 49,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 47,
+          "rank": 1
+        },
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 33,
+          "rank": 2
+        },
+        {
+          "fullName": "Lucas Moura",
+          "lastName": "Moura",
+          "value": 33,
+          "rank": 3
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 30,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2019_20_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23681,7 +25202,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23747,6 +25268,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Diego Rico",
+          "lastName": "Rico",
+          "value": 84,
+          "rank": 1
+        },
+        {
+          "fullName": "Chris Basham",
+          "lastName": "Basham",
+          "value": 77,
+          "rank": 2
+        },
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 77,
+          "rank": 3
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "value": 67,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 77,
+          "rank": 2
+        },
+        {
+          "fullName": "Étienne Capoue",
+          "lastName": "Capoue",
+          "value": 68,
+          "rank": 3
+        },
+        {
+          "fullName": "Philip Billing",
+          "lastName": "Billing",
+          "value": 66,
+          "rank": 4
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Jorginho",
+          "value": 64,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2019_20_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 30,
+          "rank": 1
+        },
+        {
+          "fullName": "Gerard Deulofeu",
+          "lastName": "Deulofeu",
+          "value": 25,
+          "rank": 2
+        },
+        {
+          "fullName": "Willian",
+          "lastName": "Willian",
+          "value": 20,
+          "rank": 3
+        },
+        {
+          "fullName": "Onel Hernández",
+          "lastName": "Hernández",
+          "value": 19,
+          "rank": 4
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Heung-Min",
+          "value": 19,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2019_20_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23756,7 +25412,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23837,7 +25493,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23903,6 +25559,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 55,
+          "rank": 1
+        },
+        {
+          "fullName": "Stuart Dallas",
+          "lastName": "Dallas",
+          "value": 48,
+          "rank": 2
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 36,
+          "rank": 3
+        },
+        {
+          "fullName": "João Cancelo",
+          "lastName": "Cancelo",
+          "value": 35,
+          "rank": 4
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "value": 34,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 121,
+          "rank": 1
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "value": 82,
+          "rank": 2
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 80,
+          "rank": 3
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 75,
+          "rank": 4
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 67,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 137,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 126,
+          "rank": 2
+        },
+        {
+          "fullName": "Patrick Bamford",
+          "lastName": "Bamford",
+          "value": 107,
+          "rank": 3
+        },
+        {
+          "fullName": "Ollie Watkins",
+          "lastName": "Watkins",
+          "value": 97,
+          "rank": 4
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 94,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2020_21_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -23912,7 +25703,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -23993,7 +25784,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24077,6 +25868,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Luke Ayling",
+          "lastName": "Ayling",
+          "value": 61,
+          "rank": 1
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 54,
+          "rank": 2
+        },
+        {
+          "fullName": "Kyle Walker-Peters",
+          "lastName": "Walker-Peters",
+          "value": 53,
+          "rank": 3
+        },
+        {
+          "fullName": "Nélson Semedo",
+          "lastName": "Semedo",
+          "value": 48,
+          "rank": 4
+        },
+        {
+          "fullName": "Liam Cooper",
+          "lastName": "Cooper",
+          "value": 45,
+          "rank": 5
+        },
+        {
+          "fullName": "Stuart Dallas",
+          "lastName": "Dallas",
+          "value": 45,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "value": 68,
+          "rank": 1
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 63,
+          "rank": 2
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "value": 51,
+          "rank": 3
+        },
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "value": 49,
+          "rank": 4
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 46,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 32,
+          "rank": 1
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 30,
+          "rank": 2
+        },
+        {
+          "fullName": "Moussa Djenepo",
+          "lastName": "Djenepo",
+          "value": 27,
+          "rank": 3
+        },
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 26,
+          "rank": 4
+        },
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 24,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2020_21_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24086,7 +26018,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24152,6 +26084,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 84,
+          "rank": 1
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 62,
+          "rank": 2
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "value": 62,
+          "rank": 3
+        },
+        {
+          "fullName": "Liam Cooper",
+          "lastName": "Cooper",
+          "value": 61,
+          "rank": 4
+        },
+        {
+          "fullName": "Wesley Fofana",
+          "lastName": "Fofana",
+          "value": 61,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Josh Brownhill",
+          "lastName": "Brownhill",
+          "value": 69,
+          "rank": 1
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 65,
+          "rank": 2
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "value": 64,
+          "rank": 3
+        },
+        {
+          "fullName": "Tomás Soucek",
+          "lastName": "Soucek",
+          "value": 62,
+          "rank": 4
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 61,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2020_21_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 32,
+          "rank": 1
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Neto",
+          "value": 31,
+          "rank": 2
+        },
+        {
+          "fullName": "Raphinha",
+          "lastName": "Raphinha",
+          "value": 29,
+          "rank": 3
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "value": 26,
+          "rank": 4
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 25,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2020_21_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24161,7 +26228,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24236,7 +26303,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24302,6 +26369,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "João Cancelo",
+          "lastName": "Cancelo",
+          "value": 81,
+          "rank": 1
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 51,
+          "rank": 2
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "value": 48,
+          "rank": 3
+        },
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "value": 43,
+          "rank": 4
+        },
+        {
+          "fullName": "Matty Cash",
+          "lastName": "Cash",
+          "value": 37,
+          "rank": 5
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "value": 37,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 89,
+          "rank": 1
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 78,
+          "rank": 2
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "value": 76,
+          "rank": 3
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Harvey Barnes",
+          "lastName": "Barnes",
+          "value": 66,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 139,
+          "rank": 1
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 133,
+          "rank": 2
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "Ronaldo",
+          "value": 110,
+          "rank": 3
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "value": 98,
+          "rank": 4
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 97,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2021_22_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24311,7 +26519,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24386,7 +26594,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24452,6 +26660,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "value": 62,
+          "rank": 1
+        },
+        {
+          "fullName": "Tyrick Mitchell",
+          "lastName": "Mitchell",
+          "value": 57,
+          "rank": 2
+        },
+        {
+          "fullName": "Stuart Dallas",
+          "lastName": "Dallas",
+          "value": 55,
+          "rank": 3
+        },
+        {
+          "fullName": "João Cancelo",
+          "lastName": "Cancelo",
+          "value": 54,
+          "rank": 4
+        },
+        {
+          "fullName": "Matty Cash",
+          "lastName": "Cash",
+          "value": 50,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "John McGinn",
+          "lastName": "McGinn",
+          "value": 64,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Nørgaard",
+          "lastName": "Nørgaard",
+          "value": 60,
+          "rank": 2
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "value": 49,
+          "rank": 3
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "value": 45,
+          "rank": 4
+        },
+        {
+          "fullName": "Allan",
+          "lastName": "Allan",
+          "value": 44,
+          "rank": 5
+        },
+        {
+          "fullName": "Jacob Ramsey",
+          "lastName": "Ramsey",
+          "value": 44,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 49,
+          "rank": 1
+        },
+        {
+          "fullName": "Emmanuel Dennis",
+          "lastName": "Dennis",
+          "value": 35,
+          "rank": 2
+        },
+        {
+          "fullName": "Anthony Gordon",
+          "lastName": "Gordon",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 30,
+          "rank": 4
+        },
+        {
+          "fullName": "Raphinha",
+          "lastName": "Raphinha",
+          "value": 29,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2021_22_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24461,7 +26810,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24527,6 +26876,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohammed Salisu",
+          "lastName": "Salisu",
+          "value": 78,
+          "rank": 1
+        },
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 72,
+          "rank": 2
+        },
+        {
+          "fullName": "Hassane Kamara",
+          "lastName": "Kamara",
+          "value": 69,
+          "rank": 3
+        },
+        {
+          "fullName": "Michael Keane",
+          "lastName": "Keane",
+          "value": 62,
+          "rank": 4
+        },
+        {
+          "fullName": "João Cancelo",
+          "lastName": "Cancelo",
+          "value": 59,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Josh Brownhill",
+          "lastName": "Brownhill",
+          "value": 68,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Nørgaard",
+          "lastName": "Nørgaard",
+          "value": 64,
+          "rank": 2
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 63,
+          "rank": 3
+        },
+        {
+          "fullName": "Tomás Soucek",
+          "lastName": "Soucek",
+          "value": 52,
+          "rank": 4
+        },
+        {
+          "fullName": "Oriol Romeu",
+          "lastName": "Romeu",
+          "value": 51,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2021_22_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 35,
+          "rank": 1
+        },
+        {
+          "fullName": "Raphinha",
+          "lastName": "Raphinha",
+          "value": 29,
+          "rank": 2
+        },
+        {
+          "fullName": "Anthony Gordon",
+          "lastName": "Gordon",
+          "value": 22,
+          "rank": 3
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 22,
+          "rank": 4
+        },
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 21,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2021_22_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24536,7 +27020,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24611,7 +27095,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24683,6 +27167,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Fabian Schär",
+          "lastName": "Schär",
+          "value": 56,
+          "rank": 1
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 40,
+          "rank": 2
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "Magalhães",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "James Tarkowski",
+          "lastName": "Tarkowski",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "Romain Perraud",
+          "lastName": "Perraud",
+          "value": 30,
+          "rank": 5
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "value": 30,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "value": 93,
+          "rank": 1
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 92,
+          "rank": 2
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Allister",
+          "value": 86,
+          "rank": 3
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 85,
+          "rank": 4
+        },
+        {
+          "fullName": "Solly March",
+          "lastName": "March",
+          "value": 74,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 130,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 125,
+          "rank": 2
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 123,
+          "rank": 3
+        },
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "value": 108,
+          "rank": 4
+        },
+        {
+          "fullName": "Ivan Toney",
+          "lastName": "Toney",
+          "value": 94,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2022_23_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24692,7 +27317,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24773,7 +27398,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24863,6 +27488,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Pascal Struijk",
+          "lastName": "Struijk",
+          "value": 57,
+          "rank": 1
+        },
+        {
+          "fullName": "Tyrick Mitchell",
+          "lastName": "Mitchell",
+          "value": 49,
+          "rank": 2
+        },
+        {
+          "fullName": "Kieran Trippier",
+          "lastName": "Trippier",
+          "value": 49,
+          "rank": 3
+        },
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 47,
+          "rank": 4
+        },
+        {
+          "fullName": "Kenny Tete",
+          "lastName": "Tete",
+          "value": 46,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Palhinha",
+          "value": 83,
+          "rank": 1
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 57,
+          "rank": 2
+        },
+        {
+          "fullName": "Lucas Paquetá",
+          "lastName": "Paquetá",
+          "value": 53,
+          "rank": 3
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 50,
+          "rank": 4
+        },
+        {
+          "fullName": "Joelinton",
+          "lastName": "Joelinton",
+          "value": 49,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 41,
+          "rank": 1
+        },
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 41,
+          "rank": 2
+        },
+        {
+          "fullName": "Alex Iwobi",
+          "lastName": "Iwobi",
+          "value": 37,
+          "rank": 3
+        },
+        {
+          "fullName": "Anthony Gordon",
+          "lastName": "Gordon",
+          "value": 34,
+          "rank": 4
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 34,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2022_23_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24872,7 +27632,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -24938,6 +27698,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Tyrone Mings",
+          "lastName": "Mings",
+          "value": 54,
+          "rank": 1
+        },
+        {
+          "fullName": "Antonee Robinson",
+          "lastName": "Robinson",
+          "value": 53,
+          "rank": 2
+        },
+        {
+          "fullName": "Fabian Schär",
+          "lastName": "Schär",
+          "value": 52,
+          "rank": 3
+        },
+        {
+          "fullName": "Kenny Tete",
+          "lastName": "Tete",
+          "value": 52,
+          "rank": 4
+        },
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 51,
+          "rank": 5
+        },
+        {
+          "fullName": "James Tarkowski",
+          "lastName": "Tarkowski",
+          "value": 51,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 63,
+          "rank": 1
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 56,
+          "rank": 2
+        },
+        {
+          "fullName": "Cheick Doucouré",
+          "lastName": "Doucouré",
+          "value": 56,
+          "rank": 3
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 56,
+          "rank": 4
+        },
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "value": 55,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2022_23_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2022/23 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 36,
+          "rank": 1
+        },
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 31,
+          "rank": 2
+        },
+        {
+          "fullName": "Alex Iwobi",
+          "lastName": "Iwobi",
+          "value": 25,
+          "rank": 3
+        },
+        {
+          "fullName": "Ivan Perisic",
+          "lastName": "Perisic",
+          "value": 22,
+          "rank": 4
+        },
+        {
+          "fullName": "Bobby De Cordova-Reid",
+          "lastName": "De Cordova-Reid",
+          "value": 20,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2022_23_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -24947,7 +27848,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25022,7 +27923,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25088,6 +27989,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "value": 53,
+          "rank": 1
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 47,
+          "rank": 2
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "value": 45,
+          "rank": 3
+        },
+        {
+          "fullName": "Fabian Schär",
+          "lastName": "Schär",
+          "value": 35,
+          "rank": 4
+        },
+        {
+          "fullName": "Matty Cash",
+          "lastName": "Cash",
+          "value": 33,
+          "rank": 5
+        },
+        {
+          "fullName": "Lewis Dunk",
+          "lastName": "Dunk",
+          "value": 33,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "value": 109,
+          "rank": 1
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "value": 105,
+          "rank": 2
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 95,
+          "rank": 3
+        },
+        {
+          "fullName": "Eberechi Eze",
+          "lastName": "Eze",
+          "value": 83,
+          "rank": 4
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "value": 77,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 121,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 114,
+          "rank": 2
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "value": 109,
+          "rank": 3
+        },
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "value": 108,
+          "rank": 4
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 108,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2023_24_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25097,7 +28139,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25178,7 +28220,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25244,6 +28286,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Emerson",
+          "lastName": "Emerson",
+          "value": 68,
+          "rank": 1
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "value": 63,
+          "rank": 2
+        },
+        {
+          "fullName": "Tyrick Mitchell",
+          "lastName": "Mitchell",
+          "value": 60,
+          "rank": 3
+        },
+        {
+          "fullName": "Antonee Robinson",
+          "lastName": "Robinson",
+          "value": 58,
+          "rank": 4
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot",
+          "value": 51,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Vinicius Souza",
+          "lastName": "Souza",
+          "value": 76,
+          "rank": 1
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Palhinha",
+          "value": 75,
+          "rank": 2
+        },
+        {
+          "fullName": "João Gomes",
+          "lastName": "Gomes",
+          "value": 74,
+          "rank": 3
+        },
+        {
+          "fullName": "Mario Lemina",
+          "lastName": "Lemina",
+          "value": 58,
+          "rank": 4
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casemiro",
+          "value": 56,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jordan Ayew",
+          "lastName": "Ayew",
+          "value": 36,
+          "rank": 1
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "value": 35,
+          "rank": 2
+        },
+        {
+          "fullName": "Anthony Gordon",
+          "lastName": "Gordon",
+          "value": 34,
+          "rank": 3
+        },
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 28,
+          "rank": 4
+        },
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 27,
+          "rank": 5
+        },
+        {
+          "fullName": "Dango Ouattara",
+          "lastName": "Ouattara",
+          "value": 27,
+          "rank": 6
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2023_24_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25253,7 +28436,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25331,6 +28514,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Antonee Robinson",
+          "lastName": "Robinson",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Teden Mengi",
+          "lastName": "Mengi",
+          "value": 57,
+          "rank": 2
+        },
+        {
+          "fullName": "James Tarkowski",
+          "lastName": "Tarkowski",
+          "value": 56,
+          "rank": 3
+        },
+        {
+          "fullName": "Jarrad Branthwaite",
+          "lastName": "Branthwaite",
+          "value": 50,
+          "rank": 4
+        },
+        {
+          "fullName": "Nathan Collins",
+          "lastName": "Collins",
+          "value": 44,
+          "rank": 5
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "value": 44,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Lewis Cook",
+          "lastName": "Cook",
+          "value": 65,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Nørgaard",
+          "lastName": "Nørgaard",
+          "value": 54,
+          "rank": 2
+        },
+        {
+          "fullName": "Ryan Christie",
+          "lastName": "Christie",
+          "value": 52,
+          "rank": 3
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Palhinha",
+          "value": 46,
+          "rank": 4
+        },
+        {
+          "fullName": "James Garner",
+          "lastName": "Garner",
+          "value": 45,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2023_24_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Dwight McNeil",
+          "lastName": "McNeil",
+          "value": 22,
+          "rank": 1
+        },
+        {
+          "fullName": "Dango Ouattara",
+          "lastName": "Ouattara",
+          "value": 22,
+          "rank": 2
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "value": 20,
+          "rank": 3
+        },
+        {
+          "fullName": "Simon Adingra",
+          "lastName": "Adingra",
+          "value": 19,
+          "rank": 4
+        },
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 19,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2023_24_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25340,7 +28664,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25415,7 +28739,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25481,6 +28805,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "value": 45,
+          "rank": 1
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "value": 40,
+          "rank": 2
+        },
+        {
+          "fullName": "Fabian Schär",
+          "lastName": "Schär",
+          "value": 40,
+          "rank": 3
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "value": 39,
+          "rank": 4
+        },
+        {
+          "fullName": "Daniel Muñoz",
+          "lastName": "Muñoz",
+          "value": 37,
+          "rank": 5
+        },
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 37,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "value": 126,
+          "rank": 1
+        },
+        {
+          "fullName": "Eberechi Eze",
+          "lastName": "Eze",
+          "value": 102,
+          "rank": 2
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 96,
+          "rank": 3
+        },
+        {
+          "fullName": "Mohammed Kudus",
+          "lastName": "Kudus",
+          "value": 75,
+          "rank": 4
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "value": 67,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 130,
+          "rank": 1
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 125,
+          "rank": 2
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Cunha",
+          "value": 110,
+          "rank": 3
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 108,
+          "rank": 4
+        },
+        {
+          "fullName": "Alexander Isak",
+          "lastName": "Isak",
+          "value": 99,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2024_25_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25490,7 +28955,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25565,7 +29030,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25631,6 +29096,141 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Daniel Muñoz",
+          "lastName": "Muñoz",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Noussair Mazraoui",
+          "lastName": "Mazraoui",
+          "value": 68,
+          "rank": 2
+        },
+        {
+          "fullName": "Antonee Robinson",
+          "lastName": "Robinson",
+          "value": 61,
+          "rank": 3
+        },
+        {
+          "fullName": "Rayan Aït-Nouri",
+          "lastName": "Aït-Nouri",
+          "value": 57,
+          "rank": 4
+        },
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 57,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 73,
+          "rank": 2
+        },
+        {
+          "fullName": "João Gomes",
+          "lastName": "Gomes",
+          "value": 71,
+          "rank": 3
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Allister",
+          "value": 58,
+          "rank": 4
+        },
+        {
+          "fullName": "Youri Tielemans",
+          "lastName": "Tielemans",
+          "value": 58,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Yankuba Minteh",
+          "lastName": "Minteh",
+          "value": 35,
+          "rank": 1
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 35,
+          "rank": 2
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "value": 31,
+          "rank": 3
+        },
+        {
+          "fullName": "Bryan Mbeumo",
+          "lastName": "Mbeumo",
+          "value": 31,
+          "rank": 4
+        },
+        {
+          "fullName": "Iliman Ndiaye",
+          "lastName": "Ndiaye",
+          "value": 28,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2024_25_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25640,7 +29240,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25706,6 +29306,96 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 66,
+          "rank": 1
+        },
+        {
+          "fullName": "Antonee Robinson",
+          "lastName": "Robinson",
+          "value": 62,
+          "rank": 2
+        },
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 56,
+          "rank": 3
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "value": 56,
+          "rank": 4
+        },
+        {
+          "fullName": "Maxence Lacroix",
+          "lastName": "Lacroix",
+          "value": 54,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2024_25_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "value": 60,
+          "rank": 1
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 49,
+          "rank": 2
+        },
+        {
+          "fullName": "Christian Nørgaard",
+          "lastName": "Nørgaard",
+          "value": 49,
+          "rank": 3
+        },
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "value": 48,
+          "rank": 4
+        },
+        {
+          "fullName": "Carlos Baleba",
+          "lastName": "Baleba",
+          "value": 46,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2024_25_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25715,7 +29405,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25790,7 +29480,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25856,6 +29546,147 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_shots_defenders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most shots in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 46,
+          "rank": 1
+        },
+        {
+          "fullName": "Trai Hume",
+          "lastName": "Hume",
+          "value": 34,
+          "rank": 2
+        },
+        {
+          "fullName": "Riccardo Calafiori",
+          "lastName": "Calafiori",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Marc Guéhi",
+          "lastName": "Guéhi",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "value": 32,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_midfielders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most shots in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 85,
+          "rank": 1
+        },
+        {
+          "fullName": "Morgan Rogers",
+          "lastName": "Rogers",
+          "value": 84,
+          "rank": 2
+        },
+        {
+          "fullName": "Morgan Gibbs-White",
+          "lastName": "Gibbs-White",
+          "value": 83,
+          "rank": 3
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "value": 71,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_shots_forwards_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most shots in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 126,
+          "rank": 1
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Cunha",
+          "value": 90,
+          "rank": 2
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "value": 87,
+          "rank": 3
+        },
+        {
+          "fullName": "Igor Thiago",
+          "lastName": "Thiago",
+          "value": 84,
+          "rank": 4
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 83,
+          "rank": 5
+        },
+        {
+          "fullName": "Ollie Watkins",
+          "lastName": "Watkins",
+          "value": 83,
+          "rank": 6
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_shotsontarget_2025_26_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -25865,7 +29696,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -25946,7 +29777,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -26018,6 +29849,153 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_tackles_defenders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most tackles in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Tyrick Mitchell",
+          "lastName": "Mitchell",
+          "value": 63,
+          "rank": 1
+        },
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 62,
+          "rank": 2
+        },
+        {
+          "fullName": "Adrien Truffert",
+          "lastName": "Truffert",
+          "value": 52,
+          "rank": 3
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "value": 50,
+          "rank": 4
+        },
+        {
+          "fullName": "Álex Jiménez",
+          "lastName": "Jiménez",
+          "value": 48,
+          "rank": 5
+        },
+        {
+          "fullName": "Daniel Muñoz",
+          "lastName": "Muñoz",
+          "value": 48,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_midfielders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most tackles in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Garner",
+          "lastName": "Garner",
+          "value": 71,
+          "rank": 1
+        },
+        {
+          "fullName": "João Gomes",
+          "lastName": "Gomes",
+          "value": 68,
+          "rank": 2
+        },
+        {
+          "fullName": "Mateus Fernandes",
+          "lastName": "Fernandes",
+          "value": 67,
+          "rank": 3
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Palhinha",
+          "value": 66,
+          "rank": 4
+        },
+        {
+          "fullName": "Elliot Anderson",
+          "lastName": "Anderson",
+          "value": 63,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_tackles_forwards_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most tackles in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Iliman Ndiaye",
+          "lastName": "Ndiaye",
+          "value": 43,
+          "rank": 1
+        },
+        {
+          "fullName": "Yankuba Minteh",
+          "lastName": "Minteh",
+          "value": 37,
+          "rank": 2
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 32,
+          "rank": 3
+        },
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 29,
+          "rank": 4
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "value": 25,
+          "rank": 5
+        },
+        {
+          "fullName": "Crysencio Summerville",
+          "lastName": "Summerville",
+          "value": 25,
+          "rank": 6
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_interceptions_2025_26_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -26027,7 +30005,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {
@@ -26093,6 +30071,153 @@
       ]
     },
     {
+      "id": "list_premier_league_stat_interceptions_defenders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 defenders with the most interceptions in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Marcos Senesi",
+          "lastName": "Senesi",
+          "value": 56,
+          "rank": 1
+        },
+        {
+          "fullName": "Marc Guéhi",
+          "lastName": "Guéhi",
+          "value": 50,
+          "rank": 2
+        },
+        {
+          "fullName": "Konstantinos Mavropanos",
+          "lastName": "Mavropanos",
+          "value": 49,
+          "rank": 3
+        },
+        {
+          "fullName": "Adrien Truffert",
+          "lastName": "Truffert",
+          "value": 48,
+          "rank": 4
+        },
+        {
+          "fullName": "Jan Paul van Hecke",
+          "lastName": "van Hecke",
+          "value": 47,
+          "rank": 5
+        },
+        {
+          "fullName": "Neco Williams",
+          "lastName": "Williams",
+          "value": 47,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_midfielders_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 midfielders with the most interceptions in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 59,
+          "rank": 1
+        },
+        {
+          "fullName": "James Garner",
+          "lastName": "Garner",
+          "value": 59,
+          "rank": 2
+        },
+        {
+          "fullName": "Ethan Ampadu",
+          "lastName": "Ampadu",
+          "value": 50,
+          "rank": 3
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "value": 48,
+          "rank": 4
+        },
+        {
+          "fullName": "Elliot Anderson",
+          "lastName": "Anderson",
+          "value": 41,
+          "rank": 5
+        },
+        {
+          "fullName": "Florentino",
+          "lastName": "Florentino",
+          "value": 41,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_stat_interceptions_forwards_2025_26_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 forwards with the most interceptions in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jarrod Bowen",
+          "lastName": "Bowen",
+          "value": 27,
+          "rank": 1
+        },
+        {
+          "fullName": "Dango Ouattara",
+          "lastName": "Ouattara",
+          "value": 24,
+          "rank": 2
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Cunha",
+          "value": 21,
+          "rank": 3
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "value": 17,
+          "rank": 4
+        },
+        {
+          "fullName": "Yankuba Minteh",
+          "lastName": "Minteh",
+          "value": 17,
+          "rank": 5
+        }
+      ]
+    },
+    {
       "id": "list_premier_league_stat_saves_2025_26_10",
       "category": "PREMIER_LEAGUE",
       "format": "LIST",
@@ -26102,7 +30227,7 @@
       "source": {
         "name": "Premier League",
         "url": "https://www.premierleague.com/stats",
-        "retrievedAt": "2026-09-03T03:42:33.096Z"
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
       },
       "answers": [
         {

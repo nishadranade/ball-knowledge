@@ -52,6 +52,11 @@ export interface SeasonStatEntry {
   fullName: string;
   lastName: string;
   value: number;
+  /** 'G' | 'D' | 'M' | 'F' | null, straight from the API — see
+   *  build-season-stats.ts's position-split variants (tackles/interceptions/
+   *  shots), which filter on this. Unused by the overall (all-position)
+   *  question, which is why this wasn't threaded through until that was added. */
+  position: string | null;
 }
 
 /** One metric's ranked leaderboard for one season, overall only (no
@@ -65,5 +70,6 @@ export async function fetchSeasonStat(
     fullName: e.name,
     lastName: deriveLastName(e.name),
     value: e.value,
+    position: e.position,
   }));
 }

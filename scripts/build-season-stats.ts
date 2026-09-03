@@ -7,10 +7,10 @@
  * Scoped to the most recent N *complete* seasons (default 10 — "complete"
  * meaning every club has played its full fixture list, checked against
  * fetch/plStandings.ts, so a season still in progress can't produce a
- * misleadingly-final "top 10"). Deliberately OVERALL only, no per-club/
- * per-country breakdown — that dimension already exists for the marquee
- * all-time metrics (goals/assists/appearances/clean sheets); adding it here
- * too would multiply into a huge number of thin, rarely-useful questions.
+ * misleadingly-final "top 10"). Deliberately OVERALL only for club/country —
+ * that dimension already exists for the marquee all-time metrics (goals/
+ * assists/appearances/clean sheets); adding it here too would multiply into
+ * a huge number of thin, rarely-useful questions.
  *
  * STANDARD difficulty by design: unlike a minor club's obscure rank 6-10
  * tail, a season's top-10 shooters/tacklers/interceptors/savers are all
@@ -20,6 +20,20 @@
  * (Originally shipped HARD-only; promoted to STANDARD once the daily
  * rotation needed more list-question variety than the all-time metrics
  * alone provided.)
+ *
+ * Tackles/interceptions/shots ALSO get a position-scoped variant (top 5
+ * defenders, midfielders, forwards) — checked against real data before
+ * building this: contrary to the assumption that a tackles/interceptions
+ * top 10 would just be "the same defensive midfielders every year", the
+ * overall list is already a genuine D/M mix every season sampled, so the
+ * position split isn't fixing a skew — it's a deliberately narrower/more
+ * specific extra dimension (e.g. "which forward racked up the most shots"
+ * surfaces different, more interesting names than the overall top 10, which
+ * forwards already dominate). These are HARD/top-5, same convention as any
+ * other narrower slice of a broader STANDARD metric, so they stay out of the
+ * daily pool. Saves is deliberately excluded from the split — it's already
+ * 100% goalkeepers by definition, so "goalkeepers with the most saves" would
+ * just be the overall list again.
  *
  * This script owns a SLICE of q-list.json (every id starting with
  * `list_premier_league_stat_`), merging into whatever build-questions.ts
@@ -56,6 +70,20 @@ const METRICS: SeasonStatMetric[] = ['shots', 'shotsOnTarget', 'tackles', 'inter
 /** Every id this script owns starts with this — see the module comment. */
 const ID_PREFIX = 'list_premier_league_stat_';
 
+/** Metrics that also get a position-scoped variant — see the module comment
+ *  for why saves/shotsOnTarget are left out. */
+const POSITION_SPLIT_METRICS: SeasonStatMetric[] = ['tackles', 'interceptions', 'shots'];
+const POSITION_TOP_N = 5;
+const POSITIONS: { code: 'D' | 'M' | 'F'; label: string }[] = [
+  { code: 'D', label: 'defenders' },
+  { code: 'M', label: 'midfielders' },
+  { code: 'F', label: 'forwards' },
+];
+/** Matches the trailing "_<position label>_<season>_<N>" that only a
+ *  position-scoped variant's id has — used by validate() to hold it to a
+ *  different (HARD/top-5) bar than the overall (STANDARD/top-10) questions. */
+const POSITION_VARIANT_RE = /_(?:defenders|midfielders|forwards)_\d{4}_\d{2}_\d+$/;
+
 function slug(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 }
@@ -85,28 +113,62 @@ async function buildForSeason(season: CompSeason): Promise<{ questions: ListQues
     if (ranked.length < TOP_N) {
       console.warn(`    ! skip ${metric} ${season.label}: only ${ranked.length} qualify (need ${TOP_N})`);
       skipped++;
-      continue;
+    } else {
+      // Expand to include ties at the boundary, same convention as the
+      // all-time LIST generator.
+      const cutoff = ranked[TOP_N - 1].value;
+      const kept = ranked.filter((e) => e.value >= cutoff);
+      const answers: ListAnswer[] = kept.map((e, i) => ({
+        fullName: e.fullName,
+        lastName: e.lastName,
+        value: e.value,
+        rank: i + 1,
+      }));
+      out.push({
+        id: `${ID_PREFIX}${slug(metric)}_${seasonSlug}_${TOP_N}`,
+        category: 'PREMIER_LEAGUE',
+        format: 'LIST',
+        prompt: `Name the top ${TOP_N} players with the most ${SEASON_STAT_LABELS[metric]} in the Premier League in the ${season.label} season.`,
+        maxWrong: 3,
+        difficulty: 'STANDARD',
+        source: { name: 'Premier League', url: PL_SOURCE_URL, retrievedAt: NOW },
+        answers,
+      });
     }
-    // Expand to include ties at the boundary, same convention as the
-    // all-time LIST generator.
-    const cutoff = ranked[TOP_N - 1].value;
-    const kept = ranked.filter((e) => e.value >= cutoff);
-    const answers: ListAnswer[] = kept.map((e, i) => ({
-      fullName: e.fullName,
-      lastName: e.lastName,
-      value: e.value,
-      rank: i + 1,
-    }));
-    out.push({
-      id: `${ID_PREFIX}${slug(metric)}_${seasonSlug}_${TOP_N}`,
-      category: 'PREMIER_LEAGUE',
-      format: 'LIST',
-      prompt: `Name the top ${TOP_N} players with the most ${SEASON_STAT_LABELS[metric]} in the Premier League in the ${season.label} season.`,
-      maxWrong: 3,
-      difficulty: 'STANDARD',
-      source: { name: 'Premier League', url: PL_SOURCE_URL, retrievedAt: NOW },
-      answers,
-    });
+
+    if (!POSITION_SPLIT_METRICS.includes(metric)) continue;
+    // Reuses the same `entries` fetch above — no extra API call, just a
+    // different filter/sort over data already in hand.
+    for (const { code, label } of POSITIONS) {
+      const posRanked = entries
+        .filter((e) => e.position === code && e.value >= floor)
+        .sort((a, b) => b.value - a.value);
+      if (posRanked.length < POSITION_TOP_N) {
+        console.warn(
+          `    ! skip ${metric}/${label} ${season.label}: only ${posRanked.length} qualify (need ${POSITION_TOP_N})`,
+        );
+        skipped++;
+        continue;
+      }
+      const posCutoff = posRanked[POSITION_TOP_N - 1].value;
+      const posKept = posRanked.filter((e) => e.value >= posCutoff);
+      const posAnswers: ListAnswer[] = posKept.map((e, i) => ({
+        fullName: e.fullName,
+        lastName: e.lastName,
+        value: e.value,
+        rank: i + 1,
+      }));
+      out.push({
+        id: `${ID_PREFIX}${slug(metric)}_${label}_${seasonSlug}_${POSITION_TOP_N}`,
+        category: 'PREMIER_LEAGUE',
+        format: 'LIST',
+        prompt: `Name the top ${POSITION_TOP_N} ${label} with the most ${SEASON_STAT_LABELS[metric]} in the Premier League in the ${season.label} season.`,
+        maxWrong: 3,
+        difficulty: 'HARD',
+        source: { name: 'Premier League', url: PL_SOURCE_URL, retrievedAt: NOW },
+        answers: posAnswers,
+      });
+    }
   }
   return { questions: out, skipped };
 }
@@ -115,9 +177,17 @@ function validate(questions: ListQuestion[]): string[] {
   const errors: string[] = [];
   for (const q of questions) {
     if (!q.id.startsWith(ID_PREFIX)) errors.push(`${q.id}: missing expected id prefix`);
-    if (q.difficulty !== 'STANDARD') errors.push(`${q.id}: season stats should be STANDARD`);
+    const isPositionVariant = POSITION_VARIANT_RE.test(q.id);
+    if (isPositionVariant) {
+      if (q.difficulty !== 'HARD') errors.push(`${q.id}: position-split season stats should be HARD`);
+      if (q.answers.length < POSITION_TOP_N) {
+        errors.push(`${q.id}: only ${q.answers.length} answers, expected ≥${POSITION_TOP_N}`);
+      }
+    } else {
+      if (q.difficulty !== 'STANDARD') errors.push(`${q.id}: season stats should be STANDARD`);
+      if (q.answers.length < TOP_N) errors.push(`${q.id}: only ${q.answers.length} answers, expected ≥${TOP_N}`);
+    }
     if (q.maxWrong !== 3) errors.push(`${q.id}: maxWrong should be 3`);
-    if (q.answers.length < TOP_N) errors.push(`${q.id}: only ${q.answers.length} answers, expected ≥${TOP_N}`);
     for (const a of q.answers) {
       if (!a.lastName) errors.push(`${q.id}: answer missing lastName`);
       if (!((a.value ?? 0) > 0)) errors.push(`${q.id}: answer with non-positive value`);
@@ -137,7 +207,8 @@ async function main() {
     const { questions, skipped } = await buildForSeason(season);
     totalSkipped += skipped;
     out.push(...questions);
-    console.log(`  ${season.label}: ${questions.length}/${METRICS.length} stat questions`);
+    const maxPossible = METRICS.length + POSITION_SPLIT_METRICS.length * POSITIONS.length;
+    console.log(`  ${season.label}: ${questions.length}/${maxPossible} stat questions`);
   }
 
   const errors = validate(out);

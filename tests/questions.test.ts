@@ -348,13 +348,20 @@ describe('generated answer bank', () => {
   const seasonStats = bundle.questions.filter(
     (q): q is ListQuestion => q.format === 'LIST' && q.id.startsWith('list_premier_league_stat_'),
   );
+  // Position-scoped variants (tackles/interceptions/shots, split by
+  // defenders/midfielders/forwards) are held to a different bar than the
+  // overall per-season questions — see build-season-stats.ts's module
+  // comment and POSITION_VARIANT_RE.
+  const POSITION_VARIANT_RE = /_(?:defenders|midfielders|forwards)_\d{4}_\d{2}_\d+$/;
+  const overallSeasonStats = seasonStats.filter((q) => !POSITION_VARIANT_RE.test(q.id));
+  const positionSeasonStats = seasonStats.filter((q) => POSITION_VARIANT_RE.test(q.id));
 
   it('has per-season stat questions (run `npm run build:season-stats` if this fails)', () => {
-    expect(seasonStats.length).toBeGreaterThan(0);
+    expect(overallSeasonStats.length).toBeGreaterThan(0);
   });
 
   it('per-season stat questions are STANDARD (daily-eligible), top 10, with a positive value per answer', () => {
-    for (const q of seasonStats) {
+    for (const q of overallSeasonStats) {
       expect(q.difficulty).toBe('STANDARD');
       expect(q.maxWrong).toBe(3);
       expect(q.answers.length).toBeGreaterThanOrEqual(10);
@@ -366,7 +373,7 @@ describe('generated answer bank', () => {
   });
 
   it('per-season stat prompts name a real season and stat', () => {
-    for (const q of seasonStats) {
+    for (const q of overallSeasonStats) {
       expect(q.prompt).toMatch(/\b\d{4}\/\d{2}\b/); // e.g. "2020/21"
       expect(q.prompt).toContain('Premier League');
     }
@@ -375,11 +382,44 @@ describe('generated answer bank', () => {
   it('covers all five stat types', () => {
     // id shape: list_premier_league_stat_<metric>_<YYYY>_<YY>_<N>
     const stats = new Set(
-      seasonStats.map((q) => q.id.match(/^list_premier_league_stat_(.+)_\d{4}_\d{2}_\d+$/)?.[1]),
+      overallSeasonStats.map((q) => q.id.match(/^list_premier_league_stat_(.+)_\d{4}_\d{2}_\d+$/)?.[1]),
     );
     for (const expected of ['shots', 'shotsontarget', 'tackles', 'interceptions', 'saves']) {
       expect(stats).toContain(expected);
     }
+  });
+
+  it('has position-split season-stat questions (run `npm run build:season-stats` if this fails)', () => {
+    expect(positionSeasonStats.length).toBeGreaterThan(0);
+  });
+
+  it('position-split season-stat questions are HARD, top 5, positive value per answer', () => {
+    for (const q of positionSeasonStats) {
+      expect(q.difficulty).toBe('HARD');
+      expect(q.maxWrong).toBe(3);
+      expect(q.answers.length).toBeGreaterThanOrEqual(5);
+      for (const a of q.answers) {
+        expect(a.lastName.length).toBeGreaterThan(0);
+        expect(a.value ?? 0).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('position-split prompts name the position and a real season', () => {
+    for (const q of positionSeasonStats) {
+      expect(q.prompt).toMatch(/\b(defenders|midfielders|forwards)\b/);
+      expect(q.prompt).toMatch(/\b\d{4}\/\d{2}\b/);
+    }
+  });
+
+  it('only splits tackles, interceptions, and shots by position (not shotsOnTarget or saves)', () => {
+    // id shape: list_premier_league_stat_<metric>_<position>_<YYYY>_<YY>_<N>
+    const metrics = new Set(
+      positionSeasonStats.map(
+        (q) => q.id.match(/^list_premier_league_stat_(.+)_(?:defenders|midfielders|forwards)_\d{4}_\d{2}_\d+$/)?.[1],
+      ),
+    );
+    expect(metrics).toEqual(new Set(['tackles', 'interceptions', 'shots']));
   });
 
   const clubHistory = bundle.questions.filter(
