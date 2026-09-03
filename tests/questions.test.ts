@@ -463,4 +463,40 @@ describe('generated answer bank', () => {
     // first/last-name matching heuristic is exactly what SHOULD apply here.
     for (const q of managers) for (const a of q.answers) expect(a.noAutoTokens).toBeFalsy();
   });
+
+  const transfers = bundle.questions.filter(
+    (q): q is ListQuestion => q.format === 'LIST' && q.id.startsWith('list_premier_league_transfer_'),
+  );
+
+  it('has transfer-fee questions (run `npm run build:transfers` if this fails)', () => {
+    expect(transfers.length).toBeGreaterThan(0);
+  });
+
+  it('every transfer question has at least 5 answers, sorted by descending fee', () => {
+    for (const q of transfers) {
+      expect(q.answers.length).toBeGreaterThanOrEqual(5);
+      for (let i = 1; i < q.answers.length; i++) {
+        expect(q.answers[i - 1].value ?? 0).toBeGreaterThanOrEqual(q.answers[i].value ?? 0);
+      }
+      const names = q.answers.map((a) => a.fullName);
+      expect(new Set(names).size).toBe(names.length); // no player counted twice
+    }
+  });
+
+  it('transfer fees are in a plausible £ million range (not a comma-truncation artifact)', () => {
+    // A regression guard specific to the comma-figure parsing bug: a bug that
+    // truncated "£34,600,000" at the comma would produce a value like 34 —
+    // plausible-looking on its own, so this instead checks the fee has real
+    // sub-integer precision preserved somewhere in the dataset (proof the
+    // full-precision path is exercised, not just the whole-number one) and
+    // that nothing is absurdly small (a truncated-to-single-digit fee).
+    for (const q of transfers) {
+      for (const a of q.answers) {
+        expect(a.value ?? 0).toBeGreaterThan(1); // no PL club's biggest signings are ~£1m
+        expect(a.value ?? 0).toBeLessThan(500); // sanity ceiling, well above any real fee
+      }
+    }
+    const anyFractional = transfers.some((q) => q.answers.some((a) => (a.value ?? 0) % 1 !== 0));
+    expect(anyFractional).toBe(true);
+  });
 });

@@ -64,6 +64,20 @@ the container exits. Check `git status` after.
   Birmingham City), so "who's current" has to be resolved ONCE, globally, not per-table. `tests/
   wikiManagers.test.ts` pins each of these with a fixture reproducing the real page snippet that broke
   — treat a new club failing validation as the correct, safe outcome, not a bug to route around.
+- **`fetch/wikiTransfers.ts` is fragile too — same rule: read its comments first, re-run
+  `build:transfers` + `npm test` after any change.** Smaller blast radius than the managers page family
+  (one section, one table shape per club) but still shipped wrong data three times during development
+  before any test existed: (1) a single `cleanCell` that unconditionally truncated at the first `{{`
+  worked for numeric cells but destroyed every player/club cell, where `{{flagicon|...}}` legitimately
+  comes BEFORE the real content — fixed by splitting into `stripAttrPrefix` (no truncation, for
+  player/club cells) and `cleanNumericCell` (truncates, for fee/year cells only); (2) Manchester
+  United's row layout puts the rank cell inline with the rest (`|1||player||from||fee||date`) instead
+  of on its own preceding line like Chelsea's, and naive positional destructuring silently shifted
+  every field by one (the fee became the "player") with no error; (3) Fulham's fee cell was the full
+  comma-grouped figure ("£34,600,000") rather than the millions-shorthand used elsewhere ("£117"), and
+  the plain `£([\d.]+)` regex silently truncated at the comma, reporting £34m instead of £34.6m — a
+  precision-loss bug, not a crash, so it would've shipped unnoticed without manual spot-checking.
+  `tests/wikiTransfers.test.ts` pins all three with real-page fixtures.
 - **SQUAD's fixture filter is stricter than MATCH's, on purpose.** Both start from the same
   `qualifies()` in `scripts/fetch/matchFilters.ts`, but SQUAD additionally requires a marquee side in
   CL fixtures (`isBigClFixture`/`BIG_EUROPE`) and always asks about the bigger side when only one
@@ -120,7 +134,8 @@ Run `npm test` and `npm run build:app` locally first.
 |---|---|---|
 | Only per-season stats | `npm run build:season-stats` | Rewrites just its own slice of `q-list.json`. `SEASON_STATS_SEASONS=n` to limit. |
 | Only club history (relegated/promoted/top-N) | `npm run build:club-history` | Rewrites just its own slice of `q-list.json`. No env override — always uses full PL standings history. |
-| Only manager questions | `npm run build:managers` | Rewrites just its own slice of `q-list.json`. Attempts all 51 clubs, keeps only the ~18 that validate cleanly — see the note below. |
+| Only manager questions | `npm run build:managers` | Rewrites just its own slice of `q-list.json`. Attempts all 51 clubs, keeps only the ~18 that validate cleanly — see the note above. |
+| Only transfer-fee questions | `npm run build:transfers` | Rewrites just its own slice of `q-list.json`. Attempts all 51 clubs, keeps only the ~7 that have the table at all. |
 | Only match fixtures | `npm run build:matches` | Rewrites just `q-match.json`. `MATCH_SEASONS=n` to limit. |
 | Only squad line-ups | `npm run build:squads` | Rewrites just `q-squad.json`. Run after `build:matches` — same fixture detail endpoint, so it reuses that disk cache for free. `SQUAD_SEASONS=n` to limit. |
 | Players / stats / sources | `npm run build:data` | Chains matches + squads + daily. Several minutes; hits the PL API and Wikipedia. |

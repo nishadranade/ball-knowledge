@@ -24,6 +24,11 @@ question formats and forgiving answer matching.
    managerial history. Only 18 of the 51 clubs ever in the Premier League have a table clean enough to
    answer this reliably (see the data-source section below for why); STANDARD for a major club,
    otherwise HARD.
+
+   And a **transfers** slice — "Name the top 5 most expensive players Chelsea have signed" — from each
+   club's own "highest transfer fees paid" Wikipedia table. The sparsest of the four: only clubs
+   wealthy/active enough to have this table at all get the question — currently **7** of the 51 (the
+   biggest spenders). Same STANDARD-for-a-major-club, HARD-otherwise split.
 2. **Career paths** — a player's club-by-club career (years, club, apps, goals) is shown with the
    name hidden; **1 answer**, up to **2 wrong guesses**.
 3. **Match scorers** — a real fixture shown in full (teams, score, date, competition round): name
@@ -231,6 +236,20 @@ tests/                       matcher unit tests, daily/share/link tests, generat
   non-caretaker managers must chronologically connect, and the most recent one must be the *current*
   incumbent — a table that doesn't reflect that looks stale, not just short). See
   `scripts/build-managers.ts`; owns the `list_premier_league_manager_` slice of `q-list.json`.
+- **Transfer-fee LIST questions** — each club's own "Highest transfer fees paid" table, on its
+  "List of X F.C. records and statistics" Wikipedia page. The sparsest source of the four: unlike
+  managers, there's no fallback page — a club either has this exact table or doesn't, and a survey
+  before building this found only a fifth or so of clubs checked do (currently **7** clubs pass, all
+  among the bigger spenders). The table itself is more consistently shaped than the managers one, but
+  still needed real fixes: some clubs put the rank on its own line ("Chelsea"), others put it as the
+  first cell of the same "||"-separated line as everything else ("Manchester United") — get that wrong
+  and every field shifts by one; a leading `{{flagicon|...}}` template on a player/club cell must NOT
+  be treated as trailing citation junk to truncate at (the reverse is true for the fee/year cells,
+  where a `{{efn|...}}`/`<ref>` genuinely does trail the real value); and the fee itself appears in
+  three different formats — "£117", "£89.3&nbsp;million", and (Fulham) the full comma-grouped figure
+  "£34,600,000", which naively parsed as "digits after £" alone silently truncates to £34m instead of
+  the real £34.6m. See `scripts/fetch/wikiTransfers.ts` and `scripts/build-transfers.ts`; owns the
+  `list_premier_league_transfer_` slice of `q-list.json`.
 - **CAREER questions** — **Wikipedia infoboxes** (top-K players per metric across both competitions).
 - **MATCH questions** — the same pulselive API, via two endpoints: `/fixtures` (teams, scores, and a
   `goals[]` of person ids) to decide which matches qualify, then `/fixtures/{id}` for the ones that
@@ -282,6 +301,7 @@ npm run build:data   # regenerate the whole bank + daily.json (PL API + Wikipedi
 npm run build:season-stats # regenerate ONLY the per-season stat questions (SEASON_STATS_SEASONS=n to limit)
 npm run build:club-history # regenerate ONLY relegated/promoted/top-N club questions
 npm run build:managers # regenerate ONLY "last 3 managers" questions (18/51 clubs currently pass validation)
+npm run build:transfers # regenerate ONLY transfer-fee questions (7/51 clubs currently have the table)
 npm run build:matches # regenerate ONLY q-match.json (MATCH_SEASONS=n to limit)
 npm run build:squads  # regenerate ONLY q-squad.json (SQUAD_SEASONS=n to limit); cheap after build:matches
 npm run build:daily  # freeze today's daily into public/data/daily.json (append-only)
@@ -344,11 +364,12 @@ visit doesn't register, the usual cause is an adblocker blocking `gc.zgo.at`.
   public product; fine for a personal non-commercial project.
 - **Career paths:** Wikipedia player infoboxes (CC BY-SA 4.0).
 
-Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,101
-questions** (492 list — including 50 per-season stat, 70 club-history, and 18 manager questions —
-1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier League** (4,877) and
-**Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches from **2012-08-18 to
-2026-05-30**. Questions are split **Standard** (2,575) / **Hard** (3,526) across all four formats
+Sources and retrieval dates are recorded in `public/data/manifest.json`. Current dataset: **6,108
+questions** (499 list — including 50 per-season stat, 70 club-history, 18 manager, and 7 transfer-fee
+questions — 1,290 career, 2,342 match, 1,977 squad) across two competitions — **Premier League**
+(4,884) and **Champions League** (1,224) — covering 48 nationalities, 46 clubs, and matches from
+**2012-08-18 to 2026-05-30**. Questions are split **Standard** (2,580) / **Hard** (3,528) across all
+four formats
 (see difficulty tiers below).
 
 **The bank is split by format and fetched lazily**, because one combined file would mean every

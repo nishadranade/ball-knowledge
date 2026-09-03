@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T03:00:51.099Z",
+  "generatedAt": "2026-09-03T03:16:39.048Z",
   "questions": [
     {
       "id": "list_premier_league_goals_overall_all_10",
@@ -25880,6 +25880,296 @@
         {
           "fullName": "Xisco Muñoz",
           "lastName": "Muñoz"
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Chelsea have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Chelsea_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Morgan Rogers",
+          "lastName": "Rogers",
+          "value": 117
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "value": 106.8
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "value": 100
+        },
+        {
+          "fullName": "Romelu Lukaku",
+          "lastName": "Lukaku",
+          "value": 97.5
+        },
+        {
+          "fullName": "Kepa Arrizabalaga",
+          "lastName": "Arrizabalaga",
+          "value": 71.6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_everton",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Everton have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Everton_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Gylfi Sigurðsson",
+          "lastName": "Sigurðsson",
+          "value": 45
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 35
+        },
+        {
+          "fullName": "Amadou Onana",
+          "lastName": "Onana",
+          "value": 30
+        },
+        {
+          "fullName": "Romelu Lukaku",
+          "lastName": "Lukaku",
+          "value": 28
+        },
+        {
+          "fullName": "Alex Iwobi",
+          "lastName": "Iwobi",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_fulham",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Fulham have signed.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Fulham_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Kevin",
+          "lastName": "Kevin",
+          "value": 34.6
+        },
+        {
+          "fullName": "Gonzalo García",
+          "lastName": "García",
+          "value": 34.2
+        },
+        {
+          "fullName": "Emile Smith Rowe",
+          "lastName": "Rowe",
+          "value": 27
+        },
+        {
+          "fullName": "Shea Charles",
+          "lastName": "Charles",
+          "value": 26
+        },
+        {
+          "fullName": "Jean Michaël Seri",
+          "lastName": "Seri",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_manchester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Manchester City have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Manchester_City_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jack Grealish",
+          "lastName": "Grealish",
+          "value": 100
+        },
+        {
+          "fullName": "Joško Gvardiol",
+          "lastName": "Gvardiol",
+          "value": 77.5
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 65
+        },
+        {
+          "fullName": "Rodri",
+          "lastName": "Rodri",
+          "value": 63.6
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "Dias",
+          "value": 62
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Manchester United have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Manchester_United_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "value": 89.3
+        },
+        {
+          "fullName": "Antony",
+          "lastName": "Antony",
+          "value": 82
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "value": 80
+        },
+        {
+          "fullName": "Jadon Sancho",
+          "lastName": "Sancho",
+          "value": 73
+        },
+        {
+          "fullName": "Rasmus Højlund",
+          "lastName": "Højlund",
+          "value": 72
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_queens_park_rangers",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Queens Park Rangers have signed.",
+      "maxWrong": 3,
+      "difficulty": "HARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Queens_Park_Rangers_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Christopher Samba",
+          "lastName": "Samba",
+          "value": 12.5
+        },
+        {
+          "fullName": "Steven Caulker",
+          "lastName": "Caulker",
+          "value": 8.5
+        },
+        {
+          "fullName": "Leroy Fer",
+          "lastName": "Fer",
+          "value": 8
+        },
+        {
+          "fullName": "Loïc Rémy",
+          "lastName": "Rémy",
+          "value": 8
+        },
+        {
+          "fullName": "Sandro",
+          "lastName": "Sandro",
+          "value": 6
+        },
+        {
+          "fullName": "Jordon Mutch",
+          "lastName": "Mutch",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "list_premier_league_transfer_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Tottenham Hotspur have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Tottenham_Hotspur_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sandro Tonali",
+          "lastName": "Tonali",
+          "value": 92.5
+        },
+        {
+          "fullName": "Mateus Fernandes",
+          "lastName": "Fernandes",
+          "value": 85
+        },
+        {
+          "fullName": "Sávio",
+          "lastName": "Sávio",
+          "value": 75
+        },
+        {
+          "fullName": "Tanguy Ndombele",
+          "lastName": "Ndombele",
+          "value": 55.4
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "value": 55
+        },
+        {
+          "fullName": "Mohammed Kudus",
+          "lastName": "Kudus",
+          "value": 55
         }
       ]
     }

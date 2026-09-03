@@ -57,6 +57,7 @@ const FOREIGN_LIST_PREFIXES = [
   'list_premier_league_stat_',
   'list_premier_league_club_',
   'list_premier_league_manager_',
+  'list_premier_league_transfer_',
 ];
 /** Career-path difficulty bands, by a player's BEST rank across all metrics and
  *  competitions. STANDARD = famous (best rank ≤ this); HARD = rarer (best rank in
