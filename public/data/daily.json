@@ -8370,5 +8370,315 @@
         ]
       ]
     }
+  },
+  "2026-09-04": {
+    "list": {
+      "id": "list_premier_league_stat_shotsontarget_2019_20_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots on target in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 59,
+          "rank": 1
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "Jesus",
+          "value": 48,
+          "rank": 2
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "value": 44,
+          "rank": 3
+        },
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "value": 44,
+          "rank": 4
+        },
+        {
+          "fullName": "Jamie Vardy",
+          "lastName": "Vardy",
+          "value": 43,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_alessandro_bastoni",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 149,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Alessandro_Bastoni",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2016–2017",
+          "club": "Atalanta",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2017–",
+          "club": "Inter Milan",
+          "appearances": 207,
+          "goals": 6
+        },
+        {
+          "years": "2017–2018",
+          "club": "Atalanta",
+          "appearances": 4,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "Parma",
+          "appearances": 24,
+          "goals": 1,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Alessandro Bastoni",
+        "lastName": "Bastoni",
+        "aliases": [
+          "Alessandro",
+          "Bastoni"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_tim_sherwood",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 88,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tim_Sherwood",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1987–1989",
+          "club": "Watford",
+          "appearances": 32,
+          "goals": 2
+        },
+        {
+          "years": "1989–1992",
+          "club": "Norwich City",
+          "appearances": 71,
+          "goals": 10
+        },
+        {
+          "years": "1992–1999",
+          "club": "Blackburn Rovers",
+          "appearances": 246,
+          "goals": 25
+        },
+        {
+          "years": "1999–2003",
+          "club": "Tottenham Hotspur",
+          "appearances": 93,
+          "goals": 12
+        },
+        {
+          "years": "2003–2004",
+          "club": "Portsmouth",
+          "appearances": 30,
+          "goals": 1
+        },
+        {
+          "years": "2004–2005",
+          "club": "Coventry City",
+          "appearances": 11,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Tim Sherwood",
+        "lastName": "Sherwood",
+        "aliases": [
+          "Tim",
+          "Sherwood"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-04-23_arsenal_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "Chelsea",
+        "homeScore": 5,
+        "awayScore": 0,
+        "date": "2024-04-23",
+        "dateLabel": "23 April 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "goals": 2,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 2,
+          "team": "Arsenal"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-04-16_manchester_united_norwich_city_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Norwich City",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 2,
+        "date": "2022-04-16",
+        "dateLabel": "16 April 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 20,
+          "position": "D"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Victor Lindelöf",
+          "lastName": "Lindelöf",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Alex Telles",
+          "lastName": "Nicolao Telles",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Jesse Lingard",
+          "lastName": "Lingard",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Anthony Elanga",
+          "lastName": "Elanga",
+          "shirtNumber": 36,
+          "position": "F"
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "dos Santos Aveiro",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Jadon Sancho",
+          "lastName": "Sancho",
+          "shirtNumber": 25,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
