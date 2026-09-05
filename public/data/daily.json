@@ -8680,5 +8680,310 @@
         ]
       ]
     }
+  },
+  "2026-09-05": {
+    "list": {
+      "id": "list_premier_league_manager_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Liverpool.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Liverpool_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Andoni Iraola",
+          "lastName": "Iraola"
+        },
+        {
+          "fullName": "Arne Slot",
+          "lastName": "Slot"
+        },
+        {
+          "fullName": "Jürgen Klopp",
+          "lastName": "Klopp"
+        }
+      ]
+    },
+    "career": {
+      "id": "career_antoine_griezmann",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 24,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Antoine_Griezmann",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2014",
+          "club": "Real Sociedad",
+          "appearances": 180,
+          "goals": 46
+        },
+        {
+          "years": "2014–2019",
+          "club": "Atlético Madrid",
+          "appearances": 180,
+          "goals": 94
+        },
+        {
+          "years": "2019–2022",
+          "club": "Barcelona",
+          "appearances": 74,
+          "goals": 22
+        },
+        {
+          "years": "2021–2022",
+          "club": "Atlético Madrid",
+          "appearances": 34,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2022–2026",
+          "club": "Atlético Madrid",
+          "appearances": 135,
+          "goals": 44
+        },
+        {
+          "years": "2026–",
+          "club": "Orlando City",
+          "appearances": 2,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Antoine Griezmann",
+        "lastName": "Griezmann",
+        "aliases": [
+          "Antoine",
+          "Griezmann"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_sergio_ramos",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 9,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sergio_Ramos",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2004",
+          "club": "Sevilla Atlético",
+          "appearances": 26,
+          "goals": 2
+        },
+        {
+          "years": "2004–2005",
+          "club": "Sevilla",
+          "appearances": 39,
+          "goals": 2
+        },
+        {
+          "years": "2005–2021",
+          "club": "Real Madrid",
+          "appearances": 469,
+          "goals": 72
+        },
+        {
+          "years": "2021–2023",
+          "club": "Paris Saint-Germain",
+          "appearances": 45,
+          "goals": 4
+        },
+        {
+          "years": "2023–2024",
+          "club": "Sevilla",
+          "appearances": 28,
+          "goals": 3
+        },
+        {
+          "years": "2025–2026",
+          "club": "Monterrey",
+          "appearances": 27,
+          "goals": 6
+        }
+      ],
+      "answer": {
+        "fullName": "Sergio Ramos",
+        "lastName": "Ramos",
+        "aliases": [
+          "Sergio",
+          "Ramos"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-12-06_manchester_city_sunderland",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Sunderland",
+        "homeScore": 3,
+        "awayScore": 0,
+        "date": "2025-12-06",
+        "dateLabel": "6 December 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "dos Santos Gato Alves Dias",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-10-16_liverpool_manchester_city_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Manchester City",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 0,
+        "date": "2022-10-16",
+        "dateLabel": "16 October 2022",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "James Milner",
+          "lastName": "Milner",
+          "shirtNumber": 7,
+          "position": "D"
+        },
+        {
+          "fullName": "Joe Gomez",
+          "lastName": "Gomez",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "shirtNumber": 9,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
