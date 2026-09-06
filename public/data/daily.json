@@ -8985,5 +8985,322 @@
         ]
       ]
     }
+  },
+  "2026-09-06": {
+    "list": {
+      "id": "list_premier_league_goals_club_tottenham_hotspur_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Tottenham Hotspur in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 213,
+          "rank": 1
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Heung-Min",
+          "value": 127,
+          "rank": 2
+        },
+        {
+          "fullName": "Teddy Sheringham",
+          "lastName": "Sheringham",
+          "value": 97,
+          "rank": 3
+        },
+        {
+          "fullName": "Jermain Defoe",
+          "lastName": "Defoe",
+          "value": 91,
+          "rank": 4
+        },
+        {
+          "fullName": "Robbie Keane",
+          "lastName": "Keane",
+          "value": 91,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_neven_subotic",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Neven_Subotic",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Mainz 05 II",
+          "appearances": 23,
+          "goals": 3
+        },
+        {
+          "years": "2007–2008",
+          "club": "Mainz 05",
+          "appearances": 34,
+          "goals": 4
+        },
+        {
+          "years": "2008–2018",
+          "club": "Borussia Dortmund",
+          "appearances": 196,
+          "goals": 15
+        },
+        {
+          "years": "2016",
+          "club": "Borussia Dortmund II",
+          "appearances": 2,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2017",
+          "club": "1. FC Köln",
+          "appearances": 12,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "Saint-Étienne",
+          "appearances": 42,
+          "goals": 3
+        },
+        {
+          "years": "2019–2020",
+          "club": "Union Berlin",
+          "appearances": 23,
+          "goals": 1
+        },
+        {
+          "years": "2020–2021",
+          "club": "Denizlispor",
+          "appearances": 5,
+          "goals": 1
+        },
+        {
+          "years": "2021",
+          "club": "Rheindorf Altach",
+          "appearances": 10,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Neven Subotic",
+        "lastName": "Subotic",
+        "aliases": [
+          "Neven",
+          "Subotic"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_julian_brandt",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 64,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Julian_Brandt",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014",
+          "club": "Bayer Leverkusen II",
+          "appearances": 1,
+          "goals": 1
+        },
+        {
+          "years": "2014–2019",
+          "club": "Bayer Leverkusen",
+          "appearances": 165,
+          "goals": 34
+        },
+        {
+          "years": "2019–2026",
+          "club": "Borussia Dortmund",
+          "appearances": 218,
+          "goals": 43
+        }
+      ],
+      "answer": {
+        "fullName": "Julian Brandt",
+        "lastName": "Brandt",
+        "aliases": [
+          "Julian",
+          "Brandt"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2023-04-18_napoli_milan",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Napoli",
+        "awayTeam": "Milan",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2023-04-18",
+        "dateLabel": "18 April 2023",
+        "round": "Quarter-Finals, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Olivier Giroud",
+          "lastName": "Giroud",
+          "goals": 1,
+          "team": "Milan"
+        },
+        {
+          "fullName": "Victor Osimhen",
+          "lastName": "Osimhen",
+          "goals": 1,
+          "team": "Napoli"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-12-21_crystal_palace_arsenal_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Crystal Palace",
+        "home": false,
+        "teamScore": 5,
+        "opponentScore": 1,
+        "date": "2024-12-21",
+        "dateLabel": "21 December 2024",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Jurriën Timber",
+          "lastName": "Timber",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Myles Lewis-Skelly",
+          "lastName": "Lewis-Skelly",
+          "shirtNumber": 49,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Thomas Partey",
+          "lastName": "Partey",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "de Jesus",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
