@@ -9302,5 +9302,306 @@
         ]
       ]
     }
+  },
+  "2026-09-07": {
+    "list": {
+      "id": "list_premier_league_assists_country_portugal_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Portuguese assist providers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 73,
+          "rank": 1
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Silva",
+          "value": 50,
+          "rank": 2
+        },
+        {
+          "fullName": "Nani",
+          "lastName": "Nani",
+          "value": 43,
+          "rank": 3
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "Ronaldo",
+          "value": 37,
+          "rank": 4
+        },
+        {
+          "fullName": "Luís Boa Morte",
+          "lastName": "Morte",
+          "value": 35,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_kevin_de_bruyne",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 2,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2012",
+          "club": "Genk",
+          "appearances": 97,
+          "goals": 16
+        },
+        {
+          "years": "2012–2014",
+          "club": "Chelsea",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2012–2013",
+          "club": "Werder Bremen",
+          "appearances": 33,
+          "goals": 10,
+          "loan": true
+        },
+        {
+          "years": "2014–2015",
+          "club": "VfL Wolfsburg",
+          "appearances": 52,
+          "goals": 13
+        },
+        {
+          "years": "2015–2025",
+          "club": "Manchester City",
+          "appearances": 285,
+          "goals": 72
+        },
+        {
+          "years": "2025–",
+          "club": "Napoli",
+          "appearances": 18,
+          "goals": 5
+        }
+      ],
+      "answer": {
+        "fullName": "Kevin De Bruyne",
+        "lastName": "De Bruyne",
+        "aliases": [
+          "Kevin",
+          "Bruyne"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_gabriel_jesus",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 64,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Jesus",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2015–2017",
+          "club": "Palmeiras",
+          "appearances": 67,
+          "goals": 21
+        },
+        {
+          "years": "2017–2022",
+          "club": "Manchester City",
+          "appearances": 159,
+          "goals": 58
+        },
+        {
+          "years": "2022–",
+          "club": "Arsenal",
+          "appearances": 84,
+          "goals": 21
+        }
+      ],
+      "answer": {
+        "fullName": "Gabriel Jesus",
+        "lastName": "Jesus",
+        "aliases": [
+          "Gabriel",
+          "Jesus"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2023-03-07_chelsea_borussia_dortmund",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Borussia Dortmund",
+        "homeScore": 2,
+        "awayScore": 0,
+        "date": "2023-03-07",
+        "dateLabel": "7 March 2023",
+        "round": "Round of 16, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2025-04-16_real_madrid_arsenal_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Real Madrid",
+        "opponent": "Arsenal",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2025-04-16",
+        "dateLabel": "16 April 2025",
+        "round": "Quarter-Finals, second leg",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Thibaut Courtois",
+          "lastName": "Courtois",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Lucas Vázquez",
+          "lastName": "Vázquez",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Raúl Asencio",
+          "lastName": "Asencio",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "shirtNumber": 22,
+          "position": "D"
+        },
+        {
+          "fullName": "David Alaba",
+          "lastName": "Alaba",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Federico Valverde",
+          "lastName": "Valverde",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Aurélien Tchouaméni",
+          "lastName": "Tchouaméni",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrygo",
+          "lastName": "Silva de Goes",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Jude Bellingham",
+          "lastName": "Bellingham",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Vinícius Júnior",
+          "lastName": "Paixão de Oliveira Júnior",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Kylian Mbappé",
+          "lastName": "Mbappé",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
