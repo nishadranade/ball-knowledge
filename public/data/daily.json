@@ -9603,5 +9603,351 @@
         ]
       ]
     }
+  },
+  "2026-09-08": {
+    "list": {
+      "id": "list_champions_league_assists_country_italy_5",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Italian assist providers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Marco Verratti",
+          "lastName": "Verratti",
+          "value": 9,
+          "rank": 1
+        },
+        {
+          "fullName": "Alessandro Bastoni",
+          "lastName": "Bastoni",
+          "value": 6,
+          "rank": 2
+        },
+        {
+          "fullName": "Federico Bernardeschi",
+          "lastName": "Bernardeschi",
+          "value": 6,
+          "rank": 3
+        },
+        {
+          "fullName": "Federico Dimarco",
+          "lastName": "Dimarco",
+          "value": 6,
+          "rank": 4
+        },
+        {
+          "fullName": "Davide Zappacosta",
+          "lastName": "Zappacosta",
+          "value": 6,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_anthony_martial",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 88,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Anthony_Martial",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2013",
+          "club": "Lyon B",
+          "appearances": 11,
+          "goals": 5
+        },
+        {
+          "years": "2013",
+          "club": "Lyon",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2013",
+          "club": "Monaco B",
+          "appearances": 4,
+          "goals": 3
+        },
+        {
+          "years": "2013–2015",
+          "club": "Monaco",
+          "appearances": 49,
+          "goals": 11
+        },
+        {
+          "years": "2015–2024",
+          "club": "Manchester United",
+          "appearances": 209,
+          "goals": 63
+        },
+        {
+          "years": "2022",
+          "club": "Sevilla",
+          "appearances": 9,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2024–2025",
+          "club": "AEK Athens",
+          "appearances": 16,
+          "goals": 7
+        },
+        {
+          "years": "2025–2026",
+          "club": "Monterrey",
+          "appearances": 17,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Anthony Martial",
+        "lastName": "Martial",
+        "aliases": [
+          "Anthony",
+          "Martial"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_dusan_tadic",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 54,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dusan_Tadic",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2010",
+          "club": "Vojvodina",
+          "appearances": 107,
+          "goals": 29
+        },
+        {
+          "years": "2010–2012",
+          "club": "Groningen",
+          "appearances": 68,
+          "goals": 14
+        },
+        {
+          "years": "2012–2014",
+          "club": "Twente",
+          "appearances": 66,
+          "goals": 28
+        },
+        {
+          "years": "2014–2018",
+          "club": "Southampton",
+          "appearances": 134,
+          "goals": 21
+        },
+        {
+          "years": "2018–2023",
+          "club": "Ajax",
+          "appearances": 161,
+          "goals": 77
+        },
+        {
+          "years": "2023–2025",
+          "club": "Fenerbahçe",
+          "appearances": 73,
+          "goals": 21
+        },
+        {
+          "years": "2025–2026",
+          "club": "Al Wahda",
+          "appearances": 25,
+          "goals": 1
+        },
+        {
+          "years": "2026–",
+          "club": "NEC Nijmegen"
+        }
+      ],
+      "answer": {
+        "fullName": "Dusan Tadic",
+        "lastName": "Tadic",
+        "aliases": [
+          "Dusan",
+          "Tadic"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-01-04_manchester_city_west_ham_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "West Ham United",
+        "homeScore": 4,
+        "awayScore": 1,
+        "date": "2025-01-04",
+        "dateLabel": "4 January 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 2,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Niclas Füllkrug",
+          "lastName": "Füllkrug",
+          "goals": 1,
+          "team": "West Ham United"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-10-20_wolverhampton_wanderers_manchester_city_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester City",
+        "opponent": "Wolverhampton Wanderers",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2024-10-20",
+        "dateLabel": "20 October 2024",
+        "formation": "4-1-4-1"
+      },
+      "answers": [
+        {
+          "fullName": "Ederson",
+          "lastName": "Santana de Moraes",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Rico Lewis",
+          "lastName": "Lewis",
+          "shirtNumber": 82,
+          "position": "D"
+        },
+        {
+          "fullName": "John Stones",
+          "lastName": "Stones",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "dos Santos Gato Alves Dias",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Savinho",
+          "lastName": "Moreira de Oliveira",
+          "shirtNumber": 26,
+          "position": "M"
+        },
+        {
+          "fullName": "Ilkay Gündogan",
+          "lastName": "Gündogan",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
