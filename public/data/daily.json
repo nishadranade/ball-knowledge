@@ -9949,5 +9949,373 @@
         ]
       ]
     }
+  },
+  "2026-09-09": {
+    "list": {
+      "id": "list_champions_league_goals_country_spain_3",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 Spanish goalscorers in Champions League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Raúl",
+          "lastName": "Raúl",
+          "value": 71,
+          "rank": 1
+        },
+        {
+          "fullName": "Fernando Morientes",
+          "lastName": "Morientes",
+          "value": 33,
+          "rank": 2
+        },
+        {
+          "fullName": "Paco Gento",
+          "lastName": "Gento",
+          "value": 30,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_dimitar_berbatov",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 40,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dimitar_Berbatov",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–2001",
+          "club": "CSKA Sofia",
+          "appearances": 50,
+          "goals": 26
+        },
+        {
+          "years": "2001",
+          "club": "Bayer Leverkusen II",
+          "appearances": 7,
+          "goals": 6
+        },
+        {
+          "years": "2001–2006",
+          "club": "Bayer Leverkusen",
+          "appearances": 154,
+          "goals": 69
+        },
+        {
+          "years": "2006–2008",
+          "club": "Tottenham Hotspur",
+          "appearances": 70,
+          "goals": 27
+        },
+        {
+          "years": "2008–2012",
+          "club": "Manchester United",
+          "appearances": 108,
+          "goals": 48
+        },
+        {
+          "years": "2012–2014",
+          "club": "Fulham",
+          "appearances": 51,
+          "goals": 19
+        },
+        {
+          "years": "2014–2015",
+          "club": "Monaco",
+          "appearances": 38,
+          "goals": 13
+        },
+        {
+          "years": "2015–2016",
+          "club": "PAOK",
+          "appearances": 17,
+          "goals": 4
+        },
+        {
+          "years": "2017–2018",
+          "club": "Kerala Blasters",
+          "appearances": 9,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Dimitar Berbatov",
+        "lastName": "Berbatov",
+        "aliases": [
+          "Dimitar",
+          "Berbatov"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_luiz_gustavo",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 126,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Luiz_Gustavo",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006",
+          "club": "Ipanema"
+        },
+        {
+          "years": "2006",
+          "club": "{{ill|Universal Futebol Clube"
+        },
+        {
+          "years": "2007–2008",
+          "club": "Corinthians Alagoano",
+          "appearances": 21,
+          "goals": 2
+        },
+        {
+          "years": "2007",
+          "club": "CRB",
+          "appearances": 14,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2007–2008",
+          "club": "TSG Hoffenheim",
+          "appearances": 27,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2008–2011",
+          "club": "TSG Hoffenheim",
+          "appearances": 72,
+          "goals": 2
+        },
+        {
+          "years": "2011–2013",
+          "club": "Bayern Munich",
+          "appearances": 64,
+          "goals": 6
+        },
+        {
+          "years": "2013–2017",
+          "club": "VfL Wolfsburg",
+          "appearances": 109,
+          "goals": 7
+        },
+        {
+          "years": "2017–2019",
+          "club": "Marseille",
+          "appearances": 67,
+          "goals": 7
+        },
+        {
+          "years": "2019–2022",
+          "club": "Fenerbahçe",
+          "appearances": 84,
+          "goals": 5
+        },
+        {
+          "years": "2022–2023",
+          "club": "Al-Nassr",
+          "appearances": 29,
+          "goals": 5
+        },
+        {
+          "years": "2024–2025",
+          "club": "São Paulo",
+          "appearances": 46,
+          "goals": 5
+        },
+        {
+          "years": "2026–",
+          "club": "Athletico Paranaense",
+          "appearances": 6,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Luiz Gustavo",
+        "lastName": "Gustavo",
+        "aliases": [
+          "Luiz",
+          "Gustavo"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-02-24_manchester_united_fulham",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester United",
+        "awayTeam": "Fulham",
+        "homeScore": 1,
+        "awayScore": 2,
+        "date": "2024-02-24",
+        "dateLabel": "24 February 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Calvin Bassey",
+          "lastName": "Bassey",
+          "goals": 1,
+          "team": "Fulham"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Alex Iwobi",
+          "lastName": "Iwobi",
+          "goals": 1,
+          "team": "Fulham"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-02-04_manchester_united_crystal_palace_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Crystal Palace",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2023-02-04",
+        "dateLabel": "4 February 2023",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Raphaël Varane",
+          "lastName": "Varane",
+          "shirtNumber": 19,
+          "position": "D"
+        },
+        {
+          "fullName": "Lisandro Martínez",
+          "lastName": "Martínez",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Fred",
+          "lastName": "Rodrigues de Paula Santos",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Antony",
+          "lastName": "dos Santos",
+          "shirtNumber": 21,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Wout Weghorst",
+          "lastName": "Weghorst",
+          "shirtNumber": 27,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
