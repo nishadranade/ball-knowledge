@@ -10317,5 +10317,400 @@
         ]
       ]
     }
+  },
+  "2026-09-10": {
+    "list": {
+      "id": "list_premier_league_assists_country_denmark_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Danish assist providers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 78,
+          "rank": 1
+        },
+        {
+          "fullName": "Thomas Gravesen",
+          "lastName": "Gravesen",
+          "value": 25,
+          "rank": 2
+        },
+        {
+          "fullName": "Claus Jensen",
+          "lastName": "Jensen",
+          "value": 22,
+          "rank": 3
+        },
+        {
+          "fullName": "Nicklas Bendtner",
+          "lastName": "Bendtner",
+          "value": 16,
+          "rank": 4
+        },
+        {
+          "fullName": "Mikkel Damsgaard",
+          "lastName": "Damsgaard",
+          "value": 16,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_ruud_van_nistelrooij",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 37,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ruud_van_Nistelrooij",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1997",
+          "club": "Den Bosch",
+          "appearances": 69,
+          "goals": 17
+        },
+        {
+          "years": "1997–1998",
+          "club": "Heerenveen",
+          "appearances": 31,
+          "goals": 13
+        },
+        {
+          "years": "1998–2001",
+          "club": "PSV Eindhoven",
+          "appearances": 67,
+          "goals": 62
+        },
+        {
+          "years": "2001–2006",
+          "club": "Manchester United",
+          "appearances": 150,
+          "goals": 95
+        },
+        {
+          "years": "2006–2010",
+          "club": "Real Madrid",
+          "appearances": 68,
+          "goals": 46
+        },
+        {
+          "years": "2010–2011",
+          "club": "Hamburger SV",
+          "appearances": 36,
+          "goals": 12
+        },
+        {
+          "years": "2011–2012",
+          "club": "Málaga",
+          "appearances": 28,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Ruud van Nistelrooij",
+        "lastName": "van Nistelrooij",
+        "aliases": [
+          "Ruud",
+          "van",
+          "Nistelrooij"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_angeli_o",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 81,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Angeliño",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2015–2018",
+          "club": "Manchester City",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2015",
+          "club": "New York City FC",
+          "appearances": 14,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2017",
+          "club": "Girona",
+          "appearances": 0,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2017",
+          "club": "Mallorca",
+          "appearances": 17,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2017–2018",
+          "club": "NAC Breda",
+          "appearances": 34,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "PSV Eindhoven",
+          "appearances": 34,
+          "goals": 1
+        },
+        {
+          "years": "2019–2021",
+          "club": "Manchester City",
+          "appearances": 6,
+          "goals": 0
+        },
+        {
+          "years": "2020–2021",
+          "club": "RB Leipzig",
+          "appearances": 39,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2021–2024",
+          "club": "RB Leipzig",
+          "appearances": 29,
+          "goals": 2
+        },
+        {
+          "years": "2022–2023",
+          "club": "TSG Hoffenheim",
+          "appearances": 33,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2023–2024",
+          "club": "Galatasaray",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2024",
+          "club": "Roma",
+          "appearances": 16,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2024–",
+          "club": "Roma",
+          "appearances": 45,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Angeliño",
+        "lastName": "Angeliño",
+        "aliases": [
+          "Angeliño"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-08-27_liverpool_bournemouth",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Bournemouth",
+        "homeScore": 9,
+        "awayScore": 0,
+        "date": "2022-08-27",
+        "dateLabel": "27 August 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Fábio Carvalho",
+          "lastName": "Freitas Gouveia de Carvalho",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-12-28_arsenal_west_ham_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "West Ham United",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 2,
+        "date": "2023-12-28",
+        "dateLabel": "28 December 2023",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "de Jesus",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
