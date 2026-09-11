@@ -10712,5 +10712,327 @@
         ]
       ]
     }
+  },
+  "2026-09-11": {
+    "list": {
+      "id": "list_premier_league_stat_shots_2017_18_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 144,
+          "rank": 2
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 97,
+          "rank": 3
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 95,
+          "rank": 4
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 94,
+          "rank": 5
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 94,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_lukasz_fabianski",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 62,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lukasz_Fabianski",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2004–2005",
+          "club": "Lech Poznań",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2005–2007",
+          "club": "Legia Warsaw",
+          "appearances": 53,
+          "goals": 0
+        },
+        {
+          "years": "2007–2014",
+          "club": "Arsenal",
+          "appearances": 32,
+          "goals": 0
+        },
+        {
+          "years": "2014–2018",
+          "club": "Swansea City",
+          "appearances": 149,
+          "goals": 0
+        },
+        {
+          "years": "2018–2025",
+          "club": "West Ham United",
+          "appearances": 195,
+          "goals": 0
+        },
+        {
+          "years": "2025–2026",
+          "club": "West Ham United",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Lukasz Fabianski",
+        "lastName": "Fabianski",
+        "aliases": [
+          "Lukasz",
+          "Fabianski"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_per_mertesacker",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 76,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Per_Mertesacker",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2004",
+          "club": "Hannover 96 II",
+          "appearances": 16,
+          "goals": 1
+        },
+        {
+          "years": "2003–2006",
+          "club": "Hannover 96",
+          "appearances": 74,
+          "goals": 7
+        },
+        {
+          "years": "2006–2011",
+          "club": "Werder Bremen",
+          "appearances": 147,
+          "goals": 12
+        },
+        {
+          "years": "2011–2018",
+          "club": "Arsenal",
+          "appearances": 156,
+          "goals": 6
+        }
+      ],
+      "answer": {
+        "fullName": "Per Mertesacker",
+        "lastName": "Mertesacker",
+        "aliases": [
+          "Per",
+          "Mertesacker"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-04-30_fc_barcelona_internazionale",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "FC Barcelona",
+        "awayTeam": "Internazionale",
+        "homeScore": 3,
+        "awayScore": 3,
+        "date": "2025-04-30",
+        "dateLabel": "30 April 2025",
+        "round": "Semi-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Marcus Thuram",
+          "lastName": "Thuram",
+          "goals": 1,
+          "team": "Internazionale"
+        },
+        {
+          "fullName": "Denzel Dumfries",
+          "lastName": "Dumfries",
+          "goals": 2,
+          "team": "Internazionale"
+        },
+        {
+          "fullName": "Lamine Yamal",
+          "lastName": "Nasraoui Ebana",
+          "goals": 1,
+          "team": "FC Barcelona"
+        },
+        {
+          "fullName": "Ferran Torres",
+          "lastName": "Torres",
+          "goals": 1,
+          "team": "FC Barcelona"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-02-22_arsenal_west_ham_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "West Ham United",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2025-02-22",
+        "dateLabel": "22 February 2025",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Jurriën Timber",
+          "lastName": "Timber",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Riccardo Calafiori",
+          "lastName": "Calafiori",
+          "shirtNumber": 33,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Thomas Partey",
+          "lastName": "Partey",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Ethan Nwaneri",
+          "lastName": "Nwaneri",
+          "shirtNumber": 53,
+          "position": "F"
+        },
+        {
+          "fullName": "Mikel Merino",
+          "lastName": "Merino",
+          "shirtNumber": 23,
+          "position": "F"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
