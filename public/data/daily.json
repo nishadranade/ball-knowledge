@@ -11034,5 +11034,318 @@
         ]
       ]
     }
+  },
+  "2026-09-12": {
+    "list": {
+      "id": "list_premier_league_stat_saves_2021_22_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most saves in the Premier League in the 2021/22 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Illan Meslier",
+          "lastName": "Meslier",
+          "value": 143,
+          "rank": 1
+        },
+        {
+          "fullName": "Kasper Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 131,
+          "rank": 2
+        },
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "value": 128,
+          "rank": 3
+        },
+        {
+          "fullName": "José Sá",
+          "lastName": "Sá",
+          "value": 121,
+          "rank": 4
+        },
+        {
+          "fullName": "Nick Pope",
+          "lastName": "Pope",
+          "value": 121,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_eric_dier",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 100,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eric_Dier",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2014",
+          "club": "Sporting CP B",
+          "appearances": 16,
+          "goals": 2
+        },
+        {
+          "years": "2012–2014",
+          "club": "Sporting CP",
+          "appearances": 27,
+          "goals": 1
+        },
+        {
+          "years": "2014–2024",
+          "club": "Tottenham Hotspur",
+          "appearances": 274,
+          "goals": 12
+        },
+        {
+          "years": "2024",
+          "club": "Bayern Munich",
+          "appearances": 15,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2024–2025",
+          "club": "Bayern Munich",
+          "appearances": 21,
+          "goals": 2
+        },
+        {
+          "years": "2025–",
+          "club": "Monaco",
+          "appearances": 9,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Eric Dier",
+        "lastName": "Dier",
+        "aliases": [
+          "Eric",
+          "Dier"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_youri_tielemans",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 103,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Youri_Tielemans",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2013–2017",
+          "club": "Anderlecht",
+          "appearances": 139,
+          "goals": 26
+        },
+        {
+          "years": "2017–2019",
+          "club": "Monaco",
+          "appearances": 47,
+          "goals": 5
+        },
+        {
+          "years": "2019",
+          "club": "Leicester City",
+          "appearances": 13,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2019–2023",
+          "club": "Leicester City",
+          "appearances": 138,
+          "goals": 18
+        },
+        {
+          "years": "2023–2026",
+          "club": "Aston Villa",
+          "appearances": 93,
+          "goals": 5
+        },
+        {
+          "years": "2026–",
+          "club": "Manchester United",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Youri Tielemans",
+        "lastName": "Tielemans",
+        "aliases": [
+          "Youri",
+          "Tielemans"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2026-04-07_sporting_lisbon_arsenal",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Sporting Lisbon",
+        "awayTeam": "Arsenal",
+        "homeScore": 0,
+        "awayScore": 1,
+        "date": "2026-04-07",
+        "dateLabel": "7 April 2026",
+        "round": "Quarter-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-02-16_liverpool_wolverhampton_wanderers_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Wolverhampton Wanderers",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2025-02-16",
+        "dateLabel": "16 February 2025",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "shirtNumber": 38,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Mac Allister",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "shirtNumber": 20,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
