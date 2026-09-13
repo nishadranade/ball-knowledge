@@ -11347,5 +11347,363 @@
         ]
       ]
     }
+  },
+  "2026-09-13": {
+    "list": {
+      "id": "list_champions_league_appearances_country_england_5",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 English appearance makers in Champions League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_footballers_with_100_or_more_UEFA_Champions_League_appearances",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Paul Scholes",
+          "lastName": "Scholes",
+          "value": 124,
+          "rank": 1
+        },
+        {
+          "fullName": "Gary Neville",
+          "lastName": "Neville",
+          "value": 109,
+          "rank": 2
+        },
+        {
+          "fullName": "John Terry",
+          "lastName": "Terry",
+          "value": 109,
+          "rank": 3
+        },
+        {
+          "fullName": "Ashley Cole",
+          "lastName": "Cole",
+          "value": 108,
+          "rank": 4
+        },
+        {
+          "fullName": "David Beckham",
+          "lastName": "Beckham",
+          "value": 107,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_martin_degaard",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 103,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Martin_Ødegaard",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2013",
+          "club": "Strømsgodset 3",
+          "appearances": 11,
+          "goals": 4
+        },
+        {
+          "years": "2013–2014",
+          "club": "Strømsgodset 2",
+          "appearances": 5,
+          "goals": 1
+        },
+        {
+          "years": "2014–2015",
+          "club": "Strømsgodset",
+          "appearances": 23,
+          "goals": 5
+        },
+        {
+          "years": "2015–2017",
+          "club": "Real Madrid Castilla",
+          "appearances": 58,
+          "goals": 5
+        },
+        {
+          "years": "2015–2021",
+          "club": "Real Madrid",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2017–2018",
+          "club": "Heerenveen",
+          "appearances": 38,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "Vitesse",
+          "appearances": 31,
+          "goals": 8,
+          "loan": true
+        },
+        {
+          "years": "2019–2020",
+          "club": "Real Sociedad",
+          "appearances": 31,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2021",
+          "club": "Arsenal",
+          "appearances": 14,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2021–",
+          "club": "Arsenal",
+          "appearances": 162,
+          "goals": 34
+        }
+      ],
+      "answer": {
+        "fullName": "Martin Ødegaard",
+        "lastName": "Ødegaard",
+        "aliases": [
+          "Martin",
+          "Ødegaard"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_scott_parker",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 68,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Scott_Parker",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1997–2004",
+          "club": "Charlton Athletic",
+          "appearances": 128,
+          "goals": 9
+        },
+        {
+          "years": "2000",
+          "club": "Norwich City",
+          "appearances": 6,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2004–2005",
+          "club": "Chelsea",
+          "appearances": 15,
+          "goals": 1
+        },
+        {
+          "years": "2005–2007",
+          "club": "Newcastle United",
+          "appearances": 55,
+          "goals": 4
+        },
+        {
+          "years": "2007–2011",
+          "club": "West Ham United",
+          "appearances": 113,
+          "goals": 10
+        },
+        {
+          "years": "2011–2013",
+          "club": "Tottenham Hotspur",
+          "appearances": 50,
+          "goals": 0
+        },
+        {
+          "years": "2013–2017",
+          "club": "Fulham",
+          "appearances": 119,
+          "goals": 6
+        }
+      ],
+      "answer": {
+        "fullName": "Scott Parker",
+        "lastName": "Parker",
+        "aliases": [
+          "Scott",
+          "Parker"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-12-31_fulham_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Fulham",
+        "awayTeam": "Arsenal",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2023-12-31",
+        "dateLabel": "31 December 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "goals": 1,
+          "team": "Fulham"
+        },
+        {
+          "fullName": "Bobby De Cordova-Reid",
+          "lastName": "De Cordova-Reid",
+          "goals": 1,
+          "team": "Fulham"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2025-04-16_internazionale_fc_bayern_m_nchen_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "FC Bayern München",
+        "opponent": "Internazionale",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 2,
+        "date": "2025-04-16",
+        "dateLabel": "16 April 2025",
+        "round": "Quarter-Finals, second leg",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Jonas Urbig",
+          "lastName": "Urbig",
+          "shirtNumber": 40,
+          "position": "G"
+        },
+        {
+          "fullName": "Konrad Laimer",
+          "lastName": "Laimer",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Kim Min-Jae",
+          "lastName": "Kim",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Josip Stanisic",
+          "lastName": "Stanisic",
+          "shirtNumber": 44,
+          "position": "D"
+        },
+        {
+          "fullName": "Leon Goretzka",
+          "lastName": "Goretzka",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Joshua Kimmich",
+          "lastName": "Kimmich",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Michael Olise",
+          "lastName": "Olise",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Thomas Müller",
+          "lastName": "Müller",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Leroy Sané",
+          "lastName": "Sané",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
