@@ -12364,5 +12364,380 @@
         ]
       ]
     }
+  },
+  "2026-09-16": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_leeds_united_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Leeds United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Nigel Martyn",
+          "lastName": "Martyn",
+          "value": 82,
+          "rank": 1
+        },
+        {
+          "fullName": "John Lukic",
+          "lastName": "Lukic",
+          "value": 44,
+          "rank": 2
+        },
+        {
+          "fullName": "Illan Meslier",
+          "lastName": "Meslier",
+          "value": 21,
+          "rank": 3
+        },
+        {
+          "fullName": "Paul Robinson",
+          "lastName": "Robinson",
+          "value": 18,
+          "rank": 4
+        },
+        {
+          "fullName": "Mark Beeney",
+          "lastName": "Beeney",
+          "value": 13,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_matt_upson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 167,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Matt_Upson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1996–1997",
+          "club": "Luton Town",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "1997–2003",
+          "club": "Arsenal",
+          "appearances": 35,
+          "goals": 0
+        },
+        {
+          "years": "2000",
+          "club": "Nottingham Forest",
+          "appearances": 1,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2001",
+          "club": "Crystal Palace",
+          "appearances": 7,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2002",
+          "club": "Reading",
+          "appearances": 14,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2003–2007",
+          "club": "Birmingham City",
+          "appearances": 113,
+          "goals": 5
+        },
+        {
+          "years": "2007–2011",
+          "club": "West Ham United",
+          "appearances": 131,
+          "goals": 4
+        },
+        {
+          "years": "2011–2013",
+          "club": "Stoke City",
+          "appearances": 15,
+          "goals": 2
+        },
+        {
+          "years": "2013",
+          "club": "Brighton & Hove Albion",
+          "appearances": 18,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2013–2014",
+          "club": "Brighton & Hove Albion",
+          "appearances": 43,
+          "goals": 2
+        },
+        {
+          "years": "2014–2015",
+          "club": "Leicester City",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2015–2016",
+          "club": "Milton Keynes Dons",
+          "appearances": 3,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Matt Upson",
+        "lastName": "Upson",
+        "aliases": [
+          "Matt",
+          "Upson"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_martin_keown",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 52,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Martin_Keown",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1984–1986",
+          "club": "Arsenal",
+          "appearances": 22,
+          "goals": 0
+        },
+        {
+          "years": "1985",
+          "club": "Brighton & Hove Albion",
+          "appearances": 23,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "1986–1989",
+          "club": "Aston Villa",
+          "appearances": 112,
+          "goals": 3
+        },
+        {
+          "years": "1989–1993",
+          "club": "Everton",
+          "appearances": 96,
+          "goals": 0
+        },
+        {
+          "years": "1993–2004",
+          "club": "Arsenal",
+          "appearances": 310,
+          "goals": 4
+        },
+        {
+          "years": "2004–2005",
+          "club": "Leicester City",
+          "appearances": 17,
+          "goals": 0
+        },
+        {
+          "years": "2005",
+          "club": "Reading",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2012",
+          "club": "Wembley",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Martin Keown",
+        "lastName": "Keown",
+        "aliases": [
+          "Martin",
+          "Keown"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2023-05-17_manchester_city_real_madrid",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Real Madrid",
+        "homeScore": 4,
+        "awayScore": 0,
+        "date": "2023-05-17",
+        "dateLabel": "17 May 2023",
+        "round": "Semi-Finals, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "goals": 2,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Manuel Akanji",
+          "lastName": "Akanji",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Julián Alvarez",
+          "lastName": "Alvarez",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2026-02-24_atl_tico_madrid_club_brugge_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Atlético Madrid",
+        "opponent": "Club Brugge",
+        "home": true,
+        "teamScore": 4,
+        "opponentScore": 1,
+        "date": "2026-02-24",
+        "dateLabel": "24 February 2026",
+        "round": "Play-Offs, second leg",
+        "formation": "4-4-2"
+      },
+      "answers": [
+        {
+          "fullName": "Jan Oblak",
+          "lastName": "Oblak",
+          "shirtNumber": 13,
+          "position": "G"
+        },
+        {
+          "fullName": "Marcos Llorente",
+          "lastName": "Llorente",
+          "shirtNumber": 14,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Pubill",
+          "lastName": "Pubill",
+          "shirtNumber": 18,
+          "position": "D"
+        },
+        {
+          "fullName": "Dávid Hancko",
+          "lastName": "Hancko",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Matteo Ruggeri",
+          "lastName": "Ruggeri",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Giuliano Simeone",
+          "lastName": "Simeone",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Koke",
+          "lastName": "Resurrección Merodio",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Johnny Cardoso",
+          "lastName": "Cardoso",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Álex Baena",
+          "lastName": "Baena",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexander Sørloth",
+          "lastName": "Sørloth",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Julián Alvarez",
+          "lastName": "Alvarez",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
