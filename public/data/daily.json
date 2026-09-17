@@ -12739,5 +12739,361 @@
         ]
       ]
     }
+  },
+  "2026-09-17": {
+    "list": {
+      "id": "list_premier_league_goals_country_republic_of_ireland_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Irish goalscorers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Robbie Keane",
+          "lastName": "Keane",
+          "value": 126,
+          "rank": 1
+        },
+        {
+          "fullName": "Niall Quinn",
+          "lastName": "Quinn",
+          "value": 59,
+          "rank": 2
+        },
+        {
+          "fullName": "Shane Long",
+          "lastName": "Long",
+          "value": 56,
+          "rank": 3
+        },
+        {
+          "fullName": "Damien Duff",
+          "lastName": "Duff",
+          "value": 54,
+          "rank": 4
+        },
+        {
+          "fullName": "Jonathan Walters",
+          "lastName": "Walters",
+          "value": 43,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_timo_werner",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Timo_Werner",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2013–2016",
+          "club": "VfB Stuttgart",
+          "appearances": 95,
+          "goals": 13
+        },
+        {
+          "years": "2014",
+          "club": "VfB Stuttgart II",
+          "appearances": 1,
+          "goals": 1
+        },
+        {
+          "years": "2016–2020",
+          "club": "RB Leipzig",
+          "appearances": 127,
+          "goals": 78
+        },
+        {
+          "years": "2020–2022",
+          "club": "Chelsea",
+          "appearances": 56,
+          "goals": 10
+        },
+        {
+          "years": "2022–2026",
+          "club": "RB Leipzig",
+          "appearances": 38,
+          "goals": 11
+        },
+        {
+          "years": "2024–2025",
+          "club": "Tottenham Hotspur",
+          "appearances": 31,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2026–",
+          "club": "San Jose Earthquakes",
+          "appearances": 8,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Timo Werner",
+        "lastName": "Werner",
+        "aliases": [
+          "Timo",
+          "Werner"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_mikel_arteta",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 78,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mikel_Arteta",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2002",
+          "club": "Barcelona B",
+          "appearances": 42,
+          "goals": 3
+        },
+        {
+          "years": "2001–2002",
+          "club": "Paris Saint-Germain",
+          "appearances": 31,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2002–2004",
+          "club": "Rangers",
+          "appearances": 50,
+          "goals": 12
+        },
+        {
+          "years": "2004–2005",
+          "club": "Real Sociedad",
+          "appearances": 15,
+          "goals": 1
+        },
+        {
+          "years": "2005",
+          "club": "Everton",
+          "appearances": 12,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2005–2011",
+          "club": "Everton",
+          "appearances": 162,
+          "goals": 27
+        },
+        {
+          "years": "2011–2016",
+          "club": "Arsenal",
+          "appearances": 110,
+          "goals": 14
+        }
+      ],
+      "answer": {
+        "fullName": "Mikel Arteta",
+        "lastName": "Arteta",
+        "aliases": [
+          "Mikel",
+          "Arteta"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2026-03-11_paris_saint_germain_chelsea",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Paris Saint Germain",
+        "awayTeam": "Chelsea",
+        "homeScore": 5,
+        "awayScore": 2,
+        "date": "2026-03-11",
+        "dateLabel": "11 March 2026",
+        "round": "Round of 16, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Bradley Barcola",
+          "lastName": "Barcola",
+          "goals": 1,
+          "team": "Paris Saint Germain"
+        },
+        {
+          "fullName": "Malo Gusto",
+          "lastName": "Gusto",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Ousmane Dembélé",
+          "lastName": "Dembélé",
+          "goals": 1,
+          "team": "Paris Saint Germain"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Vitinha",
+          "lastName": "Machado Ferreira",
+          "goals": 1,
+          "team": "Paris Saint Germain"
+        },
+        {
+          "fullName": "Khvicha Kvaratskhelia",
+          "lastName": "Kvaratskhelia",
+          "goals": 2,
+          "team": "Paris Saint Germain"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-09-28_wolverhampton_wanderers_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Wolverhampton Wanderers",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2024-09-28",
+        "dateLabel": "28 September 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "shirtNumber": 38,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Mac Allister",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "shirtNumber": 20,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
