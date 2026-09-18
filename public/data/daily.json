@@ -13095,5 +13095,340 @@
         ]
       ]
     }
+  },
+  "2026-09-18": {
+    "list": {
+      "id": "list_champions_league_assists_country_france_10",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 French assist providers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Kylian Mbappé",
+          "lastName": "Mbappé",
+          "value": 25,
+          "rank": 1
+        },
+        {
+          "fullName": "Karim Benzema",
+          "lastName": "Benzema",
+          "value": 24,
+          "rank": 2
+        },
+        {
+          "fullName": "Ousmane Dembélé",
+          "lastName": "Dembélé",
+          "value": 20,
+          "rank": 3
+        },
+        {
+          "fullName": "Antoine Griezmann",
+          "lastName": "Griezmann",
+          "value": 16,
+          "rank": 4
+        },
+        {
+          "fullName": "Kingsley Coman",
+          "lastName": "Coman",
+          "value": 14,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_thiago_silva",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 36,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Thiago_Silva",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2002–2003",
+          "club": "RS Futebol",
+          "appearances": 25,
+          "goals": 2
+        },
+        {
+          "years": "2004",
+          "club": "Juventude",
+          "appearances": 35,
+          "goals": 3
+        },
+        {
+          "years": "2004–2005",
+          "club": "Porto B",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2005–2006",
+          "club": "Dynamo Moscow",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2006–2008",
+          "club": "Fluminense",
+          "appearances": 108,
+          "goals": 9
+        },
+        {
+          "years": "2009–2012",
+          "club": "AC Milan",
+          "appearances": 93,
+          "goals": 5
+        },
+        {
+          "years": "2012–2020",
+          "club": "Paris Saint-Germain",
+          "appearances": 204,
+          "goals": 9
+        },
+        {
+          "years": "2020–2024",
+          "club": "Chelsea",
+          "appearances": 113,
+          "goals": 8
+        },
+        {
+          "years": "2024–2025",
+          "club": "Fluminense",
+          "appearances": 47,
+          "goals": 3
+        },
+        {
+          "years": "2026",
+          "club": "Porto",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Fluminense",
+          "appearances": 1,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Thiago Silva",
+        "lastName": "Silva",
+        "aliases": [
+          "Thiago",
+          "Silva"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_jude_bellingham",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 32,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jude_Bellingham",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2019–2020",
+          "club": "Birmingham City",
+          "appearances": 41,
+          "goals": 4
+        },
+        {
+          "years": "2020–2023",
+          "club": "Borussia Dortmund",
+          "appearances": 92,
+          "goals": 12
+        },
+        {
+          "years": "2023–",
+          "club": "Real Madrid",
+          "appearances": 87,
+          "goals": 34
+        }
+      ],
+      "answer": {
+        "fullName": "Jude Bellingham",
+        "lastName": "Bellingham",
+        "aliases": [
+          "Jude",
+          "Bellingham"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-02-12_club_brugge_atalanta",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Club Brugge",
+        "awayTeam": "Atalanta",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2025-02-12",
+        "dateLabel": "12 February 2025",
+        "round": "Play-Offs, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Ferran Jutglà",
+          "lastName": "Jutglà",
+          "goals": 1,
+          "team": "Club Brugge"
+        },
+        {
+          "fullName": "Mario Pasalic",
+          "lastName": "Pasalic",
+          "goals": 1,
+          "team": "Atalanta"
+        },
+        {
+          "fullName": "Gustaf Nilsson",
+          "lastName": "Nilsson",
+          "goals": 1,
+          "team": "Club Brugge"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-04-03_tottenham_hotspur_newcastle_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Newcastle United",
+        "home": true,
+        "teamScore": 5,
+        "opponentScore": 1,
+        "date": "2022-04-03",
+        "dateLabel": "3 April 2022",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Hugo Lloris",
+          "lastName": "Lloris",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Ben Davies",
+          "lastName": "Davies",
+          "shirtNumber": 33,
+          "position": "D"
+        },
+        {
+          "fullName": "Emerson Royal",
+          "lastName": "Leite de Souza Júnior",
+          "shirtNumber": 12,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrigo Bentancur",
+          "lastName": "Bentancur",
+          "shirtNumber": 30,
+          "position": "M"
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Matt Doherty",
+          "lastName": "Doherty",
+          "shirtNumber": 2,
+          "position": "M"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "F"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
