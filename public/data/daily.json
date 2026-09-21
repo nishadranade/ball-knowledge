@@ -14089,5 +14089,323 @@
         ]
       ]
     }
+  },
+  "2026-09-21": {
+    "list": {
+      "id": "list_premier_league_club_relegated_2024_25",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs relegated from the Premier League at the end of the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leicester City",
+          "lastName": "Leicester",
+          "noAutoTokens": true,
+          "value": 25
+        },
+        {
+          "fullName": "Ipswich Town",
+          "lastName": "Ipswich",
+          "noAutoTokens": true,
+          "value": 22
+        },
+        {
+          "fullName": "Southampton",
+          "lastName": "Southampton",
+          "noAutoTokens": true,
+          "value": 12
+        }
+      ]
+    },
+    "career": {
+      "id": "career_marc_andr_ter_stegen",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 11,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marc-André_ter_Stegen",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2011",
+          "club": "Borussia Mönchengladbach II",
+          "appearances": 18,
+          "goals": 0
+        },
+        {
+          "years": "2010–2014",
+          "club": "Borussia Mönchengladbach",
+          "appearances": 108,
+          "goals": 0
+        },
+        {
+          "years": "2014–",
+          "club": "Barcelona",
+          "appearances": 291,
+          "goals": 0
+        },
+        {
+          "years": "2026",
+          "club": "Girona",
+          "appearances": 2,
+          "goals": 0,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Marc-André ter Stegen",
+        "lastName": "ter Stegen",
+        "aliases": [
+          "Marc-André",
+          "ter",
+          "Stegen"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_konstantinos_manolas",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 148,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Konstantinos_Manolas",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2009",
+          "club": "Thrasyvoulos",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2009–2012",
+          "club": "AEK Athens",
+          "appearances": 66,
+          "goals": 3
+        },
+        {
+          "years": "2012–2014",
+          "club": "Olympiacos",
+          "appearances": 49,
+          "goals": 4
+        },
+        {
+          "years": "2014–2019",
+          "club": "Roma",
+          "appearances": 156,
+          "goals": 5
+        },
+        {
+          "years": "2019–2022",
+          "club": "Napoli",
+          "appearances": 60,
+          "goals": 4
+        },
+        {
+          "years": "2022",
+          "club": "Olympiacos",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2022–2024",
+          "club": "Sharjah",
+          "appearances": 26,
+          "goals": 0
+        },
+        {
+          "years": "2024",
+          "club": "Salernitana",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2024–",
+          "club": "Pannaxiakos",
+          "appearances": 30,
+          "goals": 26
+        }
+      ],
+      "answer": {
+        "fullName": "Konstantinos Manolas",
+        "lastName": "Manolas",
+        "aliases": [
+          "Konstantinos",
+          "Manolas"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-05-19_arsenal_everton",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "Everton",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2024-05-19",
+        "dateLabel": "19 May 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Idrissa Gueye",
+          "lastName": "Gueye",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Takehiro Tomiyasu",
+          "lastName": "Tomiyasu",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-10-19_manchester_united_brentford_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Brentford",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2024-10-19",
+        "dateLabel": "19 October 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "André Onana",
+          "lastName": "Onana",
+          "shirtNumber": 24,
+          "position": "G"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 20,
+          "position": "D"
+        },
+        {
+          "fullName": "Matthijs de Ligt",
+          "lastName": "de Ligt",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Jonny Evans",
+          "lastName": "Evans",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Lisandro Martínez",
+          "lastName": "Martínez",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Alejandro Garnacho",
+          "lastName": "Garnacho",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Rasmus Højlund",
+          "lastName": "Højlund",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
