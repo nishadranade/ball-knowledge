@@ -14407,5 +14407,348 @@
         ]
       ]
     }
+  },
+  "2026-09-22": {
+    "list": {
+      "id": "list_premier_league_appearances_country_argentina_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Argentine appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Pablo Zabaleta",
+          "lastName": "Zabaleta",
+          "value": 302,
+          "rank": 1
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 275,
+          "rank": 2
+        },
+        {
+          "fullName": "Emiliano Martínez",
+          "lastName": "Martínez",
+          "value": 229,
+          "rank": 3
+        },
+        {
+          "fullName": "Fabricio Coloccini",
+          "lastName": "Coloccini",
+          "value": 211,
+          "rank": 4
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Allister",
+          "value": 205,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_robert_pir_s",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 82,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Robert_Pirès",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1991–1992",
+          "club": "Reims",
+          "appearances": 5,
+          "goals": 2
+        },
+        {
+          "years": "1992–1993",
+          "club": "Metz B",
+          "appearances": 23,
+          "goals": 5
+        },
+        {
+          "years": "1993–1998",
+          "club": "Metz",
+          "appearances": 162,
+          "goals": 43
+        },
+        {
+          "years": "1998–2000",
+          "club": "Marseille",
+          "appearances": 66,
+          "goals": 8
+        },
+        {
+          "years": "2000–2006",
+          "club": "Arsenal",
+          "appearances": 189,
+          "goals": 62
+        },
+        {
+          "years": "2006–2010",
+          "club": "Villarreal",
+          "appearances": 103,
+          "goals": 13
+        },
+        {
+          "years": "2010–2011",
+          "club": "Aston Villa",
+          "appearances": 9,
+          "goals": 0
+        },
+        {
+          "years": "2014–2015",
+          "club": "Goa",
+          "appearances": 8,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Robert Pirès",
+        "lastName": "Pirès",
+        "aliases": [
+          "Robert",
+          "Pirès"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_guilherme_siqueira",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Guilherme_Siqueira",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2010",
+          "club": "Udinese",
+          "appearances": 23,
+          "goals": 0
+        },
+        {
+          "years": "2008–2009",
+          "club": "Ancona",
+          "appearances": 24,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2010–2014",
+          "club": "Granada",
+          "appearances": 100,
+          "goals": 12
+        },
+        {
+          "years": "2013–2014",
+          "club": "Benfica",
+          "appearances": 18,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2014–2017",
+          "club": "Atlético Madrid",
+          "appearances": 26,
+          "goals": 1
+        },
+        {
+          "years": "2016–2017",
+          "club": "Valencia",
+          "appearances": 24,
+          "goals": 0,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Guilherme Siqueira",
+        "lastName": "Siqueira",
+        "aliases": [
+          "Guilherme",
+          "Siqueira"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-04-26_manchester_city_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Arsenal",
+        "homeScore": 4,
+        "awayScore": 1,
+        "date": "2023-04-26",
+        "dateLabel": "26 April 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "goals": 2,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "John Stones",
+          "lastName": "Stones",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Rob Holding",
+          "lastName": "Holding",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-04-18_chelsea_manchester_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Manchester United",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2026-04-18",
+        "dateLabel": "18 April 2026",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Malo Gusto",
+          "lastName": "Gusto",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Wesley Fofana",
+          "lastName": "Fofana",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Jorrel Hato",
+          "lastName": "Hato",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Estêvão",
+          "lastName": "Almeida de Oliveira Gonçalves",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Liam Delap",
+          "lastName": "Delap",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
