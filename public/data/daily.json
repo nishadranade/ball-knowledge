@@ -14750,5 +14750,353 @@
         ]
       ]
     }
+  },
+  "2026-09-23": {
+    "list": {
+      "id": "list_premier_league_appearances_club_liverpool_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Liverpool in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jamie Carragher",
+          "lastName": "Carragher",
+          "value": 508,
+          "rank": 1
+        },
+        {
+          "fullName": "Steven Gerrard",
+          "lastName": "Gerrard",
+          "value": 504,
+          "rank": 2
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "value": 360,
+          "rank": 3
+        },
+        {
+          "fullName": "Sami Hyypiä",
+          "lastName": "Hyypiä",
+          "value": 318,
+          "rank": 4
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 315,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_arjen_robben",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 43,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Arjen_Robben",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000–2002",
+          "club": "Groningen",
+          "appearances": 46,
+          "goals": 8
+        },
+        {
+          "years": "2002–2004",
+          "club": "PSV",
+          "appearances": 56,
+          "goals": 17
+        },
+        {
+          "years": "2004–2007",
+          "club": "Chelsea",
+          "appearances": 67,
+          "goals": 15
+        },
+        {
+          "years": "2007–2009",
+          "club": "Real Madrid",
+          "appearances": 50,
+          "goals": 11
+        },
+        {
+          "years": "2009–2019",
+          "club": "Bayern Munich",
+          "appearances": 201,
+          "goals": 99
+        },
+        {
+          "years": "2020–2021",
+          "club": "Groningen",
+          "appearances": 6,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Arjen Robben",
+        "lastName": "Robben",
+        "aliases": [
+          "Arjen",
+          "Robben"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_yann_sommer",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 29,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Yann_Sommer",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2005–2007",
+          "club": "FC Basel U21",
+          "appearances": 42,
+          "goals": 0
+        },
+        {
+          "years": "2007–2014",
+          "club": "FC Basel",
+          "appearances": 113,
+          "goals": 0
+        },
+        {
+          "years": "2007–2009",
+          "club": "FC Vaduz",
+          "appearances": 50,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2009–2010",
+          "club": "Grasshoppers",
+          "appearances": 33,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2014–2023",
+          "club": "Borussia Mönchengladbach",
+          "appearances": 272,
+          "goals": 0
+        },
+        {
+          "years": "2023",
+          "club": "Bayern Munich",
+          "appearances": 19,
+          "goals": 0
+        },
+        {
+          "years": "2023–2026",
+          "club": "Inter Milan",
+          "appearances": 100,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Club Brugge",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Yann Sommer",
+        "lastName": "Sommer",
+        "aliases": [
+          "Yann",
+          "Sommer"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-02-11_west_ham_united_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "West Ham United",
+        "awayTeam": "Arsenal",
+        "homeScore": 0,
+        "awayScore": 6,
+        "date": "2024-02-11",
+        "dateLabel": "11 February 2024"
+      },
+      "answers": [
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "goals": 2,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-04-19_everton_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Everton",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2026-04-19",
+        "dateLabel": "19 April 2026",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Giorgi Mamardashvili",
+          "lastName": "Mamardashvili",
+          "shirtNumber": 25,
+          "position": "G"
+        },
+        {
+          "fullName": "Curtis Jones",
+          "lastName": "Jones",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "shirtNumber": 38,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Florian Wirtz",
+          "lastName": "Wirtz",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexander Isak",
+          "lastName": "Isak",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
