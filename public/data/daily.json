@@ -15098,5 +15098,346 @@
         ]
       ]
     }
+  },
+  "2026-09-24": {
+    "list": {
+      "id": "list_premier_league_assists_club_newcastle_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Newcastle United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Nolberto Solano",
+          "lastName": "Solano",
+          "value": 54,
+          "rank": 1
+        },
+        {
+          "fullName": "Alan Shearer",
+          "lastName": "Shearer",
+          "value": 36,
+          "rank": 2
+        },
+        {
+          "fullName": "Robert Lee",
+          "lastName": "Lee",
+          "value": 31,
+          "rank": 3
+        },
+        {
+          "fullName": "Jacob Murphy",
+          "lastName": "Murphy",
+          "value": 30,
+          "rank": 4
+        },
+        {
+          "fullName": "Laurent Robert",
+          "lastName": "Robert",
+          "value": 29,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_dennis_wise",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 92,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dennis_Wise",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1985–1990",
+          "club": "Wimbledon",
+          "appearances": 135,
+          "goals": 27
+        },
+        {
+          "years": "1985",
+          "club": "Grebbestads IF",
+          "appearances": 10,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "1990–2001",
+          "club": "Chelsea",
+          "appearances": 332,
+          "goals": 53
+        },
+        {
+          "years": "2001–2002",
+          "club": "Leicester City",
+          "appearances": 17,
+          "goals": 1
+        },
+        {
+          "years": "2002–2005",
+          "club": "Millwall",
+          "appearances": 85,
+          "goals": 7
+        },
+        {
+          "years": "2005–2006",
+          "club": "Southampton",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "2006",
+          "club": "Coventry City",
+          "appearances": 13,
+          "goals": 6
+        },
+        {
+          "years": "2006",
+          "club": "Swindon Town",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Dennis Wise",
+        "lastName": "Wise",
+        "aliases": [
+          "Dennis",
+          "Wise"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_marquinhos",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 11,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marquinhos",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2013",
+          "club": "Corinthians",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2012–2013",
+          "club": "Roma",
+          "appearances": 16,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2013",
+          "club": "Roma",
+          "appearances": 10,
+          "goals": 0
+        },
+        {
+          "years": "2013–",
+          "club": "Paris Saint-Germain",
+          "appearances": 326,
+          "goals": 26
+        }
+      ],
+      "answer": {
+        "fullName": "Marquinhos",
+        "lastName": "Marquinhos",
+        "aliases": [
+          "Marquinhos"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-11-04_manchester_city_bournemouth",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Bournemouth",
+        "homeScore": 6,
+        "awayScore": 1,
+        "date": "2023-11-04",
+        "dateLabel": "4 November 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "goals": 2,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Manuel Akanji",
+          "lastName": "Akanji",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Luis Sinisterra",
+          "lastName": "Sinisterra",
+          "goals": 1,
+          "team": "Bournemouth"
+        },
+        {
+          "fullName": "Nathan Aké",
+          "lastName": "Aké",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-12-06_manchester_united_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Manchester United",
+        "home": false,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2023-12-06",
+        "dateLabel": "6 December 2023",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Axel Disasi",
+          "lastName": "Disasi",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Thiago Silva",
+          "lastName": "Emiliano da Silva",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Levi Colwill",
+          "lastName": "Colwill",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Mykhailo Mudryk",
+          "lastName": "Mudryk",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Nicolas Jackson",
+          "lastName": "Jackson",
+          "shirtNumber": 15,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
