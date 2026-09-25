@@ -15439,5 +15439,353 @@
         ]
       ]
     }
+  },
+  "2026-09-25": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_manchester_city_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ederson",
+          "lastName": "Ederson",
+          "value": 122,
+          "rank": 1
+        },
+        {
+          "fullName": "Joe Hart",
+          "lastName": "Hart",
+          "value": 109,
+          "rank": 2
+        },
+        {
+          "fullName": "Tony Coton",
+          "lastName": "Coton",
+          "value": 26,
+          "rank": 3
+        },
+        {
+          "fullName": "David James",
+          "lastName": "James",
+          "value": 20,
+          "rank": 4
+        },
+        {
+          "fullName": "Gianluigi Donnarumma",
+          "lastName": "Donnarumma",
+          "value": 15,
+          "rank": 5
+        },
+        {
+          "fullName": "Nicky Weaver",
+          "lastName": "Weaver",
+          "value": 15,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_jo_o_moutinho",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/João_Moutinho",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2004",
+          "club": "Sporting CP B",
+          "appearances": 30,
+          "goals": 1
+        },
+        {
+          "years": "2004–2010",
+          "club": "Sporting CP",
+          "appearances": 163,
+          "goals": 21
+        },
+        {
+          "years": "2010–2013",
+          "club": "Porto",
+          "appearances": 83,
+          "goals": 4
+        },
+        {
+          "years": "2013–2018",
+          "club": "Monaco",
+          "appearances": 158,
+          "goals": 9
+        },
+        {
+          "years": "2018–2023",
+          "club": "Wolverhampton Wanderers",
+          "appearances": 175,
+          "goals": 5
+        },
+        {
+          "years": "2023–",
+          "club": "Braga",
+          "appearances": 83,
+          "goals": 3
+        }
+      ],
+      "answer": {
+        "fullName": "João Moutinho",
+        "lastName": "Moutinho",
+        "aliases": [
+          "João",
+          "Moutinho"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_didier_drogba",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 33,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Didier_Drogba",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–2002",
+          "club": "Le Mans",
+          "appearances": 64,
+          "goals": 12
+        },
+        {
+          "years": "2002–2003",
+          "club": "Guingamp",
+          "appearances": 45,
+          "goals": 20
+        },
+        {
+          "years": "2003–2004",
+          "club": "Marseille",
+          "appearances": 35,
+          "goals": 19
+        },
+        {
+          "years": "2004–2012",
+          "club": "Chelsea",
+          "appearances": 226,
+          "goals": 100
+        },
+        {
+          "years": "2012–2013",
+          "club": "Shanghai Shenhua",
+          "appearances": 11,
+          "goals": 8
+        },
+        {
+          "years": "2013–2014",
+          "club": "Galatasaray",
+          "appearances": 37,
+          "goals": 15
+        },
+        {
+          "years": "2014–2015",
+          "club": "Chelsea",
+          "appearances": 28,
+          "goals": 4
+        },
+        {
+          "years": "2015–2016",
+          "club": "Montreal Impact",
+          "appearances": 33,
+          "goals": 21
+        },
+        {
+          "years": "2017–2018",
+          "club": "Phoenix Rising",
+          "appearances": 21,
+          "goals": 13
+        }
+      ],
+      "answer": {
+        "fullName": "Didier Drogba",
+        "lastName": "Drogba",
+        "aliases": [
+          "Didier",
+          "Drogba"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-09-12_leeds_united_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Leeds United",
+        "awayTeam": "Liverpool",
+        "homeScore": 0,
+        "awayScore": 3,
+        "date": "2021-09-12",
+        "dateLabel": "12 September 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-10-29_liverpool_leeds_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Leeds United",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2022-10-29",
+        "dateLabel": "29 October 2022",
+        "formation": "4-1-2-1-2"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joe Gomez",
+          "lastName": "Gomez",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "shirtNumber": 9,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "shirtNumber": 27,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
