@@ -16115,5 +16115,319 @@
         ]
       ]
     }
+  },
+  "2026-09-27": {
+    "list": {
+      "id": "list_premier_league_appearances_country_england_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 English appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Milner",
+          "lastName": "Milner",
+          "value": 658,
+          "rank": 1
+        },
+        {
+          "fullName": "Gareth Barry",
+          "lastName": "Barry",
+          "value": 653,
+          "rank": 2
+        },
+        {
+          "fullName": "Frank Lampard",
+          "lastName": "Lampard",
+          "value": 609,
+          "rank": 3
+        },
+        {
+          "fullName": "David James",
+          "lastName": "James",
+          "value": 572,
+          "rank": 4
+        },
+        {
+          "fullName": "Emile Heskey",
+          "lastName": "Heskey",
+          "value": 516,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_juli_n_alvarez",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 81,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Julián_Alvarez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2018–2022",
+          "club": "River Plate",
+          "appearances": 57,
+          "goals": 23
+        },
+        {
+          "years": "2022–2024",
+          "club": "Manchester City",
+          "appearances": 67,
+          "goals": 20
+        },
+        {
+          "years": "2022",
+          "club": "River Plate",
+          "appearances": 17,
+          "goals": 11,
+          "loan": true
+        },
+        {
+          "years": "2024–",
+          "club": "Atlético Madrid",
+          "appearances": 66,
+          "goals": 25
+        }
+      ],
+      "answer": {
+        "fullName": "Julián Alvarez",
+        "lastName": "Alvarez",
+        "aliases": [
+          "Julián",
+          "Alvarez"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_joseph_yobo",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 86,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Yobo",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–2001",
+          "club": "Standard Liège",
+          "appearances": 46,
+          "goals": 2
+        },
+        {
+          "years": "2001–2003",
+          "club": "Marseille",
+          "appearances": 23,
+          "goals": 0
+        },
+        {
+          "years": "2001–2002",
+          "club": "Tenerife",
+          "appearances": 0,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2002–2003",
+          "club": "Everton",
+          "appearances": 24,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2003–2012",
+          "club": "Everton",
+          "appearances": 196,
+          "goals": 8
+        },
+        {
+          "years": "2010–2012",
+          "club": "Fenerbahçe",
+          "appearances": 69,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2012–2014",
+          "club": "Fenerbahçe",
+          "appearances": 21,
+          "goals": 1
+        },
+        {
+          "years": "2014",
+          "club": "Norwich City",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Joseph Yobo",
+        "lastName": "Yobo",
+        "aliases": [
+          "Joseph",
+          "Yobo"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-04-16_southampton_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Southampton",
+        "awayTeam": "Arsenal",
+        "homeScore": 1,
+        "awayScore": 0,
+        "date": "2022-04-16",
+        "dateLabel": "16 April 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "goals": 1,
+          "team": "Southampton"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2024-04-16_fc_barcelona_paris_saint_germain_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Paris Saint Germain",
+        "opponent": "FC Barcelona",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 1,
+        "date": "2024-04-16",
+        "dateLabel": "16 April 2024",
+        "round": "Quarter-Finals, second leg",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Gianluigi Donnarumma",
+          "lastName": "Donnarumma",
+          "shirtNumber": 99,
+          "position": "G"
+        },
+        {
+          "fullName": "Achraf Hakimi",
+          "lastName": "Hakimi",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Marquinhos",
+          "lastName": "Aoás Corrêa",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Lucas Hernández",
+          "lastName": "Hernández",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Nuno Mendes",
+          "lastName": "Tavares Mendes",
+          "shirtNumber": 25,
+          "position": "D"
+        },
+        {
+          "fullName": "Warren Zaïre-Emery",
+          "lastName": "Zaïre-Emery",
+          "shirtNumber": 33,
+          "position": "M"
+        },
+        {
+          "fullName": "Vitinha",
+          "lastName": "Machado Ferreira",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabián Ruiz",
+          "lastName": "Ruiz",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Ousmane Dembélé",
+          "lastName": "Dembélé",
+          "shirtNumber": 10,
+          "position": "F"
+        },
+        {
+          "fullName": "Kylian Mbappé",
+          "lastName": "Mbappé",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Bradley Barcola",
+          "lastName": "Barcola",
+          "shirtNumber": 29,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
