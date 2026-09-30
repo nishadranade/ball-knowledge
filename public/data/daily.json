@@ -17099,5 +17099,327 @@
         ]
       ]
     }
+  },
+  "2026-09-30": {
+    "list": {
+      "id": "list_premier_league_assists_club_manchester_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Manchester United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Giggs",
+          "lastName": "Giggs",
+          "value": 162,
+          "rank": 1
+        },
+        {
+          "fullName": "Wayne Rooney",
+          "lastName": "Rooney",
+          "value": 93,
+          "rank": 2
+        },
+        {
+          "fullName": "David Beckham",
+          "lastName": "Beckham",
+          "value": 80,
+          "rank": 3
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 73,
+          "rank": 4
+        },
+        {
+          "fullName": "Paul Scholes",
+          "lastName": "Scholes",
+          "value": 55,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_jos_callej_n",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 149,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/José_Callejón",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Real Madrid C",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2007–2008",
+          "club": "Real Madrid B",
+          "appearances": 41,
+          "goals": 21
+        },
+        {
+          "years": "2008–2011",
+          "club": "Espanyol",
+          "appearances": 97,
+          "goals": 10
+        },
+        {
+          "years": "2011–2013",
+          "club": "Real Madrid",
+          "appearances": 55,
+          "goals": 8
+        },
+        {
+          "years": "2013–2020",
+          "club": "Napoli",
+          "appearances": 255,
+          "goals": 64
+        },
+        {
+          "years": "2020–2022",
+          "club": "Fiorentina",
+          "appearances": 50,
+          "goals": 1
+        },
+        {
+          "years": "2022–2024",
+          "club": "Granada",
+          "appearances": 67,
+          "goals": 4
+        },
+        {
+          "years": "2024–2025",
+          "club": "Marbella",
+          "appearances": 38,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "José Callejón",
+        "lastName": "Callejón",
+        "aliases": [
+          "José",
+          "Callejón"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_atsuto_uchida",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atsuto_Uchida",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2010",
+          "club": "Kashima Antlers",
+          "appearances": 124,
+          "goals": 3
+        },
+        {
+          "years": "2010–2017",
+          "club": "Schalke 04",
+          "appearances": 104,
+          "goals": 1
+        },
+        {
+          "years": "2017–2018",
+          "club": "Union Berlin",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2018–2020",
+          "club": "Kashima Antlers",
+          "appearances": 24,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Atsuto Uchida",
+        "lastName": "Uchida",
+        "aliases": [
+          "Atsuto",
+          "Uchida"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-03-08_liverpool_southampton",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Southampton",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2025-03-08",
+        "dateLabel": "8 March 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Will Smallbone",
+          "lastName": "Smallbone",
+          "goals": 1,
+          "team": "Southampton"
+        },
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 2,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-12-29_west_ham_united_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "West Ham United",
+        "home": false,
+        "teamScore": 5,
+        "opponentScore": 0,
+        "date": "2024-12-29",
+        "dateLabel": "29 December 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joe Gomez",
+          "lastName": "Gomez",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "shirtNumber": 38,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Mac Allister",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Curtis Jones",
+          "lastName": "Jones",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
