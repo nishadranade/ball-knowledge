@@ -17421,5 +17421,352 @@
         ]
       ]
     }
+  },
+  "2026-10-01": {
+    "list": {
+      "id": "list_champions_league_appearances_country_argentina_3",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 Argentine appearance makers in Champions League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_footballers_with_100_or_more_UEFA_Champions_League_appearances",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Lionel Messi",
+          "lastName": "Messi",
+          "value": 163,
+          "rank": 1
+        },
+        {
+          "fullName": "Ángel Di María",
+          "lastName": "Di María",
+          "value": 116,
+          "rank": 2
+        },
+        {
+          "fullName": "Nicolás Otamendi",
+          "lastName": "Otamendi",
+          "value": 102,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_nolberto_solano",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 25,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nolberto_Solano",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993",
+          "club": "Sporting Cristal",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "1993",
+          "club": "Deportivo Municipal",
+          "appearances": 27,
+          "goals": 7
+        },
+        {
+          "years": "1994–1997",
+          "club": "Sporting Cristal",
+          "appearances": 97,
+          "goals": 31
+        },
+        {
+          "years": "1997–1998",
+          "club": "Boca Juniors",
+          "appearances": 32,
+          "goals": 5
+        },
+        {
+          "years": "1998–2004",
+          "club": "Newcastle United",
+          "appearances": 172,
+          "goals": 29
+        },
+        {
+          "years": "2004–2005",
+          "club": "Aston Villa",
+          "appearances": 49,
+          "goals": 8
+        },
+        {
+          "years": "2005–2007",
+          "club": "Newcastle United",
+          "appearances": 58,
+          "goals": 8
+        },
+        {
+          "years": "2007–2008",
+          "club": "West Ham United",
+          "appearances": 23,
+          "goals": 4
+        },
+        {
+          "years": "2008",
+          "club": "AEL",
+          "appearances": 17,
+          "goals": 2
+        },
+        {
+          "years": "2009",
+          "club": "Universitario",
+          "appearances": 32,
+          "goals": 10
+        },
+        {
+          "years": "2010",
+          "club": "Leicester City",
+          "appearances": 13,
+          "goals": 0
+        },
+        {
+          "years": "2010–2011",
+          "club": "Hull City",
+          "appearances": 11,
+          "goals": 0
+        },
+        {
+          "years": "2011–2012",
+          "club": "Hartlepool United",
+          "appearances": 14,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Nolberto Solano",
+        "lastName": "Solano",
+        "aliases": [
+          "Nolberto",
+          "Solano"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_harry_maguire",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 179,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harry_Maguire",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2014",
+          "club": "Sheffield United",
+          "appearances": 134,
+          "goals": 9
+        },
+        {
+          "years": "2014–2017",
+          "club": "Hull City",
+          "appearances": 54,
+          "goals": 2
+        },
+        {
+          "years": "2015",
+          "club": "Wigan Athletic",
+          "appearances": 16,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2017–2019",
+          "club": "Leicester City",
+          "appearances": 69,
+          "goals": 5
+        },
+        {
+          "years": "2019–",
+          "club": "Manchester United",
+          "appearances": 190,
+          "goals": 8
+        }
+      ],
+      "answer": {
+        "fullName": "Harry Maguire",
+        "lastName": "Maguire",
+        "aliases": [
+          "Harry",
+          "Maguire"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-04-03_manchester_city_aston_villa",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Aston Villa",
+        "homeScore": 4,
+        "awayScore": 1,
+        "date": "2024-04-03",
+        "dateLabel": "3 April 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Rodri",
+          "lastName": "Hernández Cascante",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Jhon Durán",
+          "lastName": "Durán",
+          "goals": 1,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 3,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-12-08_wolverhampton_wanderers_manchester_united_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Wolverhampton Wanderers",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 1,
+        "date": "2025-12-08",
+        "dateLabel": "8 December 2025",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Senne Lammens",
+          "lastName": "Lammens",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Noussair Mazraoui",
+          "lastName": "Mazraoui",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Ayden Heaven",
+          "lastName": "Heaven",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 2,
+          "position": "M"
+        },
+        {
+          "fullName": "Bryan Mbeumo",
+          "lastName": "Mbeumo",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Santos Carneiro da Cunha",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
