@@ -18099,5 +18099,374 @@
         ]
       ]
     }
+  },
+  "2026-10-03": {
+    "list": {
+      "id": "list_premier_league_appearances_country_wales_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Welsh appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Giggs",
+          "lastName": "Giggs",
+          "value": 632,
+          "rank": 1
+        },
+        {
+          "fullName": "Gary Speed",
+          "lastName": "Speed",
+          "value": 535,
+          "rank": 2
+        },
+        {
+          "fullName": "Robbie Savage",
+          "lastName": "Savage",
+          "value": 346,
+          "rank": 3
+        },
+        {
+          "fullName": "Ben Davies",
+          "lastName": "Davies",
+          "value": 316,
+          "rank": 4
+        },
+        {
+          "fullName": "Simon Davies",
+          "lastName": "Davies",
+          "value": 303,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_edmond_tapsoba",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Edmond_Tapsoba",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2015",
+          "club": "Salitas"
+        },
+        {
+          "years": "2015–2017",
+          "club": "US Ouagadougou"
+        },
+        {
+          "years": "2017–2018",
+          "club": "Leixões",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2018–2020",
+          "club": "Vitória de Guimarães B",
+          "appearances": 30,
+          "goals": 7
+        },
+        {
+          "years": "2019–2020",
+          "club": "Vitória de Guimarães",
+          "appearances": 16,
+          "goals": 4
+        },
+        {
+          "years": "2020–",
+          "club": "Bayer Leverkusen",
+          "appearances": 186,
+          "goals": 8
+        }
+      ],
+      "answer": {
+        "fullName": "Edmond Tapsoba",
+        "lastName": "Tapsoba",
+        "aliases": [
+          "Edmond",
+          "Tapsoba"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_jonathan_walters",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 170,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jonathan_Walters",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000–2001",
+          "club": "Blackburn Rovers",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2001–2004",
+          "club": "Bolton Wanderers",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2003",
+          "club": "Hull City",
+          "appearances": 11,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2003",
+          "club": "Crewe Alexandra",
+          "appearances": 0,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2003–2004",
+          "club": "Barnsley",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2004–2005",
+          "club": "Hull City",
+          "appearances": 37,
+          "goals": 2
+        },
+        {
+          "years": "2005",
+          "club": "Scunthorpe United",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2005–2006",
+          "club": "Wrexham",
+          "appearances": 38,
+          "goals": 5
+        },
+        {
+          "years": "2006–2007",
+          "club": "Chester City",
+          "appearances": 26,
+          "goals": 9
+        },
+        {
+          "years": "2007–2010",
+          "club": "Ipswich Town",
+          "appearances": 136,
+          "goals": 30
+        },
+        {
+          "years": "2010–2017",
+          "club": "Stoke City",
+          "appearances": 226,
+          "goals": 43
+        },
+        {
+          "years": "2017–2019",
+          "club": "Burnley",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2018",
+          "club": "Ipswich Town",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Jonathan Walters",
+        "lastName": "Walters",
+        "aliases": [
+          "Jonathan",
+          "Walters"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-05-15_aston_villa_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Aston Villa",
+        "awayTeam": "Liverpool",
+        "homeScore": 4,
+        "awayScore": 2,
+        "date": "2026-05-15",
+        "dateLabel": "15 May 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Morgan Rogers",
+          "lastName": "Rogers",
+          "goals": 1,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Ollie Watkins",
+          "lastName": "Watkins",
+          "goals": 2,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "John McGinn",
+          "lastName": "McGinn",
+          "goals": 1,
+          "team": "Aston Villa"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-01-02_brentford_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Brentford",
+        "home": false,
+        "teamScore": 1,
+        "opponentScore": 3,
+        "date": "2023-01-02",
+        "dateLabel": "2 January 2023",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Kostas Tsimikas",
+          "lastName": "Tsimikas",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "shirtNumber": 27,
+          "position": "F"
+        },
+        {
+          "fullName": "Alex Oxlade-Chamberlain",
+          "lastName": "Oxlade-Chamberlain",
+          "shirtNumber": 15,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
