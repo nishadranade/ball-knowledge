@@ -18468,5 +18468,393 @@
         ]
       ]
     }
+  },
+  "2026-10-04": {
+    "list": {
+      "id": "list_premier_league_goals_club_manchester_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Manchester United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Wayne Rooney",
+          "lastName": "Rooney",
+          "value": 183,
+          "rank": 1
+        },
+        {
+          "fullName": "Ryan Giggs",
+          "lastName": "Giggs",
+          "value": 109,
+          "rank": 2
+        },
+        {
+          "fullName": "Paul Scholes",
+          "lastName": "Scholes",
+          "value": 107,
+          "rank": 3
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "Ronaldo",
+          "value": 103,
+          "rank": 4
+        },
+        {
+          "fullName": "Ruud van Nistelrooij",
+          "lastName": "van Nistelrooij",
+          "value": 95,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_andros_townsend",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 157,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Andros_Townsend",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2016",
+          "club": "Tottenham Hotspur",
+          "appearances": 50,
+          "goals": 3
+        },
+        {
+          "years": "2009",
+          "club": "Yeovil Town",
+          "appearances": 10,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2009",
+          "club": "Leyton Orient",
+          "appearances": 22,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Milton Keynes Dons",
+          "appearances": 9,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Ipswich Town",
+          "appearances": 13,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Watford",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Millwall",
+          "appearances": 11,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2012",
+          "club": "Leeds United",
+          "appearances": 6,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2012",
+          "club": "Birmingham City",
+          "appearances": 15,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2013",
+          "club": "Queens Park Rangers",
+          "appearances": 12,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2016",
+          "club": "Newcastle United",
+          "appearances": 13,
+          "goals": 4
+        },
+        {
+          "years": "2016–2021",
+          "club": "Crystal Palace",
+          "appearances": 168,
+          "goals": 13
+        },
+        {
+          "years": "2021–2023",
+          "club": "Everton",
+          "appearances": 21,
+          "goals": 3
+        },
+        {
+          "years": "2023–2024",
+          "club": "Luton Town",
+          "appearances": 28,
+          "goals": 1
+        },
+        {
+          "years": "2024–2025",
+          "club": "Antalyaspor",
+          "appearances": 18,
+          "goals": 0
+        },
+        {
+          "years": "2025–",
+          "club": "Kanchanaburi Power",
+          "appearances": 30,
+          "goals": 3
+        }
+      ],
+      "answer": {
+        "fullName": "Andros Townsend",
+        "lastName": "Townsend",
+        "aliases": [
+          "Andros",
+          "Townsend"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_wojciech_szczesny",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 45,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wojciech_Szczesny",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2017",
+          "club": "Arsenal",
+          "appearances": 132,
+          "goals": 0
+        },
+        {
+          "years": "2009–2010",
+          "club": "Brentford",
+          "appearances": 28,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2015–2017",
+          "club": "Roma",
+          "appearances": 72,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2017–2024",
+          "club": "Juventus",
+          "appearances": 200,
+          "goals": 0
+        },
+        {
+          "years": "2024–",
+          "club": "Barcelona",
+          "appearances": 23,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Wojciech Szczesny",
+        "lastName": "Szczesny",
+        "aliases": [
+          "Wojciech",
+          "Szczesny"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-05-22_chelsea_watford",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Watford",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2022-05-22",
+        "dateLabel": "22 May 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Dan Gosling",
+          "lastName": "Gosling",
+          "goals": 1,
+          "team": "Watford"
+        },
+        {
+          "fullName": "Ross Barkley",
+          "lastName": "Barkley",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2026-04-28_paris_saint_germain_fc_bayern_m_nchen_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "FC Bayern München",
+        "opponent": "Paris Saint Germain",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 5,
+        "date": "2026-04-28",
+        "dateLabel": "28 April 2026",
+        "round": "Semi-Finals, first leg",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Manuel Neuer",
+          "lastName": "Neuer",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Josip Stanisic",
+          "lastName": "Stanisic",
+          "shirtNumber": 44,
+          "position": "D"
+        },
+        {
+          "fullName": "Dayot Upamecano",
+          "lastName": "Upamecano",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Jonathan Tah",
+          "lastName": "Tah",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Alphonso Davies",
+          "lastName": "Davies",
+          "shirtNumber": 19,
+          "position": "D"
+        },
+        {
+          "fullName": "Joshua Kimmich",
+          "lastName": "Kimmich",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Aleksandar Pavlovic",
+          "lastName": "Pavlovic",
+          "shirtNumber": 45,
+          "position": "M"
+        },
+        {
+          "fullName": "Michael Olise",
+          "lastName": "Olise",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Jamal Musiala",
+          "lastName": "Musiala",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
