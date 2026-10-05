@@ -18856,5 +18856,310 @@
         ]
       ]
     }
+  },
+  "2026-10-05": {
+    "list": {
+      "id": "list_premier_league_assists_club_leicester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Leicester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jamie Vardy",
+          "lastName": "Vardy",
+          "value": 48,
+          "rank": 1
+        },
+        {
+          "fullName": "Marc Albrighton",
+          "lastName": "Albrighton",
+          "value": 34,
+          "rank": 2
+        },
+        {
+          "fullName": "Steve Guppy",
+          "lastName": "Guppy",
+          "value": 34,
+          "rank": 3
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "value": 32,
+          "rank": 4
+        },
+        {
+          "fullName": "Riyad Mahrez",
+          "lastName": "Mahrez",
+          "value": 27,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_d_sir_dou_",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Désiré_Doué",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2021–2023",
+          "club": "Rennes II",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "2022–2024",
+          "club": "Rennes",
+          "appearances": 57,
+          "goals": 7
+        },
+        {
+          "years": "2024–",
+          "club": "Paris Saint-Germain",
+          "appearances": 54,
+          "goals": 13
+        }
+      ],
+      "answer": {
+        "fullName": "Désiré Doué",
+        "lastName": "Doué",
+        "aliases": [
+          "Désiré",
+          "Doué"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_kevin_davies",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 28,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kevin_Davies",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1997",
+          "club": "Chesterfield",
+          "appearances": 129,
+          "goals": 22
+        },
+        {
+          "years": "1997–1998",
+          "club": "Southampton",
+          "appearances": 25,
+          "goals": 9
+        },
+        {
+          "years": "1998–1999",
+          "club": "Blackburn Rovers",
+          "appearances": 23,
+          "goals": 1
+        },
+        {
+          "years": "1999–2003",
+          "club": "Southampton",
+          "appearances": 82,
+          "goals": 10
+        },
+        {
+          "years": "2002",
+          "club": "Millwall",
+          "appearances": 9,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2003–2013",
+          "club": "Bolton Wanderers",
+          "appearances": 351,
+          "goals": 74
+        },
+        {
+          "years": "2013–2015",
+          "club": "Preston North End",
+          "appearances": 70,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Kevin Davies",
+        "lastName": "Davies",
+        "aliases": [
+          "Kevin",
+          "Davies"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-02-18_milan_feyenoord",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Milan",
+        "awayTeam": "Feyenoord",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2025-02-18",
+        "dateLabel": "18 February 2025",
+        "round": "Play-Offs, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Santiago Giménez",
+          "lastName": "Giménez",
+          "goals": 1,
+          "team": "Milan"
+        },
+        {
+          "fullName": "Julián Carranza",
+          "lastName": "Carranza",
+          "goals": 1,
+          "team": "Feyenoord"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2025-04-29_arsenal_paris_saint_germain_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Paris Saint Germain",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2025-04-29",
+        "dateLabel": "29 April 2025",
+        "round": "Semi-Finals, first leg",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Jurriën Timber",
+          "lastName": "Timber",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Jakub Kiwior",
+          "lastName": "Kiwior",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Myles Lewis-Skelly",
+          "lastName": "Lewis-Skelly",
+          "shirtNumber": 49,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Mikel Merino",
+          "lastName": "Merino",
+          "shirtNumber": 23,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
