@@ -19161,5 +19161,310 @@
         ]
       ]
     }
+  },
+  "2026-10-06": {
+    "list": {
+      "id": "list_premier_league_transfer_manchester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 most expensive players Manchester City have signed.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Manchester_City_F.C._records_and_statistics",
+        "retrievedAt": "2026-09-03T03:16:39.048Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jack Grealish",
+          "lastName": "Grealish",
+          "value": 100
+        },
+        {
+          "fullName": "Joško Gvardiol",
+          "lastName": "Gvardiol",
+          "value": 77.5
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 65
+        },
+        {
+          "fullName": "Rodri",
+          "lastName": "Rodri",
+          "value": 63.6
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "Dias",
+          "value": 62
+        }
+      ]
+    },
+    "career": {
+      "id": "career_ezequiel_lavezzi",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ezequiel_Lavezzi",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2004",
+          "club": "Estudiantes",
+          "appearances": 39,
+          "goals": 17
+        },
+        {
+          "years": "2004–2007",
+          "club": "San Lorenzo",
+          "appearances": 84,
+          "goals": 25
+        },
+        {
+          "years": "2007–2012",
+          "club": "Napoli",
+          "appearances": 156,
+          "goals": 38
+        },
+        {
+          "years": "2012–2016",
+          "club": "Paris Saint-Germain",
+          "appearances": 107,
+          "goals": 22
+        },
+        {
+          "years": "2016–2019",
+          "club": "Hebei China Fortune",
+          "appearances": 74,
+          "goals": 35
+        }
+      ],
+      "answer": {
+        "fullName": "Ezequiel Lavezzi",
+        "lastName": "Lavezzi",
+        "aliases": [
+          "Ezequiel",
+          "Lavezzi"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_vincent_kompany",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 80,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vincent_Kompany",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2006",
+          "club": "Anderlecht",
+          "appearances": 73,
+          "goals": 5
+        },
+        {
+          "years": "2006–2008",
+          "club": "Hamburger SV",
+          "appearances": 29,
+          "goals": 1
+        },
+        {
+          "years": "2008–2019",
+          "club": "Manchester City",
+          "appearances": 265,
+          "goals": 18
+        },
+        {
+          "years": "2019–2020",
+          "club": "Anderlecht",
+          "appearances": 15,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Vincent Kompany",
+        "lastName": "Kompany",
+        "aliases": [
+          "Vincent",
+          "Kompany"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-10-05_manchester_city_fulham",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Fulham",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2024-10-05",
+        "dateLabel": "5 October 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Andreas Pereira",
+          "lastName": "Hoelgebaum Pereira",
+          "goals": 1,
+          "team": "Fulham"
+        },
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "goals": 2,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Rodrigo Muniz",
+          "lastName": "Muniz Carvalho",
+          "goals": 1,
+          "team": "Fulham"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-02-20_leeds_united_manchester_united_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Leeds United",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 2,
+        "date": "2022-02-20",
+        "dateLabel": "20 February 2022",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Victor Lindelöf",
+          "lastName": "Lindelöf",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Scott McTominay",
+          "lastName": "McTominay",
+          "shirtNumber": 39,
+          "position": "M"
+        },
+        {
+          "fullName": "Jesse Lingard",
+          "lastName": "Lingard",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Jadon Sancho",
+          "lastName": "Sancho",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "dos Santos Aveiro",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
