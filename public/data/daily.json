@@ -19466,5 +19466,349 @@
         ]
       ]
     }
+  },
+  "2026-10-07": {
+    "list": {
+      "id": "list_premier_league_stat_saves_2017_18_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most saves in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jack Butland",
+          "lastName": "Butland",
+          "value": 144,
+          "rank": 1
+        },
+        {
+          "fullName": "Lukasz Fabianski",
+          "lastName": "Fabianski",
+          "value": 137,
+          "rank": 2
+        },
+        {
+          "fullName": "Mathew Ryan",
+          "lastName": "Ryan",
+          "value": 124,
+          "rank": 3
+        },
+        {
+          "fullName": "Jordan Pickford",
+          "lastName": "Pickford",
+          "value": 121,
+          "rank": 4
+        },
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "value": 115,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_dion_dublin",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 26,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dion_Dublin",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1988–1992",
+          "club": "Cambridge United",
+          "appearances": 156,
+          "goals": 52
+        },
+        {
+          "years": "1988",
+          "club": "Barnet",
+          "appearances": 1,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "1988",
+          "club": "Wycombe Wanderers",
+          "appearances": 2,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "1992–1994",
+          "club": "Manchester United",
+          "appearances": 12,
+          "goals": 2
+        },
+        {
+          "years": "1994–1998",
+          "club": "Coventry City",
+          "appearances": 145,
+          "goals": 61
+        },
+        {
+          "years": "1998–2004",
+          "club": "Aston Villa",
+          "appearances": 155,
+          "goals": 48
+        },
+        {
+          "years": "2002",
+          "club": "Millwall",
+          "appearances": 5,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2004–2006",
+          "club": "Leicester City",
+          "appearances": 58,
+          "goals": 5
+        },
+        {
+          "years": "2006",
+          "club": "Celtic",
+          "appearances": 11,
+          "goals": 1
+        },
+        {
+          "years": "2006–2008",
+          "club": "Norwich City",
+          "appearances": 70,
+          "goals": 12
+        }
+      ],
+      "answer": {
+        "fullName": "Dion Dublin",
+        "lastName": "Dublin",
+        "aliases": [
+          "Dion",
+          "Dublin"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_taras_stepanenko",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Taras_Stepanenko",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006",
+          "club": "Metalurh-2 Zaporizhzhia",
+          "appearances": 16,
+          "goals": 1
+        },
+        {
+          "years": "2007–2010",
+          "club": "Metalurh Zaporizhzhia",
+          "appearances": 81,
+          "goals": 1
+        },
+        {
+          "years": "2010–2025",
+          "club": "Shakhtar Donetsk",
+          "appearances": 289,
+          "goals": 22
+        },
+        {
+          "years": "2025–2026",
+          "club": "Eyüpspor",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2026",
+          "club": "Kolos Kovalivka",
+          "appearances": 5,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Taras Stepanenko",
+        "lastName": "Stepanenko",
+        "aliases": [
+          "Taras",
+          "Stepanenko"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-03-30_chelsea_burnley",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Burnley",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2024-03-30",
+        "dateLabel": "30 March 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "goals": 2,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Josh Cullen",
+          "lastName": "Cullen",
+          "goals": 1,
+          "team": "Burnley"
+        },
+        {
+          "fullName": "Dara O'Shea",
+          "lastName": "O'Shea",
+          "goals": 1,
+          "team": "Burnley"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2025-02-11_sporting_lisbon_borussia_dortmund_away",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Borussia Dortmund",
+        "opponent": "Sporting Lisbon",
+        "home": false,
+        "teamScore": 3,
+        "opponentScore": 0,
+        "date": "2025-02-11",
+        "dateLabel": "11 February 2025",
+        "round": "Play-Offs, first leg",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Gregor Kobel",
+          "lastName": "Kobel",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Julian Ryerson",
+          "lastName": "Ryerson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Emre Can",
+          "lastName": "Can",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Nico Schlotterbeck",
+          "lastName": "Schlotterbeck",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Daniel Svensson",
+          "lastName": "Svensson",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Marcel Sabitzer",
+          "lastName": "Sabitzer",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Pascal Groß",
+          "lastName": "Groß",
+          "shirtNumber": 13,
+          "position": "M"
+        },
+        {
+          "fullName": "Karim Adeyemi",
+          "lastName": "Adeyemi",
+          "shirtNumber": 27,
+          "position": "M"
+        },
+        {
+          "fullName": "Julian Brandt",
+          "lastName": "Brandt",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Jamie Gittens",
+          "lastName": "Gittens",
+          "shirtNumber": 43,
+          "position": "M"
+        },
+        {
+          "fullName": "Serhou Guirassy",
+          "lastName": "Guirassy",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
