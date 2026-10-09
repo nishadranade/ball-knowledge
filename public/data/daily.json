@@ -20158,5 +20158,353 @@
         ]
       ]
     }
+  },
+  "2026-10-09": {
+    "list": {
+      "id": "list_champions_league_goals_country_france_5",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 French goalscorers in Champions League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Karim Benzema",
+          "lastName": "Benzema",
+          "value": 90,
+          "rank": 1
+        },
+        {
+          "fullName": "Kylian Mbappé",
+          "lastName": "Mbappé",
+          "value": 70,
+          "rank": 2
+        },
+        {
+          "fullName": "Thierry Henry",
+          "lastName": "Henry",
+          "value": 50,
+          "rank": 3
+        },
+        {
+          "fullName": "Antoine Griezmann",
+          "lastName": "Griezmann",
+          "value": 44,
+          "rank": 4
+        },
+        {
+          "fullName": "David Trezeguet",
+          "lastName": "Trezeguet",
+          "value": 29,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_nico_schlotterbeck",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nico_Schlotterbeck",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2018–2020",
+          "club": "SC Freiburg II",
+          "appearances": 25,
+          "goals": 2
+        },
+        {
+          "years": "2019–2022",
+          "club": "SC Freiburg",
+          "appearances": 49,
+          "goals": 4
+        },
+        {
+          "years": "2020–2021",
+          "club": "Union Berlin",
+          "appearances": 16,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2022–",
+          "club": "Borussia Dortmund",
+          "appearances": 112,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "Nico Schlotterbeck",
+        "lastName": "Schlotterbeck",
+        "aliases": [
+          "Nico",
+          "Schlotterbeck"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_carlton_palmer",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 172,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Carlton_Palmer",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1984–1989",
+          "club": "West Bromwich Albion",
+          "appearances": 121,
+          "goals": 4
+        },
+        {
+          "years": "1989–1994",
+          "club": "Sheffield Wednesday",
+          "appearances": 205,
+          "goals": 14
+        },
+        {
+          "years": "1994–1997",
+          "club": "Leeds United",
+          "appearances": 103,
+          "goals": 5
+        },
+        {
+          "years": "1997–1999",
+          "club": "Southampton",
+          "appearances": 45,
+          "goals": 3
+        },
+        {
+          "years": "1999",
+          "club": "Nottingham Forest",
+          "appearances": 16,
+          "goals": 1
+        },
+        {
+          "years": "1999–2001",
+          "club": "Coventry City",
+          "appearances": 30,
+          "goals": 1
+        },
+        {
+          "years": "2000–2001",
+          "club": "Watford",
+          "appearances": 5,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2001",
+          "club": "Sheffield Wednesday",
+          "appearances": 22,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2001–2003",
+          "club": "Stockport County",
+          "appearances": 43,
+          "goals": 4
+        },
+        {
+          "years": "2004",
+          "club": "Dublin City",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2005",
+          "club": "Mansfield Town",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2013",
+          "club": "Staveley Miners Welfare",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2021",
+          "club": "Grantham Town",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Carlton Palmer",
+        "lastName": "Palmer",
+        "aliases": [
+          "Carlton",
+          "Palmer"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2023-02-15_club_brugge_benfica",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Club Brugge",
+        "awayTeam": "Benfica",
+        "homeScore": 0,
+        "awayScore": 2,
+        "date": "2023-02-15",
+        "dateLabel": "15 February 2023",
+        "round": "Round of 16, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "João Mário",
+          "lastName": "Naval da Costa Eduardo",
+          "goals": 1,
+          "team": "Benfica"
+        },
+        {
+          "fullName": "David Neres",
+          "lastName": "Neres Campos",
+          "goals": 1,
+          "team": "Benfica"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-02-23_liverpool_leeds_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Leeds United",
+        "home": true,
+        "teamScore": 6,
+        "opponentScore": 0,
+        "date": "2022-02-23",
+        "dateLabel": "23 February 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joël Matip",
+          "lastName": "Matip",
+          "shirtNumber": 32,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Curtis Jones",
+          "lastName": "Jones",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "shirtNumber": 10,
+          "position": "F"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 23,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
