@@ -20506,5 +20506,342 @@
         ]
       ]
     }
+  },
+  "2026-10-10": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_tottenham_hotspur_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Tottenham Hotspur in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Hugo Lloris",
+          "lastName": "Lloris",
+          "value": 127,
+          "rank": 1
+        },
+        {
+          "fullName": "Ian Walker",
+          "lastName": "Walker",
+          "value": 62,
+          "rank": 2
+        },
+        {
+          "fullName": "Paul Robinson",
+          "lastName": "Robinson",
+          "value": 36,
+          "rank": 3
+        },
+        {
+          "fullName": "Heurelho Gomes",
+          "lastName": "Gomes",
+          "value": 31,
+          "rank": 4
+        },
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "value": 18,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_neven_subotic",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Neven_Subotic",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Mainz 05 II",
+          "appearances": 23,
+          "goals": 3
+        },
+        {
+          "years": "2007–2008",
+          "club": "Mainz 05",
+          "appearances": 34,
+          "goals": 4
+        },
+        {
+          "years": "2008–2018",
+          "club": "Borussia Dortmund",
+          "appearances": 196,
+          "goals": 15
+        },
+        {
+          "years": "2016",
+          "club": "Borussia Dortmund II",
+          "appearances": 2,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2017",
+          "club": "1. FC Köln",
+          "appearances": 12,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2018–2019",
+          "club": "Saint-Étienne",
+          "appearances": 42,
+          "goals": 3
+        },
+        {
+          "years": "2019–2020",
+          "club": "Union Berlin",
+          "appearances": 23,
+          "goals": 1
+        },
+        {
+          "years": "2020–2021",
+          "club": "Denizlispor",
+          "appearances": 5,
+          "goals": 1
+        },
+        {
+          "years": "2021",
+          "club": "Rheindorf Altach",
+          "appearances": 10,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Neven Subotic",
+        "lastName": "Subotic",
+        "aliases": [
+          "Neven",
+          "Subotic"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_cesc_f_bregas",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 3,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Cesc_Fàbregas",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2011",
+          "club": "Arsenal",
+          "appearances": 212,
+          "goals": 35
+        },
+        {
+          "years": "2011–2014",
+          "club": "Barcelona",
+          "appearances": 96,
+          "goals": 28
+        },
+        {
+          "years": "2014–2019",
+          "club": "Chelsea",
+          "appearances": 138,
+          "goals": 15
+        },
+        {
+          "years": "2019–2022",
+          "club": "Monaco",
+          "appearances": 54,
+          "goals": 3
+        },
+        {
+          "years": "2022",
+          "club": "Monaco B",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2022–2023",
+          "club": "Como",
+          "appearances": 17,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Cesc Fàbregas",
+        "lastName": "Fàbregas",
+        "aliases": [
+          "Cesc",
+          "Fàbregas"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2026-04-29_atl_tico_madrid_arsenal",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Atlético Madrid",
+        "awayTeam": "Arsenal",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2026-04-29",
+        "dateLabel": "29 April 2026",
+        "round": "Semi-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Viktor Gyökeres",
+          "lastName": "Gyökeres",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Julián Alvarez",
+          "lastName": "Alvarez",
+          "goals": 1,
+          "team": "Atlético Madrid"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-02-03_everton_tottenham_hotspur_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Everton",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 2,
+        "date": "2024-02-03",
+        "dateLabel": "3 February 2024",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 13,
+          "position": "G"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Destiny Udogie",
+          "lastName": "Udogie",
+          "shirtNumber": 38,
+          "position": "D"
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Rodrigo Bentancur",
+          "lastName": "Bentancur",
+          "shirtNumber": 30,
+          "position": "M"
+        },
+        {
+          "fullName": "Brennan Johnson",
+          "lastName": "Johnson",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Timo Werner",
+          "lastName": "Werner",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
