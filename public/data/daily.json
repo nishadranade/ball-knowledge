@@ -20843,5 +20843,310 @@
         ]
       ]
     }
+  },
+  "2026-10-11": {
+    "list": {
+      "id": "list_premier_league_appearances_country_italy_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Italian appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Gianfranco Zola",
+          "lastName": "Zola",
+          "value": 229,
+          "rank": 1
+        },
+        {
+          "fullName": "Angelo Ogbonna",
+          "lastName": "Ogbonna",
+          "value": 201,
+          "rank": 2
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Jorginho",
+          "value": 196,
+          "rank": 3
+        },
+        {
+          "fullName": "Paolo Di Canio",
+          "lastName": "Di Canio",
+          "value": 190,
+          "rank": 4
+        },
+        {
+          "fullName": "Benito Carbone",
+          "lastName": "Carbone",
+          "value": 177,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_j_r_me_boateng",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 25,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jérôme_Boateng",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Hertha BSC II",
+          "appearances": 24,
+          "goals": 1
+        },
+        {
+          "years": "2007",
+          "club": "Hertha BSC",
+          "appearances": 10,
+          "goals": 0
+        },
+        {
+          "years": "2007–2010",
+          "club": "Hamburger SV",
+          "appearances": 75,
+          "goals": 0
+        },
+        {
+          "years": "2010–2011",
+          "club": "Manchester City",
+          "appearances": 16,
+          "goals": 0
+        },
+        {
+          "years": "2011–2021",
+          "club": "Bayern Munich",
+          "appearances": 229,
+          "goals": 5
+        },
+        {
+          "years": "2021–2023",
+          "club": "Lyon",
+          "appearances": 32,
+          "goals": 0
+        },
+        {
+          "years": "2024",
+          "club": "Salernitana",
+          "appearances": 7,
+          "goals": 0
+        },
+        {
+          "years": "2024–2025",
+          "club": "LASK",
+          "appearances": 10,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Jérôme Boateng",
+        "lastName": "Boateng",
+        "aliases": [
+          "Jérôme",
+          "Boateng"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ferm_n_l_pez",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Fermín_López",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2022–2023",
+          "club": "Barcelona B",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2022–2023",
+          "club": "Linares",
+          "appearances": 37,
+          "goals": 12,
+          "loan": true
+        },
+        {
+          "years": "2023–",
+          "club": "Barcelona",
+          "appearances": 89,
+          "goals": 20
+        }
+      ],
+      "answer": {
+        "fullName": "Fermín López",
+        "lastName": "López",
+        "aliases": [
+          "Fermín",
+          "López"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-12-05_bournemouth_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Bournemouth",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 1,
+        "awayScore": 0,
+        "date": "2024-12-05",
+        "dateLabel": "5 December 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Dean Huijsen",
+          "lastName": "Huijsen",
+          "goals": 1,
+          "team": "Bournemouth"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-03-16_arsenal_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Arsenal",
+        "home": false,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2025-03-16",
+        "dateLabel": "16 March 2025",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Wesley Fofana",
+          "lastName": "Fofana",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Levi Colwill",
+          "lastName": "Colwill",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Benoît Badiashile",
+          "lastName": "Badiashile",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "shirtNumber": 24,
+          "position": "M"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Jadon Sancho",
+          "lastName": "Sancho",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Christopher Nkunku",
+          "lastName": "Nkunku",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
