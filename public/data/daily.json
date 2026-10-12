@@ -21148,5 +21148,397 @@
         ]
       ]
     }
+  },
+  "2026-10-12": {
+    "list": {
+      "id": "list_premier_league_stat_shots_2024_25_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots in the Premier League in the 2024/25 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 130,
+          "rank": 1
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "value": 126,
+          "rank": 2
+        },
+        {
+          "fullName": "Antoine Semenyo",
+          "lastName": "Semenyo",
+          "value": 125,
+          "rank": 3
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Cunha",
+          "value": 110,
+          "rank": 4
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 108,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_serhou_guirassy",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Serhou_Guirassy",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2015",
+          "club": "Laval B",
+          "appearances": 17,
+          "goals": 14
+        },
+        {
+          "years": "2013–2015",
+          "club": "Laval",
+          "appearances": 33,
+          "goals": 6
+        },
+        {
+          "years": "2015–2016",
+          "club": "Lille",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2015–2016",
+          "club": "Lille B",
+          "appearances": 4,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2016",
+          "club": "Auxerre",
+          "appearances": 16,
+          "goals": 8,
+          "loan": true
+        },
+        {
+          "years": "2016–2017",
+          "club": "1. FC Köln II",
+          "appearances": 5,
+          "goals": 2
+        },
+        {
+          "years": "2016–2019",
+          "club": "1. FC Köln",
+          "appearances": 37,
+          "goals": 6
+        },
+        {
+          "years": "2018",
+          "club": "Amiens",
+          "appearances": 13,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2019–2020",
+          "club": "Amiens",
+          "appearances": 24,
+          "goals": 10
+        },
+        {
+          "years": "2020–2023",
+          "club": "Rennes",
+          "appearances": 65,
+          "goals": 19
+        },
+        {
+          "years": "2022–2023",
+          "club": "VfB Stuttgart",
+          "appearances": 22,
+          "goals": 11,
+          "loan": true
+        },
+        {
+          "years": "2023–2024",
+          "club": "VfB Stuttgart",
+          "appearances": 28,
+          "goals": 28
+        },
+        {
+          "years": "2024–",
+          "club": "Borussia Dortmund",
+          "appearances": 63,
+          "goals": 38
+        }
+      ],
+      "answer": {
+        "fullName": "Serhou Guirassy",
+        "lastName": "Guirassy",
+        "aliases": [
+          "Serhou",
+          "Guirassy"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_hermann_hreidarsson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 92,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hermann_Hreidarsson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1997",
+          "club": "ÍBV",
+          "appearances": 66,
+          "goals": 5
+        },
+        {
+          "years": "1997–1998",
+          "club": "Crystal Palace",
+          "appearances": 37,
+          "goals": 2
+        },
+        {
+          "years": "1998–1999",
+          "club": "Brentford",
+          "appearances": 41,
+          "goals": 6
+        },
+        {
+          "years": "1999–2000",
+          "club": "Wimbledon",
+          "appearances": 25,
+          "goals": 1
+        },
+        {
+          "years": "2000–2003",
+          "club": "Ipswich Town",
+          "appearances": 102,
+          "goals": 2
+        },
+        {
+          "years": "2003–2007",
+          "club": "Charlton Athletic",
+          "appearances": 132,
+          "goals": 3
+        },
+        {
+          "years": "2007–2012",
+          "club": "Portsmouth",
+          "appearances": 102,
+          "goals": 7
+        },
+        {
+          "years": "2012",
+          "club": "Coventry City",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2013",
+          "club": "ÍBV",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2014",
+          "club": "Fylkir",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Hermann Hreidarsson",
+        "lastName": "Hreidarsson",
+        "aliases": [
+          "Hermann",
+          "Hreidarsson"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-05-03_aston_villa_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Aston Villa",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 1,
+        "awayScore": 2,
+        "date": "2026-05-03",
+        "dateLabel": "3 May 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Conor Gallagher",
+          "lastName": "Gallagher",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Emiliano Buendía",
+          "lastName": "Buendía",
+          "goals": 1,
+          "team": "Aston Villa"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-12-24_wolverhampton_wanderers_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Wolverhampton Wanderers",
+        "home": false,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2023-12-24",
+        "dateLabel": "24 December 2023",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Djordje Petrovic",
+          "lastName": "Petrovic",
+          "shirtNumber": 28,
+          "position": "G"
+        },
+        {
+          "fullName": "Malo Gusto",
+          "lastName": "Gusto",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Axel Disasi",
+          "lastName": "Disasi",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Thiago Silva",
+          "lastName": "Emiliano da Silva",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Levi Colwill",
+          "lastName": "Colwill",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Lesley Ugochukwu",
+          "lastName": "Ugochukwu",
+          "shirtNumber": 16,
+          "position": "M"
+        },
+        {
+          "fullName": "Conor Gallagher",
+          "lastName": "Gallagher",
+          "shirtNumber": 23,
+          "position": "M"
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Nicolas Jackson",
+          "lastName": "Jackson",
+          "shirtNumber": 15,
+          "position": "M"
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Armando Broja",
+          "lastName": "Broja",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
