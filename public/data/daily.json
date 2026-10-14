@@ -21891,5 +21891,335 @@
         ]
       ]
     }
+  },
+  "2026-10-14": {
+    "list": {
+      "id": "list_premier_league_assists_club_manchester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 118,
+          "rank": 1
+        },
+        {
+          "fullName": "David Silva",
+          "lastName": "Silva",
+          "value": 93,
+          "rank": 2
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Silva",
+          "value": 50,
+          "rank": 3
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 47,
+          "rank": 4
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "value": 42,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_kieran_trippier",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 71,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kieran_Trippier",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2012",
+          "club": "Manchester City",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2010",
+          "club": "Barnsley",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2010–2011",
+          "club": "Barnsley",
+          "appearances": 39,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2011–2012",
+          "club": "Burnley",
+          "appearances": 25,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2012–2015",
+          "club": "Burnley",
+          "appearances": 145,
+          "goals": 4
+        },
+        {
+          "years": "2015–2019",
+          "club": "Tottenham Hotspur",
+          "appearances": 69,
+          "goals": 2
+        },
+        {
+          "years": "2019–2022",
+          "club": "Atlético Madrid",
+          "appearances": 68,
+          "goals": 0
+        },
+        {
+          "years": "2022–2026",
+          "club": "Newcastle United",
+          "appearances": 118,
+          "goals": 4
+        },
+        {
+          "years": "2026–",
+          "club": "Wolverhampton Wanderers",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kieran Trippier",
+        "lastName": "Trippier",
+        "aliases": [
+          "Kieran",
+          "Trippier"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_takumi_minamino",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 183,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Takumi_Minamino",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2012–2015",
+          "club": "Cerezo Osaka",
+          "appearances": 62,
+          "goals": 7
+        },
+        {
+          "years": "2015–2020",
+          "club": "Red Bull Salzburg",
+          "appearances": 136,
+          "goals": 42
+        },
+        {
+          "years": "2020–2022",
+          "club": "Liverpool",
+          "appearances": 30,
+          "goals": 4
+        },
+        {
+          "years": "2021",
+          "club": "Southampton",
+          "appearances": 10,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2022–",
+          "club": "Monaco",
+          "appearances": 94,
+          "goals": 19
+        }
+      ],
+      "answer": {
+        "fullName": "Takumi Minamino",
+        "lastName": "Minamino",
+        "aliases": [
+          "Takumi",
+          "Minamino"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-12-30_ipswich_town_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Ipswich Town",
+        "awayTeam": "Chelsea",
+        "homeScore": 2,
+        "awayScore": 0,
+        "date": "2024-12-30",
+        "dateLabel": "30 December 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Liam Delap",
+          "lastName": "Delap",
+          "goals": 1,
+          "team": "Ipswich Town"
+        },
+        {
+          "fullName": "Omari Hutchinson",
+          "lastName": "Hutchinson",
+          "goals": 1,
+          "team": "Ipswich Town"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2021-12-01_everton_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Everton",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 1,
+        "date": "2021-12-01",
+        "dateLabel": "1 December 2021",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joël Matip",
+          "lastName": "Matip",
+          "shirtNumber": 32,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "shirtNumber": 20,
+          "position": "F"
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
