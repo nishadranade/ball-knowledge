@@ -22221,5 +22221,349 @@
         ]
       ]
     }
+  },
+  "2026-10-15": {
+    "list": {
+      "id": "list_premier_league_appearances_country_denmark_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Danish appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Thomas Sørensen",
+          "lastName": "Sørensen",
+          "value": 363,
+          "rank": 1
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 310,
+          "rank": 2
+        },
+        {
+          "fullName": "Peter Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 310,
+          "rank": 3
+        },
+        {
+          "fullName": "Kasper Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 284,
+          "rank": 4
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "value": 254,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_ayoze_p_rez",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 159,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ayoze_Pérez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2013",
+          "club": "Tenerife B",
+          "appearances": 35,
+          "goals": 11
+        },
+        {
+          "years": "2012–2014",
+          "club": "Tenerife",
+          "appearances": 50,
+          "goals": 17
+        },
+        {
+          "years": "2014–2019",
+          "club": "Newcastle United",
+          "appearances": 179,
+          "goals": 42
+        },
+        {
+          "years": "2019–2023",
+          "club": "Leicester City",
+          "appearances": 80,
+          "goals": 12
+        },
+        {
+          "years": "2023",
+          "club": "Betis",
+          "appearances": 19,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2023–2024",
+          "club": "Betis",
+          "appearances": 31,
+          "goals": 9
+        },
+        {
+          "years": "2024–",
+          "club": "Villarreal",
+          "appearances": 55,
+          "goals": 24
+        }
+      ],
+      "answer": {
+        "fullName": "Ayoze Pérez",
+        "lastName": "Pérez",
+        "aliases": [
+          "Ayoze",
+          "Pérez"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_david_silva",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 8,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/David_Silva",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2004",
+          "club": "Valencia B",
+          "appearances": 14,
+          "goals": 1
+        },
+        {
+          "years": "2004–2010",
+          "club": "Valencia",
+          "appearances": 119,
+          "goals": 21
+        },
+        {
+          "years": "2004–2005",
+          "club": "Eibar",
+          "appearances": 35,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2005–2006",
+          "club": "Celta",
+          "appearances": 34,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2010–2020",
+          "club": "Manchester City",
+          "appearances": 309,
+          "goals": 60
+        },
+        {
+          "years": "2020–2023",
+          "club": "Real Sociedad",
+          "appearances": 74,
+          "goals": 6
+        }
+      ],
+      "answer": {
+        "fullName": "David Silva",
+        "lastName": "Silva",
+        "aliases": [
+          "David",
+          "Silva"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-04-13_manchester_city_luton_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Luton Town",
+        "homeScore": 5,
+        "awayScore": 1,
+        "date": "2024-04-13",
+        "dateLabel": "13 April 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Ross Barkley",
+          "lastName": "Barkley",
+          "goals": 1,
+          "team": "Luton Town"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2021-09-19_west_ham_united_manchester_united_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "West Ham United",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2021-09-19",
+        "dateLabel": "19 September 2021",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "David de Gea",
+          "lastName": "de Gea",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Raphaël Varane",
+          "lastName": "Varane",
+          "shirtNumber": 19,
+          "position": "D"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Scott McTominay",
+          "lastName": "McTominay",
+          "shirtNumber": 39,
+          "position": "M"
+        },
+        {
+          "fullName": "Fred",
+          "lastName": "Rodrigues de Paula Santos",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Mason Greenwood",
+          "lastName": "Greenwood",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Paul Pogba",
+          "lastName": "Pogba",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "dos Santos Aveiro",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
