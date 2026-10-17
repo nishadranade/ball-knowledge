@@ -22871,5 +22871,293 @@
         []
       ]
     }
+  },
+  "2026-10-17": {
+    "list": {
+      "id": "list_premier_league_club_promoted_2023_24",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Luton Town",
+          "lastName": "Luton",
+          "noAutoTokens": true,
+          "value": 26
+        },
+        {
+          "fullName": "Burnley",
+          "lastName": "Burnley",
+          "noAutoTokens": true,
+          "value": 24
+        },
+        {
+          "fullName": "Sheffield United",
+          "lastName": "Sheffield Utd",
+          "noAutoTokens": true,
+          "value": 16
+        }
+      ]
+    },
+    "career": {
+      "id": "career_glen_johnson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 40,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Glen_Johnson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2002–2003",
+          "club": "West Ham United",
+          "appearances": 15,
+          "goals": 0
+        },
+        {
+          "years": "2002",
+          "club": "Millwall",
+          "appearances": 8,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2003–2007",
+          "club": "Chelsea",
+          "appearances": 42,
+          "goals": 3
+        },
+        {
+          "years": "2006–2007",
+          "club": "Portsmouth",
+          "appearances": 26,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2007–2009",
+          "club": "Portsmouth",
+          "appearances": 58,
+          "goals": 4
+        },
+        {
+          "years": "2009–2015",
+          "club": "Liverpool",
+          "appearances": 160,
+          "goals": 8
+        },
+        {
+          "years": "2015–2018",
+          "club": "Stoke City",
+          "appearances": 57,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Glen Johnson",
+        "lastName": "Johnson",
+        "aliases": [
+          "Glen",
+          "Johnson"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_joshua_kimmich",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 8,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Joshua_Kimmich",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2013–2015",
+          "club": "RB Leipzig",
+          "appearances": 53,
+          "goals": 3
+        },
+        {
+          "years": "2015–",
+          "club": "Bayern Munich",
+          "appearances": 324,
+          "goals": 31
+        }
+      ],
+      "answer": {
+        "fullName": "Joshua Kimmich",
+        "lastName": "Kimmich",
+        "aliases": [
+          "Joshua",
+          "Kimmich"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-10-30_manchester_city_crystal_palace",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Crystal Palace",
+        "homeScore": 0,
+        "awayScore": 2,
+        "date": "2021-10-30",
+        "dateLabel": "30 October 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Wilfried Zaha",
+          "lastName": "Zaha",
+          "goals": 1,
+          "team": "Crystal Palace"
+        },
+        {
+          "fullName": "Conor Gallagher",
+          "lastName": "Gallagher",
+          "goals": 1,
+          "team": "Crystal Palace"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2021-11-28_chelsea_manchester_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Manchester United",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 1,
+        "date": "2021-11-28",
+        "dateLabel": "28 November 2021",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Édouard Mendy",
+          "lastName": "Mendy",
+          "shirtNumber": 16,
+          "position": "G"
+        },
+        {
+          "fullName": "Trevoh Chalobah",
+          "lastName": "Chalobah",
+          "shirtNumber": 14,
+          "position": "D"
+        },
+        {
+          "fullName": "Thiago Silva",
+          "lastName": "Emiliano da Silva",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "shirtNumber": 24,
+          "position": "M"
+        },
+        {
+          "fullName": "Ruben Loftus-Cheek",
+          "lastName": "Loftus-Cheek",
+          "shirtNumber": 12,
+          "position": "M"
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Frello Filho",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Marcos Alonso",
+          "lastName": "Alonso",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Hakim Ziyech",
+          "lastName": "Ziyech",
+          "shirtNumber": 22,
+          "position": "F"
+        },
+        {
+          "fullName": "Callum Hudson-Odoi",
+          "lastName": "Hudson-Odoi",
+          "shirtNumber": 20,
+          "position": "F"
+        },
+        {
+          "fullName": "Timo Werner",
+          "lastName": "Werner",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
