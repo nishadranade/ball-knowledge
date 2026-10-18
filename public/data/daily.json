@@ -23159,5 +23159,361 @@
         ]
       ]
     }
+  },
+  "2026-10-18": {
+    "list": {
+      "id": "list_champions_league_assists_country_netherlands_5",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Dutch assist providers in the Champions League since 2004/05.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Arjen Robben",
+          "lastName": "Robben",
+          "value": 13,
+          "rank": 1
+        },
+        {
+          "fullName": "Wesley Sneijder",
+          "lastName": "Sneijder",
+          "value": 8,
+          "rank": 2
+        },
+        {
+          "fullName": "Gregory van der Wiel",
+          "lastName": "van der Wiel",
+          "value": 7,
+          "rank": 3
+        },
+        {
+          "fullName": "Steven Berghuis",
+          "lastName": "Berghuis",
+          "value": 5,
+          "rank": 4
+        },
+        {
+          "fullName": "Denzel Dumfries",
+          "lastName": "Dumfries",
+          "value": 5,
+          "rank": 5
+        },
+        {
+          "fullName": "Jeremie Frimpong",
+          "lastName": "Frimpong",
+          "value": 5,
+          "rank": 6
+        },
+        {
+          "fullName": "Guus Til",
+          "lastName": "Til",
+          "value": 5,
+          "rank": 7
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "value": 5,
+          "rank": 8
+        },
+        {
+          "fullName": "Ruud Vormer",
+          "lastName": "Vormer",
+          "value": 5,
+          "rank": 9
+        }
+      ]
+    },
+    "career": {
+      "id": "career_david_ginola",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 78,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/David_Ginola",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1985–1988",
+          "club": "Toulon",
+          "appearances": 82,
+          "goals": 4
+        },
+        {
+          "years": "1988–1990",
+          "club": "Racing Paris",
+          "appearances": 61,
+          "goals": 8
+        },
+        {
+          "years": "1990–1992",
+          "club": "Brest",
+          "appearances": 50,
+          "goals": 14
+        },
+        {
+          "years": "1992–1995",
+          "club": "Paris Saint-Germain",
+          "appearances": 115,
+          "goals": 33
+        },
+        {
+          "years": "1995–1997",
+          "club": "Newcastle United",
+          "appearances": 58,
+          "goals": 6
+        },
+        {
+          "years": "1997–2000",
+          "club": "Tottenham Hotspur",
+          "appearances": 100,
+          "goals": 13
+        },
+        {
+          "years": "2000–2002",
+          "club": "Aston Villa",
+          "appearances": 32,
+          "goals": 3
+        },
+        {
+          "years": "2002",
+          "club": "Everton",
+          "appearances": 5,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "David Ginola",
+        "lastName": "Ginola",
+        "aliases": [
+          "David",
+          "Ginola"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_marco_reus",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 43,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marco_Reus",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Rot Weiss Ahlen II",
+          "appearances": 6,
+          "goals": 3
+        },
+        {
+          "years": "2007–2009",
+          "club": "Rot Weiss Ahlen",
+          "appearances": 43,
+          "goals": 5
+        },
+        {
+          "years": "2009–2012",
+          "club": "Borussia Mönchengladbach",
+          "appearances": 97,
+          "goals": 36
+        },
+        {
+          "years": "2012–2024",
+          "club": "Borussia Dortmund",
+          "appearances": 294,
+          "goals": 120
+        },
+        {
+          "years": "2024–",
+          "club": "LA Galaxy",
+          "appearances": 44,
+          "goals": 10
+        }
+      ],
+      "answer": {
+        "fullName": "Marco Reus",
+        "lastName": "Reus",
+        "aliases": [
+          "Marco",
+          "Reus"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-03-02_brentford_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Brentford",
+        "awayTeam": "Chelsea",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2024-03-02",
+        "dateLabel": "2 March 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Nicolas Jackson",
+          "lastName": "Jackson",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Mads Roerslev",
+          "lastName": "Roerslev",
+          "goals": 1,
+          "team": "Brentford"
+        },
+        {
+          "fullName": "Yoane Wissa",
+          "lastName": "Wissa",
+          "goals": 1,
+          "team": "Brentford"
+        },
+        {
+          "fullName": "Axel Disasi",
+          "lastName": "Disasi",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-08-16_tottenham_hotspur_burnley_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Burnley",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 0,
+        "date": "2025-08-16",
+        "dateLabel": "16 August 2025",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Djed Spence",
+          "lastName": "Spence",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Pape Matar Sarr",
+          "lastName": "Sarr",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Archie Gray",
+          "lastName": "Gray",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Lucas Bergvall",
+          "lastName": "Bergvall",
+          "shirtNumber": 15,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohammed Kudus",
+          "lastName": "Kudus",
+          "shirtNumber": 20,
+          "position": "F"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Brennan Johnson",
+          "lastName": "Johnson",
+          "shirtNumber": 22,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
