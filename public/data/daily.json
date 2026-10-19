@@ -23515,5 +23515,332 @@
         ]
       ]
     }
+  },
+  "2026-10-19": {
+    "list": {
+      "id": "list_premier_league_manager_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the last 3 managers of Arsenal.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/List_of_Arsenal_F.C._managers",
+        "retrievedAt": "2026-09-03T03:00:51.099Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mikel Arteta",
+          "lastName": "Arteta"
+        },
+        {
+          "fullName": "Unai Emery",
+          "lastName": "Emery"
+        },
+        {
+          "fullName": "Arsène Wenger",
+          "lastName": "Wenger"
+        }
+      ]
+    },
+    "career": {
+      "id": "career_roberto_firmino",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 47,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roberto_Firmino",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2011",
+          "club": "Figueirense",
+          "appearances": 38,
+          "goals": 8
+        },
+        {
+          "years": "2011–2015",
+          "club": "TSG Hoffenheim",
+          "appearances": 140,
+          "goals": 38
+        },
+        {
+          "years": "2015–2023",
+          "club": "Liverpool",
+          "appearances": 256,
+          "goals": 82
+        },
+        {
+          "years": "2023–2025",
+          "club": "Al-Ahli",
+          "appearances": 49,
+          "goals": 14
+        },
+        {
+          "years": "2025–",
+          "club": "Al Sadd",
+          "appearances": 21,
+          "goals": 13
+        }
+      ],
+      "answer": {
+        "fullName": "Roberto Firmino",
+        "lastName": "Firmino",
+        "aliases": [
+          "Roberto",
+          "Firmino"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_craig_dawson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 159,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Craig_Dawson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2007–2009",
+          "club": "Radcliffe Borough"
+        },
+        {
+          "years": "2007–2008",
+          "club": "Flixton",
+          "loan": true
+        },
+        {
+          "years": "2009–2010",
+          "club": "Rochdale",
+          "appearances": 46,
+          "goals": 10
+        },
+        {
+          "years": "2009",
+          "club": "Radcliffe Borough",
+          "loan": true
+        },
+        {
+          "years": "2010–2019",
+          "club": "West Bromwich Albion",
+          "appearances": 194,
+          "goals": 14
+        },
+        {
+          "years": "2010–2011",
+          "club": "Rochdale",
+          "appearances": 41,
+          "goals": 9,
+          "loan": true
+        },
+        {
+          "years": "2013",
+          "club": "Bolton Wanderers",
+          "appearances": 16,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2019–2021",
+          "club": "Watford",
+          "appearances": 29,
+          "goals": 2
+        },
+        {
+          "years": "2020–2021",
+          "club": "West Ham United",
+          "appearances": 22,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2021–2023",
+          "club": "West Ham United",
+          "appearances": 42,
+          "goals": 2
+        },
+        {
+          "years": "2023–2025",
+          "club": "Wolverhampton Wanderers",
+          "appearances": 57,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Craig Dawson",
+        "lastName": "Dawson",
+        "aliases": [
+          "Craig",
+          "Dawson"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-03-11_fc_barcelona_benfica",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "FC Barcelona",
+        "awayTeam": "Benfica",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2025-03-11",
+        "dateLabel": "11 March 2025",
+        "round": "Round of 16, second leg"
+      },
+      "answers": [
+        {
+          "fullName": "Raphinha",
+          "lastName": "Dias Belloli",
+          "goals": 2,
+          "team": "FC Barcelona"
+        },
+        {
+          "fullName": "Nicolás Otamendi",
+          "lastName": "Otamendi",
+          "goals": 1,
+          "team": "Benfica"
+        },
+        {
+          "fullName": "Lamine Yamal",
+          "lastName": "Nasraoui Ebana",
+          "goals": 1,
+          "team": "FC Barcelona"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2022-04-27_liverpool_villarreal_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Villarreal",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 0,
+        "date": "2022-04-27",
+        "dateLabel": "27 April 2022",
+        "round": "Semi-Finals, first leg",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "shirtNumber": 10,
+          "position": "F"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 23,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
