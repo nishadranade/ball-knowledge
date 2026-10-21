@@ -24174,5 +24174,387 @@
         ]
       ]
     }
+  },
+  "2026-10-21": {
+    "list": {
+      "id": "list_premier_league_appearances_club_southampton_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Southampton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "value": 343,
+          "rank": 1
+        },
+        {
+          "fullName": "Jason Dodd",
+          "lastName": "Dodd",
+          "value": 329,
+          "rank": 2
+        },
+        {
+          "fullName": "Claus Lundekvam",
+          "lastName": "Lundekvam",
+          "value": 290,
+          "rank": 3
+        },
+        {
+          "fullName": "Matthew Le Tissier",
+          "lastName": "Le Tissier",
+          "value": 270,
+          "rank": 4
+        },
+        {
+          "fullName": "Francis Benali",
+          "lastName": "Benali",
+          "value": 243,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_jay_rodriguez",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 155,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jay_Rodriguez",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2007–2012",
+          "club": "Burnley",
+          "appearances": 105,
+          "goals": 31
+        },
+        {
+          "years": "2008",
+          "club": "Stirling Albion",
+          "appearances": 11,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Barnsley",
+          "appearances": 6,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2012–2017",
+          "club": "Southampton",
+          "appearances": 104,
+          "goals": 26
+        },
+        {
+          "years": "2017–2019",
+          "club": "West Bromwich Albion",
+          "appearances": 82,
+          "goals": 29
+        },
+        {
+          "years": "2019–2025",
+          "club": "Burnley",
+          "appearances": 165,
+          "goals": 25
+        },
+        {
+          "years": "2025–2026",
+          "club": "Wrexham",
+          "appearances": 24,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Jay Rodriguez",
+        "lastName": "Rodriguez",
+        "aliases": [
+          "Jay",
+          "Rodriguez"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_andrew_cole",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 5,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Andrew_Cole",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1989–1992",
+          "club": "Arsenal",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "1991",
+          "club": "Fulham",
+          "appearances": 13,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "1992",
+          "club": "Bristol City",
+          "appearances": 12,
+          "goals": 8,
+          "loan": true
+        },
+        {
+          "years": "1992–1993",
+          "club": "Bristol City",
+          "appearances": 29,
+          "goals": 12
+        },
+        {
+          "years": "1993–1995",
+          "club": "Newcastle United",
+          "appearances": 70,
+          "goals": 55
+        },
+        {
+          "years": "1995–2001",
+          "club": "Manchester United",
+          "appearances": 195,
+          "goals": 93
+        },
+        {
+          "years": "2001–2004",
+          "club": "Blackburn Rovers",
+          "appearances": 83,
+          "goals": 27
+        },
+        {
+          "years": "2004–2005",
+          "club": "Fulham",
+          "appearances": 31,
+          "goals": 12
+        },
+        {
+          "years": "2005–2006",
+          "club": "Manchester City",
+          "appearances": 22,
+          "goals": 9
+        },
+        {
+          "years": "2006–2007",
+          "club": "Portsmouth",
+          "appearances": 18,
+          "goals": 3
+        },
+        {
+          "years": "2007",
+          "club": "Birmingham City",
+          "appearances": 5,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2007–2008",
+          "club": "Sunderland",
+          "appearances": 7,
+          "goals": 0
+        },
+        {
+          "years": "2008",
+          "club": "Burnley",
+          "appearances": 13,
+          "goals": 6,
+          "loan": true
+        },
+        {
+          "years": "2008",
+          "club": "Nottingham Forest",
+          "appearances": 10,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Andrew Cole",
+        "lastName": "Cole",
+        "aliases": [
+          "Andrew",
+          "Cole"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-03-04_newcastle_united_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Newcastle United",
+        "awayTeam": "Manchester United",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2026-03-04",
+        "dateLabel": "4 March 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Anthony Gordon",
+          "lastName": "Gordon",
+          "goals": 1,
+          "team": "Newcastle United"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "William Osula",
+          "lastName": "Osula",
+          "goals": 1,
+          "team": "Newcastle United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-02-26_leeds_united_tottenham_hotspur_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Leeds United",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 0,
+        "date": "2022-02-26",
+        "dateLabel": "26 February 2022",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Hugo Lloris",
+          "lastName": "Lloris",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Ben Davies",
+          "lastName": "Davies",
+          "shirtNumber": 33,
+          "position": "D"
+        },
+        {
+          "fullName": "Matt Doherty",
+          "lastName": "Doherty",
+          "shirtNumber": 2,
+          "position": "M"
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Harry Winks",
+          "lastName": "Winks",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Ryan Sessegnon",
+          "lastName": "Sessegnon",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "F"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
