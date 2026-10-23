@@ -24887,5 +24887,313 @@
         ]
       ]
     }
+  },
+  "2026-10-23": {
+    "list": {
+      "id": "list_premier_league_club_promoted_2020_21",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the clubs promoted to the Premier League for the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/tables",
+        "retrievedAt": "2026-09-03T02:14:55.778Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leeds United",
+          "lastName": "Leeds",
+          "noAutoTokens": true,
+          "value": 59
+        },
+        {
+          "fullName": "Fulham",
+          "lastName": "Fulham",
+          "noAutoTokens": true,
+          "value": 28
+        },
+        {
+          "fullName": "West Bromwich Albion",
+          "lastName": "West Brom",
+          "noAutoTokens": true,
+          "value": 26
+        }
+      ]
+    },
+    "career": {
+      "id": "career_j_r_my_toulalan",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jérémy_Toulalan",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2001–2006",
+          "club": "Nantes",
+          "appearances": 94,
+          "goals": 1
+        },
+        {
+          "years": "2006–2011",
+          "club": "Lyon",
+          "appearances": 154,
+          "goals": 0
+        },
+        {
+          "years": "2011–2013",
+          "club": "Málaga",
+          "appearances": 44,
+          "goals": 3
+        },
+        {
+          "years": "2013–2016",
+          "club": "Monaco",
+          "appearances": 82,
+          "goals": 1
+        },
+        {
+          "years": "2016–2018",
+          "club": "Bordeaux",
+          "appearances": 51,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Jérémy Toulalan",
+        "lastName": "Toulalan",
+        "aliases": [
+          "Jérémy",
+          "Toulalan"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ian_harte",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 113,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ian_Harte",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1996–2004",
+          "club": "Leeds United",
+          "appearances": 213,
+          "goals": 28
+        },
+        {
+          "years": "2004–2007",
+          "club": "Levante",
+          "appearances": 66,
+          "goals": 10
+        },
+        {
+          "years": "2007–2008",
+          "club": "Sunderland",
+          "appearances": 8,
+          "goals": 0
+        },
+        {
+          "years": "2008–2009",
+          "club": "Blackpool",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2009–2010",
+          "club": "Carlisle United",
+          "appearances": 52,
+          "goals": 19
+        },
+        {
+          "years": "2010–2013",
+          "club": "Reading",
+          "appearances": 88,
+          "goals": 15
+        },
+        {
+          "years": "2013–2015",
+          "club": "AFC Bournemouth",
+          "appearances": 28,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Ian Harte",
+        "lastName": "Harte",
+        "aliases": [
+          "Ian",
+          "Harte"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-10-08_brighton_hove_albion_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Brighton & Hove Albion",
+        "awayTeam": "Liverpool",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2023-10-08",
+        "dateLabel": "8 October 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Simon Adingra",
+          "lastName": "Adingra",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Lewis Dunk",
+          "lastName": "Dunk",
+          "goals": 1,
+          "team": "Brighton & Hove Albion"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-08-31_liverpool_newcastle_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Newcastle United",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2022-08-31",
+        "dateLabel": "31 August 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joe Gomez",
+          "lastName": "Gomez",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 23,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
