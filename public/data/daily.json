@@ -25195,5 +25195,358 @@
         ]
       ]
     }
+  },
+  "2026-10-24": {
+    "list": {
+      "id": "list_premier_league_stat_shotsontarget_2023_24_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots on target in the Premier League in the 2023/24 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 59,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 56,
+          "rank": 2
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "value": 48,
+          "rank": 3
+        },
+        {
+          "fullName": "Ollie Watkins",
+          "lastName": "Watkins",
+          "value": 47,
+          "rank": 4
+        },
+        {
+          "fullName": "Darwin Núñez",
+          "lastName": "Núñez",
+          "value": 46,
+          "rank": 5
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "value": 46,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_juan_cuadrado",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 43,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Juan_Cuadrado",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2009",
+          "club": "Independiente Medellín",
+          "appearances": 30,
+          "goals": 2
+        },
+        {
+          "years": "2009–2012",
+          "club": "Udinese",
+          "appearances": 20,
+          "goals": 0
+        },
+        {
+          "years": "2011–2012",
+          "club": "Lecce",
+          "appearances": 33,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2012–2015",
+          "club": "Fiorentina",
+          "appearances": 85,
+          "goals": 20
+        },
+        {
+          "years": "2015–2017",
+          "club": "Chelsea",
+          "appearances": 13,
+          "goals": 0
+        },
+        {
+          "years": "2015–2017",
+          "club": "Juventus",
+          "appearances": 58,
+          "goals": 6,
+          "loan": true
+        },
+        {
+          "years": "2017–2023",
+          "club": "Juventus",
+          "appearances": 166,
+          "goals": 14
+        },
+        {
+          "years": "2023–2024",
+          "club": "Inter Milan",
+          "appearances": 10,
+          "goals": 0
+        },
+        {
+          "years": "2024–2025",
+          "club": "Atalanta",
+          "appearances": 23,
+          "goals": 0
+        },
+        {
+          "years": "2025–2026",
+          "club": "Pisa",
+          "appearances": 19,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Juan Cuadrado",
+        "lastName": "Cuadrado",
+        "aliases": [
+          "Juan",
+          "Cuadrado"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_layvin_kurzawa",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Layvin_Kurzawa",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2013",
+          "club": "Monaco B",
+          "appearances": 30,
+          "goals": 5
+        },
+        {
+          "years": "2010–2015",
+          "club": "Monaco",
+          "appearances": 75,
+          "goals": 6
+        },
+        {
+          "years": "2015–2024",
+          "club": "Paris Saint-Germain",
+          "appearances": 107,
+          "goals": 10
+        },
+        {
+          "years": "2022–2023",
+          "club": "Fulham",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2025",
+          "club": "Boavista",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2026",
+          "club": "Persib Bandung",
+          "appearances": 7,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Layvin Kurzawa",
+        "lastName": "Kurzawa",
+        "aliases": [
+          "Layvin",
+          "Kurzawa"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-11-27_liverpool_southampton",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Southampton",
+        "homeScore": 4,
+        "awayScore": 0,
+        "date": "2021-11-27",
+        "dateLabel": "27 November 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Thiago Alcântara",
+          "lastName": "Alcântara",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-08-27_liverpool_bournemouth_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Bournemouth",
+        "home": true,
+        "teamScore": 9,
+        "opponentScore": 0,
+        "date": "2022-08-27",
+        "dateLabel": "27 August 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joe Gomez",
+          "lastName": "Gomez",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Harvey Elliott",
+          "lastName": "Elliott",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Luis Díaz",
+          "lastName": "Díaz",
+          "shirtNumber": 23,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
