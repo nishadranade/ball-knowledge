@@ -25548,5 +25548,350 @@
         ]
       ]
     }
+  },
+  "2026-10-25": {
+    "list": {
+      "id": "list_premier_league_appearances_club_chelsea_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Chelsea in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "John Terry",
+          "lastName": "Terry",
+          "value": 492,
+          "rank": 1
+        },
+        {
+          "fullName": "Frank Lampard",
+          "lastName": "Lampard",
+          "value": 429,
+          "rank": 2
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "value": 349,
+          "rank": 3
+        },
+        {
+          "fullName": "Petr Cech",
+          "lastName": "Cech",
+          "value": 333,
+          "rank": 4
+        },
+        {
+          "fullName": "Dennis Wise",
+          "lastName": "Wise",
+          "value": 261,
+          "rank": 5
+        },
+        {
+          "fullName": "Branislav Ivanovic",
+          "lastName": "Ivanovic",
+          "value": 261,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_c_sar_azpilicueta",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 42,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/César_Azpilicueta",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006–2007",
+          "club": "Osasuna B",
+          "appearances": 27,
+          "goals": 1
+        },
+        {
+          "years": "2007–2010",
+          "club": "Osasuna",
+          "appearances": 99,
+          "goals": 0
+        },
+        {
+          "years": "2010–2012",
+          "club": "Marseille",
+          "appearances": 47,
+          "goals": 1
+        },
+        {
+          "years": "2012–2023",
+          "club": "Chelsea",
+          "appearances": 349,
+          "goals": 10
+        },
+        {
+          "years": "2023–2025",
+          "club": "Atlético Madrid",
+          "appearances": 39,
+          "goals": 1
+        },
+        {
+          "years": "2025–2026",
+          "club": "Sevilla",
+          "appearances": 17,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "César Azpilicueta",
+        "lastName": "Azpilicueta",
+        "aliases": [
+          "César",
+          "Azpilicueta"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_adil_rami",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 148,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Adil_Rami",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2006",
+          "club": "Fréjus",
+          "appearances": 58,
+          "goals": 0
+        },
+        {
+          "years": "2006–2011",
+          "club": "Lille",
+          "appearances": 163,
+          "goals": 10
+        },
+        {
+          "years": "2011–2014",
+          "club": "Valencia",
+          "appearances": 93,
+          "goals": 8
+        },
+        {
+          "years": "2014",
+          "club": "AC Milan",
+          "appearances": 22,
+          "goals": 3,
+          "loan": true
+        },
+        {
+          "years": "2014–2015",
+          "club": "AC Milan",
+          "appearances": 22,
+          "goals": 1
+        },
+        {
+          "years": "2015–2017",
+          "club": "Sevilla",
+          "appearances": 49,
+          "goals": 3
+        },
+        {
+          "years": "2017–2019",
+          "club": "Marseille",
+          "appearances": 75,
+          "goals": 3
+        },
+        {
+          "years": "2019–2020",
+          "club": "Fenerbahçe",
+          "appearances": 7,
+          "goals": 0
+        },
+        {
+          "years": "2020",
+          "club": "Sochi",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2020–2021",
+          "club": "Boavista",
+          "appearances": 22,
+          "goals": 0
+        },
+        {
+          "years": "2021–2023",
+          "club": "Troyes",
+          "appearances": 39,
+          "goals": 3
+        }
+      ],
+      "answer": {
+        "fullName": "Adil Rami",
+        "lastName": "Rami",
+        "aliases": [
+          "Adil",
+          "Rami"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-05-16_chelsea_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Manchester United",
+        "homeScore": 1,
+        "awayScore": 0,
+        "date": "2025-05-16",
+        "dateLabel": "16 May 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-08-12_arsenal_nottingham_forest_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Nottingham Forest",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2023-08-12",
+        "dateLabel": "12 August 2023",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Ramsdale",
+          "lastName": "Ramsdale",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Thomas Partey",
+          "lastName": "Partey",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Jurriën Timber",
+          "lastName": "Timber",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Eddie Nketiah",
+          "lastName": "Nketiah",
+          "shirtNumber": 14,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
