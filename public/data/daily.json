@@ -25893,5 +25893,338 @@
         ]
       ]
     }
+  },
+  "2026-10-26": {
+    "list": {
+      "id": "list_premier_league_assists_country_argentina_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Argentine assist providers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 47,
+          "rank": 1
+        },
+        {
+          "fullName": "Carlos Tevez",
+          "lastName": "Tevez",
+          "value": 36,
+          "rank": 2
+        },
+        {
+          "fullName": "Érik Lamela",
+          "lastName": "Lamela",
+          "value": 23,
+          "rank": 3
+        },
+        {
+          "fullName": "Pablo Zabaleta",
+          "lastName": "Zabaleta",
+          "value": 21,
+          "rank": 4
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Allister",
+          "value": 19,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_petr_cech",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 3,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Petr_Cech",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2001",
+          "club": "Chmel Blšany",
+          "appearances": 27,
+          "goals": 0
+        },
+        {
+          "years": "2001–2002",
+          "club": "Sparta Prague",
+          "appearances": 27,
+          "goals": 0
+        },
+        {
+          "years": "2002–2004",
+          "club": "Rennes",
+          "appearances": 70,
+          "goals": 0
+        },
+        {
+          "years": "2004–2015",
+          "club": "Chelsea",
+          "appearances": 333,
+          "goals": 0
+        },
+        {
+          "years": "2015–2019",
+          "club": "Arsenal",
+          "appearances": 110,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Petr Cech",
+        "lastName": "Cech",
+        "aliases": [
+          "Petr",
+          "Cech"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_kyle_walker",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 21,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kyle_Walker",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2009",
+          "club": "Sheffield United",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2008",
+          "club": "Northampton Town",
+          "appearances": 9,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2009–2017",
+          "club": "Tottenham Hotspur",
+          "appearances": 183,
+          "goals": 4
+        },
+        {
+          "years": "2009–2010",
+          "club": "Sheffield United",
+          "appearances": 26,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2010–2011",
+          "club": "Queens Park Rangers",
+          "appearances": 20,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Aston Villa",
+          "appearances": 15,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2017–2025",
+          "club": "Manchester City",
+          "appearances": 212,
+          "goals": 3
+        },
+        {
+          "years": "2025",
+          "club": "AC Milan",
+          "appearances": 11,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2025–",
+          "club": "Burnley",
+          "appearances": 36,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kyle Walker",
+        "lastName": "Walker",
+        "aliases": [
+          "Kyle",
+          "Walker"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-03-16_arsenal_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "Liverpool",
+        "homeScore": 0,
+        "awayScore": 2,
+        "date": "2022-03-16",
+        "dateLabel": "16 March 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-02-18_chelsea_southampton_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Southampton",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 1,
+        "date": "2023-02-18",
+        "dateLabel": "18 February 2023",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Kepa Arrizabalaga",
+          "lastName": "Arrizabalaga",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "César Azpilicueta",
+          "lastName": "Azpilicueta",
+          "shirtNumber": 28,
+          "position": "D"
+        },
+        {
+          "fullName": "Kalidou Koulibaly",
+          "lastName": "Koulibaly",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Benoît Badiashile",
+          "lastName": "Badiashile",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Ben Chilwell",
+          "lastName": "Chilwell",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Noni Madueke",
+          "lastName": "Madueke",
+          "shirtNumber": 31,
+          "position": "M"
+        },
+        {
+          "fullName": "João Félix",
+          "lastName": "Félix Sequeira",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Mason Mount",
+          "lastName": "Mount",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "David Datro Fofana",
+          "lastName": "Fofana",
+          "shirtNumber": 27,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
