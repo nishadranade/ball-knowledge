@@ -26226,5 +26226,322 @@
         ]
       ]
     }
+  },
+  "2026-10-27": {
+    "list": {
+      "id": "list_premier_league_goals_club_southampton_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Southampton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Matthew Le Tissier",
+          "lastName": "Le Tissier",
+          "value": 100,
+          "rank": 1
+        },
+        {
+          "fullName": "James Beattie",
+          "lastName": "Beattie",
+          "value": 68,
+          "rank": 2
+        },
+        {
+          "fullName": "James Ward-Prowse",
+          "lastName": "Ward-Prowse",
+          "value": 49,
+          "rank": 3
+        },
+        {
+          "fullName": "Marian Pahars",
+          "lastName": "Pahars",
+          "value": 42,
+          "rank": 4
+        },
+        {
+          "fullName": "Danny Ings",
+          "lastName": "Ings",
+          "value": 41,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_duncan_ferguson",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 79,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Duncan_Ferguson",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1990–1993",
+          "club": "Dundee United",
+          "appearances": 77,
+          "goals": 28
+        },
+        {
+          "years": "1993–1994",
+          "club": "Rangers",
+          "appearances": 14,
+          "goals": 2
+        },
+        {
+          "years": "1994",
+          "club": "Everton",
+          "appearances": 9,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "1994–1998",
+          "club": "Everton",
+          "appearances": 107,
+          "goals": 35
+        },
+        {
+          "years": "1998–2000",
+          "club": "Newcastle United",
+          "appearances": 30,
+          "goals": 8
+        },
+        {
+          "years": "2000–2006",
+          "club": "Everton",
+          "appearances": 123,
+          "goals": 23
+        }
+      ],
+      "answer": {
+        "fullName": "Duncan Ferguson",
+        "lastName": "Ferguson",
+        "aliases": [
+          "Duncan",
+          "Ferguson"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_laurent_koscielny",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 67,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Laurent_Koscielny",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2004–2007",
+          "club": "Guingamp",
+          "appearances": 41,
+          "goals": 0
+        },
+        {
+          "years": "2007–2009",
+          "club": "Tours",
+          "appearances": 67,
+          "goals": 6
+        },
+        {
+          "years": "2009–2010",
+          "club": "Lorient",
+          "appearances": 35,
+          "goals": 3
+        },
+        {
+          "years": "2010–2019",
+          "club": "Arsenal",
+          "appearances": 255,
+          "goals": 22
+        },
+        {
+          "years": "2019–2022",
+          "club": "Bordeaux",
+          "appearances": 62,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Laurent Koscielny",
+        "lastName": "Koscielny",
+        "aliases": [
+          "Laurent",
+          "Koscielny"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-10-04_chelsea_liverpool",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Liverpool",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2025-10-04",
+        "dateLabel": "4 October 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Estêvão",
+          "lastName": "Almeida de Oliveira Gonçalves",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-01-20_chelsea_wolverhampton_wanderers_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Wolverhampton Wanderers",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2025-01-20",
+        "dateLabel": "20 January 2025",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Tosin Adarabioyo",
+          "lastName": "Adarabioyo",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Trevoh Chalobah",
+          "lastName": "Chalobah",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Kiernan Dewsbury-Hall",
+          "lastName": "Dewsbury-Hall",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Noni Madueke",
+          "lastName": "Madueke",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Cole Palmer",
+          "lastName": "Palmer",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Nicolas Jackson",
+          "lastName": "Jackson",
+          "shirtNumber": 15,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
