@@ -26857,5 +26857,359 @@
         ]
       ]
     }
+  },
+  "2026-10-29": {
+    "list": {
+      "id": "list_premier_league_goals_country_wales_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Welsh goalscorers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ryan Giggs",
+          "lastName": "Giggs",
+          "value": 109,
+          "rank": 1
+        },
+        {
+          "fullName": "Craig Bellamy",
+          "lastName": "Bellamy",
+          "value": 81,
+          "rank": 2
+        },
+        {
+          "fullName": "Gary Speed",
+          "lastName": "Speed",
+          "value": 80,
+          "rank": 3
+        },
+        {
+          "fullName": "Mark Hughes",
+          "lastName": "Hughes",
+          "value": 64,
+          "rank": 4
+        },
+        {
+          "fullName": "John Hartson",
+          "lastName": "Hartson",
+          "value": 55,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_henning_berg",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 96,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Henning_Berg",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1986–1988",
+          "club": "KFUM",
+          "appearances": 100,
+          "goals": 0
+        },
+        {
+          "years": "1988–1991",
+          "club": "Vålerenga",
+          "appearances": 66,
+          "goals": 0
+        },
+        {
+          "years": "1992–1993",
+          "club": "Lillestrøm",
+          "appearances": 20,
+          "goals": 1
+        },
+        {
+          "years": "1993–1997",
+          "club": "Blackburn Rovers",
+          "appearances": 159,
+          "goals": 4
+        },
+        {
+          "years": "1997–2000",
+          "club": "Manchester United",
+          "appearances": 66,
+          "goals": 2
+        },
+        {
+          "years": "2000",
+          "club": "Blackburn Rovers",
+          "appearances": 17,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2000–2003",
+          "club": "Blackburn Rovers",
+          "appearances": 74,
+          "goals": 3
+        },
+        {
+          "years": "2003–2004",
+          "club": "Rangers",
+          "appearances": 20,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Henning Berg",
+        "lastName": "Berg",
+        "aliases": [
+          "Henning",
+          "Berg"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ruud_van_nistelrooij",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 37,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ruud_van_Nistelrooij",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1993–1997",
+          "club": "Den Bosch",
+          "appearances": 69,
+          "goals": 17
+        },
+        {
+          "years": "1997–1998",
+          "club": "Heerenveen",
+          "appearances": 31,
+          "goals": 13
+        },
+        {
+          "years": "1998–2001",
+          "club": "PSV Eindhoven",
+          "appearances": 67,
+          "goals": 62
+        },
+        {
+          "years": "2001–2006",
+          "club": "Manchester United",
+          "appearances": 150,
+          "goals": 95
+        },
+        {
+          "years": "2006–2010",
+          "club": "Real Madrid",
+          "appearances": 68,
+          "goals": 46
+        },
+        {
+          "years": "2010–2011",
+          "club": "Hamburger SV",
+          "appearances": 36,
+          "goals": 12
+        },
+        {
+          "years": "2011–2012",
+          "club": "Málaga",
+          "appearances": 28,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Ruud van Nistelrooij",
+        "lastName": "van Nistelrooij",
+        "aliases": [
+          "Ruud",
+          "van",
+          "Nistelrooij"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-02-01_manchester_united_fulham",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester United",
+        "awayTeam": "Fulham",
+        "homeScore": 3,
+        "awayScore": 2,
+        "date": "2026-02-01",
+        "dateLabel": "1 February 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Santos Carneiro da Cunha",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Raúl Jiménez",
+          "lastName": "Jiménez",
+          "goals": 1,
+          "team": "Fulham"
+        },
+        {
+          "fullName": "Kevin",
+          "lastName": "Santos Lopes de Macedo",
+          "goals": 1,
+          "team": "Fulham"
+        },
+        {
+          "fullName": "Benjamin Sesko",
+          "lastName": "Sesko",
+          "goals": 1,
+          "team": "Manchester United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-04-19_everton_liverpool_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Everton",
+        "home": false,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2026-04-19",
+        "dateLabel": "19 April 2026",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Giorgi Mamardashvili",
+          "lastName": "Mamardashvili",
+          "shirtNumber": 25,
+          "position": "G"
+        },
+        {
+          "fullName": "Curtis Jones",
+          "lastName": "Jones",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Ibrahima Konaté",
+          "lastName": "Konaté",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Dominik Szoboszlai",
+          "lastName": "Szoboszlai",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Ryan Gravenberch",
+          "lastName": "Gravenberch",
+          "shirtNumber": 38,
+          "position": "M"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "shirtNumber": 11,
+          "position": "M"
+        },
+        {
+          "fullName": "Florian Wirtz",
+          "lastName": "Wirtz",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Cody Gakpo",
+          "lastName": "Gakpo",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Alexander Isak",
+          "lastName": "Isak",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
