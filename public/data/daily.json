@@ -27211,5 +27211,322 @@
         ]
       ]
     }
+  },
+  "2026-10-30": {
+    "list": {
+      "id": "list_premier_league_stat_shotsontarget_2020_21_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots on target in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 53,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 52,
+          "rank": 2
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Fernandes",
+          "value": 51,
+          "rank": 3
+        },
+        {
+          "fullName": "Patrick Bamford",
+          "lastName": "Bamford",
+          "value": 48,
+          "rank": 4
+        },
+        {
+          "fullName": "Dominic Calvert-Lewin",
+          "lastName": "Calvert-Lewin",
+          "value": 46,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_leon_osman",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 80,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Leon_Osman",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000–2016",
+          "club": "Everton",
+          "appearances": 352,
+          "goals": 43
+        },
+        {
+          "years": "2002–2003",
+          "club": "Carlisle United",
+          "appearances": 12,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2004",
+          "club": "Derby County",
+          "appearances": 17,
+          "goals": 3,
+          "loan": true
+        }
+      ],
+      "answer": {
+        "fullName": "Leon Osman",
+        "lastName": "Osman",
+        "aliases": [
+          "Leon",
+          "Osman"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_aleksandar_mitrovic",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 200,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Aleksandar_Mitrovic",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2012",
+          "club": "Teleoptik",
+          "appearances": 25,
+          "goals": 7
+        },
+        {
+          "years": "2012–2013",
+          "club": "Partizan",
+          "appearances": 28,
+          "goals": 13
+        },
+        {
+          "years": "2013–2015",
+          "club": "Anderlecht",
+          "appearances": 69,
+          "goals": 36
+        },
+        {
+          "years": "2015–2018",
+          "club": "Newcastle United",
+          "appearances": 65,
+          "goals": 14
+        },
+        {
+          "years": "2018",
+          "club": "Fulham",
+          "appearances": 17,
+          "goals": 12,
+          "loan": true
+        },
+        {
+          "years": "2018–2023",
+          "club": "Fulham",
+          "appearances": 173,
+          "goals": 97
+        },
+        {
+          "years": "2023–2025",
+          "club": "Al Hilal",
+          "appearances": 51,
+          "goals": 47
+        },
+        {
+          "years": "2025–",
+          "club": "Al Rayyan",
+          "appearances": 11,
+          "goals": 5
+        }
+      ],
+      "answer": {
+        "fullName": "Aleksandar Mitrovic",
+        "lastName": "Mitrovic",
+        "aliases": [
+          "Aleksandar",
+          "Mitrovic"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2026-05-19_chelsea_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2026-05-19",
+        "dateLabel": "19 May 2026"
+      },
+      "answers": [
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Andrey Santos",
+          "lastName": "Nascimento dos Santos",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-02-10_tottenham_hotspur_newcastle_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Newcastle United",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2026-02-10",
+        "dateLabel": "10 February 2026",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Archie Gray",
+          "lastName": "Gray",
+          "shirtNumber": 14,
+          "position": "D"
+        },
+        {
+          "fullName": "Radu Dragusin",
+          "lastName": "Dragusin",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Djed Spence",
+          "lastName": "Spence",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Conor Gallagher",
+          "lastName": "Gallagher",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Pape Matar Sarr",
+          "lastName": "Sarr",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Wilson Odobert",
+          "lastName": "Odobert",
+          "shirtNumber": 28,
+          "position": "F"
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "shirtNumber": 19,
+          "position": "F"
+        },
+        {
+          "fullName": "Xavi Simons",
+          "lastName": "Simons",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
