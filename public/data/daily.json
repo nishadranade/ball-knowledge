@@ -27528,5 +27528,301 @@
         ]
       ]
     }
+  },
+  "2026-10-31": {
+    "list": {
+      "id": "list_premier_league_cleansheets_country_germany_3",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 3 German clean-sheet keepers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Bernd Leno",
+          "lastName": "Leno",
+          "value": 57,
+          "rank": 1
+        },
+        {
+          "fullName": "Jens Lehmann",
+          "lastName": "Lehmann",
+          "value": 54,
+          "rank": 2
+        },
+        {
+          "fullName": "Loris Karius",
+          "lastName": "Karius",
+          "value": 13,
+          "rank": 3
+        }
+      ]
+    },
+    "career": {
+      "id": "career_willian_pacho",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 106,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Willian_Pacho",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2019–2022",
+          "club": "Independiente del Valle",
+          "appearances": 26,
+          "goals": 0
+        },
+        {
+          "years": "2022–2023",
+          "club": "Royal Antwerp",
+          "appearances": 42,
+          "goals": 0
+        },
+        {
+          "years": "2023–2024",
+          "club": "Eintracht Frankfurt",
+          "appearances": 33,
+          "goals": 0
+        },
+        {
+          "years": "2024–",
+          "club": "Paris Saint-Germain",
+          "appearances": 51,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Willian Pacho",
+        "lastName": "Pacho",
+        "aliases": [
+          "Willian",
+          "Pacho"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_gary_mcallister",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 42,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gary_McAllister",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1981–1985",
+          "club": "Motherwell",
+          "appearances": 59,
+          "goals": 6
+        },
+        {
+          "years": "1985–1990",
+          "club": "Leicester City",
+          "appearances": 201,
+          "goals": 46
+        },
+        {
+          "years": "1990–1996",
+          "club": "Leeds United",
+          "appearances": 231,
+          "goals": 31
+        },
+        {
+          "years": "1996–2000",
+          "club": "Coventry City",
+          "appearances": 119,
+          "goals": 20
+        },
+        {
+          "years": "2000–2002",
+          "club": "Liverpool",
+          "appearances": 55,
+          "goals": 5
+        },
+        {
+          "years": "2002–2004",
+          "club": "Coventry City",
+          "appearances": 55,
+          "goals": 10
+        }
+      ],
+      "answer": {
+        "fullName": "Gary McAllister",
+        "lastName": "McAllister",
+        "aliases": [
+          "Gary",
+          "McAllister"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-02-03_everton_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Everton",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2024-02-03",
+        "dateLabel": "3 February 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "goals": 2,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Jack Harrison",
+          "lastName": "Harrison",
+          "goals": 1,
+          "team": "Everton"
+        },
+        {
+          "fullName": "Jarrad Branthwaite",
+          "lastName": "Branthwaite",
+          "goals": 1,
+          "team": "Everton"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-04-21_brighton_hove_albion_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Brighton & Hove Albion",
+        "home": false,
+        "teamScore": 0,
+        "opponentScore": 3,
+        "date": "2026-04-21",
+        "dateLabel": "21 April 2026",
+        "formation": "5-4-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Malo Gusto",
+          "lastName": "Gusto",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Wesley Fofana",
+          "lastName": "Fofana",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Trevoh Chalobah",
+          "lastName": "Chalobah",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Jorrel Hato",
+          "lastName": "Hato",
+          "shirtNumber": 21,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Roméo Lavia",
+          "lastName": "Lavia",
+          "shirtNumber": 45,
+          "position": "M"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Liam Delap",
+          "lastName": "Delap",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
