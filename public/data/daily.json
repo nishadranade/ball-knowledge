@@ -27824,5 +27824,304 @@
         ]
       ]
     }
+  },
+  "2026-11-01": {
+    "list": {
+      "id": "list_premier_league_appearances_country_sweden_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Swedish appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sebastian Larsson",
+          "lastName": "Larsson",
+          "value": 282,
+          "rank": 1
+        },
+        {
+          "fullName": "Freddie Ljungberg",
+          "lastName": "Ljungberg",
+          "value": 241,
+          "rank": 2
+        },
+        {
+          "fullName": "Olof Mellberg",
+          "lastName": "Mellberg",
+          "value": 232,
+          "rank": 3
+        },
+        {
+          "fullName": "Victor Lindelöf",
+          "lastName": "Lindelöf",
+          "value": 213,
+          "rank": 4
+        },
+        {
+          "fullName": "Jonas Olsson",
+          "lastName": "Olsson",
+          "value": 201,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_dominic_solanke",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 184,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dominic_Solanke",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2017",
+          "club": "Chelsea",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2015–2016",
+          "club": "Vitesse",
+          "appearances": 25,
+          "goals": 7,
+          "loan": true
+        },
+        {
+          "years": "2017–2019",
+          "club": "Liverpool",
+          "appearances": 21,
+          "goals": 1
+        },
+        {
+          "years": "2019–2024",
+          "club": "Bournemouth",
+          "appearances": 199,
+          "goals": 72
+        },
+        {
+          "years": "2024–",
+          "club": "Tottenham Hotspur",
+          "appearances": 42,
+          "goals": 12
+        }
+      ],
+      "answer": {
+        "fullName": "Dominic Solanke",
+        "lastName": "Solanke",
+        "aliases": [
+          "Dominic",
+          "Solanke"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_vin_cius_j_nior",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 6,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vinícius_Júnior",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2017–2018",
+          "club": "Flamengo",
+          "appearances": 50,
+          "goals": 11
+        },
+        {
+          "years": "2018",
+          "club": "Real Madrid B",
+          "appearances": 5,
+          "goals": 4
+        },
+        {
+          "years": "2018–",
+          "club": "Real Madrid",
+          "appearances": 242,
+          "goals": 77
+        }
+      ],
+      "answer": {
+        "fullName": "Vinícius Júnior",
+        "lastName": "Júnior",
+        "aliases": [
+          "Vinícius",
+          "Júnior"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-09-03_chelsea_west_ham_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Chelsea",
+        "awayTeam": "West Ham United",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2022-09-03",
+        "dateLabel": "3 September 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Michail Antonio",
+          "lastName": "Antonio",
+          "goals": 1,
+          "team": "West Ham United"
+        },
+        {
+          "fullName": "Ben Chilwell",
+          "lastName": "Chilwell",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-11-09_brighton_hove_albion_manchester_city_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester City",
+        "opponent": "Brighton & Hove Albion",
+        "home": false,
+        "teamScore": 1,
+        "opponentScore": 2,
+        "date": "2024-11-09",
+        "dateLabel": "9 November 2024",
+        "formation": "4-1-4-1"
+      },
+      "answers": [
+        {
+          "fullName": "Ederson",
+          "lastName": "Santana de Moraes",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Kyle Walker",
+          "lastName": "Walker",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Jahmai Simpson-Pusey",
+          "lastName": "Simpson-Pusey",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Rico Lewis",
+          "lastName": "Lewis",
+          "shirtNumber": 82,
+          "position": "D"
+        },
+        {
+          "fullName": "Mateo Kovacic",
+          "lastName": "Kovacic",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Savinho",
+          "lastName": "Moreira de Oliveira",
+          "shirtNumber": 26,
+          "position": "M"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "shirtNumber": 47,
+          "position": "M"
+        },
+        {
+          "fullName": "Ilkay Gündogan",
+          "lastName": "Gündogan",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Matheus Nunes",
+          "lastName": "Nunes",
+          "shirtNumber": 27,
+          "position": "M"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
