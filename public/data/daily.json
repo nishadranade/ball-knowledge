@@ -28464,5 +28464,325 @@
         ]
       ]
     }
+  },
+  "2026-11-03": {
+    "list": {
+      "id": "list_premier_league_cleansheets_club_southampton_5",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 clean-sheet keepers for Southampton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Paul Jones",
+          "lastName": "Jones",
+          "value": 54,
+          "rank": 1
+        },
+        {
+          "fullName": "Fraser Forster",
+          "lastName": "Forster",
+          "value": 42,
+          "rank": 2
+        },
+        {
+          "fullName": "Alex McCarthy",
+          "lastName": "McCarthy",
+          "value": 27,
+          "rank": 3
+        },
+        {
+          "fullName": "Antti Niemi",
+          "lastName": "Niemi",
+          "value": 22,
+          "rank": 4
+        },
+        {
+          "fullName": "Dave Beasant",
+          "lastName": "Beasant",
+          "value": 20,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_alejandro_grimaldo",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 64,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Alejandro_Grimaldo",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2015",
+          "club": "Barcelona B",
+          "appearances": 92,
+          "goals": 6
+        },
+        {
+          "years": "2016–2023",
+          "club": "Benfica",
+          "appearances": 197,
+          "goals": 19
+        },
+        {
+          "years": "2023–2026",
+          "club": "Bayer Leverkusen",
+          "appearances": 94,
+          "goals": 20
+        },
+        {
+          "years": "2026–",
+          "club": "Atlético Madrid",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Alejandro Grimaldo",
+        "lastName": "Grimaldo",
+        "aliases": [
+          "Alejandro",
+          "Grimaldo"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ashley_young",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 14,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ashley_Young",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2007",
+          "club": "Watford",
+          "appearances": 98,
+          "goals": 19
+        },
+        {
+          "years": "2007–2011",
+          "club": "Aston Villa",
+          "appearances": 157,
+          "goals": 30
+        },
+        {
+          "years": "2011–2020",
+          "club": "Manchester United",
+          "appearances": 192,
+          "goals": 15
+        },
+        {
+          "years": "2020–2021",
+          "club": "Inter Milan",
+          "appearances": 44,
+          "goals": 5
+        },
+        {
+          "years": "2021–2023",
+          "club": "Aston Villa",
+          "appearances": 53,
+          "goals": 1
+        },
+        {
+          "years": "2023–2025",
+          "club": "Everton",
+          "appearances": 63,
+          "goals": 1
+        },
+        {
+          "years": "2025–2026",
+          "club": "Ipswich Town",
+          "appearances": 13,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Ashley Young",
+        "lastName": "Young",
+        "aliases": [
+          "Ashley",
+          "Young"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-12-15_southampton_tottenham_hotspur",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Southampton",
+        "awayTeam": "Tottenham Hotspur",
+        "homeScore": 0,
+        "awayScore": 5,
+        "date": "2024-12-15",
+        "dateLabel": "15 December 2024"
+      },
+      "answers": [
+        {
+          "fullName": "James Maddison",
+          "lastName": "Maddison",
+          "goals": 2,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Pape Matar Sarr",
+          "lastName": "Sarr",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-04-06_brighton_hove_albion_arsenal_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Brighton & Hove Albion",
+        "home": false,
+        "teamScore": 3,
+        "opponentScore": 0,
+        "date": "2024-04-06",
+        "dateLabel": "6 April 2024",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "David Raya",
+          "lastName": "Raya",
+          "shirtNumber": 22,
+          "position": "G"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Frello Filho",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "shirtNumber": 41,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Kai Havertz",
+          "lastName": "Havertz",
+          "shirtNumber": 29,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "de Jesus",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
