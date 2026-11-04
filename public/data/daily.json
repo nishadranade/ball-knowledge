@@ -28784,5 +28784,309 @@
         ]
       ]
     }
+  },
+  "2026-11-04": {
+    "list": {
+      "id": "list_premier_league_assists_club_everton_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Everton in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Leighton Baines",
+          "lastName": "Baines",
+          "value": 53,
+          "rank": 1
+        },
+        {
+          "fullName": "Mikel Arteta",
+          "lastName": "Arteta",
+          "value": 36,
+          "rank": 2
+        },
+        {
+          "fullName": "Steven Pienaar",
+          "lastName": "Pienaar",
+          "value": 31,
+          "rank": 3
+        },
+        {
+          "fullName": "Andy Hinchcliffe",
+          "lastName": "Hinchcliffe",
+          "value": 29,
+          "rank": 4
+        },
+        {
+          "fullName": "Leon Osman",
+          "lastName": "Osman",
+          "value": 27,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career__rik_lamela",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 149,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Érik_Lamela",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2011",
+          "club": "River Plate",
+          "appearances": 36,
+          "goals": 4
+        },
+        {
+          "years": "2011–2013",
+          "club": "Roma",
+          "appearances": 62,
+          "goals": 19
+        },
+        {
+          "years": "2013–2021",
+          "club": "Tottenham Hotspur",
+          "appearances": 177,
+          "goals": 17
+        },
+        {
+          "years": "2021–2024",
+          "club": "Sevilla",
+          "appearances": 65,
+          "goals": 13
+        },
+        {
+          "years": "2024–2025",
+          "club": "AEK Athens",
+          "appearances": 24,
+          "goals": 5
+        }
+      ],
+      "answer": {
+        "fullName": "Érik Lamela",
+        "lastName": "Lamela",
+        "aliases": [
+          "Érik",
+          "Lamela"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_david_raya",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 42,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/David_Raya",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2019",
+          "club": "Blackburn Rovers",
+          "appearances": 98,
+          "goals": 0
+        },
+        {
+          "years": "2014–2015",
+          "club": "Southport",
+          "appearances": 16,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2019–2024",
+          "club": "Brentford",
+          "appearances": 150,
+          "goals": 0
+        },
+        {
+          "years": "2023–2024",
+          "club": "Arsenal",
+          "appearances": 32,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2024–",
+          "club": "Arsenal",
+          "appearances": 75,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "David Raya",
+        "lastName": "Raya",
+        "aliases": [
+          "David",
+          "Raya"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-02-19_manchester_united_leicester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester United",
+        "awayTeam": "Leicester City",
+        "homeScore": 3,
+        "awayScore": 0,
+        "date": "2023-02-19",
+        "dateLabel": "19 February 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Marcus Rashford",
+          "lastName": "Rashford",
+          "goals": 2,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Jadon Sancho",
+          "lastName": "Sancho",
+          "goals": 1,
+          "team": "Manchester United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-02-12_norwich_city_manchester_city_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester City",
+        "opponent": "Norwich City",
+        "home": false,
+        "teamScore": 4,
+        "opponentScore": 0,
+        "date": "2022-02-12",
+        "dateLabel": "12 February 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Ederson",
+          "lastName": "Santana de Moraes",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Kyle Walker",
+          "lastName": "Walker",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "dos Santos Gato Alves Dias",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Nathan Aké",
+          "lastName": "Aké",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 11,
+          "position": "D"
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Fernandinho",
+          "lastName": "Rosa",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Ilkay Gündogan",
+          "lastName": "Gündogan",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Riyad Mahrez",
+          "lastName": "Mahrez",
+          "shirtNumber": 26,
+          "position": "F"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "shirtNumber": 47,
+          "position": "F"
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
