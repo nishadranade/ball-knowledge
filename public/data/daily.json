@@ -29088,5 +29088,307 @@
         ]
       ]
     }
+  },
+  "2026-11-05": {
+    "list": {
+      "id": "list_premier_league_appearances_country_england_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 English appearance makers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Milner",
+          "lastName": "Milner",
+          "value": 658,
+          "rank": 1
+        },
+        {
+          "fullName": "Gareth Barry",
+          "lastName": "Barry",
+          "value": 653,
+          "rank": 2
+        },
+        {
+          "fullName": "Frank Lampard",
+          "lastName": "Lampard",
+          "value": 609,
+          "rank": 3
+        },
+        {
+          "fullName": "David James",
+          "lastName": "James",
+          "value": 572,
+          "rank": 4
+        },
+        {
+          "fullName": "Emile Heskey",
+          "lastName": "Heskey",
+          "value": 516,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_iker_casillas",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 5,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Iker_Casillas",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–1999",
+          "club": "Real Madrid C",
+          "appearances": 27,
+          "goals": 0
+        },
+        {
+          "years": "1999–2000",
+          "club": "Real Madrid B",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "1999–2015",
+          "club": "Real Madrid",
+          "appearances": 510,
+          "goals": 0
+        },
+        {
+          "years": "2015–2020",
+          "club": "Porto",
+          "appearances": 116,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Iker Casillas",
+        "lastName": "Casillas",
+        "aliases": [
+          "Iker",
+          "Casillas"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_stefan_savic",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 148,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Stefan_Savic",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2010",
+          "club": "BSK Borča",
+          "appearances": 27,
+          "goals": 1
+        },
+        {
+          "years": "2010–2011",
+          "club": "Partizan",
+          "appearances": 20,
+          "goals": 1
+        },
+        {
+          "years": "2011–2012",
+          "club": "Manchester City",
+          "appearances": 12,
+          "goals": 1
+        },
+        {
+          "years": "2012–2015",
+          "club": "Fiorentina",
+          "appearances": 86,
+          "goals": 4
+        },
+        {
+          "years": "2015–2024",
+          "club": "Atlético Madrid",
+          "appearances": 217,
+          "goals": 2
+        },
+        {
+          "years": "2024–",
+          "club": "Trabzonspor",
+          "appearances": 35,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Stefan Savic",
+        "lastName": "Savic",
+        "aliases": [
+          "Stefan",
+          "Savic"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-03-10_liverpool_manchester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Manchester City",
+        "homeScore": 1,
+        "awayScore": 1,
+        "date": "2024-03-10",
+        "dateLabel": "10 March 2024"
+      },
+      "answers": [
+        {
+          "fullName": "John Stones",
+          "lastName": "Stones",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Alexis Mac Allister",
+          "lastName": "Mac Allister",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-01-16_liverpool_brentford_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Liverpool",
+        "opponent": "Brentford",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 0,
+        "date": "2022-01-16",
+        "dateLabel": "16 January 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Alisson Becker",
+          "lastName": "Becker",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 66,
+          "position": "D"
+        },
+        {
+          "fullName": "Joël Matip",
+          "lastName": "Matip",
+          "shirtNumber": 32,
+          "position": "D"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Andy Robertson",
+          "lastName": "Robertson",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Jordan Henderson",
+          "lastName": "Henderson",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Fabinho",
+          "lastName": "Tavares",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Curtis Jones",
+          "lastName": "Jones",
+          "shirtNumber": 17,
+          "position": "M"
+        },
+        {
+          "fullName": "Alex Oxlade-Chamberlain",
+          "lastName": "Oxlade-Chamberlain",
+          "shirtNumber": 15,
+          "position": "F"
+        },
+        {
+          "fullName": "Roberto Firmino",
+          "lastName": "Barbosa de Oliveira",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Diogo Jota",
+          "lastName": "Teixeira da Silva",
+          "shirtNumber": 20,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
