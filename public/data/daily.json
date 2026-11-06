@@ -29390,5 +29390,316 @@
         ]
       ]
     }
+  },
+  "2026-11-06": {
+    "list": {
+      "id": "list_premier_league_stat_tackles_2025_26_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most tackles in the Premier League in the 2025/26 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "James Garner",
+          "lastName": "Garner",
+          "value": 71,
+          "rank": 1
+        },
+        {
+          "fullName": "João Gomes",
+          "lastName": "Gomes",
+          "value": 68,
+          "rank": 2
+        },
+        {
+          "fullName": "Mateus Fernandes",
+          "lastName": "Fernandes",
+          "value": 67,
+          "rank": 3
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Palhinha",
+          "value": 66,
+          "rank": 4
+        },
+        {
+          "fullName": "Elliot Anderson",
+          "lastName": "Anderson",
+          "value": 63,
+          "rank": 5
+        },
+        {
+          "fullName": "Tyrick Mitchell",
+          "lastName": "Mitchell",
+          "value": 63,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_julian_draxler",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 100,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Julian_Draxler",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2011–2015",
+          "club": "Schalke 04",
+          "appearances": 119,
+          "goals": 18
+        },
+        {
+          "years": "2015–2017",
+          "club": "VfL Wolfsburg",
+          "appearances": 34,
+          "goals": 5
+        },
+        {
+          "years": "2017–2023",
+          "club": "Paris Saint-Germain",
+          "appearances": 131,
+          "goals": 17
+        },
+        {
+          "years": "2022–2023",
+          "club": "Benfica",
+          "appearances": 10,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2023–",
+          "club": "Al Ahli",
+          "appearances": 39,
+          "goals": 22
+        }
+      ],
+      "answer": {
+        "fullName": "Julian Draxler",
+        "lastName": "Draxler",
+        "aliases": [
+          "Julian",
+          "Draxler"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_thomas_m_ller",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 10,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Thomas_Müller",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2007–2009",
+          "club": "Bayern Munich II",
+          "appearances": 35,
+          "goals": 16
+        },
+        {
+          "years": "2008–2025",
+          "club": "Bayern Munich",
+          "appearances": 503,
+          "goals": 150
+        },
+        {
+          "years": "2025–",
+          "club": "Vancouver Whitecaps",
+          "appearances": 20,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "Thomas Müller",
+        "lastName": "Müller",
+        "aliases": [
+          "Thomas",
+          "Müller"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-01-25_manchester_city_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Chelsea",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2025-01-25",
+        "dateLabel": "25 January 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Noni Madueke",
+          "lastName": "Madueke",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-04-08_tottenham_hotspur_brighton_hove_albion_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Brighton & Hove Albion",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2023-04-08",
+        "dateLabel": "8 April 2023",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Hugo Lloris",
+          "lastName": "Lloris",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Clément Lenglet",
+          "lastName": "Lenglet",
+          "shirtNumber": 34,
+          "position": "D"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "M"
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Oliver Skipp",
+          "lastName": "Skipp",
+          "shirtNumber": 4,
+          "position": "M"
+        },
+        {
+          "fullName": "Ivan Perisic",
+          "lastName": "Perisic",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "F"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
