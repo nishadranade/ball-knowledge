@@ -29701,5 +29701,344 @@
         ]
       ]
     }
+  },
+  "2026-11-07": {
+    "list": {
+      "id": "list_premier_league_stat_interceptions_2020_21_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most interceptions in the Premier League in the 2020/21 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jan Bednarek",
+          "lastName": "Bednarek",
+          "value": 84,
+          "rank": 1
+        },
+        {
+          "fullName": "Josh Brownhill",
+          "lastName": "Brownhill",
+          "value": 69,
+          "rank": 2
+        },
+        {
+          "fullName": "Rúben Neves",
+          "lastName": "Neves",
+          "value": 65,
+          "rank": 3
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "value": 64,
+          "rank": 4
+        },
+        {
+          "fullName": "Tomás Soucek",
+          "lastName": "Soucek",
+          "value": 62,
+          "rank": 5
+        },
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 62,
+          "rank": 6
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "value": 62,
+          "rank": 7
+        }
+      ]
+    },
+    "career": {
+      "id": "career_arjen_robben",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 43,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Arjen_Robben",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000–2002",
+          "club": "Groningen",
+          "appearances": 46,
+          "goals": 8
+        },
+        {
+          "years": "2002–2004",
+          "club": "PSV",
+          "appearances": 56,
+          "goals": 17
+        },
+        {
+          "years": "2004–2007",
+          "club": "Chelsea",
+          "appearances": 67,
+          "goals": 15
+        },
+        {
+          "years": "2007–2009",
+          "club": "Real Madrid",
+          "appearances": 50,
+          "goals": 11
+        },
+        {
+          "years": "2009–2019",
+          "club": "Bayern Munich",
+          "appearances": 201,
+          "goals": 99
+        },
+        {
+          "years": "2020–2021",
+          "club": "Groningen",
+          "appearances": 6,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Arjen Robben",
+        "lastName": "Robben",
+        "aliases": [
+          "Arjen",
+          "Robben"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ousmane_demb_l_",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 15,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ousmane_Dembélé",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2014–2015",
+          "club": "Rennes II",
+          "appearances": 22,
+          "goals": 13
+        },
+        {
+          "years": "2015–2016",
+          "club": "Rennes",
+          "appearances": 26,
+          "goals": 12
+        },
+        {
+          "years": "2016–2017",
+          "club": "Borussia Dortmund",
+          "appearances": 32,
+          "goals": 6
+        },
+        {
+          "years": "2017–2023",
+          "club": "Barcelona",
+          "appearances": 127,
+          "goals": 24
+        },
+        {
+          "years": "2023–",
+          "club": "Paris Saint-Germain",
+          "appearances": 77,
+          "goals": 34
+        }
+      ],
+      "answer": {
+        "fullName": "Ousmane Dembélé",
+        "lastName": "Dembélé",
+        "aliases": [
+          "Ousmane",
+          "Dembélé"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-05-11_nottingham_forest_chelsea",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Nottingham Forest",
+        "awayTeam": "Chelsea",
+        "homeScore": 2,
+        "awayScore": 3,
+        "date": "2024-05-11",
+        "dateLabel": "11 May 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Mykhailo Mudryk",
+          "lastName": "Mudryk",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Willy Boly",
+          "lastName": "Boly",
+          "goals": 1,
+          "team": "Nottingham Forest"
+        },
+        {
+          "fullName": "Callum Hudson-Odoi",
+          "lastName": "Hudson-Odoi",
+          "goals": 1,
+          "team": "Nottingham Forest"
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "goals": 1,
+          "team": "Chelsea"
+        },
+        {
+          "fullName": "Nicolas Jackson",
+          "lastName": "Jackson",
+          "goals": 1,
+          "team": "Chelsea"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_champions_league_2026-02-25_real_madrid_benfica_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Real Madrid",
+        "opponent": "Benfica",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 1,
+        "date": "2026-02-25",
+        "dateLabel": "25 February 2026",
+        "round": "Play-Offs, second leg",
+        "formation": "4-4-2"
+      },
+      "answers": [
+        {
+          "fullName": "Thibaut Courtois",
+          "lastName": "Courtois",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Trent Alexander-Arnold",
+          "lastName": "Alexander-Arnold",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "Raúl Asencio",
+          "lastName": "Asencio",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Antonio Rüdiger",
+          "lastName": "Rüdiger",
+          "shirtNumber": 22,
+          "position": "D"
+        },
+        {
+          "fullName": "Álvaro Carreras",
+          "lastName": "Carreras",
+          "shirtNumber": 18,
+          "position": "D"
+        },
+        {
+          "fullName": "Federico Valverde",
+          "lastName": "Valverde",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Arda Güler",
+          "lastName": "Güler",
+          "shirtNumber": 15,
+          "position": "M"
+        },
+        {
+          "fullName": "Aurélien Tchouaméni",
+          "lastName": "Tchouaméni",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Eduardo Camavinga",
+          "lastName": "Camavinga",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Gonzalo García",
+          "lastName": "García",
+          "shirtNumber": 16,
+          "position": "F"
+        },
+        {
+          "fullName": "Vinícius Júnior",
+          "lastName": "Paixão de Oliveira Júnior",
+          "shirtNumber": 7,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
