@@ -30040,5 +30040,334 @@
         ]
       ]
     }
+  },
+  "2026-11-08": {
+    "list": {
+      "id": "list_premier_league_goals_club_tottenham_hotspur_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Tottenham Hotspur in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 213,
+          "rank": 1
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Heung-Min",
+          "value": 127,
+          "rank": 2
+        },
+        {
+          "fullName": "Teddy Sheringham",
+          "lastName": "Sheringham",
+          "value": 97,
+          "rank": 3
+        },
+        {
+          "fullName": "Jermain Defoe",
+          "lastName": "Defoe",
+          "value": 91,
+          "rank": 4
+        },
+        {
+          "fullName": "Robbie Keane",
+          "lastName": "Keane",
+          "value": 91,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_v_ctor_vald_s",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 76,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Víctor_Valdés",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000",
+          "club": "Barcelona C",
+          "appearances": 16,
+          "goals": 0
+        },
+        {
+          "years": "2000–2003",
+          "club": "Barcelona B",
+          "appearances": 71,
+          "goals": 0
+        },
+        {
+          "years": "2002–2014",
+          "club": "Barcelona",
+          "appearances": 387,
+          "goals": 0
+        },
+        {
+          "years": "2014–2016",
+          "club": "Manchester United",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2016",
+          "club": "Standard Liège",
+          "appearances": 5,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2016–2017",
+          "club": "Middlesbrough",
+          "appearances": 28,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Víctor Valdés",
+        "lastName": "Valdés",
+        "aliases": [
+          "Víctor",
+          "Valdés"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_jonathan_woodgate",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 172,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jonathan_Woodgate",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1998–2003",
+          "club": "Leeds United",
+          "appearances": 104,
+          "goals": 5
+        },
+        {
+          "years": "2003–2004",
+          "club": "Newcastle United",
+          "appearances": 28,
+          "goals": 0
+        },
+        {
+          "years": "2004–2007",
+          "club": "Real Madrid",
+          "appearances": 9,
+          "goals": 0
+        },
+        {
+          "years": "2006–2007",
+          "club": "Middlesbrough",
+          "appearances": 30,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2007–2008",
+          "club": "Middlesbrough",
+          "appearances": 16,
+          "goals": 0
+        },
+        {
+          "years": "2008–2011",
+          "club": "Tottenham Hotspur",
+          "appearances": 49,
+          "goals": 2
+        },
+        {
+          "years": "2011–2012",
+          "club": "Stoke City",
+          "appearances": 17,
+          "goals": 0
+        },
+        {
+          "years": "2012–2016",
+          "club": "Middlesbrough",
+          "appearances": 57,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Jonathan Woodgate",
+        "lastName": "Woodgate",
+        "aliases": [
+          "Jonathan",
+          "Woodgate"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2024-03-30_tottenham_hotspur_luton_town",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Tottenham Hotspur",
+        "awayTeam": "Luton Town",
+        "homeScore": 2,
+        "awayScore": 1,
+        "date": "2024-03-30",
+        "dateLabel": "30 March 2024"
+      },
+      "answers": [
+        {
+          "fullName": "Tahith Chong",
+          "lastName": "Chong",
+          "goals": 1,
+          "team": "Luton Town"
+        },
+        {
+          "fullName": "Son Heung-Min",
+          "lastName": "Son",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-12-02_fulham_manchester_city_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester City",
+        "opponent": "Fulham",
+        "home": false,
+        "teamScore": 5,
+        "opponentScore": 4,
+        "date": "2025-12-02",
+        "dateLabel": "2 December 2025",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Gianluigi Donnarumma",
+          "lastName": "Donnarumma",
+          "shirtNumber": 25,
+          "position": "G"
+        },
+        {
+          "fullName": "Matheus Nunes",
+          "lastName": "Nunes",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Rúben Dias",
+          "lastName": "dos Santos Gato Alves Dias",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Josko Gvardiol",
+          "lastName": "Gvardiol",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "Nico O'Reilly",
+          "lastName": "O'Reilly",
+          "shirtNumber": 33,
+          "position": "D"
+        },
+        {
+          "fullName": "Bernardo Silva",
+          "lastName": "Mota Veiga de Carvalho e Silva",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Nico González",
+          "lastName": "González",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Tijjani Reijnders",
+          "lastName": "Reijnders",
+          "shirtNumber": 4,
+          "position": "M"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "shirtNumber": 47,
+          "position": "F"
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Jérémy Doku",
+          "lastName": "Doku",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
