@@ -30703,5 +30703,331 @@
         ]
       ]
     }
+  },
+  "2026-11-10": {
+    "list": {
+      "id": "list_premier_league_goals_club_nottingham_forest_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Nottingham Forest in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Chris Wood",
+          "lastName": "Wood",
+          "value": 38,
+          "rank": 1
+        },
+        {
+          "fullName": "Morgan Gibbs-White",
+          "lastName": "Gibbs-White",
+          "value": 33,
+          "rank": 2
+        },
+        {
+          "fullName": "Bryan Roy",
+          "lastName": "Roy",
+          "value": 24,
+          "rank": 3
+        },
+        {
+          "fullName": "Stan Collymore",
+          "lastName": "Collymore",
+          "value": 22,
+          "rank": 4
+        },
+        {
+          "fullName": "Taiwo Awoniyi",
+          "lastName": "Awoniyi",
+          "value": 21,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_cristiano_ronaldo",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 2,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2002–2003",
+          "club": "Sporting CP B",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2002–2003",
+          "club": "Sporting CP",
+          "appearances": 25,
+          "goals": 3
+        },
+        {
+          "years": "2003–2009",
+          "club": "Manchester United",
+          "appearances": 196,
+          "goals": 84
+        },
+        {
+          "years": "2009–2018",
+          "club": "Real Madrid",
+          "appearances": 292,
+          "goals": 311
+        },
+        {
+          "years": "2018–2021",
+          "club": "Juventus",
+          "appearances": 98,
+          "goals": 81
+        },
+        {
+          "years": "2021–2022",
+          "club": "Manchester United",
+          "appearances": 40,
+          "goals": 19
+        },
+        {
+          "years": "2023–",
+          "club": "Al-Nassr",
+          "appearances": 107,
+          "goals": 102
+        }
+      ],
+      "answer": {
+        "fullName": "Cristiano Ronaldo",
+        "lastName": "Ronaldo",
+        "aliases": [
+          "Cristiano",
+          "Ronaldo"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_taras_stepanenko",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 177,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Taras_Stepanenko",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2006",
+          "club": "Metalurh-2 Zaporizhzhia",
+          "appearances": 16,
+          "goals": 1
+        },
+        {
+          "years": "2007–2010",
+          "club": "Metalurh Zaporizhzhia",
+          "appearances": 81,
+          "goals": 1
+        },
+        {
+          "years": "2010–2025",
+          "club": "Shakhtar Donetsk",
+          "appearances": 289,
+          "goals": 22
+        },
+        {
+          "years": "2025–2026",
+          "club": "Eyüpspor",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2026",
+          "club": "Kolos Kovalivka",
+          "appearances": 5,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Taras Stepanenko",
+        "lastName": "Stepanenko",
+        "aliases": [
+          "Taras",
+          "Stepanenko"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2022-02-23_liverpool_leeds_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Leeds United",
+        "homeScore": 6,
+        "awayScore": 0,
+        "date": "2022-02-23",
+        "dateLabel": "23 February 2022"
+      },
+      "answers": [
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Joël Matip",
+          "lastName": "Matip",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "goals": 2,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Virgil van Dijk",
+          "lastName": "van Dijk",
+          "goals": 1,
+          "team": "Liverpool"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-05-02_arsenal_chelsea_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "Chelsea",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2023-05-02",
+        "dateLabel": "2 May 2023",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Ramsdale",
+          "lastName": "Ramsdale",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Jakub Kiwior",
+          "lastName": "Kiwior",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Oleksandr Zinchenko",
+          "lastName": "Zinchenko",
+          "shirtNumber": 35,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Jorginho",
+          "lastName": "Frello Filho",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Granit Xhaka",
+          "lastName": "Xhaka",
+          "shirtNumber": 34,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Jesus",
+          "lastName": "de Jesus",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Leandro Trossard",
+          "lastName": "Trossard",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
