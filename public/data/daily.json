@@ -31029,5 +31029,336 @@
         ]
       ]
     }
+  },
+  "2026-11-11": {
+    "list": {
+      "id": "list_premier_league_goals_club_manchester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Manchester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Erling Haaland",
+          "lastName": "Haaland",
+          "value": 114,
+          "rank": 2
+        },
+        {
+          "fullName": "Raheem Sterling",
+          "lastName": "Sterling",
+          "value": 91,
+          "rank": 3
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 72,
+          "rank": 4
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "value": 68,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_federico_bernardeschi",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 149,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Federico_Bernardeschi",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2013–2017",
+          "club": "Fiorentina",
+          "appearances": 72,
+          "goals": 14
+        },
+        {
+          "years": "2013–2014",
+          "club": "Crotone",
+          "appearances": 38,
+          "goals": 12,
+          "loan": true
+        },
+        {
+          "years": "2017–2022",
+          "club": "Juventus",
+          "appearances": 134,
+          "goals": 8
+        },
+        {
+          "years": "2022–2025",
+          "club": "Toronto FC",
+          "appearances": 88,
+          "goals": 25
+        },
+        {
+          "years": "2025–",
+          "club": "Bologna",
+          "appearances": 29,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Federico Bernardeschi",
+        "lastName": "Bernardeschi",
+        "aliases": [
+          "Federico",
+          "Bernardeschi"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ryan_fraser",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 157,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ryan_Fraser",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2013",
+          "club": "Aberdeen",
+          "appearances": 21,
+          "goals": 0
+        },
+        {
+          "years": "2013–2020",
+          "club": "Bournemouth",
+          "appearances": 183,
+          "goals": 20
+        },
+        {
+          "years": "2015–2016",
+          "club": "Ipswich Town",
+          "appearances": 18,
+          "goals": 4,
+          "loan": true
+        },
+        {
+          "years": "2020–2024",
+          "club": "Newcastle United",
+          "appearances": 53,
+          "goals": 2
+        },
+        {
+          "years": "2023–2024",
+          "club": "Southampton",
+          "appearances": 39,
+          "goals": 6,
+          "loan": true
+        },
+        {
+          "years": "2024–2026",
+          "club": "Southampton",
+          "appearances": 24,
+          "goals": 0
+        },
+        {
+          "years": "2026–",
+          "club": "Western Sydney Wanderers",
+          "appearances": 12,
+          "goals": 4
+        }
+      ],
+      "answer": {
+        "fullName": "Ryan Fraser",
+        "lastName": "Fraser",
+        "aliases": [
+          "Ryan",
+          "Fraser"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2025-04-13_newcastle_united_manchester_united",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Newcastle United",
+        "awayTeam": "Manchester United",
+        "homeScore": 4,
+        "awayScore": 1,
+        "date": "2025-04-13",
+        "dateLabel": "13 April 2025"
+      },
+      "answers": [
+        {
+          "fullName": "Sandro Tonali",
+          "lastName": "Tonali",
+          "goals": 1,
+          "team": "Newcastle United"
+        },
+        {
+          "fullName": "Alejandro Garnacho",
+          "lastName": "Garnacho",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Harvey Barnes",
+          "lastName": "Barnes",
+          "goals": 2,
+          "team": "Newcastle United"
+        },
+        {
+          "fullName": "Bruno Guimarães",
+          "lastName": "Guimarães Rodriguez Moura",
+          "goals": 1,
+          "team": "Newcastle United"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-05-03_manchester_united_liverpool_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Liverpool",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 2,
+        "date": "2026-05-03",
+        "dateLabel": "3 May 2026",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Senne Lammens",
+          "lastName": "Lammens",
+          "shirtNumber": 31,
+          "position": "G"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 2,
+          "position": "D"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Ayden Heaven",
+          "lastName": "Heaven",
+          "shirtNumber": 26,
+          "position": "D"
+        },
+        {
+          "fullName": "Luke Shaw",
+          "lastName": "Shaw",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Kobbie Mainoo",
+          "lastName": "Mainoo",
+          "shirtNumber": 37,
+          "position": "M"
+        },
+        {
+          "fullName": "Bryan Mbeumo",
+          "lastName": "Mbeumo",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Bruno Fernandes",
+          "lastName": "Borges Fernandes",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Matheus Cunha",
+          "lastName": "Santos Carneiro da Cunha",
+          "shirtNumber": 10,
+          "position": "M"
+        },
+        {
+          "fullName": "Benjamin Sesko",
+          "lastName": "Sesko",
+          "shirtNumber": 30,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
