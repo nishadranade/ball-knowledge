@@ -31360,5 +31360,315 @@
         ]
       ]
     }
+  },
+  "2026-11-12": {
+    "list": {
+      "id": "list_premier_league_stat_shotsontarget_2016_17_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots on target in the Premier League in the 2016/17 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 58,
+          "rank": 1
+        },
+        {
+          "fullName": "Romelu Lukaku",
+          "lastName": "Lukaku",
+          "value": 55,
+          "rank": 2
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 53,
+          "rank": 3
+        },
+        {
+          "fullName": "Gylfi Sigurdsson",
+          "lastName": "Sigurdsson",
+          "value": 50,
+          "rank": 4
+        },
+        {
+          "fullName": "Alexis Sánchez",
+          "lastName": "Sánchez",
+          "value": 49,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_sol_campbell",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 9,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sol_Campbell",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1992–2001",
+          "club": "Tottenham Hotspur",
+          "appearances": 255,
+          "goals": 10
+        },
+        {
+          "years": "2001–2006",
+          "club": "Arsenal",
+          "appearances": 135,
+          "goals": 8
+        },
+        {
+          "years": "2006–2009",
+          "club": "Portsmouth",
+          "appearances": 95,
+          "goals": 2
+        },
+        {
+          "years": "2009",
+          "club": "Notts County",
+          "appearances": 1,
+          "goals": 0
+        },
+        {
+          "years": "2010",
+          "club": "Arsenal",
+          "appearances": 11,
+          "goals": 0
+        },
+        {
+          "years": "2010–2011",
+          "club": "Newcastle United",
+          "appearances": 7,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Sol Campbell",
+        "lastName": "Campbell",
+        "aliases": [
+          "Sol",
+          "Campbell"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_brede_hangeland",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 180,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Brede_Hangeland",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2000–2005",
+          "club": "Viking",
+          "appearances": 114,
+          "goals": 6
+        },
+        {
+          "years": "2006–2008",
+          "club": "Copenhagen",
+          "appearances": 63,
+          "goals": 3
+        },
+        {
+          "years": "2008–2014",
+          "club": "Fulham",
+          "appearances": 217,
+          "goals": 8
+        },
+        {
+          "years": "2014–2016",
+          "club": "Crystal Palace",
+          "appearances": 21,
+          "goals": 2
+        }
+      ],
+      "answer": {
+        "fullName": "Brede Hangeland",
+        "lastName": "Hangeland",
+        "aliases": [
+          "Brede",
+          "Hangeland"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2023-11-26_tottenham_hotspur_aston_villa",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Tottenham Hotspur",
+        "awayTeam": "Aston Villa",
+        "homeScore": 1,
+        "awayScore": 2,
+        "date": "2023-11-26",
+        "dateLabel": "26 November 2023"
+      },
+      "answers": [
+        {
+          "fullName": "Giovani Lo Celso",
+          "lastName": "Lo Celso",
+          "goals": 1,
+          "team": "Tottenham Hotspur"
+        },
+        {
+          "fullName": "Pau Torres",
+          "lastName": "Torres",
+          "goals": 1,
+          "team": "Aston Villa"
+        },
+        {
+          "fullName": "Ollie Watkins",
+          "lastName": "Watkins",
+          "goals": 1,
+          "team": "Aston Villa"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2026-02-01_tottenham_hotspur_manchester_city_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Manchester City",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 2,
+        "date": "2026-02-01",
+        "dateLabel": "1 February 2026",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Lobo Alves Palhares Costa Palhinha Gonçalves",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Radu Dragusin",
+          "lastName": "Dragusin",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Archie Gray",
+          "lastName": "Gray",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Conor Gallagher",
+          "lastName": "Gallagher",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "Yves Bissouma",
+          "lastName": "Bissouma",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Destiny Udogie",
+          "lastName": "Udogie",
+          "shirtNumber": 13,
+          "position": "M"
+        },
+        {
+          "fullName": "Randal Kolo Muani",
+          "lastName": "Kolo Muani",
+          "shirtNumber": 39,
+          "position": "F"
+        },
+        {
+          "fullName": "Xavi Simons",
+          "lastName": "Simons",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Dominic Solanke",
+          "lastName": "Solanke",
+          "shirtNumber": 19,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
