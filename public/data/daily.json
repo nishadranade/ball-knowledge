@@ -31670,5 +31670,382 @@
         ]
       ]
     }
+  },
+  "2026-11-13": {
+    "list": {
+      "id": "list_premier_league_stat_tackles_2019_20_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most tackles in the Premier League in the 2019/20 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Wan-Bissaka",
+          "lastName": "Wan-Bissaka",
+          "value": 80,
+          "rank": 1
+        },
+        {
+          "fullName": "Sèrge Aurier",
+          "lastName": "Aurier",
+          "value": 69,
+          "rank": 2
+        },
+        {
+          "fullName": "Ricardo Pereira",
+          "lastName": "Pereira",
+          "value": 68,
+          "rank": 3
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 67,
+          "rank": 4
+        },
+        {
+          "fullName": "Declan Rice",
+          "lastName": "Rice",
+          "value": 60,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_vincent_kompany",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 80,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vincent_Kompany",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2003–2006",
+          "club": "Anderlecht",
+          "appearances": 73,
+          "goals": 5
+        },
+        {
+          "years": "2006–2008",
+          "club": "Hamburger SV",
+          "appearances": 29,
+          "goals": 1
+        },
+        {
+          "years": "2008–2019",
+          "club": "Manchester City",
+          "appearances": 265,
+          "goals": 18
+        },
+        {
+          "years": "2019–2020",
+          "club": "Anderlecht",
+          "appearances": 15,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Vincent Kompany",
+        "lastName": "Kompany",
+        "aliases": [
+          "Vincent",
+          "Kompany"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_marcus_bent",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 191,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marcus_Bent",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1995–1998",
+          "club": "Brentford",
+          "appearances": 70,
+          "goals": 8
+        },
+        {
+          "years": "1998–1999",
+          "club": "Crystal Palace",
+          "appearances": 28,
+          "goals": 5
+        },
+        {
+          "years": "1999",
+          "club": "Port Vale",
+          "appearances": 23,
+          "goals": 1
+        },
+        {
+          "years": "1999–2000",
+          "club": "Sheffield United",
+          "appearances": 48,
+          "goals": 20
+        },
+        {
+          "years": "2000–2001",
+          "club": "Blackburn Rovers",
+          "appearances": 37,
+          "goals": 8
+        },
+        {
+          "years": "2001–2004",
+          "club": "Ipswich Town",
+          "appearances": 61,
+          "goals": 21
+        },
+        {
+          "years": "2003–2004",
+          "club": "Leicester City",
+          "appearances": 33,
+          "goals": 9,
+          "loan": true
+        },
+        {
+          "years": "2004–2006",
+          "club": "Everton",
+          "appearances": 55,
+          "goals": 7
+        },
+        {
+          "years": "2006–2008",
+          "club": "Charlton Athletic",
+          "appearances": 46,
+          "goals": 4
+        },
+        {
+          "years": "2007–2008",
+          "club": "Wigan Athletic",
+          "appearances": 31,
+          "goals": 7,
+          "loan": true
+        },
+        {
+          "years": "2008–2011",
+          "club": "Birmingham City",
+          "appearances": 33,
+          "goals": 3
+        },
+        {
+          "years": "2009–2010",
+          "club": "Middlesbrough",
+          "appearances": 7,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2010",
+          "club": "Queens Park Rangers",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2010–2011",
+          "club": "Wolverhampton Wanderers",
+          "appearances": 3,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011",
+          "club": "Sheffield United",
+          "appearances": 11,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011–2012",
+          "club": "Mitra Kukar",
+          "appearances": 11,
+          "goals": 4
+        },
+        {
+          "years": "2017–2018",
+          "club": "Wick",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2020",
+          "club": "Cornard United",
+          "appearances": 1,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Marcus Bent",
+        "lastName": "Bent",
+        "aliases": [
+          "Marcus",
+          "Bent"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2022-04-05_manchester_city_atl_tico_madrid",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester City",
+        "awayTeam": "Atlético Madrid",
+        "homeScore": 1,
+        "awayScore": 0,
+        "date": "2022-04-05",
+        "dateLabel": "5 April 2022",
+        "round": "Quarter-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2024-12-30_manchester_united_newcastle_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Manchester United",
+        "opponent": "Newcastle United",
+        "home": true,
+        "teamScore": 0,
+        "opponentScore": 2,
+        "date": "2024-12-30",
+        "dateLabel": "30 December 2024",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "André Onana",
+          "lastName": "Onana",
+          "shirtNumber": 24,
+          "position": "G"
+        },
+        {
+          "fullName": "Matthijs de Ligt",
+          "lastName": "de Ligt",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Harry Maguire",
+          "lastName": "Maguire",
+          "shirtNumber": 5,
+          "position": "D"
+        },
+        {
+          "fullName": "Lisandro Martínez",
+          "lastName": "Martínez",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Noussair Mazraoui",
+          "lastName": "Mazraoui",
+          "shirtNumber": 3,
+          "position": "M"
+        },
+        {
+          "fullName": "Casemiro",
+          "lastName": "Casimiro",
+          "shirtNumber": 18,
+          "position": "M"
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "shirtNumber": 14,
+          "position": "M"
+        },
+        {
+          "fullName": "Diogo Dalot",
+          "lastName": "Dalot Teixeira",
+          "shirtNumber": 20,
+          "position": "M"
+        },
+        {
+          "fullName": "Amad Diallo",
+          "lastName": "Diallo",
+          "shirtNumber": 16,
+          "position": "F"
+        },
+        {
+          "fullName": "Joshua Zirkzee",
+          "lastName": "Zirkzee",
+          "shirtNumber": 11,
+          "position": "F"
+        },
+        {
+          "fullName": "Rasmus Højlund",
+          "lastName": "Højlund",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
