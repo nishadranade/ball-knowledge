@@ -32047,5 +32047,355 @@
         ]
       ]
     }
+  },
+  "2026-11-14": {
+    "list": {
+      "id": "list_premier_league_stat_shots_2017_18_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 players with the most shots in the Premier League in the 2017/18 season.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T03:48:51.222Z"
+      },
+      "answers": [
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "value": 184,
+          "rank": 1
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah",
+          "value": 144,
+          "rank": 2
+        },
+        {
+          "fullName": "Christian Eriksen",
+          "lastName": "Eriksen",
+          "value": 97,
+          "rank": 3
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "Richarlison",
+          "value": 95,
+          "rank": 4
+        },
+        {
+          "fullName": "Sergio Agüero",
+          "lastName": "Agüero",
+          "value": 94,
+          "rank": 5
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "value": 94,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_wayne_routledge",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 168,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wayne_Routledge",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2001–2005",
+          "club": "Crystal Palace",
+          "appearances": 110,
+          "goals": 10
+        },
+        {
+          "years": "2005–2008",
+          "club": "Tottenham Hotspur",
+          "appearances": 5,
+          "goals": 0
+        },
+        {
+          "years": "2006",
+          "club": "Portsmouth",
+          "appearances": 13,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2006–2007",
+          "club": "Fulham",
+          "appearances": 24,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2008–2009",
+          "club": "Aston Villa",
+          "appearances": 2,
+          "goals": 0
+        },
+        {
+          "years": "2008–2009",
+          "club": "Cardiff City",
+          "appearances": 9,
+          "goals": 2,
+          "loan": true
+        },
+        {
+          "years": "2009–2010",
+          "club": "Queens Park Rangers",
+          "appearances": 44,
+          "goals": 3
+        },
+        {
+          "years": "2010–2011",
+          "club": "Newcastle United",
+          "appearances": 34,
+          "goals": 3
+        },
+        {
+          "years": "2011",
+          "club": "Queens Park Rangers",
+          "appearances": 20,
+          "goals": 5,
+          "loan": true
+        },
+        {
+          "years": "2011–2021",
+          "club": "Swansea City",
+          "appearances": 259,
+          "goals": 25
+        }
+      ],
+      "answer": {
+        "fullName": "Wayne Routledge",
+        "lastName": "Routledge",
+        "aliases": [
+          "Wayne",
+          "Routledge"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_david_de_gea",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 13,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/David_de_Gea",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2009",
+          "club": "Atlético Madrid B",
+          "appearances": 35,
+          "goals": 0
+        },
+        {
+          "years": "2009–2011",
+          "club": "Atlético Madrid",
+          "appearances": 57,
+          "goals": 0
+        },
+        {
+          "years": "2011–2023",
+          "club": "Manchester United",
+          "appearances": 415,
+          "goals": 0
+        },
+        {
+          "years": "2024–",
+          "club": "Fiorentina",
+          "appearances": 72,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "David de Gea",
+        "lastName": "de Gea",
+        "aliases": [
+          "David",
+          "Gea"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-12-18_leeds_united_arsenal",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Leeds United",
+        "awayTeam": "Arsenal",
+        "homeScore": 1,
+        "awayScore": 4,
+        "date": "2021-12-18",
+        "dateLabel": "18 December 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "goals": 2,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Raphinha",
+          "lastName": "Dias Belloli",
+          "goals": 1,
+          "team": "Leeds United"
+        },
+        {
+          "fullName": "Emile Smith Rowe",
+          "lastName": "Smith Rowe",
+          "goals": 1,
+          "team": "Arsenal"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-11-01_tottenham_hotspur_chelsea_away",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Chelsea",
+        "opponent": "Tottenham Hotspur",
+        "home": false,
+        "teamScore": 1,
+        "opponentScore": 0,
+        "date": "2025-11-01",
+        "dateLabel": "1 November 2025",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Robert Sánchez",
+          "lastName": "Sánchez",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Malo Gusto",
+          "lastName": "Gusto",
+          "shirtNumber": 27,
+          "position": "D"
+        },
+        {
+          "fullName": "Wesley Fofana",
+          "lastName": "Fofana",
+          "shirtNumber": 29,
+          "position": "D"
+        },
+        {
+          "fullName": "Trevoh Chalobah",
+          "lastName": "Chalobah",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Marc Cucurella",
+          "lastName": "Cucurella",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Reece James",
+          "lastName": "James",
+          "shirtNumber": 24,
+          "position": "M"
+        },
+        {
+          "fullName": "Moisés Caicedo",
+          "lastName": "Caicedo",
+          "shirtNumber": 25,
+          "position": "M"
+        },
+        {
+          "fullName": "Pedro Neto",
+          "lastName": "Lomba Neto",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Enzo Fernández",
+          "lastName": "Fernández",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Alejandro Garnacho",
+          "lastName": "Garnacho",
+          "shirtNumber": 49,
+          "position": "M"
+        },
+        {
+          "fullName": "João Pedro",
+          "lastName": "Junqueira de Jesus",
+          "shirtNumber": 20,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
