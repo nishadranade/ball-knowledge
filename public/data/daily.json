@@ -33686,5 +33686,345 @@
         ]
       ]
     }
+  },
+  "2026-11-19": {
+    "list": {
+      "id": "list_premier_league_assists_country_italy_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 Italian assist providers in Premier League history.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Paolo Di Canio",
+          "lastName": "Di Canio",
+          "value": 49,
+          "rank": 1
+        },
+        {
+          "fullName": "Gianfranco Zola",
+          "lastName": "Zola",
+          "value": 42,
+          "rank": 2
+        },
+        {
+          "fullName": "Benito Carbone",
+          "lastName": "Carbone",
+          "value": 35,
+          "rank": 3
+        },
+        {
+          "fullName": "Roberto Di Matteo",
+          "lastName": "Di Matteo",
+          "value": 13,
+          "rank": 4
+        },
+        {
+          "fullName": "Gianluca Vialli",
+          "lastName": "Vialli",
+          "value": 11,
+          "rank": 5
+        },
+        {
+          "fullName": "Emerson",
+          "lastName": "Emerson",
+          "value": 11,
+          "rank": 6
+        }
+      ]
+    },
+    "career": {
+      "id": "career_nicol_s_gait_n",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 100,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nicolás_Gaitán",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2008–2010",
+          "club": "Boca Juniors",
+          "appearances": 66,
+          "goals": 12
+        },
+        {
+          "years": "2010–2016",
+          "club": "Benfica",
+          "appearances": 152,
+          "goals": 25
+        },
+        {
+          "years": "2016–2018",
+          "club": "Atlético Madrid",
+          "appearances": 29,
+          "goals": 3
+        },
+        {
+          "years": "2018–2019",
+          "club": "Dalian Yifang",
+          "appearances": 28,
+          "goals": 2
+        },
+        {
+          "years": "2019",
+          "club": "Chicago Fire",
+          "appearances": 27,
+          "goals": 4
+        },
+        {
+          "years": "2020",
+          "club": "Lille",
+          "appearances": 4,
+          "goals": 0
+        },
+        {
+          "years": "2020–2021",
+          "club": "Braga",
+          "appearances": 18,
+          "goals": 2
+        },
+        {
+          "years": "2021–2022",
+          "club": "Peñarol",
+          "appearances": 10,
+          "goals": 1
+        },
+        {
+          "years": "2022–2023",
+          "club": "Paços de Ferreira",
+          "appearances": 33,
+          "goals": 5
+        },
+        {
+          "years": "2024",
+          "club": "Sarmiento",
+          "appearances": 16,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Nicolás Gaitán",
+        "lastName": "Gaitán",
+        "aliases": [
+          "Nicolás",
+          "Gaitán"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_sergio_busquets",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 11,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sergio_Busquets",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2007–2008",
+          "club": "Barcelona B",
+          "appearances": 25,
+          "goals": 2
+        },
+        {
+          "years": "2008–2023",
+          "club": "Barcelona",
+          "appearances": 481,
+          "goals": 11
+        },
+        {
+          "years": "2023–2025",
+          "club": "Inter Miami",
+          "appearances": 74,
+          "goals": 1
+        }
+      ],
+      "answer": {
+        "fullName": "Sergio Busquets",
+        "lastName": "Busquets",
+        "aliases": [
+          "Sergio",
+          "Busquets"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-10-03_liverpool_manchester_city",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Liverpool",
+        "awayTeam": "Manchester City",
+        "homeScore": 2,
+        "awayScore": 2,
+        "date": "2021-10-03",
+        "dateLabel": "3 October 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Sadio Mané",
+          "lastName": "Mané",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Phil Foden",
+          "lastName": "Foden",
+          "goals": 1,
+          "team": "Manchester City"
+        },
+        {
+          "fullName": "Mohamed Salah",
+          "lastName": "Salah Hamed Mahrous Ghaly",
+          "goals": 1,
+          "team": "Liverpool"
+        },
+        {
+          "fullName": "Kevin De Bruyne",
+          "lastName": "De Bruyne",
+          "goals": 1,
+          "team": "Manchester City"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2023-02-26_tottenham_hotspur_chelsea_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Chelsea",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 0,
+        "date": "2023-02-26",
+        "dateLabel": "26 February 2023",
+        "formation": "3-4-2-1"
+      },
+      "answers": [
+        {
+          "fullName": "Fraser Forster",
+          "lastName": "Forster",
+          "shirtNumber": 20,
+          "position": "G"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Eric Dier",
+          "lastName": "Dier",
+          "shirtNumber": 15,
+          "position": "D"
+        },
+        {
+          "fullName": "Clément Lenglet",
+          "lastName": "Lenglet",
+          "shirtNumber": 34,
+          "position": "D"
+        },
+        {
+          "fullName": "Emerson Royal",
+          "lastName": "Leite de Souza Júnior",
+          "shirtNumber": 12,
+          "position": "M"
+        },
+        {
+          "fullName": "Oliver Skipp",
+          "lastName": "Skipp",
+          "shirtNumber": 4,
+          "position": "M"
+        },
+        {
+          "fullName": "Pierre-Emile Højbjerg",
+          "lastName": "Højbjerg",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Ben Davies",
+          "lastName": "Davies",
+          "shirtNumber": 33,
+          "position": "M"
+        },
+        {
+          "fullName": "Dejan Kulusevski",
+          "lastName": "Kulusevski",
+          "shirtNumber": 21,
+          "position": "F"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "shirtNumber": 9,
+          "position": "F"
+        },
+        {
+          "fullName": "Harry Kane",
+          "lastName": "Kane",
+          "shirtNumber": 10,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
