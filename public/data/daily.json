@@ -34026,5 +34026,340 @@
         ]
       ]
     }
+  },
+  "2026-11-20": {
+    "list": {
+      "id": "list_premier_league_goals_club_leeds_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 goalscorers for Leeds United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Mark Viduka",
+          "lastName": "Viduka",
+          "value": 59,
+          "rank": 1
+        },
+        {
+          "fullName": "Harry Kewell",
+          "lastName": "Kewell",
+          "value": 45,
+          "rank": 2
+        },
+        {
+          "fullName": "Rod Wallace",
+          "lastName": "Wallace",
+          "value": 42,
+          "rank": 3
+        },
+        {
+          "fullName": "Lee Bowyer",
+          "lastName": "Bowyer",
+          "value": 38,
+          "rank": 4
+        },
+        {
+          "fullName": "Alan Smith",
+          "lastName": "Smith",
+          "value": 38,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_thomas_meunier",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 123,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Thomas_Meunier",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2009–2011",
+          "club": "Virton",
+          "appearances": 49,
+          "goals": 15
+        },
+        {
+          "years": "2011–2016",
+          "club": "Club Brugge",
+          "appearances": 149,
+          "goals": 15
+        },
+        {
+          "years": "2016–2020",
+          "club": "Paris Saint-Germain",
+          "appearances": 84,
+          "goals": 8
+        },
+        {
+          "years": "2020–2024",
+          "club": "Borussia Dortmund",
+          "appearances": 56,
+          "goals": 3
+        },
+        {
+          "years": "2023",
+          "club": "Borussia Dortmund II",
+          "appearances": 3,
+          "goals": 0
+        },
+        {
+          "years": "2024",
+          "club": "Trabzonspor",
+          "appearances": 14,
+          "goals": 1
+        },
+        {
+          "years": "2024–2026",
+          "club": "Lille",
+          "appearances": 55,
+          "goals": 3
+        },
+        {
+          "years": "2026–",
+          "club": "Sunderland",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Thomas Meunier",
+        "lastName": "Meunier",
+        "aliases": [
+          "Thomas",
+          "Meunier"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_ben_mee",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 141,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ben_Mee",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2010–2012",
+          "club": "Manchester City",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2011",
+          "club": "Leicester City",
+          "appearances": 15,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2011–2012",
+          "club": "Burnley",
+          "appearances": 19,
+          "goals": 0,
+          "loan": true
+        },
+        {
+          "years": "2012–2022",
+          "club": "Burnley",
+          "appearances": 332,
+          "goals": 12
+        },
+        {
+          "years": "2022–2025",
+          "club": "Brentford",
+          "appearances": 60,
+          "goals": 5
+        },
+        {
+          "years": "2025–2026",
+          "club": "Sheffield United",
+          "appearances": 15,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Ben Mee",
+        "lastName": "Mee",
+        "aliases": [
+          "Ben",
+          "Mee"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_champions_league_2025-04-08_fc_bayern_m_nchen_internazionale",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "FC Bayern München",
+        "awayTeam": "Internazionale",
+        "homeScore": 1,
+        "awayScore": 2,
+        "date": "2025-04-08",
+        "dateLabel": "8 April 2025",
+        "round": "Quarter-Finals, first leg"
+      },
+      "answers": [
+        {
+          "fullName": "Lautaro Martínez",
+          "lastName": "Martínez",
+          "goals": 1,
+          "team": "Internazionale"
+        },
+        {
+          "fullName": "Thomas Müller",
+          "lastName": "Müller",
+          "goals": 1,
+          "team": "FC Bayern München"
+        },
+        {
+          "fullName": "Davide Frattesi",
+          "lastName": "Frattesi",
+          "goals": 1,
+          "team": "Internazionale"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2022-12-26_arsenal_west_ham_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Arsenal",
+        "opponent": "West Ham United",
+        "home": true,
+        "teamScore": 3,
+        "opponentScore": 1,
+        "date": "2022-12-26",
+        "dateLabel": "26 December 2022",
+        "formation": "4-3-3"
+      },
+      "answers": [
+        {
+          "fullName": "Aaron Ramsdale",
+          "lastName": "Ramsdale",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Ben White",
+          "lastName": "White",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "William Saliba",
+          "lastName": "Saliba",
+          "shirtNumber": 12,
+          "position": "D"
+        },
+        {
+          "fullName": "Gabriel Magalhães",
+          "lastName": "dos Santos Magalhães",
+          "shirtNumber": 6,
+          "position": "D"
+        },
+        {
+          "fullName": "Kieran Tierney",
+          "lastName": "Tierney",
+          "shirtNumber": 3,
+          "position": "D"
+        },
+        {
+          "fullName": "Martin Ødegaard",
+          "lastName": "Ødegaard",
+          "shirtNumber": 8,
+          "position": "M"
+        },
+        {
+          "fullName": "Thomas Partey",
+          "lastName": "Partey",
+          "shirtNumber": 5,
+          "position": "M"
+        },
+        {
+          "fullName": "Granit Xhaka",
+          "lastName": "Xhaka",
+          "shirtNumber": 34,
+          "position": "M"
+        },
+        {
+          "fullName": "Bukayo Saka",
+          "lastName": "Saka",
+          "shirtNumber": 7,
+          "position": "F"
+        },
+        {
+          "fullName": "Eddie Nketiah",
+          "lastName": "Nketiah",
+          "shirtNumber": 14,
+          "position": "F"
+        },
+        {
+          "fullName": "Gabriel Martinelli",
+          "lastName": "Teodoro Martinelli Silva",
+          "shirtNumber": 11,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ]
+    }
   }
 }
