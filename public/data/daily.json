@@ -34361,5 +34361,330 @@
         ]
       ]
     }
+  },
+  "2026-11-21": {
+    "list": {
+      "id": "list_premier_league_assists_club_leeds_united_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 assist providers for Leeds United in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Ian Harte",
+          "lastName": "Harte",
+          "value": 33,
+          "rank": 1
+        },
+        {
+          "fullName": "Gary Kelly",
+          "lastName": "Kelly",
+          "value": 31,
+          "rank": 2
+        },
+        {
+          "fullName": "Harry Kewell",
+          "lastName": "Kewell",
+          "value": 29,
+          "rank": 3
+        },
+        {
+          "fullName": "Lee Bowyer",
+          "lastName": "Bowyer",
+          "value": 26,
+          "rank": 4
+        },
+        {
+          "fullName": "Alan Smith",
+          "lastName": "Smith",
+          "value": 23,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_kevin_nolan",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 44,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kevin_Nolan",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "1999–2009",
+          "club": "Bolton Wanderers",
+          "appearances": 296,
+          "goals": 40
+        },
+        {
+          "years": "2009–2011",
+          "club": "Newcastle United",
+          "appearances": 85,
+          "goals": 29
+        },
+        {
+          "years": "2011–2015",
+          "club": "West Ham United",
+          "appearances": 141,
+          "goals": 30
+        },
+        {
+          "years": "2016",
+          "club": "Leyton Orient",
+          "appearances": 14,
+          "goals": 0
+        },
+        {
+          "years": "2017–2018",
+          "club": "Notts County",
+          "appearances": 0,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Kevin Nolan",
+        "lastName": "Nolan",
+        "aliases": [
+          "Kevin",
+          "Nolan"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_nicol_s_otamendi",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 24,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nicolás_Otamendi",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2007–2010",
+          "club": "Vélez Sarsfield",
+          "appearances": 40,
+          "goals": 1
+        },
+        {
+          "years": "2010–2014",
+          "club": "Porto",
+          "appearances": 77,
+          "goals": 7
+        },
+        {
+          "years": "2014–2015",
+          "club": "Valencia",
+          "appearances": 35,
+          "goals": 6
+        },
+        {
+          "years": "2014",
+          "club": "Atlético Mineiro",
+          "appearances": 12,
+          "goals": 1,
+          "loan": true
+        },
+        {
+          "years": "2015–2020",
+          "club": "Manchester City",
+          "appearances": 136,
+          "goals": 8
+        },
+        {
+          "years": "2020–2026",
+          "club": "Benfica",
+          "appearances": 178,
+          "goals": 12
+        },
+        {
+          "years": "2026–",
+          "club": "River Plate",
+          "appearances": 1,
+          "goals": 0
+        }
+      ],
+      "answer": {
+        "fullName": "Nicolás Otamendi",
+        "lastName": "Otamendi",
+        "aliases": [
+          "Nicolás",
+          "Otamendi"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-12-30_manchester_united_burnley",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Manchester United",
+        "awayTeam": "Burnley",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2021-12-30",
+        "dateLabel": "30 December 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Scott McTominay",
+          "lastName": "McTominay",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Cristiano Ronaldo",
+          "lastName": "dos Santos Aveiro",
+          "goals": 1,
+          "team": "Manchester United"
+        },
+        {
+          "fullName": "Aaron Lennon",
+          "lastName": "Lennon",
+          "goals": 1,
+          "team": "Burnley"
+        }
+      ],
+      "ownGoals": 1
+    },
+    "squad": {
+      "id": "squad_champions_league_2023-02-15_borussia_dortmund_chelsea_home",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Borussia Dortmund",
+        "opponent": "Chelsea",
+        "home": true,
+        "teamScore": 1,
+        "opponentScore": 0,
+        "date": "2023-02-15",
+        "dateLabel": "15 February 2023",
+        "round": "Round of 16, first leg",
+        "formation": "4-1-4-1"
+      },
+      "answers": [
+        {
+          "fullName": "Gregor Kobel",
+          "lastName": "Kobel",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Marius Wolf",
+          "lastName": "Wolf",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Niklas Süle",
+          "lastName": "Süle",
+          "shirtNumber": 25,
+          "position": "D"
+        },
+        {
+          "fullName": "Nico Schlotterbeck",
+          "lastName": "Schlotterbeck",
+          "shirtNumber": 4,
+          "position": "D"
+        },
+        {
+          "fullName": "Raphaël Guerreiro",
+          "lastName": "Guerreiro",
+          "shirtNumber": 13,
+          "position": "D"
+        },
+        {
+          "fullName": "Emre Can",
+          "lastName": "Can",
+          "shirtNumber": 23,
+          "position": "M"
+        },
+        {
+          "fullName": "Julian Brandt",
+          "lastName": "Brandt",
+          "shirtNumber": 19,
+          "position": "M"
+        },
+        {
+          "fullName": "Jude Bellingham",
+          "lastName": "Bellingham",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "Salih Özcan",
+          "lastName": "Özcan",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Karim Adeyemi",
+          "lastName": "Adeyemi",
+          "shirtNumber": 27,
+          "position": "M"
+        },
+        {
+          "fullName": "Sébastien Haller",
+          "lastName": "Haller",
+          "shirtNumber": 9,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
