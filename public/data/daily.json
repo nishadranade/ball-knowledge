@@ -35955,5 +35955,321 @@
         ]
       ]
     }
+  },
+  "2026-11-26": {
+    "list": {
+      "id": "list_premier_league_appearances_club_leicester_city_10",
+      "category": "PREMIER_LEAGUE",
+      "format": "LIST",
+      "prompt": "Name the top 5 appearance makers for Leicester City in the Premier League.",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/stats",
+        "retrievedAt": "2026-09-03T00:22:40.951Z"
+      },
+      "answers": [
+        {
+          "fullName": "Jamie Vardy",
+          "lastName": "Vardy",
+          "value": 342,
+          "rank": 1
+        },
+        {
+          "fullName": "Kasper Schmeichel",
+          "lastName": "Schmeichel",
+          "value": 276,
+          "rank": 2
+        },
+        {
+          "fullName": "Marc Albrighton",
+          "lastName": "Albrighton",
+          "value": 224,
+          "rank": 3
+        },
+        {
+          "fullName": "Muzzy Izzet",
+          "lastName": "Izzet",
+          "value": 222,
+          "rank": 4
+        },
+        {
+          "fullName": "Wilfred Ndidi",
+          "lastName": "Ndidi",
+          "value": 220,
+          "rank": 5
+        }
+      ]
+    },
+    "career": {
+      "id": "career_david_neres",
+      "category": "CHAMPIONS_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 183,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/David_Neres",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2016",
+          "club": "São Paulo",
+          "appearances": 8,
+          "goals": 3
+        },
+        {
+          "years": "2017",
+          "club": "Jong Ajax",
+          "appearances": 5,
+          "goals": 3
+        },
+        {
+          "years": "2017–2022",
+          "club": "Ajax",
+          "appearances": 121,
+          "goals": 37
+        },
+        {
+          "years": "2022",
+          "club": "Shakhtar Donetsk",
+          "appearances": 0,
+          "goals": 0
+        },
+        {
+          "years": "2022–2024",
+          "club": "Benfica",
+          "appearances": 55,
+          "goals": 11
+        },
+        {
+          "years": "2024–",
+          "club": "Napoli",
+          "appearances": 43,
+          "goals": 5
+        }
+      ],
+      "answer": {
+        "fullName": "David Neres",
+        "lastName": "Neres",
+        "aliases": [
+          "David",
+          "Neres"
+        ]
+      }
+    },
+    "career2": {
+      "id": "career_bryan_mbeumo",
+      "category": "PREMIER_LEAGUE",
+      "format": "CAREER_PATH",
+      "prompt": "Which player had this career?",
+      "maxWrong": 2,
+      "difficulty": "STANDARD",
+      "bestRank": 121,
+      "source": {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bryan_Mbeumo",
+        "retrievedAt": "2026-07-30T15:00:22.622Z"
+      },
+      "career": [
+        {
+          "years": "2016–2018",
+          "club": "Troyes II",
+          "appearances": 33,
+          "goals": 14
+        },
+        {
+          "years": "2018–2019",
+          "club": "Troyes",
+          "appearances": 41,
+          "goals": 11
+        },
+        {
+          "years": "2019–2025",
+          "club": "Brentford",
+          "appearances": 222,
+          "goals": 65
+        },
+        {
+          "years": "2025–",
+          "club": "Manchester United",
+          "appearances": 33,
+          "goals": 11
+        }
+      ],
+      "answer": {
+        "fullName": "Bryan Mbeumo",
+        "lastName": "Mbeumo",
+        "aliases": [
+          "Bryan",
+          "Mbeumo"
+        ]
+      }
+    },
+    "match": {
+      "id": "match_premier_league_2021-10-22_arsenal_aston_villa",
+      "category": "PREMIER_LEAGUE",
+      "format": "MATCH",
+      "prompt": "Who scored in this match?",
+      "maxWrong": 3,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-10T04:04:44.112Z"
+      },
+      "match": {
+        "homeTeam": "Arsenal",
+        "awayTeam": "Aston Villa",
+        "homeScore": 3,
+        "awayScore": 1,
+        "date": "2021-10-22",
+        "dateLabel": "22 October 2021"
+      },
+      "answers": [
+        {
+          "fullName": "Thomas Partey",
+          "lastName": "Partey",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Pierre-Emerick Aubameyang",
+          "lastName": "Aubameyang",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Emile Smith Rowe",
+          "lastName": "Smith Rowe",
+          "goals": 1,
+          "team": "Arsenal"
+        },
+        {
+          "fullName": "Jacob Ramsey",
+          "lastName": "Ramsey",
+          "goals": 1,
+          "team": "Aston Villa"
+        }
+      ]
+    },
+    "squad": {
+      "id": "squad_premier_league_2025-11-08_tottenham_hotspur_manchester_united_home",
+      "category": "PREMIER_LEAGUE",
+      "format": "SQUAD",
+      "prompt": "Name the starting XI.",
+      "maxWrong": 6,
+      "difficulty": "STANDARD",
+      "source": {
+        "name": "Premier League",
+        "url": "https://www.premierleague.com/results",
+        "retrievedAt": "2026-08-20T02:59:25.884Z"
+      },
+      "squad": {
+        "team": "Tottenham Hotspur",
+        "opponent": "Manchester United",
+        "home": true,
+        "teamScore": 2,
+        "opponentScore": 2,
+        "date": "2025-11-08",
+        "dateLabel": "8 November 2025",
+        "formation": "4-2-3-1"
+      },
+      "answers": [
+        {
+          "fullName": "Guglielmo Vicario",
+          "lastName": "Vicario",
+          "shirtNumber": 1,
+          "position": "G"
+        },
+        {
+          "fullName": "Pedro Porro",
+          "lastName": "Porro",
+          "shirtNumber": 23,
+          "position": "D"
+        },
+        {
+          "fullName": "Cristian Romero",
+          "lastName": "Romero",
+          "shirtNumber": 17,
+          "position": "D"
+        },
+        {
+          "fullName": "Micky van de Ven",
+          "lastName": "van de Ven",
+          "shirtNumber": 37,
+          "position": "D"
+        },
+        {
+          "fullName": "Djed Spence",
+          "lastName": "Spence",
+          "shirtNumber": 24,
+          "position": "D"
+        },
+        {
+          "fullName": "João Palhinha",
+          "lastName": "Lobo Alves Palhares Costa Palhinha Gonçalves",
+          "shirtNumber": 6,
+          "position": "M"
+        },
+        {
+          "fullName": "Pape Matar Sarr",
+          "lastName": "Sarr",
+          "shirtNumber": 29,
+          "position": "M"
+        },
+        {
+          "fullName": "Brennan Johnson",
+          "lastName": "Johnson",
+          "shirtNumber": 22,
+          "position": "M"
+        },
+        {
+          "fullName": "Xavi Simons",
+          "lastName": "Simons",
+          "shirtNumber": 7,
+          "position": "M"
+        },
+        {
+          "fullName": "Richarlison",
+          "lastName": "de Andrade",
+          "shirtNumber": 9,
+          "position": "M"
+        },
+        {
+          "fullName": "Randal Kolo Muani",
+          "lastName": "Kolo Muani",
+          "shirtNumber": 39,
+          "position": "F"
+        }
+      ],
+      "lines": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10
+        ]
+      ]
+    }
   }
 }
